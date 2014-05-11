@@ -1,7 +1,7 @@
 {
   "name": "reserved",
   "description": "Reserved words that may not be used as variables, functions, methods, or object identifiers, since ECMAScript specifies special behavior for them.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/jonschlinkert/reserved",
   "author": {
     "name": "Jon Schlinkert",
