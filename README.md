@@ -2,7 +2,7 @@
 
 > Reserved words that may not be used as variables, functions, methods, or object identifiers, since ECMAScript specifies special behavior for them.
 
-Used in [varname](https://github.com/jonschlinkert/varname)
+Used in [variable](https://github.com/jonschlinkert/variable)
 
 ## Install
 Install with [npm](npmjs.org):
