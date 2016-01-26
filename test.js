@@ -1,4 +1,4 @@
-var cpi = require('./main.js');
+var cpi = require('./chinese-parseint');
 
 var units = [
 	['哈哈', NaN],

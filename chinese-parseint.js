@@ -1,4 +1,5 @@
-var chars = {
+var chinese_parseInt = (function(){
+  var chars = {
 	"０": 0, "零": 0, "○": 0, "〇": 0, "洞": 0,
 	"１": 1, "一": 1, "壹": 1, "ㄧ": 1, "弌": 1, "么": 1,
 	"２": 2, "二": 2, "貳": 2, "贰": 2, "弍": 2, "兩": 2, "两": 2,
@@ -24,9 +25,9 @@ var chars = {
 	"溝": 1e+32, "沟": 1e+32,
 	"澗": 1e+36, "涧": 1e+36,
 	"正": 1e+40, "載": 1e+44, "極": 1e+48
-};
+  };
 
-var main = function(str, radix) {
+  var main = function(str, radix) {
 	var result = parseInt(str, radix);
 	if(!isNaN(result)) return result;
 	if(typeof str !== "string") return NaN;
@@ -79,7 +80,10 @@ var main = function(str, radix) {
 
 	if(negative) result *= -1;
 	return result;
-};
+  };
 
-main.characters = chars;
-module.exports = main;
+  main.characters = chars;
+  return main;
+})();
+
+if(typeof module === 'object') module.exports = chinese_parseInt;

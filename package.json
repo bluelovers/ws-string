@@ -1,8 +1,8 @@
 {
   "name": "chinese-parseint",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "parse Chinese numeric strings to integer",
-  "main": "main.js",
+  "main": "chinese-parseint.js",
   "scripts": {
     "test": "node test.js"
   },
