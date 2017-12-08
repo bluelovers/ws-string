@@ -5,6 +5,7 @@
 import { relative, expect } from './_local-dev';
 
 import * as index from '..';
+import { FullHalfCore } from '../lib/fullhalf';
 
 // @ts-ignore
 describe(relative(__filename), () =>
@@ -15,37 +16,38 @@ describe(relative(__filename), () =>
 
 	before(function ()
 	{
-		table = [] as number[];
+		table = [];
 
 		for (let key in index.tableFullHalf[0])
 		{
 			let data = [];
 
+			if (key == 'default')
+			{
+				continue;
+			}
+
+			//table.push(`>>> ${key}`);
+
+			//table.push(`\n`);
+
 			for (let i in index.tableFullHalf)
 			{
 				let data = index.tableFullHalf[i][key];
 
-				if (data.from && data.to)
-				{
-					for (let i = data.from; i<=data.to; i++)
-					{
-						table.push(i);
-					}
-				}
-				else if (data.values)
-				{
-					table = table.concat(data.values);
-				}
-
-				table.push("\n".charCodeAt(0));
+				let _a = FullHalfCore.filterTable(data);
+				table.push(String.fromCharCode(..._a));
 			}
 		}
 
-		table = String.fromCharCode(...table)
+		table = table
+			.join('\n')
 			.replace(/^\n|\n$/g, '')
 		;
 
 		console.log(table);
+
+		//console.log(0x007F - 0x0020);
 	});
 
 	it(`table`, function ()
@@ -91,6 +93,75 @@ describe(relative(__filename), () =>
 		it(`toHalfNumber`, function ()
 		{
 			expect(index.toHalfNumber(str)).to.equal('THE ｑｕｉｃｋ， ＢＲＯＷＮ　fox.　1 2 3／＊－＋＝－0］［’；／．+-*/=-09][\'";/.');
+		});
+	});
+
+	describe(`FullHalf.options`, () =>
+	{
+		const str = 'THE ｑｕｉｃｋ， ＢＲＯＷＮ\u3000fox.　1 ２ 3'
+			+ '／＊－＋＝－０］［’；／．+-*/=-09][\'";/.'
+		;
+
+		const options = {
+			skip: {
+				exists: true,
+			},
+		};
+
+		it(`toFullWidth`, function ()
+		{
+			expect(index.toFullWidth(str, options)).to.equal('THE ｑｕｉｃｋ， ＢＲＯＷＮ　fox．　1 ２ 3／＊－＋＝－０］［’；／．＋－＊／＝－09］［＇＂；／．');
+		});
+
+		it(`toHalfWidth`, function ()
+		{
+			expect(index.toHalfWidth(str, options)).to.equal('THE ｑｕｉｃｋ, ＢＲＯＷＮ　fox.　1 ２ 3/*-+=-０][’;/.+-*/=-09][\'";/.');
+		});
+	});
+
+	describe(`FullHalf.options`, () =>
+	{
+		const str = 'THE ｑｕｉｃｋ， ＢＲＯＷＮ\u3000fox.　1 ２ 3'
+			+ '／＊－＋＝－０］［’；／．+-*/=-09][\'";/.'
+		;
+
+		const options = {
+			only: {
+				default_not: true,
+			},
+		};
+
+		it(`toFullWidth`, function ()
+		{
+			expect(index.toFullWidth(str, options)).to.equal('THE ｑｕｉｃｋ， ＢＲＯＷＮ　fox．　1 ２ 3／＊－＋＝－０］［’；／．＋－＊／＝－09］［＇＂；／．');
+		});
+
+		it(`toHalfWidth`, function ()
+		{
+			expect(index.toHalfWidth(str, options)).to.equal('THE ｑｕｉｃｋ, ＢＲＯＷＮ　fox.　1 ２ 3/*-+=-０][’;/.+-*/=-09][\'";/.');
+		});
+	});
+
+	describe(`FullHalf.options`, () =>
+	{
+		const str = 'THE ｑｕｉｃｋ， ＢＲＯＷＮ\u3000fox.　1 ２ 3'
+			+ '／＊－＋＝－０］［’；／．+-*/=-09][\'";/.'
+		;
+
+		const options = {
+			skip: {
+				default_not: true,
+			},
+		};
+
+		it(`toFullWidth`, function ()
+		{
+			expect(index.toFullWidth(str, options)).to.equal('ＴＨＥ　ｑｕｉｃｋ，　ＢＲＯＷＮ　ｆｏｘ.　１　２　３／＊－＋＝－０］［’；／．+-*/=-０９][\'";/.');
+		});
+
+		it(`toHalfWidth`, function ()
+		{
+			expect(index.toHalfWidth(str, options)).to.equal('THE quick， BROWN fox. 1 2 3／＊－＋＝－0］［’；／．+-*/=-09][\'";/.');
 		});
 	});
 });
