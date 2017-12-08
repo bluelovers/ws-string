@@ -48,21 +48,49 @@ describe(relative(__filename), () =>
 		console.log(table);
 	});
 
-	it(`table`, function (done)
+	it(`table`, function ()
 	{
 		for (let key in index.tableFullHalf[0])
 		{
-			console.log([index.tableFullHalf[0][key], index.tableFullHalf[1][key]]);
-			expect(index.tableFullHalf[0][key]).to.not.equal(index.tableFullHalf[1][key]);
+			console.log(key, [index.tableFullHalf[0][key], index.tableFullHalf[1][key]]);
+			expect(index.tableFullHalf[0][key]).to.not.deep.equal(index.tableFullHalf[1][key]);
 		}
-
-		expect(index.tableFullHalf[0].space).to.not.equal(index.tableFullHalf[1].space);
-
-		done();
 	});
 
 	describe(`FullHalf`, () =>
 	{
+		const str = 'THE ｑｕｉｃｋ， ＢＲＯＷＮ\u3000fox.　1 ２ 3'
+			+ '／＊－＋＝－０］［’；／．+-*/=-09][\'";/.'
+		;
 
+		it(`toFullWidth`, function ()
+		{
+			expect(index.toFullWidth(str)).to.equal('ＴＨＥ　ｑｕｉｃｋ，　ＢＲＯＷＮ　ｆｏｘ．　１　２　３／＊－＋＝－０］［’；／．＋－＊／＝－０９］［＇＂；／．');
+		});
+
+		it(`toHalfWidth`, function ()
+		{
+			expect(index.toHalfWidth(str)).to.equal('THE quick, BROWN fox. 1 2 3/*-+=-0][’;/.+-*/=-09][\'";/.');
+		});
+
+		it(`toFullEnglish`, function ()
+		{
+			expect(index.toFullEnglish(str)).to.equal('ＴＨＥ ｑｕｉｃｋ， ＢＲＯＷＮ　ｆｏｘ.　1 ２ 3／＊－＋＝－０］［’；／．+-*/=-09][\'";/.');
+		});
+
+		it(`toHalfEnglish`, function ()
+		{
+			expect(index.toHalfEnglish(str)).to.equal('THE quick， BROWN　fox.　1 ２ 3／＊－＋＝－０］［’；／．+-*/=-09][\'";/.');
+		});
+
+		it(`toFullNumber`, function ()
+		{
+			expect(index.toFullNumber(str)).to.equal('THE ｑｕｉｃｋ， ＢＲＯＷＮ　fox.　１ ２ ３／＊－＋＝－０］［’；／．+-*/=-０９][\'";/.');
+		});
+
+		it(`toHalfNumber`, function ()
+		{
+			expect(index.toHalfNumber(str)).to.equal('THE ｑｕｉｃｋ， ＢＲＯＷＮ　fox.　1 2 3／＊－＋＝－0］［’；／．+-*/=-09][\'";/.');
+		});
 	});
 });
