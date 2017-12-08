@@ -19,6 +19,9 @@ export namespace FullHalfCore
 		 */
 		both?: boolean;
 
+		space: boolean;
+		exists: boolean;
+
 		[index: string]: boolean;
 	}
 
@@ -44,6 +47,8 @@ export namespace FullHalfCore
 		to?: number;
 
 		values?: number[];
+
+		not?: ITableObject[],
 	}
 
 	export interface ITable
@@ -55,6 +60,12 @@ export namespace FullHalfCore
 	 * @see https://en.wikipedia.org/wiki/Code_page_437
 	 */
 	let _table = {
+		default: {
+			from: 0x0020 + 1,
+			to: 0x007F - 1,
+			values: [0x0020],
+		},
+
 		number: [0x0030, 0x0039],
 
 		'A-Z': [0x0041, 0x005A],
@@ -65,46 +76,167 @@ export namespace FullHalfCore
 
 	export let table: ITable[] = [];
 
-	table[0] = {};
-	table[1] = {};
-
-	for (let k in _table)
 	{
-		let v = _table[k];
+		let _keys = [];
 
-		let r: ITableObject[] = [];
+		table[0] = {};
+		table[1] = {};
 
-		r[0] = {};
-		r[1] = {};
-
-		if (Array.isArray(v) && v.length == 2)
+		for (let k in _table)
 		{
-			r[0].from = v[0];
-			r[0].to = v[1];
+			let v = _table[k];
 
-			r[1].from = toFullWidth(r[0].from);
-			r[1].to = toFullWidth(r[0].to);
-
-			//table[FULL_WIDTH][k] = r[0];
-			//table[HALF_WIDTH][k] = r[1];
-		}
-		else if (Array.isArray(v))
-		{
-			r[0].values = v;
-			r[1].values = (v as number[]).reduce(function (a, code)
+			if (k.indexOf('default') != 0)
 			{
-				a.push(toFullWidth(code));
+				_keys.push(k);
+			}
 
-				return a;
-			}, []);
+			let r;
+
+			r = fn(v);
+
+			if (r)
+			{
+				table[HALF_WIDTH][k] = r[1];
+				table[FULL_WIDTH][k] = r[0];
+			}
 		}
-		else
+
+		let r = fn(_table.default);
+
+		r[0].not = [];
+		r[1].not = [];
+
+		for (let k of _keys)
 		{
-			continue;
+			let v = _table[k];
+
+			let r2;
+
+			r2 = fn(v);
+
+			if (r2)
+			{
+				r[0].not.push(r2[0]);
+				r[1].not.push(r2[1]);
+			}
 		}
 
-		table[HALF_WIDTH][k] = r[1];
-		table[FULL_WIDTH][k] = r[0];
+		table[HALF_WIDTH]['default_not'] = r[1];
+		table[FULL_WIDTH]['default_not'] = r[0];
+
+		//console.log(table);
+
+		function fn(v)
+		{
+			let r: ITableObject[] = [];
+
+			r[0] = {};
+			r[1] = {};
+
+			let _skip = true;
+
+			if (Array.isArray(v))
+			{
+				if (v.length == 2)
+				{
+					r[0].from = v[0];
+					r[0].to = v[1];
+				}
+				else
+				{
+					r[0].values = v;
+				}
+
+				_skip = false;
+			}
+
+			if (v.from && v.to)
+			{
+				r[0].from = v.from;
+				r[0].to = v.to;
+
+				_skip = false;
+			}
+
+			if (Array.isArray(v.values) && v.values.length)
+			{
+				r[0].values = v.values;
+
+				_skip = false;
+			}
+
+			if (_skip)
+			{
+				return;
+			}
+
+			if (r[0].from && r[0].to)
+			{
+				r[1].from = toFullWidth(r[0].from);
+				r[1].to = toFullWidth(r[0].to);
+			}
+
+			if (r[0].values)
+			{
+				r[1].values = (r[0].values as number[]).reduce(function (a, code)
+				{
+					a.push(toFullWidth(code));
+
+					return a;
+				}, []);
+			}
+
+			return r;
+		}
+	}
+
+	export function filterTable(data)
+	{
+		let _a = [];
+
+		if (data.from && data.to)
+		{
+			for (let i = data.from; i<=data.to; i++)
+			{
+				_a.push(i);
+			}
+		}
+
+		if (data.values)
+		{
+			_a = _a.concat(data.values)
+		}
+
+		if (Array.isArray(data.not) && data.not.length)
+		{
+			_a = _a.filter(function (charCode)
+			{
+				for (let d of data.not)
+				{
+					if (_chkType(charCode, d))
+					{
+						return false;
+					}
+				}
+
+				return true;
+			});
+		}
+
+		return _a;
+	}
+
+	function _chkType(charCode: number, data: ITableObject)
+	{
+		if (data.from && data.to && data.from <= charCode && charCode <= data.to)
+		{
+			return true;
+		}
+		else if (data.values && data.values.includes(charCode))
+		{
+			return true;
+		}
 	}
 
 	export function chkType(charCode: number, key: string, type: number)
@@ -113,11 +245,18 @@ export namespace FullHalfCore
 
 		//console.log(charCode, data);
 
-		if (data.values && data.values.includes(charCode))
+		if (Array.isArray(data.not) && data.not.length)
 		{
-			return true;
+			for (let d of data.not)
+			{
+				if (_chkType(charCode, d))
+				{
+					return false;
+				}
+			}
 		}
-		else if (data.from && data.to && data.from <= charCode && charCode <= data.to)
+
+		if (_chkType(charCode, data))
 		{
 			return true;
 		}
@@ -157,16 +296,33 @@ export namespace FullHalfCore
 	{
 		if (data)
 		{
-			if (data.both)
+			if (data.exists)
 			{
-				data.number = data.eng = true;
-				delete data.both;
-			}
+				for (let key in table[0])
+				{
+					if (key.indexOf('default') == 0)
+					{
+						continue;
+					}
 
-			if (data.eng)
+					data[key] = true;
+				}
+
+				delete data.exists;
+			}
+			else
 			{
-				data['a-z'] = data['A-Z'] = true;
-				delete data.eng;
+				if (data.both)
+				{
+					data.number = data.eng = true;
+					delete data.both;
+				}
+
+				if (data.eng)
+				{
+					data['a-z'] = data['A-Z'] = true;
+					delete data.eng;
+				}
 			}
 		}
 
