@@ -1,0 +1,30 @@
+{
+  "name": "node-str-util",
+  "version": "1.0.0",
+  "description": "Coverts characters width",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx mocha \"!(node_modules)\\**\\*.+(test|spec).js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "deepmerge": "^2.0.1",
+    "is-fullwidth-code-point": "^2.0.0",
+    "strip-ansi": "^4.0.0"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/node-str-util.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bluelovers/node-str-util/issues"
+  },
+  "homepage": "https://github.com/bluelovers/node-str-util#readme"
+}
