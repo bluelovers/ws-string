@@ -1,0 +1,8 @@
+# Created by .ignore support plugin (hsz.mobi)
+/index.ts
+/lib/is-fullwidth.ts
+/node_modules/
+/.idea/
+/lib/width.ts
+/lib/fullhalf.ts
+/test/
