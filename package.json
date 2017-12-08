@@ -1,5 +1,5 @@
 {
-  "name": "node-str-util",
+  "name": "str-util",
   "version": "1.0.0",
   "description": "Coverts characters width",
   "main": "index.js",
