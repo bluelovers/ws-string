@@ -65,8 +65,8 @@ export namespace FullHalfCore
 
 	export let table: ITable[] = [];
 
-	table[FULL_WIDTH] = {};
-	table[HALF_WIDTH] = {};
+	table[0] = {};
+	table[1] = {};
 
 	for (let k in _table)
 	{
@@ -74,24 +74,24 @@ export namespace FullHalfCore
 
 		let r: ITableObject[] = [];
 
-		r[HALF_WIDTH] = {};
-		r[FULL_WIDTH] = {};
+		r[0] = {};
+		r[1] = {};
 
 		if (Array.isArray(v) && v.length == 2)
 		{
-			r[HALF_WIDTH].from = v[0];
-			r[HALF_WIDTH].to = v[1];
+			r[0].from = v[0];
+			r[0].to = v[1];
 
-			r[FULL_WIDTH].from = toFullWidth(r[0].from);
-			r[FULL_WIDTH].to = toFullWidth(r[0].to);
+			r[1].from = toFullWidth(r[0].from);
+			r[1].to = toFullWidth(r[0].to);
 
 			//table[FULL_WIDTH][k] = r[0];
 			//table[HALF_WIDTH][k] = r[1];
 		}
 		else if (Array.isArray(v))
 		{
-			r[HALF_WIDTH].values = v;
-			r[FULL_WIDTH].values = (v as number[]).reduce(function (a, code)
+			r[0].values = v;
+			r[1].values = (v as number[]).reduce(function (a, code)
 			{
 				a.push(toFullWidth(code));
 
@@ -103,8 +103,8 @@ export namespace FullHalfCore
 			continue;
 		}
 
-		table[HALF_WIDTH][k] = r[HALF_WIDTH];
-		table[FULL_WIDTH][k] = r[FULL_WIDTH];
+		table[HALF_WIDTH][k] = r[1];
+		table[FULL_WIDTH][k] = r[0];
 	}
 
 	export function chkType(charCode: number, key: string, type: number)
