@@ -11,12 +11,16 @@ export function isFullwidthCodePoint(x: number): boolean
 		return false;
 	}
 
-	if (
-		// https://en.wikipedia.org/wiki/Box-drawing_character
-	(0x2500 <= x && x <= 0x257f)
-	// https://en.wikipedia.org/wiki/Block_Elements
-	|| (0x2580 <= x && x <= 0x259f)
-	|| _isFullwidthCodePoint(x)
+	if (0
+		|| (
+			// https://en.wikipedia.org/wiki/Box-drawing_character
+			0x2500 <= x && x <= 0x257f
+		)
+		|| (
+			// https://en.wikipedia.org/wiki/Block_Elements
+			0x2580 <= x && x <= 0x259f
+		)
+		|| _isFullwidthCodePoint(x)
 	)
 	{
 		return true;
