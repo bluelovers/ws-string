@@ -19,8 +19,11 @@ export namespace FullHalfCore
 		 */
 		both?: boolean;
 
-		space: boolean;
-		exists: boolean;
+		space?: boolean;
+		exists?: boolean;
+
+		default?: boolean;
+		not_default?: boolean;
 
 		[index: string]: boolean;
 	}
@@ -53,6 +56,16 @@ export namespace FullHalfCore
 
 	export interface ITable
 	{
+		default?: ITableObject;
+
+		number?: ITableObject;
+		space?: ITableObject;
+
+		'A-Z'?: ITableObject;
+		'a-z'?: ITableObject;
+
+		not_default?: ITableObject;
+
 		[index: string]: ITableObject;
 	}
 
@@ -74,10 +87,18 @@ export namespace FullHalfCore
 		space: [0x0020],
 	};
 
+	export let tableDefaultInclude = [
+		'number',
+		'A-Z',
+		'a-z',
+		'space',
+		'not_default',
+	];
+
 	export let table: ITable[] = [];
 
 	{
-		let _keys = [];
+		let _keys = tableDefaultInclude.slice(0, -1);
 
 		table[0] = {};
 		table[1] = {};
@@ -85,11 +106,6 @@ export namespace FullHalfCore
 		for (let k in _table)
 		{
 			let v = _table[k];
-
-			if (k.indexOf('default') != 0)
-			{
-				_keys.push(k);
-			}
 
 			let r;
 
@@ -122,8 +138,8 @@ export namespace FullHalfCore
 			}
 		}
 
-		table[HALF_WIDTH]['default_not'] = r[1];
-		table[FULL_WIDTH]['default_not'] = r[0];
+		table[HALF_WIDTH]['not_default'] = r[1];
+		table[FULL_WIDTH]['not_default'] = r[0];
 
 		//console.log(table);
 
@@ -227,7 +243,7 @@ export namespace FullHalfCore
 		return _a;
 	}
 
-	function _chkType(charCode: number, data: ITableObject)
+	export function _chkType(charCode: number, data: ITableObject)
 	{
 		if (data.from && data.to && data.from <= charCode && charCode <= data.to)
 		{
@@ -305,13 +321,29 @@ export namespace FullHalfCore
 						continue;
 					}
 
-					data[key] = true;
+					if (data[key] !== false)
+					{
+						data[key] = true;
+					}
 				}
 
 				delete data.exists;
 			}
 			else
 			{
+				if (data.default)
+				{
+					for (let key in tableDefaultInclude)
+					{
+						if (data[key] !== false)
+						{
+							data[key] = true;
+						}
+					}
+
+					delete data.default;
+				}
+
 				if (data.both)
 				{
 					data.number = data.eng = true;

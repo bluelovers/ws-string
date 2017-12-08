@@ -103,31 +103,8 @@ describe(relative(__filename), () =>
 		;
 
 		const options = {
-			skip: {
-				exists: true,
-			},
-		};
-
-		it(`toFullWidth`, function ()
-		{
-			expect(index.toFullWidth(str, options)).to.equal('THE ｑｕｉｃｋ， ＢＲＯＷＮ　fox．　1 ２ 3／＊－＋＝－０］［’；／．＋－＊／＝－09］［＇＂；／．');
-		});
-
-		it(`toHalfWidth`, function ()
-		{
-			expect(index.toHalfWidth(str, options)).to.equal('THE ｑｕｉｃｋ, ＢＲＯＷＮ　fox.　1 ２ 3/*-+=-０][’;/.+-*/=-09][\'";/.');
-		});
-	});
-
-	describe(`FullHalf.options`, () =>
-	{
-		const str = 'THE ｑｕｉｃｋ， ＢＲＯＷＮ\u3000fox.　1 ２ 3'
-			+ '／＊－＋＝－０］［’；／．+-*/=-09][\'";/.'
-		;
-
-		const options = {
 			only: {
-				default_not: true,
+				not_default: true,
 			},
 		};
 
@@ -150,7 +127,7 @@ describe(relative(__filename), () =>
 
 		const options = {
 			skip: {
-				default_not: true,
+				not_default: true,
 			},
 		};
 
