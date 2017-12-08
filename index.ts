@@ -5,12 +5,14 @@
 import { isFullWidth, isFullwidthCodePoint } from './lib/is-fullwidth';
 import { stringWidth } from './lib/width';
 import FullHalf, { FullHalfCore, toFullNumber, toHalfNumber, toFullEnglish, toHalfEnglish, toFullWidth, toHalfWidth } from './lib/fullhalf';
+import * as stripAnsi from 'strip-ansi';
 
 export const tableFullHalf = FullHalfCore.table;
 
-export { isFullWidth, isFullwidthCodePoint };
-export { stringWidth };
+export { isFullWidth, isFullwidthCodePoint }
+export { stringWidth }
 export { toFullNumber, toHalfNumber, toFullEnglish, toHalfEnglish, toFullWidth, toHalfWidth }
+export { stripAnsi }
 
 // @ts-ignore
 export default exports;
