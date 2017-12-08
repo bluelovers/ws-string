@@ -28,3 +28,17 @@ console.log(StrUtil.toHalfEnglish('123abcABCＡＢＣ１２３／＊－＋＝－
 console.log(StrUtil.toFullNumber('123abcABCＡＢＣ１２３／＊－＋＝－０］［’；／．+-*/=-09][\'";/.'));
 console.log(StrUtil.toHalfNumber('123abcABCＡＢＣ１２３／＊－＋＝－０］［’；／．+-*/=-09][\'";/.'));
 ```
+
+default
+```
+０１２３４５６７８９
+0123456789
+ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ
+abcdefghijklmnopqrstuvwxyz
+　
+
+！＂＃＄％＆＇（）＊＋，－．／：；＜＝＞？＠［＼］＾＿｀｛｜｝～
+!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+```
