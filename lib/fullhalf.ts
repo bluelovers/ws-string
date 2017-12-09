@@ -3,11 +3,14 @@
  */
 
 import * as deepmerge from 'deepmerge';
+import * as util from './util';
 
 export namespace FullHalfCore
 {
 	export const FULL_WIDTH = 1;
 	export const HALF_WIDTH = 0;
+
+	export const NO_EXIST = -1;
 
 	export interface IOptionsType
 	{
@@ -25,6 +28,9 @@ export namespace FullHalfCore
 		default?: boolean;
 		not_default?: boolean;
 		not_default2?: boolean;
+
+		slash?: boolean;
+		bracket?: boolean;
 
 		[index: string]: boolean;
 	}
@@ -86,6 +92,14 @@ export namespace FullHalfCore
 		'a-z': [0x0061, 0x007A],
 
 		space: [0x0020],
+
+		slash: {
+			values: util.charCodeAt(`/\\`),
+		},
+
+		bracket: {
+			values: util.charCodeAt(`()[]{}`),
+		},
 	};
 
 	export let tableDefaultInclude = [
@@ -277,6 +291,41 @@ export namespace FullHalfCore
 		{
 			return true;
 		}
+	}
+
+	export function hasFullHalf(charCode: number)
+	{
+		if (0x0020 <= charCode && charCode < 0x007F)
+		{
+			return HALF_WIDTH;
+		}
+
+		if (0x3000 === charCode || 0xFF00 < charCode && charCode < 0xFF5F)
+		{
+			return FULL_WIDTH;
+		}
+
+		return NO_EXIST;
+	}
+
+	export function isFullHalf(charCode: number)
+	{
+		let r = hasFullHalf(charCode);
+
+		if (r === FULL_WIDTH)
+		{
+			return true;
+		}
+		else if (r === HALF_WIDTH)
+		{
+			return false;
+		}
+		else
+		{
+			// @todo add more...
+		}
+
+		return null;
 	}
 
 	export function toFullWidth(charCode: number)
