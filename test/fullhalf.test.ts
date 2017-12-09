@@ -104,6 +104,7 @@ describe(relative(__filename), () =>
 
 		const options = {
 			only: {
+				not_default2: false,
 				not_default: true,
 			},
 		};
