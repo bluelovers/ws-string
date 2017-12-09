@@ -24,6 +24,7 @@ export namespace FullHalfCore
 
 		default?: boolean;
 		not_default?: boolean;
+		not_default2?: boolean;
 
 		[index: string]: boolean;
 	}
@@ -308,11 +309,11 @@ export namespace FullHalfCore
 		return charCode;
 	}
 
-	function _optionsType(data: IOptionsType)
+	export function _optionsType(data: IOptionsType)
 	{
 		if (data)
 		{
-			if (data.exists)
+			if (typeof data.exists == 'boolean')
 			{
 				for (let key in table[0])
 				{
@@ -323,7 +324,7 @@ export namespace FullHalfCore
 
 					if (data[key] !== false)
 					{
-						data[key] = true;
+						data[key] = data.exists;
 					}
 				}
 
@@ -331,28 +332,34 @@ export namespace FullHalfCore
 			}
 			else
 			{
-				if (data.default)
+				if (typeof data.default == 'boolean')
 				{
-					for (let key in tableDefaultInclude)
+					for (let key of tableDefaultInclude)
 					{
 						if (data[key] !== false)
 						{
-							data[key] = true;
+							data[key] = data.default;
 						}
 					}
 
 					delete data.default;
 				}
 
-				if (data.both)
+				if (typeof data.not_default2 == 'boolean')
 				{
-					data.number = data.eng = true;
+					data.both = data.space = data.not_default2;
+					delete data.not_default2;
+				}
+
+				if (typeof data.both == 'boolean')
+				{
+					data.number = data.eng = data.both;
 					delete data.both;
 				}
 
-				if (data.eng)
+				if (typeof data.eng == 'boolean')
 				{
-					data['a-z'] = data['A-Z'] = true;
+					data['a-z'] = data['A-Z'] = data.eng;
 					delete data.eng;
 				}
 			}
@@ -370,7 +377,7 @@ export namespace FullHalfCore
 
 		//console.log(options);
 
-		for (let char of str)
+		for (let char of str.toString())
 		{
 			let _skip;
 
@@ -461,10 +468,14 @@ typeOnly = {
 export const toFullEnglish = FullHalfCore.factory<string>(FullHalfCore.toFullWidth, FullHalfCore.FULL_WIDTH, typeOnly);
 export const toHalfEnglish = FullHalfCore.factory<string>(FullHalfCore.toHalfWidth, FullHalfCore.HALF_WIDTH, typeOnly);
 
-// ---
+typeOnly = {
+	only: {
+		default: true,
+	},
+};
 
-export const toFullWidth = FullHalfCore.factory<string>(FullHalfCore.toFullWidth, FullHalfCore.FULL_WIDTH);
-export const toHalfWidth = FullHalfCore.factory<string>(FullHalfCore.toHalfWidth, FullHalfCore.HALF_WIDTH);
+export const toFullWidth = FullHalfCore.factory<string>(FullHalfCore.toFullWidth, FullHalfCore.FULL_WIDTH, typeOnly);
+export const toHalfWidth = FullHalfCore.factory<string>(FullHalfCore.toHalfWidth, FullHalfCore.HALF_WIDTH, typeOnly);
 
 // @ts-ignore
 export default exports;
