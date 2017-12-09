@@ -368,21 +368,23 @@ export namespace FullHalfCore
 		return data;
 	}
 
-	export function process<T>(str: string, charProcess, options: IOptions)
+	export function process<T, U = string>(str: U, charProcess, options: IOptions)
 	{
-		let ret = [];
+		let ret: number[] = [];
 
 		options.skip = _optionsType(options.skip);
 		options.only = _optionsType(options.only);
 
 		//console.log(options);
 
-		for (let char of str.toString())
+		let _str = Array.isArray(str) ? str : str.toString();
+
+		for (let char of _str)
 		{
-			let _skip;
+			let _skip: boolean;
 
 			// @ts-ignore
-			let charCode = char.charCodeAt();
+			let charCode = typeof char == 'number' ? char : char.charCodeAt();
 
 			if (options.only)
 			{
