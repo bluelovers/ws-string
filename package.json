@@ -1,6 +1,6 @@
 {
   "name": "str-util",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Coverts characters width",
   "main": "index.js",
   "scripts": {
