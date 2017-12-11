@@ -2,15 +2,16 @@
  * Created by user on 2017/12/8/008.
  */
 
-import { isFullWidth, isFullwidthCodePoint } from './lib/is-fullwidth';
-import { stringWidth } from './lib/width';
+export { isFullWidth, isFullwidthCodePoint } from './lib/is-fullwidth';
+export { stringWidth } from './lib/width';
 import FullHalf, { FullHalfCore, toFullNumber, toHalfNumber, toFullEnglish, toHalfEnglish, toFullWidth, toHalfWidth } from './lib/fullhalf';
 import * as stripAnsi from 'strip-ansi';
 
+export { zh2num, num2zh } from './lib/han/zh2num';
+export { charCodeAt } from './lib/util';
+
 export const tableFullHalf = FullHalfCore.table;
 
-export { isFullWidth, isFullwidthCodePoint }
-export { stringWidth }
 export { toFullNumber, toHalfNumber, toFullEnglish, toHalfEnglish, toFullWidth, toHalfWidth }
 export { stripAnsi }
 
