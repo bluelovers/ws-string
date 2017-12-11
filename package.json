@@ -1,24 +1,30 @@
 {
   "name": "str-util",
-  "version": "1.0.3",
-  "description": "Coverts characters width",
+  "version": "1.1.0",
+  "description": "convert full/half width, Chinese/Japanese number ... others util helper",
   "main": "index.js",
   "scripts": {
+    "doc": "npx typedoc --out ./doc --target es2017 --ignoreCompilerErrors --exclude **/{node_modules,test}/**/* .",
     "test": "npx mocha \"!(node_modules)\\**\\*.+(test|spec).js\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chinese-parseint": "^1.1.0",
     "deepmerge": "^2.0.1",
     "is-fullwidth-code-point": "^2.0.0",
+    "japanese": "^1.2.0",
     "strip-ansi": "^4.0.0"
   },
   "directories": {
     "lib": "lib",
     "test": "test"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "typedoc": "^0.9.0",
+    "typedoc-markdown-theme": "0.0.4"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bluelovers/node-str-util.git"

@@ -1,10 +1,8 @@
-# node-str-width2
+# str-util
 
-> Coverts characters width
+> convert full/half width, Chinese/Japanese number ... others util helper
 
 `npm i str-util`
-
-fork from `ascii-fullwidth-halfwidth-convert` `string-width`
 
 ## Usage
 
@@ -12,9 +10,11 @@ fork from `ascii-fullwidth-halfwidth-convert` `string-width`
 import * as StrUtil from 'str-util';
 ```
 
+See more at [test](https://github.com/bluelovers/node-str-util/tree/master/test) / [doc](https://github.com/bluelovers/node-str-util/tree/master/doc)
+
 ### FullHalf
 
-```
+```javascript
 const str = 'THE ｑｕｉｃｋ， ＢＲＯＷＮ\u3000fox.';
 
 StrUtil.toFullWidth(str);
@@ -42,3 +42,17 @@ abcdefghijklmnopqrstuvwxyz
 ！＂＃＄％＆＇（）＊＋，－．／：；＜＝＞？＠［＼］＾＿｀｛｜｝～
 !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 ```
+
+### 漢字 Number
+
+```javascript
+zh2num('千百十七') == 1117
+num2zh(1117) == '千百十七'
+```
+
+## lib
+
+* `ascii-fullwidth-halfwidth-convert`
+* `string-width`
+* `chinese-parseint`
+* `japanese`
