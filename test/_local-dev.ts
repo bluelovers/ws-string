@@ -7,8 +7,10 @@ import * as chai from 'chai';
 // @ts-ignore
 import * as path from 'path';
 
+export { path };
+
 // @ts-ignore
-const rootDir = path.join(__dirname, '..');
+export const rootDir = path.join(__dirname, '..');
 
 export function relative(filename): string
 {
@@ -16,3 +18,7 @@ export function relative(filename): string
 }
 
 export const expect = chai.expect;
+export const assert = chai.assert;
+
+// @ts-ignore
+export default exports;
