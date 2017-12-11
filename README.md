@@ -10,7 +10,7 @@
 import * as StrUtil from 'str-util';
 ```
 
-See more at [test](https://github.com/bluelovers/node-str-util/tree/master/test) / [doc](https://github.com/bluelovers/node-str-util/tree/master/doc)
+See more at [test](https://github.com/bluelovers/node-str-util/tree/master/test) / [docs](https://github.com/bluelovers/node-str-util/tree/master/docs)
 
 ### FullHalf
 
