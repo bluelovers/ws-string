@@ -16,6 +16,8 @@ var allRegex = [hanRegex, katakanaRegex, hiraganaRegex, hangulRegex];
 var zhs = /[\u4E00-\u9FA5]+/;
 var zh = /[\u4E00-\u9FFF]+/;
 
+export const Arabic = /[\u0600-\u06FF\u0750-\u077F]/;
+
 function mergeRegExp(arr: RegExp[], options = {})
 {
 	let s = arr
