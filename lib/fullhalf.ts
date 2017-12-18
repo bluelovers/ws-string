@@ -484,6 +484,8 @@ export namespace FullHalfCore
 
 	export function factory<T = string>(charProcessor, type: number, overwriteOptions?: IOptions)
 	{
+		//const deepmerge = require('deepmerge');
+
 		return (str: string, options?: IOptions) =>
 		{
 			options = deepmerge.all([
