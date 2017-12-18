@@ -30,7 +30,13 @@ export interface IOptions
 	truncateOne?: number | boolean;
 
 	strict?: boolean;
+
+	one?: boolean;
 }
+
+export const defaultOptions = {
+	one: true,
+} as IOptions;
 
 export const transcriptionConfigs = japanese.transcriptionConfigs;
 
@@ -48,6 +54,8 @@ export const predefineedTranscriptionConfigs = japanese.predefineedTranscription
  */
 export function zh2num(str, options: IOptions = {}): string | number
 {
+	options = Object.assign({}, defaultOptions, options);
+
 	let sa: string[] = [];
 	let do_def = true;
 
@@ -123,9 +131,11 @@ export function zh2num(str, options: IOptions = {}): string | number
 
 	let rs = sa.join();
 
-	if (!(new RegExp('([^' + rs + '])')).test(str.toString()))
+	let s = str.toString();
+
+	if (!(new RegExp('([^' + rs + '])')).test(s))
 	{
-		return chinese_parseInt(str.toString()) as number;
+		return _chinese_parseInt(s, options) as number;
 	}
 	else if (options.strict)
 	{
@@ -134,10 +144,20 @@ export function zh2num(str, options: IOptions = {}): string | number
 
 	let r = new RegExp('([' + rs + ']+)', options.flags);
 
-	return str.toString().replace(r, function (...m)
+	return s.replace(r, function (...m)
 	{
-		return chinese_parseInt(m[1]);
+		return _chinese_parseInt(m[1], options);
 	});
+}
+
+export function _chinese_parseInt(str: string, options: IOptions)
+{
+	if (options.one)
+	{
+		str = str.replace(/([佰百])([一二三四五六七八九壹貳參肆伍陸柒捌玖])(?![零○〇一二三四五六七八九壹貳參肆伍陸柒捌玖拾十什])/, '$1〇$2');
+	}
+
+	return chinese_parseInt(str);
 }
 
 /**
