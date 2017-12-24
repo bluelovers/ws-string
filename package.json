@@ -1,6 +1,6 @@
 {
   "name": "str-util",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "convert full/half width, Chinese/Japanese number, 中日漢字轉換... others util helper",
   "main": "index.js",
   "scripts": {
