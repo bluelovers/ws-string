@@ -1,7 +1,7 @@
 {
   "name": "str-util",
-  "version": "2.0.0",
-  "description": "convert full/half width, Chinese/Japanese number ... others util helper",
+  "version": "2.1.0",
+  "description": "convert full/half width, Chinese/Japanese number, 中日漢字轉換... others util helper",
   "main": "index.js",
   "scripts": {
     "doc": "npx typedoc --out ./docs --target es2017 --ignoreCompilerErrors --exclude **/{node_modules,test}/**/* .",
