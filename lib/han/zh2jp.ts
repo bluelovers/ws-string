@@ -5,7 +5,7 @@
  * so don't use this module when u wanna fully zht <=> zhs
  */
 
-import * as self from './zh2jp';
+//import * as self from './zh2jp';
 import { split } from '../util';
 import ZHJP_TABLE from './table';
 
@@ -38,7 +38,7 @@ export function init(overwrite?: boolean)
 {
 	if (inited && !overwrite)
 	{
-		return;
+		return TABLE;
 	}
 
 	// @ts-ignore
@@ -97,32 +97,15 @@ export function init(overwrite?: boolean)
 		}
 	});
 
+	inited = true;
+
 	return TABLE;
 }
 
-export function _getdata(char, from, to): string
+export function _getdata(char: string, from: string, to: string): string
 {
 	return (TABLE[from][char]) ? TABLE[from][char][to] : null;
 }
-
-/*
-export function zht2jp(str)
-{
-	return split(str)
-		.map(function (char: string)
-		{
-			let c: string;
-			if (c = _getdata(char, KEY_ZHT, KEY_JP))
-			{
-				return c;
-			}
-
-			return char;
-		})
-		.join('')
-		;
-}
-*/
 
 namespace _
 {
@@ -179,7 +162,7 @@ export const zhs2jp = _.zhs2jp as IFrom2To;
 // @ts-ignore
 export const zhs2zht = _.zhs2zht as IFrom2To;
 
-export function zh2jp(str, options?)
+export function zh2jp(str, options?): string
 {
 	if (!/[\u4E00-\u9FFF]+/.test(str.toString()))
 	{
@@ -205,23 +188,21 @@ export function zh2jp(str, options?)
 		;
 }
 
-/*
-import * as fs from 'fs-extra';
-fs.outputJSON('./teachKanjiComparison.cache.json', TABLE, {
-	spaces: "\t",
-});
+//import * as fs from 'fs-extra';
+//fs.outputJSON('./teachKanjiComparison.cache.json', TABLE, {
+//	spaces: "\t",
+//});
+//
+//console.log(zhs2jp(1));
+//
+//let t = '魔物解説　ランク等話　蚀蝕蝕王で触王 冒険者ギルド解説 蚀|蝕战|戦马|馬亚|亞國預中日漢字對照表'
+//
+//console.log(zh2jp(t));
+//console.log(zht2jp(t));
+//console.log(zhs2jp(t));
+//
+//console.log(zht2zhs(t));
+//console.log(zhs2zht(t));
 
-console.log(zhs2jp(1));
-
-let t = '魔物解説　ランク等話　蚀蝕蝕王で触王 冒険者ギルド解説 蚀|蝕战|戦马|馬亚|亞國預中日漢字對照表'
-
-console.log(zh2jp(t));
-console.log(zht2jp(t));
-console.log(zhs2jp(t));
-
-console.log(zht2zhs(t));
-console.log(zhs2zht(t));
-*/
-
-export default self;
+export default zh2jp;
 //export default exports;
