@@ -7,6 +7,11 @@ export interface IcharCodeAtFn
 	(char, charCode, str)
 }
 
+export function split(str): string[]
+{
+	return str.toString().split('');
+}
+
 export function charCodeAt(str, cb?: IcharCodeAtFn): number[]
 {
 	let ret = [];
