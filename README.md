@@ -50,6 +50,25 @@ zh2num('千百十七') == 1117
 num2zh(1117) == '千百十七'
 ```
 
+### 中日漢字
+
+```javascript
+import * as ZH2JP from 'str-util/lib/han/zh2jp';
+
+// 沒有漢字存在時會直接返回原參數
+console.log(ZH2JP.zhs2jp(1));
+
+// http://ncode.syosetu.com/n1745ct/
+let t = '魔物解説　ランク等話　蚀蝕蝕王で触王 冒険者ギルド解説 蚀|蝕战|戦马|馬亚|亞國預中日漢字對照表'
+
+console.log(ZH2JP.zh2jp(t));
+console.log(ZH2JP.zht2jp(t));
+console.log(ZH2JP.zhs2jp(t));
+
+console.log(ZH2JP.zht2zhs(t));
+console.log(ZH2JP.zhs2zht(t));
+```
+
 ## lib
 
 * `ascii-fullwidth-halfwidth-convert`
