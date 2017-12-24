@@ -8,7 +8,7 @@
  */
 const teachKanjiComparison = require('./teachKanjiComparison.json') as string[][];
 
-export let TABLE = teachKanjiComparison;
+export let TABLE = [] as string[][];
 
 export function addNew(table: string[][], jp, zht, zhs): string[][]
 {
@@ -33,6 +33,8 @@ export function addNew(table: string[][], jp, zht, zhs): string[][]
 {
 	addNew(TABLE, jp, zht, zhs);
 });
+
+TABLE = TABLE.concat(teachKanjiComparison);
 
 export default TABLE;
 //export default exports;
