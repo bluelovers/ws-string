@@ -52,8 +52,8 @@ export const predefineedTranscriptionConfigs = japanese.predefineedTranscription
  *
  * @example zh2num('千百十七') == 1117
  */
-export function zh2num(str, options: IOptions = {}): string | number
-{
+export function zh2num(str, options: IOptions = {})
+	{
 	options = Object.assign({}, defaultOptions, options);
 
 	let sa: string[] = [];
@@ -147,7 +147,7 @@ export function zh2num(str, options: IOptions = {}): string | number
 	return s.replace(r, function (...m)
 	{
 		return _chinese_parseInt(m[1], options);
-	});
+	}) as string;
 }
 
 export function _chinese_parseInt(str: string, options: IOptions)
