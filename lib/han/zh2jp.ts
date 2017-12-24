@@ -54,7 +54,7 @@ export function init(overwrite?: boolean)
 		let k = KEY_JP;
 		for (let c of jp)
 		{
-			if (TABLE[k][c])
+			if (!c || TABLE[k][c])
 			{
 				continue;
 			}
@@ -69,7 +69,7 @@ export function init(overwrite?: boolean)
 		k = KEY_ZHT;
 		for (let c of zht)
 		{
-			if (TABLE[k][c])
+			if (!c || TABLE[k][c])
 			{
 				continue;
 			}
@@ -84,7 +84,7 @@ export function init(overwrite?: boolean)
 		k = KEY_ZHS;
 		for (let c of zhs)
 		{
-			if (TABLE[k][c])
+			if (!c || TABLE[k][c])
 			{
 				continue;
 			}
@@ -107,6 +107,11 @@ export function _getdata(char: string, from: string, to: string): string
 	return (TABLE[from][char]) ? TABLE[from][char][to] : null;
 }
 
+export interface IOptions
+{
+
+}
+
 namespace _
 {
 	init();
@@ -119,7 +124,7 @@ namespace _
 		{
 			if (from == to) return;
 
-			_[`${from}2${to}`] = function (str): string
+			_[`${from}2${to}`] = function (str, options?: IOptions): string
 			{
 				if (!/[\u4E00-\u9FFF]+/.test(str.toString()))
 				{
@@ -146,7 +151,7 @@ namespace _
 
 export interface IFrom2To extends Function
 {
-	(str, options?): string;
+	(str, options?: IOptions): string;
 }
 
 // @ts-ignore
@@ -162,7 +167,14 @@ export const zhs2jp = _.zhs2jp as IFrom2To;
 // @ts-ignore
 export const zhs2zht = _.zhs2zht as IFrom2To;
 
-export function zh2jp(str, options?): string
+/**
+ * 將簡繁漢字轉為日文漢字
+ *
+ * @param str
+ * @param {IOptions} options
+ * @returns {string}
+ */
+export function zh2jp(str, options?: IOptions): string
 {
 	if (!/[\u4E00-\u9FFF]+/.test(str.toString()))
 	{
@@ -178,6 +190,74 @@ export function zh2jp(str, options?): string
 				return c;
 			}
 			else if (c = _getdata(char, KEY_ZHS, KEY_JP))
+			{
+				return c;
+			}
+
+			return char;
+		})
+		.join('')
+		;
+}
+
+export const cjk2jp = zh2jp as IFrom2To;
+
+/**
+ * 將漢字轉為繁體漢字
+ *
+ * @param str
+ * @param {IOptions} options
+ * @returns {string}
+ */
+export function cjk2zht(str, options?: IOptions): string
+{
+	if (!/[\u4E00-\u9FFF]+/.test(str.toString()))
+	{
+		return str;
+	}
+
+	return split(str)
+		.map(function (char: string)
+		{
+			let c: string;
+			if (c = _getdata(char, KEY_JP, KEY_ZHT))
+			{
+				return c;
+			}
+			else if (c = _getdata(char, KEY_ZHS, KEY_ZHT))
+			{
+				return c;
+			}
+
+			return char;
+		})
+		.join('')
+		;
+}
+
+/**
+ * 將漢字轉為簡體
+ *
+ * @param str
+ * @param {IOptions} options
+ * @returns {string}
+ */
+export function cjk2zhs(str, options?: IOptions): string
+{
+	if (!/[\u4E00-\u9FFF]+/.test(str.toString()))
+	{
+		return str;
+	}
+
+	return split(str)
+		.map(function (char: string)
+		{
+			let c: string;
+			if (c = _getdata(char, KEY_JP, KEY_ZHS))
+			{
+				return c;
+			}
+			else if (c = _getdata(char, KEY_ZHT, KEY_ZHS))
 			{
 				return c;
 			}
