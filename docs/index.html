@@ -102,6 +102,28 @@ abcdefghijklmnopqrstuvwxyz
 				<pre><code class="lang-javascript">zh2num(<span class="hljs-string">'千百十七'</span>) == <span class="hljs-number">1117</span>
 num2zh(<span class="hljs-number">1117</span>) == <span class="hljs-string">'千百十七'</span>
 </code></pre>
+				<h3 id="-">中日漢字</h3>
+				<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { zh2jp } <span class="hljs-keyword">from</span> <span class="hljs-string">'str-util'</span>;
+
+<span class="hljs-keyword">let</span> t = <span class="hljs-string">'魔物解説　ランク等話　蚀蝕蝕王で触王 冒険者ギルド解説 蚀|蝕战|戦马|馬亚|亞國預中日漢字對照表'</span>
+
+<span class="hljs-built_in">console</span>.log(zh2jp(t));
+</code></pre>
+				<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> ZH2JP <span class="hljs-keyword">from</span> <span class="hljs-string">'str-util/lib/han/zh2jp'</span>;
+
+<span class="hljs-comment">// 沒有漢字存在時會直接返回原參數</span>
+<span class="hljs-built_in">console</span>.log(ZH2JP.zhs2jp(<span class="hljs-number">1</span>));
+
+<span class="hljs-comment">// http://ncode.syosetu.com/n1745ct/</span>
+<span class="hljs-keyword">let</span> t = <span class="hljs-string">'魔物解説　ランク等話　蚀蝕蝕王で触王 冒険者ギルド解説 蚀|蝕战|戦马|馬亚|亞國預中日漢字對照表'</span>
+
+<span class="hljs-built_in">console</span>.log(ZH2JP.zh2jp(t));
+<span class="hljs-built_in">console</span>.log(ZH2JP.zht2jp(t));
+<span class="hljs-built_in">console</span>.log(ZH2JP.zhs2jp(t));
+
+<span class="hljs-built_in">console</span>.log(ZH2JP.zht2zhs(t));
+<span class="hljs-built_in">console</span>.log(ZH2JP.zhs2zht(t));
+</code></pre>
 				<h2 id="lib">lib</h2>
 				<ul>
 					<li><code>ascii-fullwidth-halfwidth-convert</code></li>
@@ -122,6 +144,12 @@ num2zh(<span class="hljs-number">1117</span>) == <span class="hljs-string">'千�
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_lib_fullhalf_.html">"lib/fullhalf"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_lib_han_table_.html">"lib/han/table"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_lib_han_zh2jp_.html">"lib/han/zh2jp"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_lib_han_zh2num_.html">"lib/han/zh2num"</a>
