@@ -7,6 +7,8 @@ export { stringWidth } from './lib/width';
 import FullHalf, { FullHalfCore, toFullNumber, toHalfNumber, toFullEnglish, toHalfEnglish, toFullWidth, toHalfWidth } from './lib/fullhalf';
 import * as stripAnsi from 'strip-ansi';
 
+export { trim } from './lib/trim';
+
 export { zh2jp, jp2zhs, jp2zht } from './lib/han/zh2jp';
 
 export { zh2num, num2zh } from './lib/han/zh2num';
