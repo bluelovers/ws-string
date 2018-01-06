@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;lib/util&quot; | str-util</title>
+	<title>&quot;lib/trim&quot; | str-util</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_lib_util_.html">&quot;lib/util&quot;</a>
+					<a href="_lib_trim_.html">&quot;lib/trim&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;lib/util&quot;</h1>
+			<h1>External module &quot;lib/trim&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -73,14 +73,13 @@
 						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/_lib_util_.icharcodeatfn.html" class="tsd-kind-icon">Ichar<wbr>Code<wbr>AtFn</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/_lib_trim_.ioptions.html" class="tsd-kind-icon">IOptions</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_lib_util_.html#charcodeat" class="tsd-kind-icon">char<wbr>Code<wbr>At</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_lib_util_.html#split" class="tsd-kind-icon">split</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_lib_trim_.html#trim" class="tsd-kind-icon">trim</a></li>
 							</ul>
 						</section>
 					</div>
@@ -89,51 +88,46 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="charcodeat" class="tsd-anchor"></a>
-					<h3>char<wbr>Code<wbr>At</h3>
+					<a name="trim" class="tsd-anchor"></a>
+					<h3>trim</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">char<wbr>Code<wbr>At<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, cb<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_lib_util_.icharcodeatfn.html" class="tsd-signature-type">IcharCodeAtFn</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">trim<span class="tsd-signature-symbol">(</span>txt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, character_mask<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">trim<span class="tsd-signature-symbol">(</span>txt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, character_mask<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_lib_trim_.ioptions.html" class="tsd-signature-type">IOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluelovers/node-str-util/blob/062f2ff/lib/util.ts#L15">lib/util.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/bluelovers/node-str-util/blob/062f2ff/lib/trim.ts#L14">lib/trim.ts:14</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>str: <span class="tsd-signature-type">any</span></h5>
+									<h5>txt: <span class="tsd-signature-type">any</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> cb: <a href="../interfaces/_lib_util_.icharcodeatfn.html" class="tsd-signature-type">IcharCodeAtFn</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> character_mask: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="split" class="tsd-anchor"></a>
-					<h3>split</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">split<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/bluelovers/node-str-util/blob/062f2ff/lib/util.ts#L10">lib/util.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/bluelovers/node-str-util/blob/062f2ff/lib/trim.ts#L15">lib/trim.ts:15</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>str: <span class="tsd-signature-type">any</span></h5>
+									<h5>txt: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> character_mask: <a href="../interfaces/_lib_trim_.ioptions.html" class="tsd-signature-type">IOptions</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -163,10 +157,10 @@
 					<li class=" tsd-kind-external-module">
 						<a href="_lib_is_fullwidth_.html">"lib/is-<wbr>fullwidth"</a>
 					</li>
-					<li class=" tsd-kind-external-module">
+					<li class="current tsd-kind-external-module">
 						<a href="_lib_trim_.html">"lib/trim"</a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="_lib_util_.html">"lib/util"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -180,13 +174,10 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="../interfaces/_lib_util_.icharcodeatfn.html" class="tsd-kind-icon">Ichar<wbr>Code<wbr>AtFn</a>
+						<a href="../interfaces/_lib_trim_.ioptions.html" class="tsd-kind-icon">IOptions</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_lib_util_.html#charcodeat" class="tsd-kind-icon">char<wbr>Code<wbr>At</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_lib_util_.html#split" class="tsd-kind-icon">split</a>
+						<a href="_lib_trim_.html#trim" class="tsd-kind-icon">trim</a>
 					</li>
 				</ul>
 			</nav>
