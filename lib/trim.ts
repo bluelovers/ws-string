@@ -2,7 +2,7 @@
  * Created by user on 2018/1/7/007.
  */
 
-export interface IOptions
+export interface ITrimOptions
 {
 	trim?: string,
 	multiline?: boolean,
@@ -12,8 +12,8 @@ export interface IOptions
 }
 
 export function trim(txt, character_mask?: string)
-export function trim(txt, character_mask?: IOptions)
-export function trim(txt, character_mask?: string | IOptions)
+export function trim(txt, character_mask?: ITrimOptions)
+export function trim(txt, character_mask?: string | ITrimOptions)
 {
 	let ret = txt.toString();
 
