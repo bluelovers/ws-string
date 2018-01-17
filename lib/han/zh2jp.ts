@@ -7,9 +7,9 @@
 
 //import * as self from './zh2jp';
 import { split } from '../util';
-import ZHJP_TABLE from './table';
+import ZHJP_TABLE, { TABLE_SAFE as ZHJP_TABLE_SAFE } from './table';
 
-export { ZHJP_TABLE };
+export { ZHJP_TABLE, ZHJP_TABLE_SAFE };
 
 export const KEY_JP = 'jp';
 export const KEY_ZHT = 'zht';
@@ -17,6 +17,12 @@ export const KEY_ZHS = 'zhs';
 
 let inited = false;
 export let TABLE: {
+	jp: ITABLE,
+	zht: ITABLE,
+	zhs: ITABLE,
+};
+
+export let TABLE_SAFE: {
 	jp: ITABLE,
 	zht: ITABLE,
 	zhs: ITABLE,
@@ -41,76 +47,98 @@ export function init(overwrite?: boolean)
 		return TABLE;
 	}
 
-	// @ts-ignore
-	TABLE = {};
-	TABLE[KEY_JP] = {} as ITABLE;
-	TABLE[KEY_ZHT] = {} as ITABLE;
-	TABLE[KEY_ZHS] = {} as ITABLE;
+	TABLE = _(ZHJP_TABLE);
+	TABLE_SAFE = _(ZHJP_TABLE_SAFE);
 
-	ZHJP_TABLE.forEach(function (vrow: string[])
+	function _(src): {
+		jp: ITABLE,
+		zht: ITABLE,
+		zhs: ITABLE,
+	}
 	{
-		let [jp, zht, zhs] = vrow;
+		let to = {};
+		to[KEY_JP] = {} as ITABLE;
+		to[KEY_ZHT] = {} as ITABLE;
+		to[KEY_ZHS] = {} as ITABLE;
 
-		let k = KEY_JP;
-		for (let c of jp)
+		src.forEach(function (vrow: string[])
 		{
-			if (!c || TABLE[k][c])
+			let [jp, zht, zhs] = vrow;
+
+			let k = KEY_JP;
+			for (let c of jp)
 			{
-				continue;
+				if (!c || to[k][c])
+				{
+					continue;
+				}
+
+				to[k][c] = to[k][c] || {} as ITABLESUB;
+
+				to[k][c][k] = c;
+				to[k][c].zht = zht[0];
+				to[k][c].zhs = zhs[0];
 			}
 
-			TABLE[k][c] = TABLE[k][c] || {} as ITABLESUB;
-
-			TABLE[k][c][k] = c;
-			TABLE[k][c].zht = zht[0];
-			TABLE[k][c].zhs = zhs[0];
-		}
-
-		k = KEY_ZHT;
-		for (let c of zht)
-		{
-			if (!c || TABLE[k][c])
+			k = KEY_ZHT;
+			for (let c of zht)
 			{
-				continue;
+				if (!c || to[k][c])
+				{
+					continue;
+				}
+
+				to[k][c] = to[k][c] || {} as ITABLESUB;
+
+				to[k][c].jp = jp[0];
+				to[k][c][k] = c;
+				to[k][c].zhs = zhs[0];
 			}
 
-			TABLE[k][c] = TABLE[k][c] || {} as ITABLESUB;
-
-			TABLE[k][c].jp = jp[0];
-			TABLE[k][c][k] = c;
-			TABLE[k][c].zhs = zhs[0];
-		}
-
-		k = KEY_ZHS;
-		for (let c of zhs)
-		{
-			if (!c || TABLE[k][c])
+			k = KEY_ZHS;
+			for (let c of zhs)
 			{
-				continue;
+				if (!c || to[k][c])
+				{
+					continue;
+				}
+
+				to[k][c] = to[k][c] || {} as ITABLESUB;
+
+				to[k][c].jp = jp[0];
+				to[k][c].zht = zht[0];
+				to[k][c][k] = c;
 			}
+		});
 
-			TABLE[k][c] = TABLE[k][c] || {} as ITABLESUB;
-
-			TABLE[k][c].jp = jp[0];
-			TABLE[k][c].zht = zht[0];
-			TABLE[k][c][k] = c;
-		}
-	});
+		// @ts-ignore
+		return to;
+	}
 
 	inited = true;
 
 	return TABLE;
 }
 
-export function _getdata(char: string, from: string, to: string): string
+export function _getdata(char: string, from: string, to: string, safe?: boolean): string
 {
+	if (safe)
+	{
+		return (TABLE_SAFE[from][char]) ? TABLE_SAFE[from][char][to] : null;
+	}
+
 	return (TABLE[from][char]) ? TABLE[from][char][to] : null;
 }
 
 export interface IOptions
 {
-
+	skip?: string,
+	safe?: boolean,
 }
+
+export const defaultOptions: IOptions = {
+	safe: true,
+};
 
 namespace _
 {
@@ -131,11 +159,18 @@ namespace _
 					return str;
 				}
 
+				options = Object.assign({}, defaultOptions, options);
+
 				return split(str)
 					.map(function (char: string)
 					{
+						if (options.skip && options.skip.indexOf(char) != -1)
+						{
+							return char;
+						}
+
 						let c: string;
-						if (c = _getdata(char, from, to))
+						if (c = _getdata(char, from, to, options.safe))
 						{
 							return c;
 						}
@@ -181,15 +216,22 @@ export function zh2jp(str, options?: IOptions): string
 		return str;
 	}
 
+	options = Object.assign({}, defaultOptions, options);
+
 	return split(str)
 		.map(function (char: string)
 		{
+			if (options.skip && options.skip.indexOf(char) != -1)
+			{
+				return char;
+			}
+
 			let c: string;
-			if (c = _getdata(char, KEY_ZHT, KEY_JP))
+			if (c = _getdata(char, KEY_ZHT, KEY_JP, options.safe))
 			{
 				return c;
 			}
-			else if (c = _getdata(char, KEY_ZHS, KEY_JP))
+			else if (c = _getdata(char, KEY_ZHS, KEY_JP, options.safe))
 			{
 				return c;
 			}
@@ -216,15 +258,22 @@ export function cjk2zht(str, options?: IOptions): string
 		return str;
 	}
 
+	options = Object.assign({}, defaultOptions, options);
+
 	return split(str)
 		.map(function (char: string)
 		{
+			if (options.skip && options.skip.indexOf(char) != -1)
+			{
+				return char;
+			}
+
 			let c: string;
-			if (c = _getdata(char, KEY_JP, KEY_ZHT))
+			if (c = _getdata(char, KEY_JP, KEY_ZHT, options.safe))
 			{
 				return c;
 			}
-			else if (c = _getdata(char, KEY_ZHS, KEY_ZHT))
+			else if (c = _getdata(char, KEY_ZHS, KEY_ZHT, options.safe))
 			{
 				return c;
 			}
@@ -249,15 +298,22 @@ export function cjk2zhs(str, options?: IOptions): string
 		return str;
 	}
 
+	options = Object.assign({}, defaultOptions, options);
+
 	return split(str)
 		.map(function (char: string)
 		{
+			if (options.skip && options.skip.indexOf(char) != -1)
+			{
+				return char;
+			}
+
 			let c: string;
-			if (c = _getdata(char, KEY_JP, KEY_ZHS))
+			if (c = _getdata(char, KEY_JP, KEY_ZHS, options.safe))
 			{
 				return c;
 			}
-			else if (c = _getdata(char, KEY_ZHT, KEY_ZHS))
+			else if (c = _getdata(char, KEY_ZHT, KEY_ZHS, options.safe))
 			{
 				return c;
 			}
@@ -270,6 +326,9 @@ export function cjk2zhs(str, options?: IOptions): string
 
 //import * as fs from 'fs-extra';
 //fs.outputJSON('./teachKanjiComparison.cache.json', TABLE, {
+//	spaces: "\t",
+//});
+//fs.outputJSON('./teachKanjiComparison.cache2.json', TABLE_SAFE, {
 //	spaces: "\t",
 //});
 //
