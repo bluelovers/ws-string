@@ -47,6 +47,13 @@ export let TABLE_SAFE = [] as string[][];
 {
 	let skip = [
 		'系',
+		'欠',
+		'凶',
+		'后',
+		'只',
+		'隻',
+		'无',
+		'叶',
 	];
 
 	TABLE = TABLE.filter(function (v)
