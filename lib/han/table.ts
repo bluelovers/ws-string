@@ -33,6 +33,7 @@ export function addNew(table: string[][], jp, zht, zhs): string[][]
 
 [
 	['蝕', '蝕', '蚀'],
+	["絲", "絲", "丝"]
 	//['戻', '戾', null],
 ].forEach(function ([jp, zht, zhs])
 {
@@ -40,6 +41,76 @@ export function addNew(table: string[][], jp, zht, zhs): string[][]
 });
 
 TABLE = TABLE.concat(teachKanjiComparison);
+
+export let TABLE_SAFE = [] as string[][];
+
+{
+	let skip = [
+		'系',
+	];
+
+	TABLE = TABLE.filter(function (v)
+	{
+		let [jp, zht, zhs] = v;
+
+		if ((jp[0] == zht[0] && jp[0] == zhs[0]) || (skip.includes(jp[0]) || skip.includes(zht[0]) || skip.includes(zhs[0])))
+		{
+			return false;
+		}
+
+		return true;
+	});
+
+	TABLE_SAFE = [];
+	let cache = [];
+
+	for (let i in TABLE)
+	{
+		if (cache.includes(i))
+		{
+			continue;
+		}
+
+		let [jp, zht, zhs] = TABLE[i];
+
+		let _do = true;
+		let j;
+
+		for (j in TABLE)
+		{
+			if (j == i)
+			{
+				continue;
+			}
+
+			let [jp2, zht2, zhs2] = TABLE[j];
+
+			if (zht.includes(zht2[0]))
+			{
+				_do = false;
+				break;
+			}
+
+			if (zhs.includes(zhs2[0]))
+			{
+				_do = false;
+				break;
+			}
+		}
+
+		if (!_do)
+		{
+			cache.push(i);
+			cache.push(j);
+
+			//console.log(jp, zht, zhs);
+		}
+		else
+		{
+			TABLE_SAFE.push(TABLE[i]);
+		}
+	}
+}
 
 export default TABLE;
 //export default exports;
