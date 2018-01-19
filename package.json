@@ -1,7 +1,7 @@
 {
   "name": "blank-line",
   "version": "1.0.0",
-  "description": "get blank line data",
+  "description": "get min/mid/max blank line length in text ( not include start/end line )",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
