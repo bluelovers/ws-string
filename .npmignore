@@ -1,0 +1,6 @@
+# Created by .ignore support plugin (hsz.mobi)
+/index.ts
+/src/normalize.ts
+/.idea/
+/test/
+/node_modules/
