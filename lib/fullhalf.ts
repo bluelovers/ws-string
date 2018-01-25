@@ -417,7 +417,7 @@ export namespace FullHalfCore
 		return data;
 	}
 
-	export function process<T, U = string>(str: U, charProcess, options: IOptions)
+	export function process<T, U = string>(str, charProcess, options: IOptions)
 	{
 		let ret: number[] = [];
 
@@ -479,14 +479,14 @@ export namespace FullHalfCore
 			return ret as number[];
 		}
 
-		return String.fromCharCode.apply(String, ret) as T;
+		return String.fromCharCode.apply(String, ret);
 	}
 
-	export function factory<T = string>(charProcessor, type: number, overwriteOptions?: IOptions)
+	export function factory<T = string>(charProcessor, type: number, overwriteOptions?: IOptions): IFactoryFn
 	{
 		//const deepmerge = require('deepmerge');
 
-		return (str: string, options?: IOptions) =>
+		return (str, options?: IOptions) =>
 		{
 			options = deepmerge.all([
 				{
@@ -498,8 +498,15 @@ export namespace FullHalfCore
 
 			//console.log(options);
 
-			return process<T>(str, charProcessor, options) as T;
-		}
+			return process<T>(str, charProcessor, options);
+		};
+	}
+
+	export interface IFactoryFn
+	{
+		(str: string, options?: IOptions): string
+		(str: number, options?: IOptions): string
+		(str, options?: IOptions)
 	}
 }
 
@@ -530,8 +537,8 @@ typeOnly = {
 export const toFullWidth = FullHalfCore.factory<string>(FullHalfCore.toFullWidth, FullHalfCore.FULL_WIDTH, typeOnly);
 export const toHalfWidth = FullHalfCore.factory<string>(FullHalfCore.toHalfWidth, FullHalfCore.HALF_WIDTH, typeOnly);
 
-// @ts-ignore
-export default exports;
+import * as self from './fullhalf';
+export default self;
 
 //console.log(toFullEnglish('123abcABCＡＢＣ１２３／＊－＋＝－０］［’；／．+-*/=-09][\'";/.'));
 //console.log(toHalfEnglish('123abcABCＡＢＣ１２３／＊－＋＝－０］［’；／．+-*/=-09][\'";/.'));
