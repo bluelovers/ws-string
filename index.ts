@@ -6,7 +6,7 @@ export const CR = "\r";
 export const CRLF = "\r\n";
 export const LF = "\n";
 
-export function crlf(text: string, newline = LF): string
+export function crlf(text: string, newline: string = LF): string
 {
 	return text.replace(/\r\n|\r(?!\n)|\n/g, newline);
 }

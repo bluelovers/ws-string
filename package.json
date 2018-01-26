@@ -31,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/bluelovers/crlf-normalize/issues"
   },
-  "homepage": "https://github.com/bluelovers/crlf-normalize#readme"
+  "homepage": "https://github.com/bluelovers/crlf-normalize#readme",
+  "directories": {
+    "test": "test"
+  }
 }
