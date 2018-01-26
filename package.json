@@ -1,0 +1,35 @@
+{
+  "name": "crlf-normalize",
+  "version": "1.0.0",
+  "description": "Detect and Normalize the newline characters",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [
+    "newline",
+    "detect",
+    "linebreak",
+    "line",
+    "lf",
+    "crlf",
+    "cr",
+    "eol",
+    "linefeed",
+    "character",
+    "char",
+    "normalize",
+    "convert",
+    "replace"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/crlf-normalize.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bluelovers/crlf-normalize/issues"
+  },
+  "homepage": "https://github.com/bluelovers/crlf-normalize#readme"
+}
