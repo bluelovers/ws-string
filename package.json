@@ -1,15 +1,28 @@
 {
   "name": "str-util",
-  "version": "2.3.3",
+  "version": "2.3.4",
   "description": "convert full/half width, Chinese/Japanese number, 中日漢字轉換... others util helper",
+  "keywords": [],
+  "homepage": "https://github.com/bluelovers/node-str-util#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/node-str-util/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/node-str-util.git"
+  },
+  "license": "ISC",
+  "author": "",
   "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "doc": "docs",
+    "test": "test"
+  },
   "scripts": {
-    "doc": "npx typedoc --out ./docs --target es2017 --ignoreCompilerErrors --exclude **/{node_modules,test}/**/* .",
+    "doc": "npx typedoc --out ./docs --ignoreCompilerErrors --exclude **/{node_modules,test}/**/* .",
     "test": "npx mocha \"!(node_modules)\\**\\*.+(test|spec).js\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "chinese-parseint": "^1.1.0",
     "deepmerge": "^2.0.1",
@@ -17,21 +30,8 @@
     "japanese": "^1.2.0",
     "strip-ansi": "^4.0.0"
   },
-  "directories": {
-    "doc": "docs",
-    "lib": "lib",
-    "test": "test"
-  },
   "devDependencies": {
     "typedoc": "^0.9.0",
     "typedoc-markdown-theme": "0.0.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bluelovers/node-str-util.git"
-  },
-  "bugs": {
-    "url": "https://github.com/bluelovers/node-str-util/issues"
-  },
-  "homepage": "https://github.com/bluelovers/node-str-util#readme"
+  }
 }

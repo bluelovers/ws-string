@@ -33,7 +33,8 @@ export function addNew(table: string[][], jp, zht, zhs): string[][]
 
 [
 	['蝕', '蝕', '蚀'],
-	["絲", "絲", "丝"]
+	["絲", "絲", "丝"],
+	["異", "異", "异"],
 	//['戻', '戾', null],
 ].forEach(function ([jp, zht, zhs])
 {

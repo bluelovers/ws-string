@@ -1,5 +1,23 @@
 # Created by .ignore support plugin (hsz.mobi)
-*.js
-*.d.ts
+
 /node_modules/
 /.idea/
+/package-lock.json
+### git template
+.idea
+
+~ci.list.txt
+~ci.log.txt
+~ci.errors.txt
+
+*.stackdump
+*.bak
+*.old
+
+package-lock.json
+
+test/**/*.js
+test/**/*.d.ts
+test/*.js
+test/*.d.ts
+texst/temp
