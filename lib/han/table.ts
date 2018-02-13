@@ -37,6 +37,9 @@ export function addNew(table: string[][], jp, zht, zhs): string[][]
 	["異", "異", "异"],
 	["謎", "謎", "谜"],
 	["氷", "冰", "冰"],
+
+	// http://www.kanjipedia.jp/kanji/0003297700
+	["詛", "詛", "诅"],
 	//['戻', '戾', null],
 ].forEach(function ([jp, zht, zhs])
 {

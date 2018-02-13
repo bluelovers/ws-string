@@ -1,8 +1,20 @@
 {
   "name": "str-util",
-  "version": "2.3.6",
+  "version": "2.3.7",
   "description": "convert full/half width, Chinese/Japanese number, 中日漢字轉換... others util helper",
-  "keywords": [],
+  "keywords": [
+    "chinese",
+    "codepage",
+    "fullwidth",
+    "halfwidth",
+    "japanese",
+    "node-novel",
+    "number",
+    "str",
+    "string",
+    "trim",
+    "util"
+  ],
   "homepage": "https://github.com/bluelovers/node-str-util#readme",
   "bugs": {
     "url": "https://github.com/bluelovers/node-str-util/issues"
@@ -24,14 +36,13 @@
     "test": "npx mocha \"!(node_modules)\\**\\*.+(test|spec).js\""
   },
   "dependencies": {
-    "chinese-parseint": "^1.1.0",
-    "deepmerge": "^2.0.1",
-    "is-fullwidth-code-point": "^2.0.0",
-    "japanese": "^1.2.0",
-    "strip-ansi": "^4.0.0"
+    "chinese-parseint": "latest",
+    "deepmerge": "latest",
+    "is-fullwidth-code-point": "latest",
+    "japanese": "latest",
+    "strip-ansi": "latest"
   },
   "devDependencies": {
-    "typedoc": "^0.9.0",
-    "typedoc-markdown-theme": "0.0.4"
+    "typedoc-markdown-theme": "latest"
   }
 }
