@@ -36,6 +36,7 @@ export function addNew(table: string[][], jp, zht, zhs): string[][]
 	["絲", "絲", "丝"],
 	["異", "異", "异"],
 	["謎", "謎", "谜"],
+	["氷", "冰", "冰"],
 	//['戻', '戾', null],
 ].forEach(function ([jp, zht, zhs])
 {
