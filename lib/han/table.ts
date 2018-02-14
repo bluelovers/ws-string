@@ -41,6 +41,12 @@ export function addNew(table: string[][], jp, zht, zhs): string[][]
 	// http://www.kanjipedia.jp/kanji/0003297700
 	["詛", "詛", "诅"],
 	//['戻', '戾', null],
+
+	// https://kotobank.jp/word/%E8%B2%AA%E5%A9%AA-564803
+	["貪", "貪", "贪"],
+
+	["館", "館", "馆"],
+
 ].forEach(function ([jp, zht, zhs])
 {
 	addNew(TABLE, jp, zht, zhs);
