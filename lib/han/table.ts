@@ -47,6 +47,8 @@ export function addNew(table: string[][], jp, zht, zhs): string[][]
 
 	["館", "館", "馆"],
 
+	["画", "劃", "划"],
+
 ].forEach(function ([jp, zht, zhs])
 {
 	addNew(TABLE, jp, zht, zhs);
