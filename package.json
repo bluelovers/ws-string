@@ -1,6 +1,6 @@
 {
   "name": "str-util",
-  "version": "2.3.9",
+  "version": "2.3.10",
   "description": "convert full/half width, Chinese/Japanese number, 中日漢字轉換... others util helper",
   "keywords": [
     "chinese",
@@ -36,13 +36,13 @@
     "test": "npx mocha \"!(node_modules)\\**\\*.+(test|spec).js\""
   },
   "dependencies": {
-    "chinese-parseint": "latest",
-    "deepmerge": "latest",
-    "is-fullwidth-code-point": "latest",
-    "japanese": "latest",
-    "strip-ansi": "latest"
+    "chinese-parseint": "^1.1.0",
+    "deepmerge": "^2.0.1",
+    "is-fullwidth-code-point": "^2.0.0",
+    "japanese": "^1.2.0",
+    "strip-ansi": "^4.0.0"
   },
   "devDependencies": {
-    "typedoc-markdown-theme": "latest"
+    "typedoc-markdown-theme": "^0.0.4"
   }
 }
