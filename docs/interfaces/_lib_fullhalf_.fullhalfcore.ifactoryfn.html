@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IOptionsType | str-util</title>
+	<title>IFactoryFn | str-util</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -62,10 +62,10 @@
 					<a href="../modules/_lib_fullhalf_.fullhalfcore.html">FullHalfCore</a>
 				</li>
 				<li>
-					<a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html">IOptionsType</a>
+					<a href="_lib_fullhalf_.fullhalfcore.ifactoryfn.html">IFactoryFn</a>
 				</li>
 			</ul>
-			<h1>Interface IOptionsType</h1>
+			<h1>Interface IFactoryFn</h1>
 		</div>
 	</div>
 </header>
@@ -76,143 +76,70 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IOptionsType</span>
+						<span class="target">IFactoryFn</span>
 					</li>
 				</ul>
 			</section>
-			<section class="tsd-panel tsd-kind-interface tsd-parent-kind-module">
-				<h3 class="tsd-before-signature">Indexable</h3>
-				<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">[</span>index: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">boolean</span></div>
-			</section>
-			<section class="tsd-panel-group tsd-index-group">
-				<h2>Index</h2>
-				<section class="tsd-panel tsd-index-panel">
-					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html#both" class="tsd-kind-icon">both</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html#bracket" class="tsd-kind-icon">bracket</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html#default" class="tsd-kind-icon">default</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html#eng" class="tsd-kind-icon">eng</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html#exists" class="tsd-kind-icon">exists</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html#not_default" class="tsd-kind-icon">not_<wbr>default</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html#not_default2" class="tsd-kind-icon">not_<wbr>default2</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html#number" class="tsd-kind-icon">number</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html#slash" class="tsd-kind-icon">slash</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html#space" class="tsd-kind-icon">space</a></li>
+			<section class="tsd-panel">
+				<h3 class="tsd-before-signature">Callable</h3>
+				<ul class="tsd-signatures tsd-kind-interface tsd-parent-kind-module">
+					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="_lib_fullhalf_.fullhalfcore.ioptions.html" class="tsd-signature-type">IOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, options<span class="tsd-signature-symbol">?: </span><a href="_lib_fullhalf_.fullhalfcore.ioptions.html" class="tsd-signature-type">IOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, options<span class="tsd-signature-symbol">?: </span><a href="_lib_fullhalf_.fullhalfcore.ioptions.html" class="tsd-signature-type">IOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bluelovers/node-str-util/blob/dbc3b48/lib/fullhalf.ts#L506">lib/fullhalf.ts:506</a></li>
 							</ul>
-						</section>
-					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="both" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> both</h3>
-					<div class="tsd-signature tsd-kind-icon">both<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/bluelovers/node-str-util/blob/dbc3b48/lib/fullhalf.ts#L23">lib/fullhalf.ts:23</a></li>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>str: <span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="_lib_fullhalf_.fullhalfcore.ioptions.html" class="tsd-signature-type">IOptions</a></h5>
+							</li>
 						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>eng &amp; number</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="bracket" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> bracket</h3>
-					<div class="tsd-signature tsd-kind-icon">bracket<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/bluelovers/node-str-util/blob/dbc3b48/lib/fullhalf.ts#L33">lib/fullhalf.ts:33</a></li>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bluelovers/node-str-util/blob/dbc3b48/lib/fullhalf.ts#L507">lib/fullhalf.ts:507</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>str: <span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="_lib_fullhalf_.fullhalfcore.ioptions.html" class="tsd-signature-type">IOptions</a></h5>
+							</li>
 						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="default" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> default</h3>
-					<div class="tsd-signature tsd-kind-icon">default<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/bluelovers/node-str-util/blob/dbc3b48/lib/fullhalf.ts#L28">lib/fullhalf.ts:28</a></li>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/bluelovers/node-str-util/blob/dbc3b48/lib/fullhalf.ts#L508">lib/fullhalf.ts:508</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>str: <span class="tsd-signature-type">any</span></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="_lib_fullhalf_.fullhalfcore.ioptions.html" class="tsd-signature-type">IOptions</a></h5>
+							</li>
 						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="eng" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> eng</h3>
-					<div class="tsd-signature tsd-kind-icon">eng<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/bluelovers/node-str-util/blob/dbc3b48/lib/fullhalf.ts#L17">lib/fullhalf.ts:17</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="exists" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> exists</h3>
-					<div class="tsd-signature tsd-kind-icon">exists<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/bluelovers/node-str-util/blob/dbc3b48/lib/fullhalf.ts#L26">lib/fullhalf.ts:26</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="not_default" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> not_<wbr>default</h3>
-					<div class="tsd-signature tsd-kind-icon">not_<wbr>default<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/bluelovers/node-str-util/blob/dbc3b48/lib/fullhalf.ts#L29">lib/fullhalf.ts:29</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="not_default2" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> not_<wbr>default2</h3>
-					<div class="tsd-signature tsd-kind-icon">not_<wbr>default2<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/bluelovers/node-str-util/blob/dbc3b48/lib/fullhalf.ts#L30">lib/fullhalf.ts:30</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="number" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> number</h3>
-					<div class="tsd-signature tsd-kind-icon">number<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/bluelovers/node-str-util/blob/dbc3b48/lib/fullhalf.ts#L18">lib/fullhalf.ts:18</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="slash" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> slash</h3>
-					<div class="tsd-signature tsd-kind-icon">slash<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/bluelovers/node-str-util/blob/dbc3b48/lib/fullhalf.ts#L32">lib/fullhalf.ts:32</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="space" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> space</h3>
-					<div class="tsd-signature tsd-kind-icon">space<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/bluelovers/node-str-util/blob/dbc3b48/lib/fullhalf.ts#L25">lib/fullhalf.ts:25</a></li>
-						</ul>
-					</aside>
-				</section>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+					</li>
+				</ul>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -275,51 +202,19 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_lib_fullhalf_.fullhalfcore.ifactoryfn.html" class="tsd-kind-icon">IFactory<wbr>Fn</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="_lib_fullhalf_.fullhalfcore.ioptions.html" class="tsd-kind-icon">IOptions</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html" class="tsd-kind-icon">IOptions<wbr>Type</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html#both" class="tsd-kind-icon">both</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html#bracket" class="tsd-kind-icon">bracket</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html#default" class="tsd-kind-icon">default</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html#eng" class="tsd-kind-icon">eng</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html#exists" class="tsd-kind-icon">exists</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html#not_default" class="tsd-kind-icon">not_<wbr>default</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html#not_default2" class="tsd-kind-icon">not_<wbr>default2</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html#number" class="tsd-kind-icon">number</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html#slash" class="tsd-kind-icon">slash</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html#space" class="tsd-kind-icon">space</a>
-							</li>
-						</ul>
+						<a href="_lib_fullhalf_.fullhalfcore.ifactoryfn.html" class="tsd-kind-icon">IFactory<wbr>Fn</a>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_lib_fullhalf_.fullhalfcore.ioptions.html" class="tsd-kind-icon">IOptions</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_lib_fullhalf_.fullhalfcore.ioptionstype.html" class="tsd-kind-icon">IOptions<wbr>Type</a>
+					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="_lib_fullhalf_.fullhalfcore.itable.html" class="tsd-kind-icon">ITable</a>
 					</li>
