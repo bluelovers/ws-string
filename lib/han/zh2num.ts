@@ -133,7 +133,7 @@ export function zh2num(str, options: IOptions = {})
 
 	//console.log(options, sa);
 
-	let rs = sa.join();
+	let rs = sa.join('');
 
 	let s = str.toString();
 
