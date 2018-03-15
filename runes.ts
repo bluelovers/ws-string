@@ -1,25 +1,25 @@
 'use strict'
 
-const HIGH_SURROGATE_START = 0xd800
-const HIGH_SURROGATE_END = 0xdbff
+export const HIGH_SURROGATE_START = 0xd800
+export const HIGH_SURROGATE_END = 0xdbff
 
-const LOW_SURROGATE_START = 0xdc00
+export const LOW_SURROGATE_START = 0xdc00
 
-const REGIONAL_INDICATOR_START = 0x1f1e6
-const REGIONAL_INDICATOR_END = 0x1f1ff
+export const REGIONAL_INDICATOR_START = 0x1f1e6
+export const REGIONAL_INDICATOR_END = 0x1f1ff
 
-const FITZPATRICK_MODIFIER_START = 0x1f3fb
-const FITZPATRICK_MODIFIER_END = 0x1f3ff
+export const FITZPATRICK_MODIFIER_START = 0x1f3fb
+export const FITZPATRICK_MODIFIER_END = 0x1f3ff
 
-const VARIATION_MODIFIER_START = 0xfe00
-const VARIATION_MODIFIER_END = 0xfe0f
+export const VARIATION_MODIFIER_START = 0xfe00
+export const VARIATION_MODIFIER_END = 0xfe0f
 
-const DIACRITICAL_MARKS_START = 0x20d0
-const DIACRITICAL_MARKS_END = 0x20ff
+export const DIACRITICAL_MARKS_START = 0x20d0
+export const DIACRITICAL_MARKS_END = 0x20ff
 
-const ZWJ = 0x200d
+export const ZWJ = 0x200d
 
-const GRAPHEMS = [
+export const GRAPHEMS = [
   0x0308, // ( ◌̈ ) COMBINING DIAERESIS
   0x0937, // ( ष ) DEVANAGARI LETTER SSA
   0x0937, // ( ष ) DEVANAGARI LETTER SSA
@@ -37,7 +37,7 @@ const GRAPHEMS = [
   0x11A8 // ( ᆨ ) HANGUL JONGSEONG KIYEOK
 ]
 
-function runes (string) {
+export function runes (string) {
   if (typeof string !== 'string') {
     throw new Error('string cannot be undefined or null')
   }
@@ -72,7 +72,7 @@ function runes (string) {
 // Emoji with skin-tone modifiers: 4 code units (2 code points)
 // Country flags: 4 code units (2 code points)
 // Variations: 2 code units
-function nextUnits (i, string) {
+export function nextUnits (i, string) {
   const current = string[i]
   // If we don't have a value that is part of a surrogate pair, or we're at
   // the end, only take the value at i
@@ -104,45 +104,45 @@ function nextUnits (i, string) {
   return 2
 }
 
-function isFirstOfSurrogatePair (string) {
+export function isFirstOfSurrogatePair (string) {
   return string && betweenInclusive(string[0].charCodeAt(0), HIGH_SURROGATE_START, HIGH_SURROGATE_END)
 }
 
-function isRegionalIndicator (string) {
+export function isRegionalIndicator (string) {
   return betweenInclusive(codePointFromSurrogatePair(string), REGIONAL_INDICATOR_START, REGIONAL_INDICATOR_END)
 }
 
-function isFitzpatrickModifier (string) {
+export function isFitzpatrickModifier (string) {
   return betweenInclusive(codePointFromSurrogatePair(string), FITZPATRICK_MODIFIER_START, FITZPATRICK_MODIFIER_END)
 }
 
-function isVariationSelector (string) {
+export function isVariationSelector (string) {
   return typeof string === 'string' && betweenInclusive(string.charCodeAt(0), VARIATION_MODIFIER_START, VARIATION_MODIFIER_END)
 }
 
-function isDiacriticalMark (string) {
+export function isDiacriticalMark (string) {
   return typeof string === 'string' && betweenInclusive(string.charCodeAt(0), DIACRITICAL_MARKS_START, DIACRITICAL_MARKS_END)
 }
 
-function isGraphem (string) {
+export function isGraphem (string) {
   return typeof string === 'string' && GRAPHEMS.indexOf(string.charCodeAt(0)) !== -1
 }
 
-function isZeroWidthJoiner (string) {
+export function isZeroWidthJoiner (string) {
   return typeof string === 'string' && string.charCodeAt(0) === ZWJ
 }
 
-function codePointFromSurrogatePair (pair) {
+export function codePointFromSurrogatePair (pair) {
   const highOffset = pair.charCodeAt(0) - HIGH_SURROGATE_START
   const lowOffset = pair.charCodeAt(1) - LOW_SURROGATE_START
   return (highOffset << 10) + lowOffset + 0x10000
 }
 
-function betweenInclusive (value, lower, upper) {
+export function betweenInclusive (value, lower, upper) {
   return value >= lower && value <= upper
 }
 
-function substring (string, start, width) {
+export function substring (string, start, width) {
   const chars = runes(string)
   if (start === undefined) {
     return string
@@ -159,5 +159,5 @@ function substring (string, start, width) {
   return chars.slice(start, endIndex).join('')
 }
 
-module.exports = runes
-module.exports.substr = substring
+export default runes
+export const substr = substring
