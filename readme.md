@@ -1,10 +1,10 @@
 # ✂️ Runes
-[![NPM Version](https://img.shields.io/npm/v/runes.svg?style=flat-square)](https://www.npmjs.com/package/runes)
-[![Build Status](https://img.shields.io/travis/dotcypress/runes.svg?branch=master&style=flat-square)](https://travis-ci.org/dotcypress/runes)
 
 > Unicode-aware JS string splitting with full Emoji support.
 
 Split a string into its constituent characters, without munging emoji and other non-BMP code points.
+
+**this is typescript version fork form [`runes`](https://www.npmjs.com/package/runes)**
 
 ## Why?
 
@@ -13,40 +13,42 @@ The native `String#split` implementation does not pay attention to [surrogate pa
 ## Installation
 
 ```js
-$ npm install runes
+$ npm install runes2
 ```
 
 ## Example
-  
-```js
-const runes = require('runes')
 
+```ts
+const runes = require('runes2')
+const runes = require('runes2').runes
+import runes from 'runes2';
+import * as runes from 'runes2';
+```
+
+```js
 // Standard String.split
-'♥️'.split('') => ['♥', '️']
-'Emoji 🤖'.split('') => ['E', 'm', 'o', 'j', 'i', ' ', '�', '�']
-'👩‍👩‍👧‍👦'.split('') => ['�', '�', '‍', '�', '�', '‍', '�', '�', '‍', '�', '�']
+'♥️'.split('') // => ['♥', '️']
+'Emoji 🤖'.split('') // => ['E', 'm', 'o', 'j', 'i', ' ', '�', '�']
+'👩‍👩‍👧‍👦'.split('') // => ['�', '�', '‍', '�', '�', '‍', '�', '�', '‍', '�', '�']
 
 // ES6 string iterator
 [...'♥️'] => [ '♥', '️' ]
-[...'Emoji 🤖'] => [ 'E', 'm', 'o', 'j', 'i', ' ', '🤖' ]
-[...'👩‍👩‍👧‍👦'] => [ '👩', '', '👩', '', '👧', '', '👦' ]
+[...'Emoji 🤖'] // => [ 'E', 'm', 'o', 'j', 'i', ' ', '🤖' ]
+[...'👩‍👩‍👧‍👦'] // => [ '👩', '', '👩', '', '👧', '', '👦' ]
 
 // Runes
-runes('♥️') => ['♥️']
-runes('Emoji 🤖') => ['E', 'm', 'o', 'j', 'i', ' ', '🤖']
-runes('👩‍👩‍👧‍👦') => ['👩‍👩‍👧‍👦']
+runes('♥️') // => ['♥️']
+runes('Emoji 🤖') // => ['E', 'm', 'o', 'j', 'i', ' ', '🤖']
+runes('👩‍👩‍👧‍👦') // => ['👩‍👩‍👧‍👦']
 
 ```
 
 ## Substring example
 
 ```js
-const runes = require('runes')
-
 // String.substring
-'👨‍👨‍👧‍👧a'.substring(1) => '�‍👨‍👧‍👧a'
+'👨‍👨‍👧‍👧a'.substring(1) // => '�‍👨‍👧‍👧a'
 
 // Runes
-runes.substr('👨‍👨‍👧‍👧a', 1) => 'a'
-
+runes.substr('👨‍👨‍👧‍👧a', 1) // => 'a'
 ```
