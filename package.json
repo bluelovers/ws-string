@@ -1,18 +1,46 @@
 {
-  "name": "string",
+  "name": "unicode-string",
   "version": "1.0.0",
-  "description": "",
+  "description": "Unicode String object",
+  "keywords": [
+    "ansi",
+    "astral",
+    "char",
+    "codepoints",
+    "codes",
+    "count",
+    "emoji",
+    "escape",
+    "length",
+    "runes",
+    "size",
+    "split",
+    "split string",
+    "string",
+    "surrogates",
+    "symbol",
+    "unicode"
+  ],
+  "homepage": "https://github.com/bluelovers/unicode-string#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/unicode-string/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/unicode-string.git"
+  },
+  "license": "ISC",
+  "author": "",
   "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "class-proxy": "^1.1.1",
-    "classy-decorator": "^1.0.4",
-    "core-decorators": "^0.20.0",
     "es6-class-prototype": "^1.0.3",
     "runes2": "^0.4.4"
-  }
+  },
+  "devDependencies": {}
 }
