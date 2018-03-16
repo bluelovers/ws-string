@@ -9,7 +9,7 @@ exports.STRING_PROTOTYPE = Object.getOwnPropertyNames(String.prototype);
 class UString extends String {
     constructor(str) {
         super(str);
-        this._arr = [];
+        this._arr = null;
         let d = Object.getOwnPropertyDescriptor(this, '_arr');
         Object.defineProperty(this, '_arr', Object.assign(d, {
             configurable: true,

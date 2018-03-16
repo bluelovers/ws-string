@@ -9,14 +9,13 @@ export const STRING_PROTOTYPE = Object.getOwnPropertyNames(String.prototype);
 
 export class UString extends String
 {
-	protected _arr: string[] = [];
+	protected _arr: string[] = null;
 
 	constructor(str)
 	{
 		super(str);
 
 		let d = Object.getOwnPropertyDescriptor(this, '_arr');
-
 		Object.defineProperty(this, '_arr', Object.assign(d, {
 			configurable: true,
 			enumerable: false,

@@ -1,8 +1,8 @@
-# unicode-string
+# uni-string
 
-> Unicode String object
+> Unicode-aware String object
 
-`npm install unicode-string`
+`npm install uni-string`
 
 ## api
 
@@ -11,8 +11,11 @@
 ## demo
 
 ```ts
-import UString from 'unicode-string';
+import UString from 'uni-string';
+const UString = require('uni-string')
+```
 
+```ts
 console.log(UString.support);
 
 let t = (new UString('♥️𠬠典')).padStart(10, '𠬠');
@@ -23,16 +26,21 @@ console.dir(t);
 
 let t2 = new UString(t);
 
-console.log('length', t2.length);
-//--------------
-console.log('charLength', t2.charLength);
-console.log('size()', t2.size());
-
 console.log(t2);
 
 //console.log(666, t2.substr(-9, 3));
 console.log(666, t2.indexOf('𠬠典', 2));
 console.log(666, t2.endsWith('𠬠典'));
+```
+
+```ts
+console.log('length', t2.length);
+console.log('charLength', t2.charLength);
+console.log('size()', t2.size());
+
+//length 70
+//charLength 49
+//size() 49
 ```
 
 ## UString.support

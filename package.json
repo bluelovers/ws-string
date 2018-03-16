@@ -1,5 +1,5 @@
 {
-  "name": "unicode-string",
+  "name": "uni-string",
   "version": "1.0.0",
   "description": "Unicode String object",
   "keywords": [
@@ -19,7 +19,8 @@
     "string",
     "surrogates",
     "symbol",
-    "unicode"
+    "unicode",
+    "utf8"
   ],
   "homepage": "https://github.com/bluelovers/unicode-string#readme",
   "bugs": {
