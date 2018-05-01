@@ -5,6 +5,8 @@ export { isFullWidth, isFullwidthCodePoint } from './lib/is-fullwidth';
 export { stringWidth } from './lib/width';
 import { FullHalfCore, toFullNumber, toHalfNumber, toFullEnglish, toHalfEnglish, toFullWidth, toHalfWidth } from './lib/fullhalf';
 import * as stripAnsi from 'strip-ansi';
+import normalize from './lib/normalize';
+export { normalize };
 export { trim, ITrimOptions } from './lib/trim';
 export { zh2jp, jp2zhs, jp2zht } from './lib/han/zh2jp';
 export { zh2num, num2zh } from './lib/han/zh2num';

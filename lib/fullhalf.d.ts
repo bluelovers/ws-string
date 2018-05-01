@@ -48,7 +48,7 @@ export declare namespace FullHalfCore {
     function filterTable(data: any): any[];
     function _chkType(charCode: number, data: ITableObject): boolean;
     function chkType(charCode: number, key: string, type: number): boolean;
-    function hasFullHalf(charCode: number): 1 | 0 | -1;
+    function hasFullHalf(charCode: number): 0 | 1 | -1;
     function isFullHalf(charCode: number): boolean;
     function toFullWidth(charCode: number): number;
     function toHalfWidth(charCode: number): number;
