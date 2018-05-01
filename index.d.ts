@@ -9,4 +9,5 @@ export declare function chkcrlf(text: string): {
     cr: boolean;
 };
 export declare function lineSplit(text: string): string[];
+export declare function crlf_unicode_normalize(text: string, newline?: string): string;
 export default crlf;

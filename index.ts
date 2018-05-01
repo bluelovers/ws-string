@@ -27,4 +27,16 @@ export function lineSplit(text: string)
 	return text.split(R_CRLF);
 }
 
+export function crlf_unicode_normalize(text: string, newline: string = LF): string
+{
+	const ln3 = newline + newline + newline;
+	const ln2 = newline + newline;
+
+	return text
+		.replace(/\u000C/g, ln3)
+		.replace(/\u2028/g, newline)
+		.replace(/\u2029/g, ln2)
+	;
+}
+
 export default crlf;

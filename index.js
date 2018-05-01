@@ -20,4 +20,13 @@ function lineSplit(text) {
     return text.split(exports.R_CRLF);
 }
 exports.lineSplit = lineSplit;
+function crlf_unicode_normalize(text, newline = exports.LF) {
+    const ln3 = newline + newline + newline;
+    const ln2 = newline + newline;
+    return text
+        .replace(/\u000C/g, ln3)
+        .replace(/\u2028/g, newline)
+        .replace(/\u2029/g, ln2);
+}
+exports.crlf_unicode_normalize = crlf_unicode_normalize;
 exports.default = crlf;
