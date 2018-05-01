@@ -1,6 +1,6 @@
 {
   "name": "str-util",
-  "version": "2.3.14",
+  "version": "2.3.15",
   "description": "convert full/half width, Chinese/Japanese number, 中日漢字轉換... others util helper",
   "keywords": [
     "char",
@@ -59,6 +59,7 @@
     "test": "test"
   },
   "scripts": {
+    "_publish": "npm publish",
     "doc": "typedoc --out ./docs --ignoreCompilerErrors --exclude **/{node_modules,test}/**/* .",
     "test": "npx mocha \"!(node_modules)\\**\\*.+(test|spec).js\""
   },
