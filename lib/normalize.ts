@@ -22,7 +22,7 @@ export function normalize(input: string, options: {
 
 	if (!options.allow_bom)
 	{
-		input = input.replace(/\uFEFF/g, ' ');
+		input = input.replace(/\uFEFF/g, '');
 	}
 
 	StripTable.forEach(function (r)
