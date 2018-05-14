@@ -1,7 +1,10 @@
+/**
+ * Created by user on 2018/3/16/016.
+ */
 export declare const STRING_PROTOTYPE: string[];
 export declare class UString extends String {
     protected _arr: string[];
-    constructor(str: any);
+    constructor(str: any, ...argv: any[]);
     [Symbol.iterator](): IterableIterator<string>;
     static isString(str: any): boolean;
     static toArray(str: any): string[];

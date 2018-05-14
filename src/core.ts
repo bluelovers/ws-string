@@ -11,7 +11,7 @@ export class UString extends String
 {
 	protected _arr: string[] = null;
 
-	constructor(str)
+	constructor(str, ...argv)
 	{
 		super(str);
 

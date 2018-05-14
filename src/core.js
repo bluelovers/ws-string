@@ -7,7 +7,7 @@ const runes2_1 = require("runes2");
 const es6_class_prototype_1 = require("es6-class-prototype");
 exports.STRING_PROTOTYPE = Object.getOwnPropertyNames(String.prototype);
 class UString extends String {
-    constructor(str) {
+    constructor(str, ...argv) {
         super(str);
         this._arr = null;
         let d = Object.getOwnPropertyDescriptor(this, '_arr');
