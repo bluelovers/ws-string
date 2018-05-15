@@ -2,18 +2,18 @@
   "name": "normalize-num",
   "version": "1.0.0",
   "description": "",
+  "license": "ISC",
+  "author": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "publishConfig": {
-    "access": "public"
   },
   "dependencies": {
     "arabic-roman-convert.js": "^1.2.1",
     "deromanize": "^1.0.0",
     "num-is-roman": "^1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
