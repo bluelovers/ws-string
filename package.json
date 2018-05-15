@@ -8,6 +8,9 @@
   },
   "author": "",
   "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "arabic-roman-convert.js": "^1.2.1",
     "deromanize": "^1.0.0",
