@@ -11,6 +11,6 @@
   "dependencies": {
     "arabic-roman-convert.js": "^1.2.1",
     "deromanize": "^1.0.0",
-    "num-is-roman": "1"
+    "num-is-roman": "^1"
   }
 }
