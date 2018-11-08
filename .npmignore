@@ -11,7 +11,7 @@
 *.old
 
 tsconfig.json
-#package-lock.json
+package-lock.json
 
 test
 
@@ -23,3 +23,10 @@ test
 /out/
 /test/
 /bin/*.d.ts
+### jsonly template
+*.ts
+!*.d.ts
+### jsonly_bin template
+bin/*.ts
+bin/*.d.ts
+/yarn.lock

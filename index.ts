@@ -2,8 +2,12 @@
  * Created by user on 2018/3/16/016.
  */
 
-import UString from './src/core';
+import { UString } from './src/core';
 
+export { UString }
+export default UString
+
+// @ts-ignore
 export = UString as typeof UString & {
 	default: typeof UString,
 	UString: typeof UString,

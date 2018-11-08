@@ -166,6 +166,9 @@ class UString extends String {
     static includes(str, search, start = 0) {
         return this.create(str).includes(search, start);
     }
+    /**
+     * splits a String object into an array of strings by separating the string into substrings, using a specified separator string to determine where to make each split.
+     */
     static split(str, separator, limit) {
         return this.create(str).split(separator, limit);
     }
@@ -203,5 +206,16 @@ class UString extends String {
         return this.create(str).size();
     }
 }
+UString.UString = UString;
+/**
+ * @private
+ */
+UString.default = UString;
 exports.UString = UString;
 exports.default = UString;
+// @ts-ignore
+Object.defineProperty(UString, "__esModule", { value: true });
+// @ts-ignore
+UString.default = UString.UString = UString;
+// @ts-ignore
+exports = Object.freeze(exports);

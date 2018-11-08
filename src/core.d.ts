@@ -20,6 +20,11 @@ export declare class UString extends String {
     endsWith(search: string, length?: number): boolean;
     padEnd(targetLength: number, padString: string): string;
     padStart(targetLength: number, padString: string): string;
+    static UString: typeof UString;
+    /**
+     * @private
+     */
+    static default: typeof UString;
     static create(str: any, ...argv: any[]): UString;
     static readonly support: {
         split?: boolean;
@@ -37,6 +42,9 @@ export declare class UString extends String {
     };
     static indexOf(str: any, search: string, start?: number): number;
     static includes(str: any, search: string, start?: number): boolean;
+    /**
+     * splits a String object into an array of strings by separating the string into substrings, using a specified separator string to determine where to make each split.
+     */
     static split(str: any, separator?: any, limit?: number): string[];
     static substr(str: any, start: number, length?: number): string;
     static substring(str: any, start: number, indexEnd?: number): string;

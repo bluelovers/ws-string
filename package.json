@@ -1,6 +1,6 @@
 {
   "name": "uni-string",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Unicode String object",
   "keywords": [
     "ansi",
@@ -33,21 +33,15 @@
   "license": "ISC",
   "author": "",
   "main": "index.js",
-  "types": [
-    "./types.d.ts"
-  ],
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "build:dts": "dts-bundle --name uni-string --main ./index.d.ts --out ./types.d.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublishOnly": "npm run test",
+    "test": "npx mocha --require ts-node/register \"!(node_modules)/**/*.{test,spec}.{ts,tsx}\""
   },
   "dependencies": {
     "es6-class-prototype": "^1.0.3",
     "runes2": "^0.4.4"
-  },
-  "devDependencies": {
-    "dts-bundle": "^0.7.3"
   }
 }
