@@ -32,3 +32,5 @@ tests
 
 *.iml
 
+*.ts
+!*.d.ts
