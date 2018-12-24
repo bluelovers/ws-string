@@ -6,8 +6,7 @@ export const LF = "\n";
 
 export function normalize(txt)
 {
-	return txt
-		.toString()
+	return String(txt)
 		.replace(/\r\n|\r(?!\n)|\n/g, LF)
 		.replace(/\uFEFF/g, '')
 		.replace(/[  \xA0]/g, ' ')

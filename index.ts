@@ -2,7 +2,7 @@
  * Created by user on 2018/1/13/013.
  */
 
-import * as execall from 'execall';
+import { execall } from 'execall2';
 import { normalize } from './src/normalize';
 
 export interface IOptions
@@ -13,13 +13,11 @@ export interface IOptions
 
 export function getBlankLine(txt, options: IOptions = {}): number[]
 {
-	txt = normalize(txt);
-
-	let _ms = execall(/\n+/g, txt);
+	let _ms = execall(/\n+/g, normalize(txt));
 
 	if (_ms.length)
 	{
-		_ms = (_ms as { match: string }[])
+		let _ret: number[] = (_ms)
 			.reduce(function (a, b)
 			{
 				a.push(b.match.length);
@@ -30,7 +28,7 @@ export function getBlankLine(txt, options: IOptions = {}): number[]
 
 		if (options.filter)
 		{
-			_ms = _ms.filter(function (v, i, a)
+			_ret = _ret.filter(function (v, i, a)
 			{
 				return a.indexOf(v) == i;
 			});
@@ -38,13 +36,13 @@ export function getBlankLine(txt, options: IOptions = {}): number[]
 
 		if (options.sort)
 		{
-			_ms.sort(function (a, b)
+			_ret.sort(function (a, b)
 			{
-				return a >= b;
+				return a - b;
 			});
 		}
 
-		return _ms;
+		return _ret;
 	}
 
 	return null;

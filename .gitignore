@@ -1,6 +1,33 @@
 # Created by .ignore support plugin (hsz.mobi)
-*.js
-*.d.ts
 /package-lock.json
-/.idea/
-/node_modules/
+/test/*.d.ts
+/test/*.js
+### git template
+.idea
+
+~ci.list.txt
+~ci.log.txt
+~ci.errors.txt
+
+*.stackdump
+*.bak
+*.old
+
+package-lock.json
+
+test/**/*.js
+test/**/*.d.ts
+test/*.js
+test/*.d.ts
+texst/temp
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+/yarn.lock
+/test/temp.ts
+*.tgz
