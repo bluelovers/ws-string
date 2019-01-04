@@ -1,4 +1,7 @@
 "use strict";
+/**
+ * Created by user on 2018/5/15/015.
+ */
 Object.defineProperty(exports, "__esModule", { value: true });
 const circle_1 = require("./lib/type/circle");
 exports.circle2num = circle_1.default;

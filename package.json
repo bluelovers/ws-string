@@ -1,10 +1,21 @@
 {
   "name": "normalize-num",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
+  "homepage": "https://github.com/bluelovers/num-normalize#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/num-normalize/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/num-normalize.git"
+  },
   "license": "ISC",
   "author": "",
   "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
