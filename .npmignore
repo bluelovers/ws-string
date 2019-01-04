@@ -31,3 +31,9 @@ test
 *.iml
 out
 gen
+### jsonly template
+*.ts
+!*.d.ts
+### jsonly_bin template
+bin/*.ts
+bin/*.d.ts

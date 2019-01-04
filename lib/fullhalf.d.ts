@@ -1,3 +1,6 @@
+/**
+ * Created by user on 2017/12/8/008.
+ */
 export declare namespace FullHalfCore {
     const FULL_WIDTH = 1;
     const HALF_WIDTH = 0;
@@ -48,7 +51,7 @@ export declare namespace FullHalfCore {
     function filterTable(data: any): any[];
     function _chkType(charCode: number, data: ITableObject): boolean;
     function chkType(charCode: number, key: string, type: number): boolean;
-    function hasFullHalf(charCode: number): 0 | 1 | -1;
+    function hasFullHalf(charCode: number): 1 | 0 | -1;
     function isFullHalf(charCode: number): boolean;
     function toFullWidth(charCode: number): number;
     function toHalfWidth(charCode: number): number;
@@ -61,11 +64,11 @@ export declare namespace FullHalfCore {
         (str: any, options?: IOptions): any;
     }
 }
-export declare const toFullNumber: self.FullHalfCore.IFactoryFn;
-export declare const toHalfNumber: self.FullHalfCore.IFactoryFn;
-export declare const toFullEnglish: self.FullHalfCore.IFactoryFn;
-export declare const toHalfEnglish: self.FullHalfCore.IFactoryFn;
-export declare const toFullWidth: self.FullHalfCore.IFactoryFn;
-export declare const toHalfWidth: self.FullHalfCore.IFactoryFn;
+export declare const toFullNumber: FullHalfCore.IFactoryFn;
+export declare const toHalfNumber: FullHalfCore.IFactoryFn;
+export declare const toFullEnglish: FullHalfCore.IFactoryFn;
+export declare const toHalfEnglish: FullHalfCore.IFactoryFn;
+export declare const toFullWidth: FullHalfCore.IFactoryFn;
+export declare const toHalfWidth: FullHalfCore.IFactoryFn;
 import * as self from './fullhalf';
 export default self;

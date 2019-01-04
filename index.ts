@@ -22,5 +22,5 @@ export const tableFullHalf = FullHalfCore.table;
 export { toFullNumber, toHalfNumber, toFullEnglish, toHalfEnglish, toFullWidth, toHalfWidth }
 export { stripAnsi }
 
-// @ts-ignore
-export default exports;
+import * as self from './index';
+export default self

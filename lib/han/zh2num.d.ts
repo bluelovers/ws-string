@@ -1,3 +1,6 @@
+/**
+ * Created by user on 2017/12/11/011.
+ */
 export interface IOptions {
     /**
      * @see https://github.com/hakatashi/japanese.js/blob/master/src/numbers.es6
