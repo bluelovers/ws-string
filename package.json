@@ -60,8 +60,9 @@
   },
   "scripts": {
     "_publish": "npm publish",
+    "prepublishOnly": "npm run test",
     "doc": "npx -r typedoc-markdown-theme -r typedoc typedoc --out ./docs --ignoreCompilerErrors --exclude **/{node_modules,test}/**/* .",
-    "test": "npx mocha \"!(node_modules)\\**\\*.+(test|spec).js\""
+    "test": "npx mocha \"test/*.+(test|spec).js\""
   },
   "dependencies": {
     "chinese-parseint": "^1.1.0",
