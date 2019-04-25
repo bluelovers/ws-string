@@ -2,8 +2,8 @@
  * Created by user on 2017/12/8/008.
  */
 
-import * as deepmerge from 'deepmerge';
-import * as util from './util';
+import deepmerge = require('deepmerge');
+import util = require('./util');
 
 export namespace FullHalfCore
 {
@@ -537,8 +537,7 @@ typeOnly = {
 export const toFullWidth = FullHalfCore.factory<string>(FullHalfCore.toFullWidth, FullHalfCore.FULL_WIDTH, typeOnly);
 export const toHalfWidth = FullHalfCore.factory<string>(FullHalfCore.toHalfWidth, FullHalfCore.HALF_WIDTH, typeOnly);
 
-import * as self from './fullhalf';
-export default self;
+export default exports as typeof import('./fullhalf');
 
 //console.log(toFullEnglish('123abcABCＡＢＣ１２３／＊－＋＝－０］［’；／．+-*/=-09][\'";/.'));
 //console.log(toHalfEnglish('123abcABCＡＢＣ１２３／＊－＋＝－０］［’；／．+-*/=-09][\'";/.'));

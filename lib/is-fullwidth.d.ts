@@ -3,4 +3,5 @@
  */
 export declare function isFullwidthCodePoint(x: number): boolean;
 export declare function isFullWidth<T = number | string>(s: T): boolean;
-export default exports;
+declare const _default: typeof import("./is-fullwidth");
+export default _default;

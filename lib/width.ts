@@ -2,7 +2,7 @@
  * Created by user on 2017/12/8/008.
  */
 
-import * as stripAnsi from 'strip-ansi';
+import stripAnsi from 'strip-ansi';
 import { isFullwidthCodePoint } from './is-fullwidth';
 
 export function stringWidth(str): number
@@ -39,5 +39,4 @@ export function stringWidth(str): number
 	return width;
 }
 
-// @ts-ignore
-export default exports;
+export default exports as typeof import('./width');

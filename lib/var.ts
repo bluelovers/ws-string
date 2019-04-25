@@ -40,7 +40,6 @@ function mergeRegExp(arr: RegExp[], options = {})
 	return new RegExp('(?:' + s + ')+');
 }
 
-console.log(mergeRegExp([zhs]).exec('這種情況中日韩符号区。收容康熙字典部首、中日韩辅助部首、注音符号、日本假名、韩文音符，中日韩的符号、标点、带圈或带括符文数字、月份，以及日本的假名组合、单位、年号、月份、日期、时间等。A社會幫忙嗎...'));
+//console.log(mergeRegExp([zhs]).exec('這種情況中日韩符号区。收容康熙字典部首、中日韩辅助部首、注音符号、日本假名、韩文音符，中日韩的符号、标点、带圈或带括符文数字、月份，以及日本的假名组合、单位、年号、月份、日期、时间等。A社會幫忙嗎...'));
 
-// @ts-ignore
-export default exports;
+export default exports as typeof import('./var');

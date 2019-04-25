@@ -50,4 +50,5 @@ export declare function _chinese_parseInt(str: string, options?: IOptions): any;
  * @example num2zh(1117) == '千百十七'
  */
 export declare function num2zh(number: any, options?: any): string;
-export default exports;
+declare const _default: typeof import("./zh2num");
+export default _default;

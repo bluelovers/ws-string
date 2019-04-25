@@ -48,5 +48,4 @@ export function charCodeAt(str, cb?: IcharCodeAtFn): number[]
 	return ret;
 }
 
-// @ts-ignore
-export default exports;
+export default exports as typeof import('./util');

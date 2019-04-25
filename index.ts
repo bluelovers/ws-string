@@ -5,7 +5,7 @@
 export { isFullWidth, isFullwidthCodePoint } from './lib/is-fullwidth';
 export { stringWidth } from './lib/width';
 import FullHalf, { FullHalfCore, toFullNumber, toHalfNumber, toFullEnglish, toHalfEnglish, toFullWidth, toHalfWidth } from './lib/fullhalf';
-import * as stripAnsi from 'strip-ansi';
+import stripAnsi from 'strip-ansi';
 
 import normalize from './lib/normalize';
 export { normalize }
@@ -22,5 +22,4 @@ export const tableFullHalf = FullHalfCore.table;
 export { toFullNumber, toHalfNumber, toFullEnglish, toHalfEnglish, toFullWidth, toHalfWidth }
 export { stripAnsi }
 
-import * as self from './index';
-export default self
+export default exports as typeof import('./index');

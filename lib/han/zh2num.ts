@@ -2,8 +2,8 @@
  * Created by user on 2017/12/11/011.
  */
 
-import * as chinese_parseInt from 'chinese-parseint';
-import * as japanese from 'japanese';
+import chinese_parseInt = require('chinese-parseint');
+import japanese = require('japanese');
 
 export interface IOptions
 {
@@ -192,5 +192,4 @@ export function num2zh(number, options: any = {}): string
 	return japanese.transcribeNumber(d, options);
 }
 
-// @ts-ignore
-export default exports;
+export default exports as typeof import('./zh2num');

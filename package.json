@@ -1,6 +1,6 @@
 {
   "name": "str-util",
-  "version": "2.3.17",
+  "version": "2.3.18",
   "description": "convert full/half width, Chinese/Japanese number, 中日漢字轉換... others util helper",
   "keywords": [
     "char",
@@ -60,18 +60,16 @@
   },
   "scripts": {
     "_publish": "npm publish",
-    "doc": "typedoc --out ./docs --ignoreCompilerErrors --exclude **/{node_modules,test}/**/* .",
+    "doc": "npx -r typedoc-markdown-theme -r typedoc typedoc --out ./docs --ignoreCompilerErrors --exclude **/{node_modules,test}/**/* .",
     "test": "npx mocha \"!(node_modules)\\**\\*.+(test|spec).js\""
   },
   "dependencies": {
     "chinese-parseint": "^1.1.0",
-    "cjk-conv": "^1.1.4",
-    "deepmerge": "^3.0.0",
-    "is-fullwidth-code-point": "^2.0.0",
+    "cjk-conv": "^1.1.37",
+    "deepmerge": "^3.2.0",
+    "is-fullwidth-code-point": "^3.0.0",
     "japanese": "^1.2.0",
-    "strip-ansi": "^5.0.0"
+    "strip-ansi": "^5.2.0"
   },
-  "devDependencies": {
-    "typedoc-markdown-theme": "^0.0.4"
-  }
+  "devDependencies": {}
 }

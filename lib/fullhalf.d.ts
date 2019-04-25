@@ -70,5 +70,5 @@ export declare const toFullEnglish: FullHalfCore.IFactoryFn;
 export declare const toHalfEnglish: FullHalfCore.IFactoryFn;
 export declare const toFullWidth: FullHalfCore.IFactoryFn;
 export declare const toHalfWidth: FullHalfCore.IFactoryFn;
-import * as self from './fullhalf';
-export default self;
+declare const _default: typeof import("./fullhalf");
+export default _default;

@@ -7,4 +7,5 @@
  * https://github.com/Lizhooh/only-space/blob/master/index.js
  */
 export declare const Arabic: RegExp;
-export default exports;
+declare const _default: typeof import("./var");
+export default _default;

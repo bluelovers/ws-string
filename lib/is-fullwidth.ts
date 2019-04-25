@@ -2,7 +2,7 @@
  * Created by user on 2017/12/8/008.
  */
 
-import * as _isFullwidthCodePoint from 'is-fullwidth-code-point';
+import _isFullwidthCodePoint from 'is-fullwidth-code-point';
 
 export function isFullwidthCodePoint(x: number): boolean
 {
@@ -33,5 +33,4 @@ export function isFullWidth<T = number | string>(s: T)
 	return isFullwidthCodePoint((typeof s != 'number') ? s.codePointAt() : s);
 }
 
-// @ts-ignore
-export default exports;
+export default exports as typeof import('./is-fullwidth');
