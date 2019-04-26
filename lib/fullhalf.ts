@@ -7,10 +7,17 @@ import util = require('./util');
 
 export namespace FullHalfCore
 {
-	export const FULL_WIDTH = 1;
-	export const HALF_WIDTH = 0;
+	export const enum EnumFullHalfTableType
+	{
+		FULL_WIDTH = 1,
+		HALF_WIDTH = 0,
+		NO_EXIST = -1,
+	}
 
-	export const NO_EXIST = -1;
+	export const FULL_WIDTH = EnumFullHalfTableType.FULL_WIDTH;
+	export const HALF_WIDTH = EnumFullHalfTableType.HALF_WIDTH;
+
+	export const NO_EXIST = EnumFullHalfTableType.NO_EXIST;
 
 	export interface IOptionsType
 	{
@@ -128,8 +135,8 @@ export namespace FullHalfCore
 
 			if (r)
 			{
-				table[HALF_WIDTH][k] = r[1];
-				table[FULL_WIDTH][k] = r[0];
+				table[EnumFullHalfTableType.HALF_WIDTH][k] = r[1];
+				table[EnumFullHalfTableType.FULL_WIDTH][k] = r[0];
 			}
 		}
 
@@ -153,8 +160,8 @@ export namespace FullHalfCore
 			}
 		}
 
-		table[HALF_WIDTH]['not_default'] = r[1];
-		table[FULL_WIDTH]['not_default'] = r[0];
+		table[EnumFullHalfTableType.HALF_WIDTH]['not_default'] = r[1];
+		table[EnumFullHalfTableType.FULL_WIDTH]['not_default'] = r[0];
 
 		//console.log(table);
 
@@ -297,26 +304,26 @@ export namespace FullHalfCore
 	{
 		if (0x0020 <= charCode && charCode < 0x007F)
 		{
-			return HALF_WIDTH;
+			return EnumFullHalfTableType.HALF_WIDTH;
 		}
 
 		if (0x3000 === charCode || 0xFF00 < charCode && charCode < 0xFF5F)
 		{
-			return FULL_WIDTH;
+			return EnumFullHalfTableType.FULL_WIDTH;
 		}
 
-		return NO_EXIST;
+		return EnumFullHalfTableType.NO_EXIST;
 	}
 
 	export function isFullHalf(charCode: number)
 	{
 		let r = hasFullHalf(charCode);
 
-		if (r === FULL_WIDTH)
+		if (r === EnumFullHalfTableType.FULL_WIDTH)
 		{
 			return true;
 		}
-		else if (r === HALF_WIDTH)
+		else if (r === EnumFullHalfTableType.HALF_WIDTH)
 		{
 			return false;
 		}
@@ -482,10 +489,11 @@ export namespace FullHalfCore
 		return String.fromCharCode.apply(String, ret);
 	}
 
-	export function factory<T = string>(charProcessor, type: number, overwriteOptions?: IOptions): IFactoryFn
+	export function factory<T = string>(charProcessor, type: number | EnumFullHalfTableType, overwriteOptions?: IOptions): IFactoryFn
 	{
 		//const deepmerge = require('deepmerge');
 
+		// @ts-ignore
 		return (str, options?: IOptions) =>
 		{
 			options = deepmerge.all([
@@ -516,8 +524,8 @@ let typeOnly: FullHalfCore.IOptions = {
 	},
 };
 
-export const toFullNumber = FullHalfCore.factory<string>(FullHalfCore.toFullWidth, FullHalfCore.FULL_WIDTH, typeOnly);
-export const toHalfNumber = FullHalfCore.factory<string>(FullHalfCore.toHalfWidth, FullHalfCore.HALF_WIDTH, typeOnly);
+export const toFullNumber = FullHalfCore.factory<string>(FullHalfCore.toFullWidth, FullHalfCore.EnumFullHalfTableType.FULL_WIDTH, typeOnly);
+export const toHalfNumber = FullHalfCore.factory<string>(FullHalfCore.toHalfWidth, FullHalfCore.EnumFullHalfTableType.HALF_WIDTH, typeOnly);
 
 typeOnly = {
 	only: {
@@ -525,8 +533,8 @@ typeOnly = {
 	},
 };
 
-export const toFullEnglish = FullHalfCore.factory<string>(FullHalfCore.toFullWidth, FullHalfCore.FULL_WIDTH, typeOnly);
-export const toHalfEnglish = FullHalfCore.factory<string>(FullHalfCore.toHalfWidth, FullHalfCore.HALF_WIDTH, typeOnly);
+export const toFullEnglish = FullHalfCore.factory<string>(FullHalfCore.toFullWidth, FullHalfCore.EnumFullHalfTableType.FULL_WIDTH, typeOnly);
+export const toHalfEnglish = FullHalfCore.factory<string>(FullHalfCore.toHalfWidth, FullHalfCore.EnumFullHalfTableType.HALF_WIDTH, typeOnly);
 
 typeOnly = {
 	only: {
@@ -534,8 +542,8 @@ typeOnly = {
 	},
 };
 
-export const toFullWidth = FullHalfCore.factory<string>(FullHalfCore.toFullWidth, FullHalfCore.FULL_WIDTH, typeOnly);
-export const toHalfWidth = FullHalfCore.factory<string>(FullHalfCore.toHalfWidth, FullHalfCore.HALF_WIDTH, typeOnly);
+export const toFullWidth = FullHalfCore.factory<string>(FullHalfCore.toFullWidth, FullHalfCore.EnumFullHalfTableType.FULL_WIDTH, typeOnly);
+export const toHalfWidth = FullHalfCore.factory<string>(FullHalfCore.toHalfWidth, FullHalfCore.EnumFullHalfTableType.HALF_WIDTH, typeOnly);
 
 export default exports as typeof import('./fullhalf');
 

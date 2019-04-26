@@ -2,9 +2,14 @@
  * Created by user on 2017/12/8/008.
  */
 export declare namespace FullHalfCore {
-    const FULL_WIDTH = 1;
-    const HALF_WIDTH = 0;
-    const NO_EXIST = -1;
+    const enum EnumFullHalfTableType {
+        FULL_WIDTH = 1,
+        HALF_WIDTH = 0,
+        NO_EXIST = -1
+    }
+    const FULL_WIDTH = EnumFullHalfTableType.FULL_WIDTH;
+    const HALF_WIDTH = EnumFullHalfTableType.HALF_WIDTH;
+    const NO_EXIST = EnumFullHalfTableType.NO_EXIST;
     interface IOptionsType {
         eng?: boolean;
         number?: boolean;
@@ -51,13 +56,13 @@ export declare namespace FullHalfCore {
     function filterTable(data: any): any[];
     function _chkType(charCode: number, data: ITableObject): boolean;
     function chkType(charCode: number, key: string, type: number): boolean;
-    function hasFullHalf(charCode: number): 1 | 0 | -1;
+    function hasFullHalf(charCode: number): EnumFullHalfTableType;
     function isFullHalf(charCode: number): boolean;
     function toFullWidth(charCode: number): number;
     function toHalfWidth(charCode: number): number;
     function _optionsType(data: IOptionsType): IOptionsType;
-    function process<T, U = string>(str: any, charProcess: any, options: IOptions): any;
-    function factory<T = string>(charProcessor: any, type: number, overwriteOptions?: IOptions): IFactoryFn;
+    function process<T, U = string>(str: any, charProcess: any, options: IOptions): string | number[];
+    function factory<T = string>(charProcessor: any, type: number | EnumFullHalfTableType, overwriteOptions?: IOptions): IFactoryFn;
     interface IFactoryFn {
         (str: string, options?: IOptions): string;
         (str: number, options?: IOptions): string;
