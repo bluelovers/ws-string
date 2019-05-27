@@ -11,7 +11,14 @@ export declare const DIACRITICAL_MARKS_START = 8400;
 export declare const DIACRITICAL_MARKS_END = 8447;
 export declare const ZWJ = 8205;
 export declare const GRAPHEMS: number[];
-export declare function runes(string: string): string[];
+declare function runes(string: string): string[];
+declare namespace runes {
+    var substr: typeof substring;
+    var substring: typeof substring;
+    var default: typeof runes;
+    var runes: typeof runes;
+}
+export default runes;
 export declare function nextUnits(i: number, string: string): 1 | 4 | 2;
 export declare function isFirstOfSurrogatePair(string: string): boolean;
 export declare function isRegionalIndicator(string: string): boolean;
@@ -23,5 +30,5 @@ export declare function isZeroWidthJoiner(string: string): boolean;
 export declare function codePointFromSurrogatePair(pair: string): number;
 export declare function betweenInclusive(value: number, lower: number, upper: number): boolean;
 export declare function substring(string: string, start: number, width?: number): string;
-export default runes;
 export declare const substr: typeof substring;
+export default runes;

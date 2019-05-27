@@ -1,6 +1,6 @@
 {
   "name": "runes2",
-  "version": "0.4.3",
+  "version": "0.4.6",
   "description": "Unicode-aware JS string splitting, typescript version",
   "keywords": [
     "char",
@@ -29,9 +29,15 @@
     "test": "test"
   },
   "scripts": {
-    "test": "ava test"
+    "coverage": "npx nyc npm run test",
+    "lint": "npx eslint **/*.ts",
+    "ncu": "npx yarn-tool ncu -u",
+    "prepublishOnly": "npm run ncu && npm run sort-package-json && npm run test",
+    "sort-package-json": "npx sort-package-json ./package.json",
+    "test": "npx ava test"
   },
+  "dependencies": {},
   "devDependencies": {
-    "ava": "^0.25.0"
+    "@bluelovers/tsconfig": "^1.0.3"
   }
 }

@@ -51,3 +51,7 @@ test/*.js
 test/*.d.ts
 test/temp
 /test/temp*
+/.eslintignore
+/.eslintrc.json.tpl
+/.browserslistrc
+/.nvmrc

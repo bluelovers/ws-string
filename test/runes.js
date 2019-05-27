@@ -32,7 +32,7 @@ test('✂️  Runes should handle ZERO WIDTH JOINER', (t) => {
   t.deepEqual(runes('👨‍👩‍👧'), ['👨‍👩‍👧'])
 })
 
-test('✂️  Runes should handle ZERO WIDTH JOINER', (t) => {
+test('✂️  Runes should handle ZERO WIDTH JOINER 2', (t) => {
   t.deepEqual(runes('👨‍👨‍👧‍👧'), ['👨‍👨‍👧‍👧'])
 })
 
@@ -61,6 +61,13 @@ test('✂️  Runes should handle chinese', (t) => {
   t.is(result[6], '"')
   t.is(result[14], '𩷶')
   t.is(result[15], '"')
+})
+
+test('✂️  Runes should handle chinese 2', (t) => {
+  const string = '𠬠𡬶𫗭𣛙𢎐'
+  const result = runes(string)
+
+  t.deepEqual(result, [ '𠬠', '𡬶', '𫗭', '𣛙', '𢎐' ])
 })
 
 test('✂️  Runes should handle math script', (t) => {
