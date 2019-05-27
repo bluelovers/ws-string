@@ -1,6 +1,6 @@
 {
   "name": "uni-string",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Unicode String object",
   "keywords": [
     "ansi",
@@ -41,12 +41,13 @@
     "lint": "npx eslint **/*.ts",
     "ncu": "npx yarn-tool ncu -u",
     "prepublishOnly": "npm run ncu && npm run sort-package-json && npm run test",
+    "postpublish": "git commit -a -m \"postpublish new version\"",
     "sort-package-json": "npx sort-package-json ./package.json",
     "test": "npx mocha --require ts-node/register \"!(node_modules)/**/*.{test,spec}.{ts,tsx}\""
   },
   "dependencies": {
     "es6-class-prototype": "^1.0.4",
-    "runes2": "^0.4.6"
+    "runes2": "^0.4.7"
   },
   "devDependencies": {
     "@bluelovers/tsconfig": "^1.0.3"
