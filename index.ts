@@ -4,14 +4,4 @@
 
 import { UString } from './src/core';
 
-export { UString }
-export default UString
-
-// @ts-ignore
-export = UString as typeof UString & {
-	default: typeof UString,
-	UString: typeof UString,
-};
-
-// @ts-ignore
-UString.default = UString.UString = UString;
+export = UString;

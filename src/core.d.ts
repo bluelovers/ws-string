@@ -20,12 +20,19 @@ export declare class UString extends String {
     endsWith(search: string, length?: number): boolean;
     padEnd(targetLength: number, padString: string): string;
     padStart(targetLength: number, padString: string): string;
+    /**
+     * 𠮷 134071 20bb7
+     */
+    codePointAt(pos: number): number;
     static UString: typeof UString;
     /**
      * @private
      */
     static default: typeof UString;
     static create(str: any, ...argv: any[]): UString;
+    /**
+     * 顯示 目前支援 unicode 的 method
+     */
     static readonly support: {
         split?: boolean;
         substr?: boolean;
@@ -38,6 +45,7 @@ export declare class UString extends String {
         endsWith?: boolean;
         padEnd?: boolean;
         padStart?: boolean;
+        codePointAt?: boolean;
         [key: string]: boolean;
     };
     static indexOf(str: any, search: string, start?: number): number;
@@ -57,5 +65,9 @@ export declare class UString extends String {
     readonly charLength: number;
     size(): number;
     static size(str: any): number;
+    /**
+     * 𠮷 134071 20bb7
+     */
+    static codePointAt(str: any, pos: number): number;
 }
 export default UString;

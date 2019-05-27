@@ -204,6 +204,7 @@ export class UString extends String
 			{
 				padString += padString.repeat(targetLength / pad.length); //append to original to ensure we are longer than needed
 
+				// @ts-ignore
 				pad = new UString(padString);
 			}
 			return String(this) + pad.slice(0, targetLength);
@@ -229,11 +230,22 @@ export class UString extends String
 			{
 				padString += padString.repeat(targetLength / pad.length); //append to original to ensure we are longer than needed
 
+				// @ts-ignore
 				pad = new UString(padString);
 			}
 
 			return pad.slice(0, targetLength) + String(this);
 		}
+	}
+
+
+
+	/**
+	 * 𠮷 134071 20bb7
+	 */
+	codePointAt(pos: number): number
+	{
+		return this.toArray()[pos].codePointAt(0)
 	}
 
 	static UString = UString;
@@ -247,6 +259,9 @@ export class UString extends String
 		return new this(str, ...argv);
 	}
 
+	/**
+	 * 顯示 目前支援 unicode 的 method
+	 */
 	static get support(): {
 
 		split?: boolean,
@@ -260,6 +275,8 @@ export class UString extends String
 		endsWith?: boolean,
 		padEnd?: boolean,
 		padStart?: boolean,
+
+		codePointAt?: boolean,
 
 		[key: string]: boolean,
 	}
@@ -349,6 +366,15 @@ export class UString extends String
 	{
 		return this.create(str).size();
 	}
+
+	/**
+	 * 𠮷 134071 20bb7
+	 */
+	static codePointAt(str, pos: number): number
+	{
+		return this.create(str).codePointAt(pos)
+	}
+
 }
 
 export default UString;

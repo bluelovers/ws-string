@@ -1,6 +1,6 @@
 {
   "name": "uni-string",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Unicode String object",
   "keywords": [
     "ansi",
@@ -37,11 +37,18 @@
     "test": "test"
   },
   "scripts": {
-    "prepublishOnly": "npm run test",
+    "coverage": "npx nyc npm run test",
+    "lint": "npx eslint **/*.ts",
+    "ncu": "npx yarn-tool ncu -u",
+    "prepublishOnly": "npm run ncu && npm run sort-package-json && npm run test",
+    "sort-package-json": "npx sort-package-json ./package.json",
     "test": "npx mocha --require ts-node/register \"!(node_modules)/**/*.{test,spec}.{ts,tsx}\""
   },
   "dependencies": {
-    "es6-class-prototype": "^1.0.3",
-    "runes2": "^0.4.4"
+    "es6-class-prototype": "^1.0.4",
+    "runes2": "^0.4.6"
+  },
+  "devDependencies": {
+    "@bluelovers/tsconfig": "^1.0.3"
   }
 }

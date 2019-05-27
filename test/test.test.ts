@@ -2,9 +2,13 @@
  * Created by user on 2018/11/8/008.
  */
 
+// @ts-ignore
 /// <reference types="mocha" />
+// @ts-ignore
 /// <reference types="benchmark" />
+// @ts-ignore
 /// <reference types="chai" />
+// @ts-ignore
 /// <reference types="node" />
 
 import { chai, relative, expect, path, assert, util, mochaAsync } from './_local-dev';
@@ -48,27 +52,30 @@ describe(relative(__filename), () =>
 			done();
 		});
 
-		// @ts-ignore
-		it(`𠬠典`, function (done)
+		[
+			[`𠬠典`, ['𠬠', '典']],
+			[`𡬶寻尋`, ['𡬶', '寻', '尋']],
+		].forEach(function ([input, expected])
 		{
-			//console.log('it:inner', currentTest.title);
-			//console.log('it:inner', currentTest.fullTitle());
+			// @ts-ignore
+			it(input, function ()
+			{
+				//console.log('it:inner', currentTest.title);
+				//console.log('it:inner', currentTest.fullTitle());
 
-			let input = '𠬠典';
+				let actual = UString.split(input, '');
 
-			let actual = UString.split(input, '');
-			let expected = ['𠬠', '典'];
+				//expect(actual).to.be.ok;
+				expect(actual).to.be.deep.equal(expected);
+				expect(actual.length).to.be.deep.equal(expected.length);
+				expect(UString.size(input)).to.be.deep.equal(expected.length);
 
-			//expect(actual).to.be.ok;
-			expect(actual).to.be.deep.equal(expected);
-			expect(actual.length).to.be.deep.equal(2);
-			expect(UString.size(input)).to.be.deep.equal(2);
+				expect(UString.slice(input, 1, 2)).to.be.deep.equal(expected[1]);
 
-			expect(UString.slice(input, 1)).to.be.deep.equal(expected[1]);
+				//assert.isOk(actual.value, util.inspect(actual));
+			});
+		})
 
-			//assert.isOk(actual.value, util.inspect(actual));
 
-			done();
-		});
 	});
 });
