@@ -26,7 +26,7 @@ export declare namespace FullHalfCore {
         bracket?: boolean;
         [index: string]: boolean;
     }
-    interface IOptions {
+    interface IOptionsBase {
         type?: number;
         skip?: IOptionsType;
         only?: IOptionsType;
@@ -34,8 +34,25 @@ export declare namespace FullHalfCore {
             only?: boolean;
             [index: string]: boolean;
         };
-        returnType?: number;
     }
+    type IOptionsTrue = IOptionsBase & {
+        /**
+         * 回傳直接回傳陣列而不組合成字串
+         */
+        returnType: ILazyTrue;
+    };
+    type IOptionsFalse = IOptionsBase & {
+        /**
+         * 回傳直接回傳陣列而不組合成字串
+         */
+        returnType?: ILazyFalse;
+    };
+    type IOptions = IOptionsBase & {
+        /**
+         * 回傳直接回傳陣列而不組合成字串
+         */
+        returnType?: ILazyTrue | ILazyFalse;
+    };
     interface ITableObject {
         from?: number;
         to?: number;
@@ -63,17 +80,29 @@ export declare namespace FullHalfCore {
     function _optionsType(data: IOptionsType): IOptionsType;
     function process<T, U = string>(str: any, charProcess: any, options: IOptions): string | number[];
     function factory<T = string>(charProcessor: any, type: number | EnumFullHalfTableType, overwriteOptions?: IOptions): IFactoryFn;
+    type ILazyTrue = true | 1;
+    type ILazyFalse = 0 | false | void | undefined | null;
     interface IFactoryFn {
-        (str: string, options?: IOptions): string;
-        (str: number, options?: IOptions): string;
-        (str: any, options?: IOptions): any;
+        (str: string | string[], options?: IOptionsFalse): string;
+        (str: (string | number)[], options: IOptionsTrue): number[];
+        (str: any, options: IOptionsTrue): number[];
+        (str: (string | number)[]): string;
+        (str: (string | number)[], options?: IOptionsFalse): string;
+        (str: any, options: IOptionsFalse): string;
+        (str: any, options: IOptions): string | number[];
     }
 }
-export declare const toFullNumber: FullHalfCore.IFactoryFn;
-export declare const toHalfNumber: FullHalfCore.IFactoryFn;
-export declare const toFullEnglish: FullHalfCore.IFactoryFn;
-export declare const toHalfEnglish: FullHalfCore.IFactoryFn;
-export declare const toFullWidth: FullHalfCore.IFactoryFn;
-export declare const toHalfWidth: FullHalfCore.IFactoryFn;
+export import IFactoryFn = FullHalfCore.IFactoryFn;
+export import EnumFullHalfTableType = FullHalfCore.EnumFullHalfTableType;
+export import IOptions = FullHalfCore.IOptions;
+export import IOptionsType = FullHalfCore.IOptionsType;
+export import ITable = FullHalfCore.ITable;
+export import ITableObject = FullHalfCore.ITableObject;
+export declare const toFullNumber: IFactoryFn;
+export declare const toHalfNumber: IFactoryFn;
+export declare const toFullEnglish: IFactoryFn;
+export declare const toHalfEnglish: IFactoryFn;
+export declare const toFullWidth: IFactoryFn;
+export declare const toHalfWidth: IFactoryFn;
 declare const _default: typeof import("./fullhalf");
 export default _default;

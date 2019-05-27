@@ -4,6 +4,7 @@
 
 import deepmerge = require('deepmerge');
 import util = require('./util');
+import UString from 'uni-string';
 
 export namespace FullHalfCore
 {
@@ -42,7 +43,7 @@ export namespace FullHalfCore
 		[index: string]: boolean;
 	}
 
-	export interface IOptions
+	export interface IOptionsBase
 	{
 		type?: number;
 
@@ -54,8 +55,33 @@ export namespace FullHalfCore
 
 			[index: string]: boolean;
 		};
+	}
 
-		returnType?: number;
+	export type IOptionsTrue = IOptionsBase & {
+
+		/**
+		 * 回傳直接回傳陣列而不組合成字串
+		 */
+		returnType: ILazyTrue;
+
+	}
+
+	export type IOptionsFalse = IOptionsBase & {
+
+		/**
+		 * 回傳直接回傳陣列而不組合成字串
+		 */
+		returnType?: ILazyFalse;
+
+	}
+
+	export type IOptions = IOptionsBase & {
+
+		/**
+		 * 回傳直接回傳陣列而不組合成字串
+		 */
+		returnType?: ILazyTrue | ILazyFalse;
+
 	}
 
 	export interface ITableObject
@@ -433,14 +459,15 @@ export namespace FullHalfCore
 
 		//console.log(options);
 
-		let _str = Array.isArray(str) ? str : str.toString();
+		let _str = Array.isArray(str) ? str : new UString(str);
 
 		for (let char of _str)
 		{
 			let _skip: boolean;
 
 			// @ts-ignore
-			let charCode = typeof char == 'number' ? char : char.charCodeAt();
+			//let charCode = typeof char == 'number' ? char : char.charCodeAt();
+			let charCode = typeof char == 'number' ? char : char.codePointAt();
 
 			if (options.only)
 			{
@@ -486,7 +513,8 @@ export namespace FullHalfCore
 			return ret as number[];
 		}
 
-		return String.fromCharCode.apply(String, ret);
+		//return String.fromCharCode.apply(String, ret);
+		return String.fromCodePoint.apply(String, ret);
 	}
 
 	export function factory<T = string>(charProcessor, type: number | EnumFullHalfTableType, overwriteOptions?: IOptions): IFactoryFn
@@ -510,13 +538,32 @@ export namespace FullHalfCore
 		};
 	}
 
+	type ILazyTrue = true | 1;
+	type ILazyFalse = 0 | false | void | undefined | null;
+
 	export interface IFactoryFn
 	{
-		(str: string, options?: IOptions): string
-		(str: number, options?: IOptions): string
-		(str, options?: IOptions)
+		(str: string | string[], options?: IOptionsFalse): string
+		(str: (string | number)[], options: IOptionsTrue): number[]
+
+		(str, options: IOptionsTrue): number[]
+
+		(str: (string | number)[]): string
+
+		(str: (string | number)[], options?: IOptionsFalse): string
+
+		(str, options: IOptionsFalse): string
+
+		(str, options: IOptions): string | number[]
 	}
 }
+
+export import IFactoryFn = FullHalfCore.IFactoryFn;
+export import EnumFullHalfTableType = FullHalfCore.EnumFullHalfTableType;
+export import IOptions = FullHalfCore.IOptions;
+export import IOptionsType = FullHalfCore.IOptionsType;
+export import ITable = FullHalfCore.ITable;
+export import ITableObject = FullHalfCore.ITableObject;
 
 let typeOnly: FullHalfCore.IOptions = {
 	only: {
