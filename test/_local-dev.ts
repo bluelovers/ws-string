@@ -1,24 +1,78 @@
-/**
- * Created by user on 2017/12/3/003.
- */
+// @ts-ignore
+import _chai = require('chai');
+// @ts-ignore
+// @ts-ignore
+//import { expect, assert } from 'chai';
+
+import { IChaiInstalled } from 'chai-asserttype-extra'
+//import ChaiPlugin = require('chai-asserttype-extra');
+// @ts-ignore
+import ChaiStatic = Chai.ChaiStatic;
+
+let chai: IChaiInstalled<ChaiStatic> | ChaiStatic;
+
+if (requireResolve('chai-asserttype-extra'))
+{
+	const ChaiPlugin = require('chai-asserttype-extra').ChaiPlugin;
+
+	chai = ChaiPlugin.install(_chai) as IChaiInstalled<ChaiStatic>;
+}
+else
+{
+	chai = _chai;
+}
+
+if (requireResolve('chai-string'))
+{
+	chai.use(require('chai-string'));
+}
+
+const { expect, assert } = chai;
+
+export { chai, expect, assert }
 
 // @ts-ignore
-import * as chai from 'chai';
+import path = require('path');
 // @ts-ignore
-import * as path from 'path';
+import util = require('util');
 
-export { path };
+export { path, util };
 
 // @ts-ignore
-export const rootDir = path.join(__dirname, '..');
+export const rootDir: string = path.join(__dirname, '..');
 
-export function relative(filename): string
+export function relative(filename: string): string
 {
 	return path.relative(rootDir, filename);
 }
 
-export const expect = chai.expect;
-export const assert = chai.assert;
+export function mochaAsync(fn: Function)
+{
+	return async (done) =>
+	{
+		try
+		{
+			await fn();
+			done();
+		}
+		catch (err)
+		{
+			done(err);
+		}
+	};
+}
 
-// @ts-ignore
-export default exports;
+export default exports as typeof import('./_local-dev');
+
+export function requireResolve(name: string): string
+{
+	try
+	{
+		return require.resolve(name)
+	}
+	catch (e)
+	{
+
+	}
+	return null;
+}

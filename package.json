@@ -1,6 +1,6 @@
 {
   "name": "str-util",
-  "version": "2.3.19",
+  "version": "2.3.20",
   "description": "convert full/half width, Chinese/Japanese number, 中日漢字轉換... others util helper",
   "keywords": [
     "char",
@@ -62,15 +62,16 @@
     "_publish": "npm publish",
     "prepublishOnly": "npx npm-check-updates -u --packageFile ./package.json && npm run test",
     "doc": "npx -r typedoc-markdown-theme -r typedoc typedoc --out ./docs --ignoreCompilerErrors --exclude **/{node_modules,test}/**/* .",
-    "test": "npx mocha \"test/*.+(test|spec).js\""
+    "test": "npx mocha --require ts-node/register \"test/*.+(test|spec).ts\""
   },
   "dependencies": {
     "chinese-parseint": "^1.1.0",
-    "cjk-conv": "^1.1.37",
+    "cjk-conv": "^1.1.56",
     "deepmerge": "^3.2.0",
     "is-fullwidth-code-point": "^3.0.0",
     "japanese": "^1.2.0",
-    "strip-ansi": "^5.2.0"
+    "strip-ansi": "^5.2.0",
+    "uni-string": "^1.1.1"
   },
   "devDependencies": {
     "@bluelovers/tsconfig": "^1.0.3"
