@@ -1,0 +1,22 @@
+{
+  "name": "ws-string",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "lerna:publish": "lerna publish",
+    "ncu": "npx npm-check-updates -u",
+    "sort-package-json": "npx \"sort-package-json\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@bluelovers/tsconfig": "^1.0.12",
+    "@types/node": "*"
+  },
+  "peerDependencies": {
+    "lerna": "^3.16.4"
+  },
+  "resolutions": {}
+}

@@ -1,0 +1,28 @@
+{
+  "name": "zero-width",
+  "version": "1.0.0",
+  "description": "remove zero-width",
+  "license": "ISC",
+  "author": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "coverage": "npx nyc yarn run test",
+    "lint": "npx eslint **/*.ts",
+    "ncu": "npx yarn-tool ncu -u",
+    "npm:publish": "npm publish",
+    "prepublishOnly": "yarn run ncu && yarn run sort-package-json && yarn run test",
+    "postpublish": "git commit -m \"publish new version\" .",
+    "sort-package-json": "npx sort-package-json ./package.json",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc:default": "tsc -p tsconfig.json",
+    "tsc:esm": "tsc -p tsconfig.esm.json"
+  },
+  "dependencies": {
+    "regexp-helper-core": "^1.0.7"
+  },
+  "keywords": [
+    "zero-width",
+    "space",
+    "variation-selectors"
+  ]
+}
