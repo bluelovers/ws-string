@@ -1,11 +1,17 @@
-/**
- * Created by user on 2019/8/7.
- */
-import { _regexpMerge, reBomStrict, reBomUnsafe, reVariationSelectorsAll, reZeroWidthAll, reZeroWidthTrim } from './re';
+import {
+	_regexpMerge,
+	reBomStrict,
+	reBomUnsafe,
+	reNBSP,
+	reVariationSelectorsAll,
+	reZeroWidthAll,
+	reZeroWidthTrim,
+} from './re';
+import { ENUM_SPACE } from './const';
 
 export function existsZeroWidth(str: string)
 {
-	return reVariationSelectorsAll.test(str)
+	return reZeroWidthAll.test(str)
 }
 
 export function removeVariationSelectors(str: string)
@@ -35,6 +41,11 @@ export function removeBom(str: string, unsafe?: boolean)
 	}
 
 	return str.replace(reBomStrict, '')
+}
+
+export function nbspToSpace(str: string)
+{
+	return str.replace(reNBSP, ENUM_SPACE.SPACE)
 }
 
 export default removeZeroWidth

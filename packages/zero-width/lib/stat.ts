@@ -1,9 +1,7 @@
-/**
- * Created by user on 2019/8/7.
- */
 import { unicodeEscape, toHex } from 'regexp-helper-core';
 import { reVariationSelectorsAll, reZeroWidthAll, reZeroWidthWithSpace } from './re';
 import removeZeroWidth from './index';
+import { ENUM_SPACE } from './const';
 
 export function reportZeroWidth(str: string)
 {
@@ -45,16 +43,16 @@ export function _toKey(k: string)
 
 	switch (k)
 	{
-		case '\t':
+		case ENUM_SPACE.TAB:
 			k2 = '\\t';
 			break;
-		case '\v':
+		case  ENUM_SPACE.VERTICAL_TABULATION:
 			k2 = '\\v';
 			break;
-		case '\n':
+		case ENUM_SPACE.NEW_LINE:
 			k2 = '\\n';
 			break;
-		case '\r':
+		case ENUM_SPACE.CARRIAGE_RETURN:
 			k2 = '\\r';
 			break;
 		default:
@@ -77,8 +75,4 @@ export function _toKey(k: string)
 	return k2
 }
 
-console.dir(/\n/.source)
-
-console.dir(reportZeroWidthWithSpace('\udb40\udd00\n\r\b\t\v\u00a0 '));
-
-console.dir(`1\u20602`)
+export default reportZeroWidthWithSpace

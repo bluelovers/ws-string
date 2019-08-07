@@ -5,3 +5,4 @@ export declare function reportZeroWidthWithSpace(str: string): Record<string, nu
  */
 export declare function _report(str: string, re: RegExp): Record<string, number>;
 export declare function _toKey(k: string): string;
+export default reportZeroWidthWithSpace;

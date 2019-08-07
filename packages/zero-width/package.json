@@ -1,17 +1,51 @@
 {
   "name": "zero-width",
   "version": "1.0.0",
-  "description": "remove zero-width",
+  "description": "remove zero-width and some other util about space",
+  "keywords": [
+    "check",
+    "es2018",
+    "esnext",
+    "flag",
+    "flags",
+    "helper",
+    "is",
+    "pattern",
+    "re",
+    "regex",
+    "regexp",
+    "regular expression",
+    "space",
+    "support",
+    "supported",
+    "unicode",
+    "util",
+    "valid",
+    "variation-selectors",
+    "zero-width"
+  ],
+  "homepage": "https://github.com/bluelovers/ws-string#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/ws-string/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/ws-string.git"
+  },
   "license": "ISC",
   "author": "",
   "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
   "scripts": {
     "coverage": "npx nyc yarn run test",
     "lint": "npx eslint **/*.ts",
     "ncu": "npx yarn-tool ncu -u",
     "npm:publish": "npm publish",
     "prepublishOnly": "yarn run ncu && yarn run sort-package-json && yarn run test",
-    "postpublish": "git commit -m \"publish new version\" .",
+    "postpublish": "echo postpublish",
     "sort-package-json": "npx sort-package-json ./package.json",
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc:default": "tsc -p tsconfig.json",
@@ -19,10 +53,5 @@
   },
   "dependencies": {
     "regexp-helper-core": "^1.0.7"
-  },
-  "keywords": [
-    "zero-width",
-    "space",
-    "variation-selectors"
-  ]
+  }
 }

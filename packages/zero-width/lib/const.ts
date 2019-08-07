@@ -6,6 +6,7 @@ export const enum ENUM_ZERO_WIDTH
 {
 	NON_JOINER = '\u200c',
 	JOINER = '\u200d',
+
 	SPACE = '\u200b',
 
 	NO_BREAK_SPACE = '\ufeff',
@@ -107,6 +108,56 @@ export const enum ENUM_VARIATION_SELECTORS_SUPPLEMENT
 
 export const enum ENUM_SPACE
 {
+	/**
+	 * 空格符 (space character)
+	 * @type {string}
+	 */
+	SPACE = '\u0020',
+	NO_BREAK_SPACE = '\u00a0',
 
+	/**
+	 * `　`
+	 */
+	FULL_WIDTH_SPACE = '\u3000',
+
+	/**
+	 * `\t`
+	 */
+	TAB = '\u0009',
+	/**
+	 * `\t`
+	 * 制表符 (tab character)
+	 */
+	HORIZONTAL_TABULATION = '\u0009',
+
+	/**
+	 * `\v`
+	 * 垂直换行符 (vertical tab character)
+	 */
+	VERTICAL_TABULATION = '\u000b',
+
+	/**
+	 * `\r`
+	 * 回车符 (carriage return character)
+	 */
+	CARRIAGE_RETURN = '\u000d',
+
+	/**
+	 * `\n`
+	 * 换行符 (new line character)
+	 */
+	NEW_LINE = '\u000a',
+
+	/**
+	 * `\b`
+	 */
+	BACKSPACE = '\u0008',
+
+	/**
+	 * `\f` => 000c
+	 * 换页符 (form feed character)
+	 *
+	 * @see https://unicode-table.com/cn/000C/
+	 */
+	FORM_FEED = '\u000c',
 }
-

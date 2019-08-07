@@ -100,5 +100,50 @@ var ENUM_VARIATION_SELECTORS_SUPPLEMENT;
 })(ENUM_VARIATION_SELECTORS_SUPPLEMENT = exports.ENUM_VARIATION_SELECTORS_SUPPLEMENT || (exports.ENUM_VARIATION_SELECTORS_SUPPLEMENT = {}));
 var ENUM_SPACE;
 (function (ENUM_SPACE) {
+    /**
+     * 空格符 (space character)
+     * @type {string}
+     */
+    ENUM_SPACE["SPACE"] = " ";
+    ENUM_SPACE["NO_BREAK_SPACE"] = "\u00A0";
+    /**
+     * `　`
+     */
+    ENUM_SPACE["FULL_WIDTH_SPACE"] = "\u3000";
+    /**
+     * `\t`
+     */
+    ENUM_SPACE["TAB"] = "\t";
+    /**
+     * `\t`
+     * 制表符 (tab character)
+     */
+    ENUM_SPACE["HORIZONTAL_TABULATION"] = "\t";
+    /**
+     * `\v`
+     * 垂直换行符 (vertical tab character)
+     */
+    ENUM_SPACE["VERTICAL_TABULATION"] = "\v";
+    /**
+     * `\r`
+     * 回车符 (carriage return character)
+     */
+    ENUM_SPACE["CARRIAGE_RETURN"] = "\r";
+    /**
+     * `\n`
+     * 换行符 (new line character)
+     */
+    ENUM_SPACE["NEW_LINE"] = "\n";
+    /**
+     * `\b`
+     */
+    ENUM_SPACE["BACKSPACE"] = "\b";
+    /**
+     * `\f` => 000c
+     * 换页符 (form feed character)
+     *
+     * @see https://unicode-table.com/cn/000C/
+     */
+    ENUM_SPACE["FORM_FEED"] = "\f";
 })(ENUM_SPACE = exports.ENUM_SPACE || (exports.ENUM_SPACE = {}));
 //# sourceMappingURL=const.js.map

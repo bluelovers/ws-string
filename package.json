@@ -6,7 +6,7 @@
     "packages/*"
   ],
   "scripts": {
-    "lerna:publish": "lerna publish",
+    "lerna:publish": "lerna publish --yes --cd-version patch",
     "ncu": "npx npm-check-updates -u",
     "sort-package-json": "npx \"sort-package-json\"",
     "test": "echo \"Error: no test specified\" && exit 1"

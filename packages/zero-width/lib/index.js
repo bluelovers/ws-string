@@ -1,11 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/**
- * Created by user on 2019/8/7.
- */
 const re_1 = require("./re");
 function existsZeroWidth(str) {
-    return re_1.reVariationSelectorsAll.test(str);
+    return re_1.reZeroWidthAll.test(str);
 }
 exports.existsZeroWidth = existsZeroWidth;
 function removeVariationSelectors(str) {
@@ -29,5 +26,9 @@ function removeBom(str, unsafe) {
     return str.replace(re_1.reBomStrict, '');
 }
 exports.removeBom = removeBom;
+function nbspToSpace(str) {
+    return str.replace(re_1.reNBSP, " " /* SPACE */);
+}
+exports.nbspToSpace = nbspToSpace;
 exports.default = removeZeroWidth;
 //# sourceMappingURL=index.js.map

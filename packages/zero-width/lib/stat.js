@@ -1,8 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/**
- * Created by user on 2019/8/7.
- */
 const regexp_helper_core_1 = require("regexp-helper-core");
 const re_1 = require("./re");
 function reportZeroWidth(str) {
@@ -33,16 +30,16 @@ exports._report = _report;
 function _toKey(k) {
     let k2;
     switch (k) {
-        case '\t':
+        case "\t" /* TAB */:
             k2 = '\\t';
             break;
-        case '\v':
+        case "\v" /* VERTICAL_TABULATION */:
             k2 = '\\v';
             break;
-        case '\n':
+        case "\n" /* NEW_LINE */:
             k2 = '\\n';
             break;
-        case '\r':
+        case "\r" /* CARRIAGE_RETURN */:
             k2 = '\\r';
             break;
         default:
@@ -59,7 +56,5 @@ function _toKey(k) {
     return k2;
 }
 exports._toKey = _toKey;
-console.dir(/\n/.source);
-console.dir(reportZeroWidthWithSpace('\udb40\udd00\n\r\b\t\v\u00a0 '));
-console.dir(`1\u20602`);
+exports.default = reportZeroWidthWithSpace;
 //# sourceMappingURL=stat.js.map

@@ -94,4 +94,49 @@ export declare const enum ENUM_VARIATION_SELECTORS {
 export declare const enum ENUM_VARIATION_SELECTORS_SUPPLEMENT {
 }
 export declare const enum ENUM_SPACE {
+    /**
+     * 空格符 (space character)
+     * @type {string}
+     */
+    SPACE = " ",
+    NO_BREAK_SPACE = "\u00A0",
+    /**
+     * `　`
+     */
+    FULL_WIDTH_SPACE = "\u3000",
+    /**
+     * `\t`
+     */
+    TAB = "\t",
+    /**
+     * `\t`
+     * 制表符 (tab character)
+     */
+    HORIZONTAL_TABULATION = "\t",
+    /**
+     * `\v`
+     * 垂直换行符 (vertical tab character)
+     */
+    VERTICAL_TABULATION = "\v",
+    /**
+     * `\r`
+     * 回车符 (carriage return character)
+     */
+    CARRIAGE_RETURN = "\r",
+    /**
+     * `\n`
+     * 换行符 (new line character)
+     */
+    NEW_LINE = "\n",
+    /**
+     * `\b`
+     */
+    BACKSPACE = "\b",
+    /**
+     * `\f` => 000c
+     * 换页符 (form feed character)
+     *
+     * @see https://unicode-table.com/cn/000C/
+     */
+    FORM_FEED = "\f"
 }
