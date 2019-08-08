@@ -1,6 +1,6 @@
 {
   "name": "zero-width",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "remove zero-width and some other util about space",
   "keywords": [
     "check",
