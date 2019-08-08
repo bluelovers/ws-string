@@ -31,6 +31,11 @@ export function _regexpMerge(re: (string | RegExp)[])
 export const reZeroWidth = /[\u200b-\u200f\ufeff\u2060]/ug;
 export const reZeroWidth2 = /[\u2028-\u202F\u205F-\u206F]/ug;
 
+export const reZeroWidthAllSafe = _regexpMerge([
+	reZeroWidth,
+	reZeroWidth2,
+]);
+
 export const reZeroWidthAll = _regexpMerge([
 	reVariationSelectorsAll,
 	reZeroWidth,

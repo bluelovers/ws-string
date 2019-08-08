@@ -9,9 +9,12 @@ function removeVariationSelectors(str) {
     return str.replace(re_1.reVariationSelectorsAll, '');
 }
 exports.removeVariationSelectors = removeVariationSelectors;
-function removeZeroWidth(str) {
+function removeZeroWidth(str, unsafe) {
+    if (unsafe) {
+        return str.replace(re_1.reZeroWidthAll, '');
+    }
     return str
-        .replace(re_1.reZeroWidthAll, '');
+        .replace(re_1.reZeroWidthAllSafe, '');
 }
 exports.removeZeroWidth = removeZeroWidth;
 function trimWithZeroWidth(str) {

@@ -20,6 +20,7 @@ export declare const reVariationSelectorsAll: RegExp;
 export declare function _regexpMerge(re: (string | RegExp)[]): RegExp;
 export declare const reZeroWidth: RegExp;
 export declare const reZeroWidth2: RegExp;
+export declare const reZeroWidthAllSafe: RegExp;
 export declare const reZeroWidthAll: RegExp;
 export declare const reNBSP: RegExp;
 export declare const reNewLine: RegExp;

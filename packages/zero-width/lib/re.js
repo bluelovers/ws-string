@@ -25,6 +25,10 @@ function _regexpMerge(re) {
 exports._regexpMerge = _regexpMerge;
 exports.reZeroWidth = /[\u200b-\u200f\ufeff\u2060]/ug;
 exports.reZeroWidth2 = /[\u2028-\u202F\u205F-\u206F]/ug;
+exports.reZeroWidthAllSafe = _regexpMerge([
+    exports.reZeroWidth,
+    exports.reZeroWidth2,
+]);
 exports.reZeroWidthAll = _regexpMerge([
     exports.reVariationSelectorsAll,
     exports.reZeroWidth,

@@ -4,7 +4,7 @@ import {
 	reBomUnsafe,
 	reNBSP,
 	reVariationSelectorsAll,
-	reZeroWidthAll,
+	reZeroWidthAll, reZeroWidthAllSafe,
 	reZeroWidthTrim,
 } from './re';
 import { ENUM_SPACE } from './const';
@@ -19,10 +19,15 @@ export function removeVariationSelectors(str: string)
 	return str.replace(reVariationSelectorsAll, '')
 }
 
-export function removeZeroWidth(str: string)
+export function removeZeroWidth(str: string, unsafe?: boolean)
 {
+	if (unsafe)
+	{
+		return str.replace(reZeroWidthAll, '')
+	}
+
 	return str
-		.replace(reZeroWidthAll, '')
+		.replace(reZeroWidthAllSafe, '')
 	;
 }
 
