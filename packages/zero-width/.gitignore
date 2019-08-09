@@ -73,3 +73,4 @@ tsconfig.esm.json.tpl
 
 .browserslistrc
 .nvmrc
+!/test/lazy.test.ts
