@@ -2,20 +2,20 @@
   "name": "regexp-class-to-regenerate",
   "version": "1.0.1",
   "description": "convert Specified type RegExp to hacked regenerate object",
+  "keywords": [
+    "generator",
+    "javascript",
+    "regenerate",
+    "regex",
+    "regexp",
+    "regular expression",
+    "tool",
+    "unicode"
+  ],
   "homepage": "https://github.com/bluelovers/ws-string#readme",
   "bugs": {
     "url": "https://github.com/bluelovers/ws-string/issues"
   },
-  "keywords": [
-    "regex",
-    "regexp",
-    "javascript",
-    "unicode",
-    "regular expression",
-    "regenerate",
-    "generator",
-    "tool"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bluelovers/ws-string.git"
@@ -28,7 +28,7 @@
     "lint": "npx eslint **/*.ts",
     "ncu": "npx yarn-tool ncu -u",
     "npm:publish": "npm publish",
-    "prepublishOnly": "yarn run ncu && yarn run sort-package-json && yarn run test",
+    "prepublishOnly": "yarn run ncu && yarn run sort-package-json",
     "postpublish": "echo postpublish",
     "sort-package-json": "npx sort-package-json ./package.json",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -39,5 +39,6 @@
     "regenerate": "^1.4.0",
     "regexp-parser-event": "^1.1.5",
     "regexpu-core": "^4.5.5"
-  }
+  },
+  "gitHead": "cde848c71badceb359aa2ce5ab95a9baa256262d"
 }
