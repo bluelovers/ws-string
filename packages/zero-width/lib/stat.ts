@@ -1,6 +1,5 @@
 import { unicodeEscape, toHex } from 'regexp-helper-core';
 import { reVariationSelectorsAll, reZeroWidthAll, reZeroWidthWithSpace } from './re';
-import removeZeroWidth from './index';
 import { ENUM_SPACE } from './const';
 
 export function reportZeroWidth(str: string)

@@ -1,5 +1,4 @@
 import {
-	_regexpMerge,
 	reBomStrict,
 	reBomUnsafe,
 	reNBSP,

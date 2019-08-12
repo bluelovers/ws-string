@@ -54,5 +54,10 @@
   "dependencies": {
     "regexp-helper-core": "^1.0.7"
   },
-  "gitHead": "bbcb1af38bbd269e1e65ee3267822b90a0584ab7"
+  "gitHead": "bbcb1af38bbd269e1e65ee3267822b90a0584ab7",
+  "devDependencies": {
+    "regexp-class-to-regenerate": "^1.0.0",
+    "@types/fs-extra": "^8.0.0",
+    "fs-extra": "^8.1.0"
+  }
 }
