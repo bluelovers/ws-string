@@ -1,6 +1,6 @@
 {
   "name": "regexp-class-to-regenerate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "convert Specified type RegExp to hacked regenerate object",
   "homepage": "https://github.com/bluelovers/ws-string#readme",
   "bugs": {

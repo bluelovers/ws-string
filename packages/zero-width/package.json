@@ -1,6 +1,6 @@
 {
   "name": "zero-width",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "remove zero-width and some other util about space",
   "keywords": [
     "check",
@@ -56,8 +56,8 @@
   },
   "gitHead": "bbcb1af38bbd269e1e65ee3267822b90a0584ab7",
   "devDependencies": {
-    "regexp-class-to-regenerate": "^1.0.0",
     "@types/fs-extra": "^8.0.0",
-    "fs-extra": "^8.1.0"
+    "fs-extra": "^8.1.0",
+    "regexp-class-to-regenerate": "^1.0.1"
   }
 }
