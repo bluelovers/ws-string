@@ -1,6 +1,6 @@
 {
   "name": "regexp-class-to-regenerate",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "convert Specified type RegExp to hacked regenerate object",
   "keywords": [
     "generator",

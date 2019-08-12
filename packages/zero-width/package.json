@@ -1,6 +1,6 @@
 {
   "name": "zero-width",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "remove zero-width and some other util about space",
   "keywords": [
     "check",
@@ -58,6 +58,6 @@
   "devDependencies": {
     "@types/fs-extra": "^8.0.0",
     "fs-extra": "^8.1.0",
-    "regexp-class-to-regenerate": "^1.0.1"
+    "regexp-class-to-regenerate": "^1.0.2"
   }
 }
