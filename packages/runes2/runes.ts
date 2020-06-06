@@ -162,7 +162,7 @@ export function betweenInclusive(value: number, lower: number, upper: number)
 	return value >= lower && value <= upper
 }
 
-export function substring(string: string, start: number, width?: number)
+export function substring(string: string, start?: number, width?: number)
 {
 	const chars = runes(string)
 	if (start === undefined)
@@ -183,7 +183,7 @@ export function substring(string: string, start: number, width?: number)
 	return chars.slice(start, endIndex).join('')
 }
 
-export const substr = substring
+export { substring as substr }
 
 runes.substr = substring;
 runes.substring = substring;

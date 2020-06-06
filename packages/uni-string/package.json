@@ -37,24 +37,20 @@
     "test": "test"
   },
   "scripts": {
-    "coverage": "npx nyc npm run test",
-    "lint": "npx eslint **/*.ts",
-    "test": "npx mocha --require ts-node/register \"!(node_modules)/**/*.{test,spec}.{ts,tsx}\"",
+    "test": "jest",
     "npm:publish": "npm publish",
     "npm:publish:lerna": "npx lerna publish --yes --cd-version patch",
     "prepublish:lockfile": "npx sync-lockfile .",
-    "prepublishOnly": "npm run ncu && npm run sort-package-json && npm run test",
-    "prepublishOnly_": "yarn run ncu && yarn run sort-package-json && yarn run test",
-    "postpublish": "git commit -a -m \"postpublish new version\"",
+    "prepublishOnly": "yarn run test",
+    "postpublish": "yarn run postpublishOnly:add",
     "postpublish_": "git commit -m \"chore(release): publish\" .",
     "ncu": "npx yarn-tool ncu -u",
-    "sort-package-json": "npx sort-package-json ./package.json"
+    "postpublishOnly:add": "npx yarn-tool root run postpublishOnly:add uni-string",
+    "sort-package-json": "npx yarn-tool sort"
   },
   "dependencies": {
     "es6-class-prototype": "^1.0.4",
     "runes2": "^0.4.7"
   },
-  "devDependencies": {
-
-  }
+  "devDependencies": {}
 }

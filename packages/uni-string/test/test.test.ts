@@ -2,80 +2,108 @@
  * Created by user on 2018/11/8/008.
  */
 
-// @ts-ignore
-/// <reference types="mocha" />
-// @ts-ignore
-/// <reference types="benchmark" />
-// @ts-ignore
-/// <reference types="chai" />
-// @ts-ignore
-/// <reference types="node" />
+import UString from '../src/core';
+import { inspect } from 'util';
 
-import { chai, relative, expect, path, assert, util, mochaAsync } from './_local-dev';
-
-// @ts-ignore
-import { ITest } from 'mocha';
-
-import UString = require('../');
-
-// @ts-ignore
-describe(relative(__filename), () =>
+it(`UString = UString.UString = UString.default`, done =>
 {
-	let currentTest: ITest;
 
-	// @ts-ignore
-	beforeEach(function ()
+	expect(UString).toEqual(UString.UString);
+	expect(UString).toEqual(UString.default);
+
+	done();
+});
+
+describe(`simple`, () =>
+{
+
+	([
+		[`𠬠典`, ['𠬠', '典']],
+		[`𡬶寻尋`, ['𡬶', '寻', '尋']],
+	] as [string, string[]][]).forEach(function ([input, expected])
 	{
-		currentTest = this.currentTest as ITest;
 
-		//console.log('it:before', currentTest.title);
-		//console.log('it:before', currentTest.fullTitle());
-	});
-
-	// @ts-ignore
-	describe(`suite`, () =>
-	{
-		// @ts-ignore
-		it(`UString = UString.UString = UString.default`, function (done)
+		it(inspect(input), () =>
 		{
 			//console.log('it:inner', currentTest.title);
 			//console.log('it:inner', currentTest.fullTitle());
 
-			let actual;
-			let expected;
+			let actual = UString.split(input, '');
 
-			//expect(actual).to.be.ok;
-			expect(UString).to.be.deep.equal(UString.UString);
-			expect(UString).to.be.deep.equal(UString.default);
-			//assert.isOk(actual.value, util.inspect(actual));
+			let size = UString.size(input);
 
-			done();
+			expect(actual).toEqual(expected);
+			expect(actual.length).toEqual(expected.length);
+			expect(size).toEqual(expected.length);
+
+			let arr = UString.slice(input, 1, 2);
+
+			expect(arr).toEqual(expected[1]);
+
+			expect(input.split('')).toMatchSnapshot();
+			expect(actual).toMatchSnapshot();
+
+			expect(input.length).toMatchSnapshot();
+			expect(size).toMatchSnapshot();
+
+			expect(arr).toMatchSnapshot();
+
 		});
+	})
 
-		[
-			[`𠬠典`, ['𠬠', '典']],
-			[`𡬶寻尋`, ['𡬶', '寻', '尋']],
-		].forEach(function ([input, expected])
-		{
-			// @ts-ignore
-			it(input, function ()
-			{
-				//console.log('it:inner', currentTest.title);
-				//console.log('it:inner', currentTest.fullTitle());
+});
 
-				let actual = UString.split(input, '');
+describe(`demo`, () =>
+{
 
-				//expect(actual).to.be.ok;
-				expect(actual).to.be.deep.equal(expected);
-				expect(actual.length).to.be.deep.equal(expected.length);
-				expect(UString.size(input)).to.be.deep.equal(expected.length);
+	test('mixin', () =>
+	{
 
-				expect(UString.slice(input, 1, 2)).to.be.deep.equal(expected[1]);
+		let t = (new UString('♥️𠬠典')).padStart(10, '𠬠');
 
-				//assert.isOk(actual.value, util.inspect(actual));
-			});
-		})
+		t = t.concat('\n♥️𠬠典そこで彼らは\'"\'👩‍👩‍👧‍👦\'，オリーブ山と呼ばれる山からエルサレムに帰った。');
 
+		expect(t).toMatchSnapshot();
+		expect(t.split('')).toMatchSnapshot();
+
+		let t2 = new UString(t);
+
+		expect(t2).toMatchSnapshot();
+		expect(t2.length).toMatchSnapshot();
+		expect(t2.charLength).toMatchSnapshot();
+		expect(t2.size()).toMatchSnapshot();
+
+		expect(t2.indexOf('𠬠典', 2)).toMatchSnapshot();
+		expect(t2.endsWith('𠬠典')).toMatchSnapshot();
+
+		expect(t2.split('')).toMatchSnapshot();
 
 	});
+
+	test('👩‍👩‍👧‍👦', () =>
+	{
+
+		let t3 = new UString('👩‍👩‍👧‍👦');
+
+		expect(t3).toMatchSnapshot();
+		expect(t3.length).toMatchSnapshot();
+		expect(t3.charLength).toMatchSnapshot();
+		expect(t3.size()).toMatchSnapshot();
+
+		expect(t3.split('')).toMatchSnapshot();
+
+	});
+
+})
+
+test('support', () => {
+
+	let actual = UString.support;
+
+	let keys = Object.keys(actual);
+
+	console.dir(actual)
+
+	expect(keys).toMatchSnapshot();
+
 });

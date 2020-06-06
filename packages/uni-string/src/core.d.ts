@@ -33,7 +33,7 @@ export declare class UString extends String {
     /**
      * 顯示 目前支援 unicode 的 method
      */
-    static readonly support: {
+    static get support(): {
         split?: boolean;
         substr?: boolean;
         substring?: boolean;
@@ -62,7 +62,7 @@ export declare class UString extends String {
     static padStart(str: any, targetLength: number, padString: string): string;
     static startsWith(str: any, search: string, pos?: number): boolean;
     static endsWith(str: any, search: string, length?: number): boolean;
-    readonly charLength: number;
+    get charLength(): number;
     size(): number;
     static size(str: any): number;
     /**

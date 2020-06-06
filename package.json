@@ -6,19 +6,31 @@
     "packages/*"
   ],
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "lerna:publish": "lerna publish --yes --cd-version patch",
+    "postpublish:subtree": "ts-node ./script/run/postpublish-subtree.ts",
     "ncu": "npx yarn-tool ncu -u && npx yarn-tool ws exec yarn-tool ncu -- -u",
-    "sort-package-json": "npx yarn-tool sort && npx yarn-tool ws exec yarn-tool sort",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postpublishOnly": "yarn run postpublish:subtree",
+    "postpublishOnly:add": "ts-node ./script/run/postpublish-add.ts",
+    "sort-package-json": "npx yarn-tool sort && npx yarn-tool ws exec yarn-tool sort"
   },
+  "resolutions": {},
   "devDependencies": {
+    "@bluelovers/fast-glob": "^3.0.4",
     "@bluelovers/tsconfig": "^1.0.19",
+    "@git-lazy/spawn": "^1.0.7",
+    "@git-lazy/subtree": "^1.0.3",
+    "@types/bluebird": "^3.5.32",
     "@types/fs-extra": "^9.0.1",
+    "@types/jest": "^25.2.3",
+    "@types/node": "*",
+    "bluebird": "^3.7.2",
+    "debug-color2": "^1.1.7",
     "fs-extra": "^9.0.1",
-    "@types/node": "*"
+    "jest": "^26.0.1",
+    "ts-jest": "^26.1.0"
   },
   "peerDependencies": {
     "lerna": "^3.22.0"
-  },
-  "resolutions": {}
+  }
 }

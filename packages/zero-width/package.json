@@ -34,31 +34,29 @@
   },
   "license": "ISC",
   "author": "bluelovers",
-  "main": "lib/index.js",
+  "main": "index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
   },
   "scripts": {
-    "coverage": "npx nyc yarn run test",
-    "lint": "npx eslint **/*.ts",
-    "test": "npx mocha --require ts-node/register \"!(node_modules)/**/*.{test,spec}.{ts,tsx}\"",
     "npm:publish": "npm publish",
     "npm:publish:lerna": "npx lerna publish --yes --cd-version patch",
+    "pretest": "yarn run build",
+    "test": "jest",
+    "build": "ts-node test/scripts/build-re.ts && ynpx build-ts-file -- ./lib/re.ts",
     "prepublish:lockfile": "npx sync-lockfile .",
-    "prepublishOnly": "yarn run ncu && yarn run sort-package-json && yarn run test",
-    "postpublish": "echo postpublish",
+    "prepublishOnly": "yarn run test",
+    "postpublish": "yarn run postpublishOnly:add",
     "postpublish_": "git commit -m \"chore(release): publish\" .",
     "ncu": "npx yarn-tool ncu -u",
-    "sort-package-json": "npx sort-package-json ./package.json",
-    "tsc:default": "tsc -p tsconfig.json",
-    "tsc:esm": "tsc -p tsconfig.esm.json"
+    "postpublishOnly:add": "npx yarn-tool root run postpublishOnly:add zero-width",
+    "sort-package-json": "npx yarn-tool sort"
   },
   "dependencies": {
     "regexp-helper-core": "^1.0.8"
   },
   "devDependencies": {
-
     "regexp-class-to-regenerate": "^1.0.3"
   }
 }

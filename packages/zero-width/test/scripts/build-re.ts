@@ -8,12 +8,14 @@ import fs from 'fs-extra';
 import path from 'path';
 
 let data = Object.entries(reSource)
+	// @ts-ignore
 .reduce((a, [k, v]: [keyof typeof reSource, RegExp]) => {
 
 	if (v instanceof RegExp)
 	{
 		try
 		{
+			// @ts-ignore
 			a[k] = regexpClassToObject(v).toRegExp();
 		}
 		catch (e)
@@ -31,8 +33,10 @@ let data = Object.entries(reSource)
 	return a
 }, {} as Record<keyof typeof reSource, RegExp>);
 
+
 let txt = Object.entries(data)
-.map(([k, v]: [keyof typeof reSource, RegExp]) => {
+	// @ts-ignore
+	.map(([k, v]: [keyof typeof reSource, RegExp]) => {
 	return `export const ${k} = ${v.toString()};`;
 }).join('\n\n');
 

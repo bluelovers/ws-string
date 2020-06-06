@@ -32,6 +32,7 @@ export const reZeroWidthAllSafe = _regexpMerge2([
 	reZeroWidth,
 	reZeroWidth2,
 ])
+	// @ts-ignore
 	.remove(ENUM_ZERO_WIDTH.JOINER)
 	.remove(ENUM_ZERO_WIDTH.NON_JOINER)
 	.toRegExp()

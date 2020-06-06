@@ -1,7 +1,7 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.nbspToSpace = exports.removeBom = exports.trimWithZeroWidth = exports.removeZeroWidth = exports.removeVariationSelectors = exports.existsZeroWidth = void 0;
-var re_1 = require("./re");
+const re_1 = require("./re");
 function existsZeroWidth(str) {
     return re_1.reZeroWidthAll.test(str);
 }
@@ -34,4 +34,5 @@ function nbspToSpace(str) {
     return str.replace(re_1.reNBSP, " " /* SPACE */);
 }
 exports.nbspToSpace = nbspToSpace;
-exports["default"] = removeZeroWidth;
+exports.default = removeZeroWidth;
+//# sourceMappingURL=index.js.map
