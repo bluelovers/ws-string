@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lerna:publish": "lerna publish --yes --cd-version patch",
+    "lerna:publish": "lerna publish --yes --cd-version patch && yarn run postpublishOnly",
     "postpublish:subtree": "ts-node ./script/run/postpublish-subtree.ts",
     "ncu": "npx yarn-tool ncu -u && npx yarn-tool ws exec yarn-tool ncu -- -u",
     "postpublishOnly": "yarn run postpublish:subtree",
