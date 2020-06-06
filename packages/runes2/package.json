@@ -1,6 +1,6 @@
 {
   "name": "runes2",
-  "version": "0.4.7",
+  "version": "0.4.8",
   "description": "Unicode-aware JS string splitting, typescript version",
   "keywords": [
     "char",
@@ -36,7 +36,5 @@
     "ncu": "npx yarn-tool ncu -u",
     "postpublishOnly:add": "npx yarn-tool root run postpublishOnly:add runes2",
     "sort-package-json": "npx yarn-tool sort"
-  },
-  "dependencies": {},
-  "devDependencies": {}
+  }
 }
