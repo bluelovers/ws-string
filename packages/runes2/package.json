@@ -1,6 +1,6 @@
 {
   "name": "runes2",
-  "version": "0.4.11",
+  "version": "0.4.12",
   "description": "Unicode-aware JS string splitting, typescript version",
   "keywords": [
     "char",

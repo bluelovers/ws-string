@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.12](https://github.com/bluelovers/runes/compare/runes2@0.4.11...runes2@0.4.12) (2020-06-06)
+
+
+### Bug Fixes
+
+* avoid jest snap with unicode title ([7192534](https://github.com/bluelovers/runes/commit/7192534e7e379c154397452f2c40981481198d44))
+
+
+
+
+
 ## [0.4.11](https://github.com/bluelovers/runes/compare/runes2@0.4.10...runes2@0.4.11) (2020-06-06)
 
 

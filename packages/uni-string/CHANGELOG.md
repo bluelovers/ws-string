@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.7](https://github.com/bluelovers/ws-string/compare/uni-string@1.1.6...uni-string@1.1.7) (2020-06-06)
+
+
+### Bug Fixes
+
+* avoid jest snap with unicode title ([7192534](https://github.com/bluelovers/ws-string/commit/7192534e7e379c154397452f2c40981481198d44))
+
+
+
+
+
 ## [1.1.6](https://github.com/bluelovers/ws-string/compare/uni-string@1.1.5...uni-string@1.1.6) (2020-06-06)
 
 

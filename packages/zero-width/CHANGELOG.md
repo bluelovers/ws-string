@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.10](https://github.com/bluelovers/ws-string/compare/zero-width@1.0.9...zero-width@1.0.10) (2020-06-06)
+
+
+### Bug Fixes
+
+* avoid jest snap with unicode title ([7192534](https://github.com/bluelovers/ws-string/commit/7192534e7e379c154397452f2c40981481198d44))
+
+
+
+
+
 ## [1.0.9](https://github.com/bluelovers/ws-string/compare/zero-width@1.0.8...zero-width@1.0.9) (2020-06-06)
 
 
