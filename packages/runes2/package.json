@@ -36,5 +36,6 @@
     "ncu": "npx yarn-tool ncu -u",
     "postpublishOnly:add": "npx yarn-tool root run postpublishOnly:add runes2",
     "sort-package-json": "npx yarn-tool sort"
-  }
+  },
+  "gitHead": "244adcd70b7a3b80a97fa6f34c2c65a0004f944b"
 }

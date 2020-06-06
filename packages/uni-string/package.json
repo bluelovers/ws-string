@@ -51,5 +51,6 @@
   "dependencies": {
     "es6-class-prototype": "^1.0.4",
     "runes2": "^0.4.8"
-  }
+  },
+  "gitHead": "244adcd70b7a3b80a97fa6f34c2c65a0004f944b"
 }
