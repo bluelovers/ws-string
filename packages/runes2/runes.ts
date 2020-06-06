@@ -79,7 +79,7 @@ export function runes(string: string): string[]
 // Emoji with skin-tone modifiers: 4 code units (2 code points)
 // Country flags: 4 code units (2 code points)
 // Variations: 2 code units
-export function nextUnits(i: number, string: string)
+export function nextUnits(i: number, string: string): 1 | 2 | 4
 {
 	const current = string[i]
 	// If we don't have a value that is part of a surrogate pair, or we're at
