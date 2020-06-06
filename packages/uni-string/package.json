@@ -1,0 +1,55 @@
+{
+  "name": "uni-string",
+  "version": "1.1.2",
+  "description": "Unicode String object",
+  "keywords": [
+    "ansi",
+    "astral",
+    "char",
+    "codepoints",
+    "codes",
+    "count",
+    "emoji",
+    "escape",
+    "length",
+    "runes",
+    "size",
+    "split",
+    "split string",
+    "string",
+    "surrogates",
+    "symbol",
+    "unicode",
+    "utf8"
+  ],
+  "homepage": "https://github.com/bluelovers/unicode-string#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/unicode-string/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/unicode-string.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "coverage": "npx nyc npm run test",
+    "lint": "npx eslint **/*.ts",
+    "ncu": "npx yarn-tool ncu -u",
+    "prepublishOnly": "npm run ncu && npm run sort-package-json && npm run test",
+    "postpublish": "git commit -a -m \"postpublish new version\"",
+    "sort-package-json": "npx sort-package-json ./package.json",
+    "test": "npx mocha --require ts-node/register \"!(node_modules)/**/*.{test,spec}.{ts,tsx}\""
+  },
+  "dependencies": {
+    "es6-class-prototype": "^1.0.4",
+    "runes2": "^0.4.7"
+  },
+  "devDependencies": {
+    "@bluelovers/tsconfig": "^1.0.3"
+  }
+}
