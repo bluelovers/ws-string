@@ -1,7 +1,8 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const regexp_helper_core_1 = require("regexp-helper-core");
-const re_1 = require("./re");
+exports.__esModule = true;
+exports._toKey = exports._report = exports.reportZeroWidthWithSpace = exports.reportZeroWidth = void 0;
+var regexp_helper_core_1 = require("regexp-helper-core");
+var re_1 = require("./re");
 function reportZeroWidth(str) {
     return _report(str, re_1.reZeroWidthAll);
 }
@@ -14,13 +15,14 @@ exports.reportZeroWidthWithSpace = reportZeroWidthWithSpace;
  * @private
  */
 function _report(str, re) {
-    let stat = {};
-    str.replace(re, (s) => {
+    var stat = {};
+    str.replace(re, function (s) {
         stat[s] = (stat[s] |= 0) + 1;
         return '';
     });
     stat = Object.entries(stat)
-        .reduce((a, [k, n]) => {
+        .reduce(function (a, _a) {
+        var k = _a[0], n = _a[1];
         a[_toKey(k)] = n;
         return a;
     }, {});
@@ -28,7 +30,7 @@ function _report(str, re) {
 }
 exports._report = _report;
 function _toKey(k) {
-    let k2;
+    var k2;
     switch (k) {
         case "\t" /* TAB */:
             k2 = '\\t';
@@ -56,5 +58,4 @@ function _toKey(k) {
     return k2;
 }
 exports._toKey = _toKey;
-exports.default = reportZeroWidthWithSpace;
-//# sourceMappingURL=stat.js.map
+exports["default"] = reportZeroWidthWithSpace;

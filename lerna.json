@@ -1,7 +1,36 @@
 {
   "packages": [
+    "packages/@lazy-cjk/*",
+    "packages/@regexp-cjk/*",
+    "packages/@node-novel/*",
     "packages/*"
   ],
+  "command": {
+    "publish": {
+      "ignoreChanges": [
+        "**/node_modules/**",
+        "**/__snapshots__/**",
+        "**/__fixtures__/**",
+        "**/__tests__/**",
+        "**/__tests__/**",
+        "*.map",
+        "*.spec.*",
+        "*.test.*",
+        "packages/cjk-conv/test/list.ts",
+        ".gitrepo"
+      ],
+      "message": "chore(release): publish",
+      "bump": "patch",
+      "conventionalCommits": true,
+      "conventionalGraduate": false
+    },
+    "run": {
+      "stream": true
+    },
+    "exec": {
+      "stream": true
+    }
+  },
   "npmClient": "yarn",
   "useWorkspaces": true,
   "version": "independent"

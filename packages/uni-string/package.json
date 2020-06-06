@@ -22,16 +22,16 @@
     "unicode",
     "utf8"
   ],
-  "homepage": "https://github.com/bluelovers/unicode-string#readme",
+  "homepage": "https://github.com/bluelovers/ws-string/tree/master/packages/uni-string#readme",
   "bugs": {
-    "url": "https://github.com/bluelovers/unicode-string/issues"
+    "url": "https://github.com/bluelovers/ws-string/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluelovers/unicode-string.git"
+    "url": "git+https://github.com/bluelovers/ws-string.git"
   },
   "license": "ISC",
-  "author": "",
+  "author": "bluelovers",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -39,17 +39,22 @@
   "scripts": {
     "coverage": "npx nyc npm run test",
     "lint": "npx eslint **/*.ts",
-    "ncu": "npx yarn-tool ncu -u",
+    "test": "npx mocha --require ts-node/register \"!(node_modules)/**/*.{test,spec}.{ts,tsx}\"",
+    "npm:publish": "npm publish",
+    "npm:publish:lerna": "npx lerna publish --yes --cd-version patch",
+    "prepublish:lockfile": "npx sync-lockfile .",
     "prepublishOnly": "npm run ncu && npm run sort-package-json && npm run test",
+    "prepublishOnly_": "yarn run ncu && yarn run sort-package-json && yarn run test",
     "postpublish": "git commit -a -m \"postpublish new version\"",
-    "sort-package-json": "npx sort-package-json ./package.json",
-    "test": "npx mocha --require ts-node/register \"!(node_modules)/**/*.{test,spec}.{ts,tsx}\""
+    "postpublish_": "git commit -m \"chore(release): publish\" .",
+    "ncu": "npx yarn-tool ncu -u",
+    "sort-package-json": "npx sort-package-json ./package.json"
   },
   "dependencies": {
     "es6-class-prototype": "^1.0.4",
     "runes2": "^0.4.7"
   },
   "devDependencies": {
-    "@bluelovers/tsconfig": "^1.0.3"
+
   }
 }

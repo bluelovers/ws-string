@@ -24,7 +24,7 @@
     "variation-selectors",
     "zero-width"
   ],
-  "homepage": "https://github.com/bluelovers/ws-string#readme",
+  "homepage": "https://github.com/bluelovers/ws-string/tree/master/packages/zero-width#readme",
   "bugs": {
     "url": "https://github.com/bluelovers/ws-string/issues"
   },
@@ -33,7 +33,7 @@
     "url": "git+https://github.com/bluelovers/ws-string.git"
   },
   "license": "ISC",
-  "author": "",
+  "author": "bluelovers",
   "main": "lib/index.js",
   "directories": {
     "lib": "lib",
@@ -42,22 +42,23 @@
   "scripts": {
     "coverage": "npx nyc yarn run test",
     "lint": "npx eslint **/*.ts",
-    "ncu": "npx yarn-tool ncu -u",
+    "test": "npx mocha --require ts-node/register \"!(node_modules)/**/*.{test,spec}.{ts,tsx}\"",
     "npm:publish": "npm publish",
+    "npm:publish:lerna": "npx lerna publish --yes --cd-version patch",
+    "prepublish:lockfile": "npx sync-lockfile .",
     "prepublishOnly": "yarn run ncu && yarn run sort-package-json && yarn run test",
     "postpublish": "echo postpublish",
+    "postpublish_": "git commit -m \"chore(release): publish\" .",
+    "ncu": "npx yarn-tool ncu -u",
     "sort-package-json": "npx sort-package-json ./package.json",
-    "test": "npx mocha --require ts-node/register \"!(node_modules)/**/*.{test,spec}.{ts,tsx}\"",
     "tsc:default": "tsc -p tsconfig.json",
     "tsc:esm": "tsc -p tsconfig.esm.json"
   },
   "dependencies": {
-    "regexp-helper-core": "^1.0.7"
+    "regexp-helper-core": "^1.0.8"
   },
-  "gitHead": "cde848c71badceb359aa2ce5ab95a9baa256262d",
   "devDependencies": {
-    "@types/fs-extra": "^8.0.0",
-    "fs-extra": "^8.1.0",
-    "regexp-class-to-regenerate": "^1.0.2"
+
+    "regexp-class-to-regenerate": "^1.0.3"
   }
 }

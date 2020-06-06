@@ -1,8 +1,6 @@
 {
-  "extends": "@bluelovers/tsconfig/esm/index.json",
+  "extends": "@bluelovers/tsconfig/esm/mapfile",
   "compilerOptions": {
-    "sourceMap": true,
-    "inlineSourceMap": false,
-    "inlineSources": true
+    "strictBindCallApply": true
   }
 }
