@@ -1,6 +1,7 @@
 import removeZeroWidth from '../lib';
 import { toHex } from 'regexp-helper-core';
 import { ENUM_ZERO_WIDTH } from '../lib/const';
+import { inspect } from 'util';
 
 describe(`allow VariationSelectors by default`, () =>
 {
@@ -10,7 +11,7 @@ describe(`allow VariationSelectors by default`, () =>
 	].forEach(input =>
 	{
 
-		test(input, () =>
+		test(inspect(input), () =>
 		{
 
 			let expected = input;
@@ -39,7 +40,7 @@ describe(`keep source`, () =>
 	].forEach(input =>
 	{
 
-		test(input, () =>
+		test(inspect(input), () =>
 		{
 
 			let expected = input;
@@ -76,7 +77,7 @@ describe(`demo`, () =>
 	].forEach(input =>
 	{
 
-		test(input, () =>
+		test(inspect(input), () =>
 		{
 
 			let expected = input;
