@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.8](https://github.com/bluelovers/ws-string/compare/uni-string@1.1.7...uni-string@1.1.8) (2020-06-07)
+
+
+### Features
+
+* subtree add str-util ([e7e7492](https://github.com/bluelovers/ws-string/commit/e7e74928ab4dd8e36caf5cebffe43f5d19a50b4e))
+
+
+
+
+
 ## [1.1.7](https://github.com/bluelovers/ws-string/compare/uni-string@1.1.6...uni-string@1.1.7) (2020-06-06)
 
 
