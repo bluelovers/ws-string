@@ -2,15 +2,15 @@
  * Created by user on 2017/12/8/008.
  */
 export declare namespace FullHalfCore {
-    const enum EnumFullHalfTableType {
+    export const enum EnumFullHalfTableType {
         FULL_WIDTH = 1,
         HALF_WIDTH = 0,
         NO_EXIST = -1
     }
-    const FULL_WIDTH = EnumFullHalfTableType.FULL_WIDTH;
-    const HALF_WIDTH = EnumFullHalfTableType.HALF_WIDTH;
-    const NO_EXIST = EnumFullHalfTableType.NO_EXIST;
-    interface IOptionsType {
+    export const FULL_WIDTH = EnumFullHalfTableType.FULL_WIDTH;
+    export const HALF_WIDTH = EnumFullHalfTableType.HALF_WIDTH;
+    export const NO_EXIST = EnumFullHalfTableType.NO_EXIST;
+    export interface IOptionsType {
         eng?: boolean;
         number?: boolean;
         /**
@@ -26,7 +26,7 @@ export declare namespace FullHalfCore {
         bracket?: boolean;
         [index: string]: boolean;
     }
-    interface IOptionsBase {
+    export interface IOptionsBase {
         type?: number;
         skip?: IOptionsType;
         only?: IOptionsType;
@@ -35,31 +35,31 @@ export declare namespace FullHalfCore {
             [index: string]: boolean;
         };
     }
-    type IOptionsTrue = IOptionsBase & {
+    export type IOptionsTrue = IOptionsBase & {
         /**
          * 回傳直接回傳陣列而不組合成字串
          */
         returnType: ILazyTrue;
     };
-    type IOptionsFalse = IOptionsBase & {
+    export type IOptionsFalse = IOptionsBase & {
         /**
          * 回傳直接回傳陣列而不組合成字串
          */
         returnType?: ILazyFalse;
     };
-    type IOptions = IOptionsBase & {
+    export type IOptions = IOptionsBase & {
         /**
          * 回傳直接回傳陣列而不組合成字串
          */
         returnType?: ILazyTrue | ILazyFalse;
     };
-    interface ITableObject {
+    export interface ITableObject {
         from?: number;
         to?: number;
         values?: number[];
         not?: ITableObject[];
     }
-    interface ITable {
+    export interface ITable {
         default?: ITableObject;
         number?: ITableObject;
         space?: ITableObject;
@@ -68,21 +68,21 @@ export declare namespace FullHalfCore {
         not_default?: ITableObject;
         [index: string]: ITableObject;
     }
-    let tableDefaultInclude: string[];
-    let table: ITable[];
-    function filterTable(data: any): any[];
-    function _chkType(charCode: number, data: ITableObject): boolean;
-    function chkType(charCode: number, key: string, type: number): boolean;
-    function hasFullHalf(charCode: number): EnumFullHalfTableType;
-    function isFullHalf(charCode: number): boolean;
-    function toFullWidth(charCode: number): number;
-    function toHalfWidth(charCode: number): number;
-    function _optionsType(data: IOptionsType): IOptionsType;
-    function process<T, U = string>(str: any, charProcess: any, options: IOptions): string | number[];
-    function factory<T = string>(charProcessor: any, type: number | EnumFullHalfTableType, overwriteOptions?: IOptions): IFactoryFn;
+    export let tableDefaultInclude: string[];
+    export let table: ITable[];
+    export function filterTable(data: any): any[];
+    export function _chkType(charCode: number, data: ITableObject): boolean;
+    export function chkType(charCode: number, key: string, type: number): boolean;
+    export function hasFullHalf(charCode: number): EnumFullHalfTableType;
+    export function isFullHalf(charCode: number): boolean;
+    export function toFullWidth(charCode: number): number;
+    export function toHalfWidth(charCode: number): number;
+    export function _optionsType(data: IOptionsType): IOptionsType;
+    export function process<T, U = string>(str: any, charProcess: any, options: IOptions): string | number[];
+    export function factory<T = string>(charProcessor: any, type: number | EnumFullHalfTableType, overwriteOptions?: IOptions): IFactoryFn;
     type ILazyTrue = true | 1;
     type ILazyFalse = 0 | false | void | undefined | null;
-    interface IFactoryFn {
+    export interface IFactoryFn {
         (str: string | string[], options?: IOptionsFalse): string;
         (str: (string | number)[], options: IOptionsTrue): number[];
         (str: any, options: IOptionsTrue): number[];
@@ -91,6 +91,7 @@ export declare namespace FullHalfCore {
         (str: any, options: IOptionsFalse): string;
         (str: any, options: IOptions): string | number[];
     }
+    export {};
 }
 export import IFactoryFn = FullHalfCore.IFactoryFn;
 export import EnumFullHalfTableType = FullHalfCore.EnumFullHalfTableType;

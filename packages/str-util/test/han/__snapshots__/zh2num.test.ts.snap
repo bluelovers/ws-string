@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`zh2num 千百十七 { digits: [ 'common' ], strict: true, truncateOne: false } => NaN 1`] = `"number"`;
+
+exports[`zh2num 千百十七 { digits: [ 'common' ], strict: true, truncateOne: false } => NaN 2`] = `NaN`;
+
+exports[`zh2num 千百十七 { digits: [ 'common' ], truncateOne: 2, strict: true } => NaN 1`] = `"number"`;
+
+exports[`zh2num 千百十七 { digits: [ 'common' ], truncateOne: 2, strict: true } => NaN 2`] = `NaN`;
+
+exports[`zh2num 千百十七 { strict: true } => 1117 1`] = `"number"`;
+
+exports[`zh2num 千百十七 { strict: true } => 1117 2`] = `1117`;
+
+exports[`zh2num 千百十七話百十七話百十七話
+百十七話百十七話百十七話 { digits: [ 'common' ], strict: true, truncateOne: false } => NaN 1`] = `"number"`;
+
+exports[`zh2num 千百十七話百十七話百十七話
+百十七話百十七話百十七話 { digits: [ 'common' ], strict: true, truncateOne: false } => NaN 2`] = `NaN`;
+
+exports[`zh2num 千百十七話百十七話百十七話
+百十七話百十七話百十七話 { digits: [ 'common' ], truncateOne: 1 } => 千百17話百十七話百十七話
+百十七話百十七話百十七話 1`] = `"string"`;
+
+exports[`zh2num 千百十七話百十七話百十七話
+百十七話百十七話百十七話 { digits: [ 'common' ], truncateOne: 1 } => 千百17話百十七話百十七話
+百十七話百十七話百十七話 2`] = `
+"千百17話百十七話百十七話
+百十七話百十七話百十七話"
+`;
+
+exports[`zh2num 千百十七話百十七話百十七話
+百十七話百十七話百十七話 { digits: [ 'common' ], truncateOne: 2 } => 千117話百十七話百十七話
+百十七話百十七話百十七話 1`] = `"string"`;
+
+exports[`zh2num 千百十七話百十七話百十七話
+百十七話百十七話百十七話 { digits: [ 'common' ], truncateOne: 2 } => 千117話百十七話百十七話
+百十七話百十七話百十七話 2`] = `
+"千117話百十七話百十七話
+百十七話百十七話百十七話"
+`;
+
+exports[`zh2num 千百十七話百十七話百十七話
+百十七話百十七話百十七話 { digits: [ 'common' ], truncateOne: false } => 千百十7話百十七話百十七話
+百十七話百十七話百十七話 1`] = `"string"`;
+
+exports[`zh2num 千百十七話百十七話百十七話
+百十七話百十七話百十七話 { digits: [ 'common' ], truncateOne: false } => 千百十7話百十七話百十七話
+百十七話百十七話百十七話 2`] = `
+"千百十7話百十七話百十七話
+百十七話百十七話百十七話"
+`;
+
+exports[`zh2num 千百十七話百十七話百十七話
+百十七話百十七話百十七話 undefined => 1117話百十七話百十七話
+百十七話百十七話百十七話 1`] = `"string"`;
+
+exports[`zh2num 千百十七話百十七話百十七話
+百十七話百十七話百十七話 undefined => 1117話百十七話百十七話
+百十七話百十七話百十七話 2`] = `
+"1117話百十七話百十七話
+百十七話百十七話百十七話"
+`;
+
+exports[`zh2num 百二話 { one: false } => 120話 1`] = `"string"`;
+
+exports[`zh2num 百二話 { one: false } => 120話 2`] = `"120話"`;
+
+exports[`zh2num 百二話 { one: true } => 102話 1`] = `"string"`;
+
+exports[`zh2num 百二話 { one: true } => 102話 2`] = `"102話"`;
+
+exports[`zh2num 百二話 {} => 102話 1`] = `"string"`;
+
+exports[`zh2num 百二話 {} => 102話 2`] = `"102話"`;

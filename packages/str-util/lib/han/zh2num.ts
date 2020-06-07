@@ -2,8 +2,8 @@
  * Created by user on 2017/12/11/011.
  */
 
-import chinese_parseInt = require('chinese-parseint');
-import japanese = require('japanese');
+import chinese_parseInt from 'chinese-parseint';
+import japanese from '@lazy-cjk/japanese';
 
 export interface IOptions
 {

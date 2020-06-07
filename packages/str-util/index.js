@@ -2,34 +2,38 @@
 /**
  * Created by user on 2017/12/8/008.
  */
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.stripAnsi = exports.toHalfWidth = exports.toFullWidth = exports.toHalfEnglish = exports.toFullEnglish = exports.toHalfNumber = exports.toFullNumber = exports.tableFullHalf = exports.normalize = void 0;
 var is_fullwidth_1 = require("./lib/is-fullwidth");
-exports.isFullWidth = is_fullwidth_1.isFullWidth;
-exports.isFullwidthCodePoint = is_fullwidth_1.isFullwidthCodePoint;
+Object.defineProperty(exports, "isFullWidth", { enumerable: true, get: function () { return is_fullwidth_1.isFullWidth; } });
+Object.defineProperty(exports, "isFullwidthCodePoint", { enumerable: true, get: function () { return is_fullwidth_1.isFullwidthCodePoint; } });
 var width_1 = require("./lib/width");
-exports.stringWidth = width_1.stringWidth;
+Object.defineProperty(exports, "stringWidth", { enumerable: true, get: function () { return width_1.stringWidth; } });
 const fullhalf_1 = require("./lib/fullhalf");
-exports.toFullNumber = fullhalf_1.toFullNumber;
-exports.toHalfNumber = fullhalf_1.toHalfNumber;
-exports.toFullEnglish = fullhalf_1.toFullEnglish;
-exports.toHalfEnglish = fullhalf_1.toHalfEnglish;
-exports.toFullWidth = fullhalf_1.toFullWidth;
-exports.toHalfWidth = fullhalf_1.toHalfWidth;
-const strip_ansi_1 = require("strip-ansi");
+Object.defineProperty(exports, "toFullNumber", { enumerable: true, get: function () { return fullhalf_1.toFullNumber; } });
+Object.defineProperty(exports, "toHalfNumber", { enumerable: true, get: function () { return fullhalf_1.toHalfNumber; } });
+Object.defineProperty(exports, "toFullEnglish", { enumerable: true, get: function () { return fullhalf_1.toFullEnglish; } });
+Object.defineProperty(exports, "toHalfEnglish", { enumerable: true, get: function () { return fullhalf_1.toHalfEnglish; } });
+Object.defineProperty(exports, "toFullWidth", { enumerable: true, get: function () { return fullhalf_1.toFullWidth; } });
+Object.defineProperty(exports, "toHalfWidth", { enumerable: true, get: function () { return fullhalf_1.toHalfWidth; } });
+const strip_ansi_1 = __importDefault(require("strip-ansi"));
 exports.stripAnsi = strip_ansi_1.default;
-const normalize_1 = require("./lib/normalize");
+const normalize_1 = __importDefault(require("./lib/normalize"));
 exports.normalize = normalize_1.default;
 var trim_1 = require("./lib/trim");
-exports.trim = trim_1.trim;
+Object.defineProperty(exports, "trim", { enumerable: true, get: function () { return trim_1.trim; } });
 var zh2jp_1 = require("./lib/han/zh2jp");
-exports.zh2jp = zh2jp_1.zh2jp;
-exports.jp2zhs = zh2jp_1.jp2zhs;
-exports.jp2zht = zh2jp_1.jp2zht;
+Object.defineProperty(exports, "zh2jp", { enumerable: true, get: function () { return zh2jp_1.zh2jp; } });
+Object.defineProperty(exports, "jp2zhs", { enumerable: true, get: function () { return zh2jp_1.jp2zhs; } });
+Object.defineProperty(exports, "jp2zht", { enumerable: true, get: function () { return zh2jp_1.jp2zht; } });
 var zh2num_1 = require("./lib/han/zh2num");
-exports.zh2num = zh2num_1.zh2num;
-exports.num2zh = zh2num_1.num2zh;
+Object.defineProperty(exports, "zh2num", { enumerable: true, get: function () { return zh2num_1.zh2num; } });
+Object.defineProperty(exports, "num2zh", { enumerable: true, get: function () { return zh2num_1.num2zh; } });
 var util_1 = require("./lib/util");
-exports.charCodeAt = util_1.charCodeAt;
+Object.defineProperty(exports, "charCodeAt", { enumerable: true, get: function () { return util_1.charCodeAt; } });
 exports.tableFullHalf = fullhalf_1.FullHalfCore.table;
 exports.default = exports;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUE7O0dBRUc7O0FBRUgsbURBQXVFO0FBQTlELHFDQUFBLFdBQVcsQ0FBQTtBQUFFLDhDQUFBLG9CQUFvQixDQUFBO0FBQzFDLHFDQUEwQztBQUFqQyw4QkFBQSxXQUFXLENBQUE7QUFDcEIsNkNBQTRJO0FBZW5JLHVCQWZ3Qix1QkFBWSxDQWV4QjtBQUFFLHVCQWZ3Qix1QkFBWSxDQWV4QjtBQUFFLHdCQWZ3Qix3QkFBYSxDQWV4QjtBQUFFLHdCQWZ3Qix3QkFBYSxDQWV4QjtBQUFFLHNCQWZ3QixzQkFBVyxDQWV4QjtBQUFFLHNCQWZ3QixzQkFBVyxDQWV4QjtBQWQzRiwyQ0FBbUM7QUFlMUIsb0JBZkYsb0JBQVMsQ0FlRTtBQWJsQiwrQ0FBd0M7QUFDL0Isb0JBREYsbUJBQVMsQ0FDRTtBQUVsQixtQ0FBZ0Q7QUFBdkMsc0JBQUEsSUFBSSxDQUFBO0FBRWIseUNBQXdEO0FBQS9DLHdCQUFBLEtBQUssQ0FBQTtBQUFFLHlCQUFBLE1BQU0sQ0FBQTtBQUFFLHlCQUFBLE1BQU0sQ0FBQTtBQUU5QiwyQ0FBa0Q7QUFBekMsMEJBQUEsTUFBTSxDQUFBO0FBQUUsMEJBQUEsTUFBTSxDQUFBO0FBQ3ZCLG1DQUF3QztBQUEvQiw0QkFBQSxVQUFVLENBQUE7QUFFTixRQUFBLGFBQWEsR0FBRyx1QkFBWSxDQUFDLEtBQUssQ0FBQztBQUtoRCxrQkFBZSxPQUFtQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBDcmVhdGVkIGJ5IHVzZXIgb24gMjAxNy8xMi84LzAwOC5cbiAqL1xuXG5leHBvcnQgeyBpc0Z1bGxXaWR0aCwgaXNGdWxsd2lkdGhDb2RlUG9pbnQgfSBmcm9tICcuL2xpYi9pcy1mdWxsd2lkdGgnO1xuZXhwb3J0IHsgc3RyaW5nV2lkdGggfSBmcm9tICcuL2xpYi93aWR0aCc7XG5pbXBvcnQgRnVsbEhhbGYsIHsgRnVsbEhhbGZDb3JlLCB0b0Z1bGxOdW1iZXIsIHRvSGFsZk51bWJlciwgdG9GdWxsRW5nbGlzaCwgdG9IYWxmRW5nbGlzaCwgdG9GdWxsV2lkdGgsIHRvSGFsZldpZHRoIH0gZnJvbSAnLi9saWIvZnVsbGhhbGYnO1xuaW1wb3J0IHN0cmlwQW5zaSBmcm9tICdzdHJpcC1hbnNpJztcblxuaW1wb3J0IG5vcm1hbGl6ZSBmcm9tICcuL2xpYi9ub3JtYWxpemUnO1xuZXhwb3J0IHsgbm9ybWFsaXplIH1cblxuZXhwb3J0IHsgdHJpbSwgSVRyaW1PcHRpb25zIH0gZnJvbSAnLi9saWIvdHJpbSc7XG5cbmV4cG9ydCB7IHpoMmpwLCBqcDJ6aHMsIGpwMnpodCB9IGZyb20gJy4vbGliL2hhbi96aDJqcCc7XG5cbmV4cG9ydCB7IHpoMm51bSwgbnVtMnpoIH0gZnJvbSAnLi9saWIvaGFuL3poMm51bSc7XG5leHBvcnQgeyBjaGFyQ29kZUF0IH0gZnJvbSAnLi9saWIvdXRpbCc7XG5cbmV4cG9ydCBjb25zdCB0YWJsZUZ1bGxIYWxmID0gRnVsbEhhbGZDb3JlLnRhYmxlO1xuXG5leHBvcnQgeyB0b0Z1bGxOdW1iZXIsIHRvSGFsZk51bWJlciwgdG9GdWxsRW5nbGlzaCwgdG9IYWxmRW5nbGlzaCwgdG9GdWxsV2lkdGgsIHRvSGFsZldpZHRoIH1cbmV4cG9ydCB7IHN0cmlwQW5zaSB9XG5cbmV4cG9ydCBkZWZhdWx0IGV4cG9ydHMgYXMgdHlwZW9mIGltcG9ydCgnLi9pbmRleCcpO1xuIl19
+//# sourceMappingURL=index.js.map

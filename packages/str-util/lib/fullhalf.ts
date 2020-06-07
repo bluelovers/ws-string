@@ -2,8 +2,8 @@
  * Created by user on 2017/12/8/008.
  */
 
-import deepmerge = require('deepmerge');
-import util = require('./util');
+import deepmerge from 'deepmerge';
+import util from './util';
 import UString from 'uni-string';
 
 export namespace FullHalfCore
