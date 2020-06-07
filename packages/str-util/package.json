@@ -1,0 +1,80 @@
+{
+  "name": "str-util",
+  "version": "2.3.21",
+  "description": "convert full/half width, Chinese/Japanese number, 中日漢字轉換... others util helper",
+  "keywords": [
+    "char",
+    "character",
+    "characters",
+    "chinese",
+    "cjk",
+    "cn",
+    "cn2tw",
+    "codepage",
+    "conv",
+    "conversion",
+    "convert",
+    "fullwidth",
+    "halfwidth",
+    "han",
+    "han zi",
+    "hanja",
+    "japanese",
+    "jp2zhs",
+    "jp2zht",
+    "kanji",
+    "node-novel",
+    "number",
+    "simplified",
+    "str",
+    "str-util",
+    "string",
+    "traditional",
+    "transform",
+    "trim",
+    "tw",
+    "tw2cn",
+    "unicode",
+    "util",
+    "words",
+    "zh",
+    "zh2jp",
+    "zhs",
+    "zht"
+  ],
+  "homepage": "https://github.com/bluelovers/node-str-util#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/node-str-util/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/node-str-util.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "_publish": "npm publish",
+    "prepublishOnly": "npx npm-check-updates -u --packageFile ./package.json && npm run test",
+    "doc": "npx -r typedoc-markdown-theme -r typedoc typedoc --out ./docs --ignoreCompilerErrors --exclude **/{node_modules,test}/**/* .",
+    "postpublish": "git commit -a -m \"postpublish new version\"",
+    "test": "npx mocha --require ts-node/register \"./test/*.{test,spec}.{ts,tsx}\""
+  },
+  "dependencies": {
+    "chinese-parseint": "^1.1.0",
+    "cjk-conv": "^1.1.57",
+    "deepmerge": "^3.2.0",
+    "is-fullwidth-code-point": "^3.0.0",
+    "japanese": "^1.2.0",
+    "strip-ansi": "^5.2.0",
+    "uni-string": "^1.1.2"
+  },
+  "devDependencies": {
+    "@bluelovers/tsconfig": "^1.0.3"
+  }
+}
