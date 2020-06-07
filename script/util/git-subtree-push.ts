@@ -7,13 +7,13 @@ import __root_ws from '../../__root_ws';
 import { unlinkSync, pathExistsSync } from 'fs-extra';
 import { name } from './add-to-postpublish-task';
 import createCacheName from './create-cache-name';
-import { subtreePush, IOptions } from '@git-lazy/subtree';
+import { subtreePush, IOptionsCommon } from '@git-lazy/subtree';
 
 export async function gitSubtreePush(module_name: 'runes2' | string)
 {
 	let _ok: boolean = true;
 
-	let options: IOptions = {
+	let options: IOptionsCommon = {
 		name: module_name,
 		prefix: `packages/${module_name}`,
 		cwd: __root_ws,
