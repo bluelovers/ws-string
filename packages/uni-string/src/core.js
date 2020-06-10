@@ -238,6 +238,4 @@ exports.default = UString;
 Object.defineProperty(UString, "__esModule", { value: true });
 // @ts-ignore
 UString.default = UString.UString = UString;
-// @ts-ignore
-exports = Object.freeze(exports);
 //# sourceMappingURL=core.js.map
