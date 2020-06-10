@@ -1,6 +1,6 @@
 {
   "name": "str-util",
-  "version": "2.3.22",
+  "version": "2.3.23",
   "description": "convert full/half width, Chinese/Japanese number, 中日漢字轉換... others util helper",
   "keywords": [
     "char",
@@ -74,6 +74,6 @@
     "deepmerge": "^4.2.2",
     "is-fullwidth-code-point": "^3.0.0",
     "strip-ansi": "^6.0.0",
-    "uni-string": "^1.1.8"
+    "uni-string": "^1.1.9"
   }
 }
