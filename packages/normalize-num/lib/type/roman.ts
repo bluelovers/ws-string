@@ -2,8 +2,7 @@
  * Created by user on 2018/5/15/015.
  */
 
-import { convertRoman } from 'arabic-roman-convert.js';
-import * as deromanize from 'deromanize';
+import deromanize from 'deromanize';
 import isRoman from 'num-is-roman';
 
 export { isRoman }

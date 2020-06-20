@@ -2,27 +2,35 @@
   "name": "normalize-num",
   "version": "1.0.1",
   "description": "",
-  "homepage": "https://github.com/bluelovers/num-normalize#readme",
+  "keywords": [],
+  "homepage": "https://github.com/bluelovers/ws-string/tree/master/packages/normalize-num#readme",
   "bugs": {
-    "url": "https://github.com/bluelovers/num-normalize/issues"
+    "url": "https://github.com/bluelovers/ws-string/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluelovers/num-normalize.git"
+    "url": "git+https://github.com/bluelovers/ws-string.git"
   },
   "license": "ISC",
-  "author": "",
+  "author": "bluelovers",
   "main": "index.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\"",
+    "prepublishOnly": "yarn run test",
+    "prepublishOnly:check-bin": "ynpx --quiet @yarn-tool/check-pkg-bin",
+    "prepublishOnly:update": "yarn run ncu && yarn run sort-package-json",
+    "ncu": "ynpx --quiet yarn-tool -- ncu -u",
+    "sort-package-json": "ynpx --quiet yarn-tool -- sort"
   },
   "dependencies": {
-    "arabic-roman-convert.js": "^1.2.1",
     "deromanize": "^1.0.0",
-    "num-is-roman": "^1"
+    "num-is-roman": "^1.0.0"
+  },
+  "devDependencies": {
+    "arabic-roman-convert.js": "^1.2.1"
   },
   "publishConfig": {
     "access": "public"
