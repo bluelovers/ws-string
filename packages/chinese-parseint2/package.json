@@ -1,14 +1,10 @@
 {
-  "name": "chinese-parseint",
+  "name": "chinese-parseint2",
   "version": "1.1.0",
   "description": "parse Chinese numeric strings to integer",
-  "main": "chinese-parseint.js",
+  "main": "index.js",
   "scripts": {
-    "test": "node test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kong0107/chinese-parseint.git"
+    "test": "node test/test.js"
   },
   "keywords": [
     "chinese",
@@ -16,9 +12,5 @@
     "integer"
   ],
   "author": "kong0107",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/kong0107/chinese-parseint/issues"
-  },
-  "homepage": "https://github.com/kong0107/chinese-parseint#readme"
+  "license": "MIT"
 }
