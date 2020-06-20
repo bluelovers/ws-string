@@ -1,0 +1,30 @@
+{
+  "name": "normalize-num",
+  "version": "1.0.1",
+  "description": "",
+  "homepage": "https://github.com/bluelovers/num-normalize#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/num-normalize/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/num-normalize.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "arabic-roman-convert.js": "^1.2.1",
+    "deromanize": "^1.0.0",
+    "num-is-roman": "^1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
