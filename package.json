@@ -18,14 +18,14 @@
   "devDependencies": {
     "@bluelovers/fast-glob": "^3.0.4",
     "@bluelovers/tsconfig": "^1.0.19",
-    "@git-lazy/spawn": "^1.0.12",
-    "@git-lazy/subtree": "^1.0.9",
+    "@git-lazy/spawn": "^1.0.20",
+    "@git-lazy/subtree": "^1.0.13",
     "@types/bluebird": "^3.5.32",
     "@types/fs-extra": "^9.0.1",
     "@types/jest": "^26.0.0",
     "@types/node": "*",
     "bluebird": "^3.7.2",
-    "debug-color2": "^1.1.7",
+    "debug-color2": "^1.2.3",
     "fs-extra": "^9.0.1",
     "jest": "^26.0.1",
     "ts-jest": "^26.1.0"

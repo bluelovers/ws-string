@@ -95,3 +95,5 @@ jest.config.js.map
 */**/.github
 !/.github
 /temp/
+*.7z
+
