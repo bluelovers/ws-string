@@ -2,15 +2,31 @@
   "name": "chinese-parseint2",
   "version": "1.1.0",
   "description": "parse Chinese numeric strings to integer",
-  "main": "index.js",
-  "scripts": {
-    "test": "node test/test.js"
-  },
   "keywords": [
     "chinese",
     "parseInt",
     "integer"
   ],
+  "homepage": "https://github.com/bluelovers/ws-string/tree/master/packages/chinese-parseint2#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/ws-string/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/ws-string.git"
+  },
+  "license": "MIT",
   "author": "kong0107",
-  "license": "MIT"
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest",
+    "prepublishOnly": "yarn run test",
+    "prepublishOnly:check-bin": "ynpx --quiet @yarn-tool/check-pkg-bin",
+    "prepublishOnly:update": "yarn run ncu && yarn run sort-package-json",
+    "ncu": "ynpx --quiet yarn-tool -- ncu -u",
+    "sort-package-json": "ynpx --quiet yarn-tool -- sort"
+  }
 }

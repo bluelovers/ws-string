@@ -1,6 +1,6 @@
-var cpi = require('../chinese-parseint');
+import cpi from '../';
 
-var units = [
+const units = [
 	['哈哈', NaN],
 	['零五', 5],
 	['六　八　九', 689],
@@ -10,13 +10,20 @@ var units = [
 	['二百五', 250],
 	['千三', 1300],
 	['二十四萬二', 242000],
-	['四萬萬五千萬', 450000000]
-];
+	['四萬萬五千萬', 450000000],
+] as [string, number][];
 
-var result = units.reduce(function(prev, cur) {
-	var result = (cpi(cur[0]) === cur[1]);
-	console.log('cpi(%j) === %d : %s', cur[0], cur[1], result);
-	return (result && prev);
-});
+describe(`demo`, () => {
+	units.forEach(function (cur)
+	{
+		test(cur[0], () => {
 
-console.log("Test %s.", result ? 'succeeds' : 'fails');
+			let actual = cpi(cur[0]);
+			let expected = cur[1];
+
+			expect(actual).toStrictEqual(expected)
+
+		});
+	});
+})
+
