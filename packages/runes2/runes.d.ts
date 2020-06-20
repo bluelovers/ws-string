@@ -13,10 +13,11 @@ export declare const ZWJ = 8205;
 export declare const GRAPHEMS: number[];
 export declare function runes(string: string): string[];
 export declare namespace runes {
-    var substr: typeof import("./runes").substring;
-    var substring: typeof import("./runes").substring;
-    var default: typeof import("./runes").runes;
-    var runes: typeof import("./runes").runes;
+    export var substr: typeof import("./runes").substring;
+    export var substring: typeof import("./runes").substring;
+    var _a: typeof import("./runes").runes;
+    export var runes: typeof import("./runes").runes;
+    export { _a as default };
 }
 export declare function nextUnits(i: number, string: string): 1 | 2 | 4;
 export declare function isFirstOfSurrogatePair(string: string): boolean;

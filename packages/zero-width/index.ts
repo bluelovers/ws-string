@@ -3,6 +3,6 @@
  */
 
 export * from './lib';
-import removeZeroWidth from './lib';
+import { removeZeroWidth } from './lib';
 
 export default removeZeroWidth

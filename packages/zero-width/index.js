@@ -12,11 +12,8 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
 var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./lib"), exports);
-const lib_1 = __importDefault(require("./lib"));
-exports.default = lib_1.default;
+const lib_1 = require("./lib");
+exports.default = lib_1.removeZeroWidth;
 //# sourceMappingURL=index.js.map
