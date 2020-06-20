@@ -2,6 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.chinese_parseInt = void 0;
 const data_1 = require("./lib/data");
+var data_2 = require("./lib/data");
+Object.defineProperty(exports, "characters", { enumerable: true, get: function () { return data_2.characters; } });
 function chinese_parseInt(str, radix) {
     let charVal;
     let result = parseInt(str, radix);

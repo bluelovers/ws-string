@@ -2,24 +2,21 @@
 /**
  * Created by user on 2017/12/11/011.
  */
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.num2zh = exports._chinese_parseInt = exports.zh2num = exports.predefineedTranscriptionConfigs = exports.transcriptionConfigs = exports.defaultOptions = void 0;
-const chinese_parseint_1 = __importDefault(require("chinese-parseint"));
-const japanese_1 = __importDefault(require("@lazy-cjk/japanese"));
+const chinese_parseint2_1 = require("chinese-parseint2");
+const japanese_1 = require("@lazy-cjk/japanese");
+Object.defineProperty(exports, "transcriptionConfigs", { enumerable: true, get: function () { return japanese_1.transcriptionConfigs; } });
+Object.defineProperty(exports, "predefineedTranscriptionConfigs", { enumerable: true, get: function () { return japanese_1.predefineedTranscriptionConfigs; } });
 exports.defaultOptions = {
     one: true,
 };
-exports.transcriptionConfigs = japanese_1.default.transcriptionConfigs;
-exports.predefineedTranscriptionConfigs = japanese_1.default.predefineedTranscriptionConfigs;
 function zh2num(str, options = {}) {
     options = Object.assign({}, exports.defaultOptions, options);
     let sa = [];
     let do_def = true;
-    let jtc = japanese_1.default.transcriptionConfigs;
-    let jpc = japanese_1.default.predefineedTranscriptionConfigs;
+    let jtc = japanese_1.transcriptionConfigs;
+    let jpc = japanese_1.predefineedTranscriptionConfigs;
     for (let id of [
         'digits',
         'unitNames',
@@ -32,7 +29,7 @@ function zh2num(str, options = {}) {
             }
         }
     }
-    if (typeof options.truncateOne == 'number') {
+    if (typeof options.truncateOne === 'number') {
         for (let i in jtc.default.truncateOne) {
             // @ts-ignore
             if (i < options.truncateOne) {
@@ -50,13 +47,13 @@ function zh2num(str, options = {}) {
         do_def = false;
     }
     sa.filter(function (value) {
-        if (value.length == 1 && (value in chinese_parseint_1.default.characters)) {
+        if (value.length === 1 && (value in chinese_parseint2_1.characters)) {
             return true;
         }
         return false;
     });
     if (do_def) {
-        sa = Object.keys(chinese_parseint_1.default.characters);
+        sa = Object.keys(chinese_parseint2_1.characters);
     }
     options.flags = (options.flags || 'u');
     if (options.unsafe) {
@@ -81,8 +78,9 @@ function _chinese_parseInt(str, options = {}) {
     if (options.one) {
         str = str.replace(/([佰百])([一二三四五六七八九壹貳參肆伍陸柒捌玖])(?![零○〇一二三四五六七八九壹貳參肆伍陸柒捌玖拾十什])/, '$1〇$2');
     }
-    let ret = chinese_parseint_1.default(str);
+    let ret = chinese_parseint2_1.chinese_parseInt(str);
     if (options.string) {
+        // @ts-ignore
         ret = ret.toString();
     }
     return ret;
@@ -102,7 +100,7 @@ function num2zh(number, options = {}) {
     if (Number.isNaN(d) || (options && options.strict && (typeof number != 'number' || d !== number))) {
         throw new TypeError(`${number} is not valid allow number`);
     }
-    return japanese_1.default.transcribeNumber(d, options);
+    return japanese_1.transcribeNumber(d, options);
 }
 exports.num2zh = num2zh;
 exports.default = exports;

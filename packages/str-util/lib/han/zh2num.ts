@@ -2,8 +2,9 @@
  * Created by user on 2017/12/11/011.
  */
 
-import chinese_parseInt from 'chinese-parseint';
-import japanese from '@lazy-cjk/japanese';
+import { chinese_parseInt, characters } from 'chinese-parseint2';
+import { transcribeNumber, transcriptionConfigs, predefineedTranscriptionConfigs } from '@lazy-cjk/japanese';
+import { ITSOverwrite } from 'ts-type';
 
 export interface IOptions
 {
@@ -40,9 +41,9 @@ export const defaultOptions = {
 	one: true,
 } as IOptions;
 
-export const transcriptionConfigs = japanese.transcriptionConfigs;
+export { transcriptionConfigs };
 
-export const predefineedTranscriptionConfigs = japanese.predefineedTranscriptionConfigs;
+export { predefineedTranscriptionConfigs };
 
 /**
  * 將漢字轉換成數字
@@ -54,8 +55,8 @@ export const predefineedTranscriptionConfigs = japanese.predefineedTranscription
  *
  * @example zh2num('千百十七') == 1117
  */
-export function zh2num(str, options?: IOptions): string
 export function zh2num(str: number, options?: IOptions): number
+export function zh2num(str, options?: IOptions): string
 export function zh2num(str, options: IOptions = {})
 {
 	options = Object.assign({}, defaultOptions, options);
@@ -63,8 +64,8 @@ export function zh2num(str, options: IOptions = {})
 	let sa: string[] = [];
 	let do_def = true;
 
-	let jtc = japanese.transcriptionConfigs;
-	let jpc = japanese.predefineedTranscriptionConfigs;
+	let jtc = transcriptionConfigs;
+	let jpc = predefineedTranscriptionConfigs;
 
 	for (let id of [
 		'digits',
@@ -83,7 +84,7 @@ export function zh2num(str, options: IOptions = {})
 		}
 	}
 
-	if (typeof options.truncateOne == 'number')
+	if (typeof options.truncateOne === 'number')
 	{
 		for (let i in jtc.default.truncateOne)
 		{
@@ -111,7 +112,7 @@ export function zh2num(str, options: IOptions = {})
 
 	sa.filter(function (value)
 	{
-		if (value.length == 1 && (value in chinese_parseInt.characters))
+		if (value.length === 1 && (value in characters))
 		{
 			return true;
 		}
@@ -121,7 +122,7 @@ export function zh2num(str, options: IOptions = {})
 
 	if (do_def)
 	{
-		sa = Object.keys(chinese_parseInt.characters);
+		sa = Object.keys(characters);
 	}
 
 	options.flags = (options.flags || 'u');
@@ -150,11 +151,18 @@ export function zh2num(str, options: IOptions = {})
 
 	return s.replace(r, function (...m)
 	{
-		return _chinese_parseInt(m[1], options);
+		return _chinese_parseInt(m[1], options) as any;
 	}).toString();
 }
 
-export function _chinese_parseInt(str: string, options: IOptions = {})
+export function _chinese_parseInt(str: string, options: IOptions & {
+	string: true,
+}): string
+export function _chinese_parseInt(str: string, options?: IOptions & {
+	string?: false,
+}): number
+export function _chinese_parseInt(str: string, options?: IOptions): number
+export function _chinese_parseInt(str: string, options: IOptions = {}): number | string
 {
 	if (options.one)
 	{
@@ -165,6 +173,7 @@ export function _chinese_parseInt(str: string, options: IOptions = {})
 
 	if (options.string)
 	{
+		// @ts-ignore
 		ret = ret.toString();
 	}
 
@@ -189,7 +198,7 @@ export function num2zh(number, options: any = {}): string
 		throw new TypeError(`${number} is not valid allow number`);
 	}
 
-	return japanese.transcribeNumber(d, options);
+	return transcribeNumber(d, options);
 }
 
 export default exports as typeof import('./zh2num');
