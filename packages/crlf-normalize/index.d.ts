@@ -1,3 +1,6 @@
+/**
+ * Created by user on 2018/1/26/026.
+ */
 export declare const CR = "\r";
 export declare const CRLF = "\r\n";
 export declare const LF = "\n";

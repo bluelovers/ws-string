@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CR 1`] = `
+"foo
+bar
+baz
+"
+`;
+
+exports[`CRLF 1`] = `
+"foo
+bar
+baz
+"
+`;
+
+exports[`LF 1`] = `
+"foo
+bar
+baz
+"
+`;
+
+exports[`chkcrlf 1`] = `
+Object {
+  "cr": true,
+  "crlf": true,
+  "lf": true,
+}
+`;
