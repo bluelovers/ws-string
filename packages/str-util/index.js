@@ -6,7 +6,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.stripAnsi = exports.toHalfWidth = exports.toFullWidth = exports.toHalfEnglish = exports.toFullEnglish = exports.toHalfNumber = exports.toFullNumber = exports.tableFullHalf = exports.normalize = void 0;
+exports.stripAnsi = exports.toHalfWidth = exports.toFullWidth = exports.toHalfEnglish = exports.toFullEnglish = exports.toHalfNumber = exports.toFullNumber = exports.tableFullHalf = exports.charCodeAt = exports.num2zh = exports.zh2num = exports.jp2zht = exports.jp2zhs = exports.zh2jp = exports.trim = exports.normalize = exports.stringWidth = exports.isFullwidthCodePoint = exports.isFullWidth = void 0;
 var is_fullwidth_1 = require("./lib/is-fullwidth");
 Object.defineProperty(exports, "isFullWidth", { enumerable: true, get: function () { return is_fullwidth_1.isFullWidth; } });
 Object.defineProperty(exports, "isFullwidthCodePoint", { enumerable: true, get: function () { return is_fullwidth_1.isFullwidthCodePoint; } });
