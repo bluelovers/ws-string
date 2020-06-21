@@ -16,25 +16,30 @@
     "newline",
     "report"
   ],
-  "homepage": "https://github.com/bluelovers/node-blank-line#readme",
+  "homepage": "https://github.com/bluelovers/ws-string/tree/master/packages/blank-line#readme",
   "bugs": {
-    "url": "https://github.com/bluelovers/node-blank-line/issues"
+    "url": "https://github.com/bluelovers/ws-string/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluelovers/node-blank-line.git"
+    "url": "git+https://github.com/bluelovers/ws-string.git"
   },
   "license": "ISC",
-  "author": "",
+  "author": "bluelovers",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "prepublishOnly": "yarn run test",
+    "prepublishOnly:check-bin": "ynpx --quiet @yarn-tool/check-pkg-bin",
+    "prepublishOnly:update": "yarn run ncu && yarn run sort-package-json",
+    "ncu": "ynpx --quiet yarn-tool -- ncu -u",
+    "sort-package-json": "ynpx --quiet yarn-tool -- sort"
   },
   "dependencies": {
-    "execall2": "^1.1.0"
+    "execall2": "^2.0.2"
   },
   "devDependencies": {}
 }

@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`demo blankLine:0 1`] = `
+Array [
+  2,
+  2,
+  2,
+]
+`;
+
+exports[`demo blankLine:1 1`] = `
+Array [
+  1,
+  2,
+  3,
+]
+`;
+
+exports[`demo blankLine:2 1`] = `
+Array [
+  2,
+  6,
+  11,
+]
+`;
+
+exports[`demo blankLine:3 1`] = `
+Array [
+  1,
+  1,
+  1,
+]
+`;
+
+exports[`demo blankLine:4 1`] = `
+Array [
+  1,
+  2,
+  3,
+]
+`;
+
+exports[`demo blankLine:5 1`] = `
+Array [
+  2,
+  3,
+  11,
+]
+`;
+
+exports[`demo getMinMidMax:0 1`] = `
+Array [
+  2,
+  2,
+  2,
+]
+`;
+
+exports[`demo getMinMidMax:1 1`] = `
+Array [
+  1,
+  2,
+  3,
+]
+`;
+
+exports[`demo getMinMidMax:2 1`] = `
+Array [
+  2,
+  6,
+  11,
+]
+`;
+
+exports[`demo getMinMidMax:3 1`] = `
+Array [
+  1,
+  1,
+  1,
+]
+`;
+
+exports[`demo getMinMidMax:4 1`] = `
+Array [
+  1,
+  2,
+  3,
+]
+`;
+
+exports[`demo getMinMidMax:5 1`] = `
+Array [
+  2,
+  3,
+  11,
+]
+`;
