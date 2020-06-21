@@ -70,7 +70,7 @@
   "dependencies": {
     "@lazy-cjk/japanese": "^1.2.6",
     "chinese-parseint2": "^1.1.1",
-    "cjk-conv": "^1.2.87",
+    "cjk-conv": "^1.2.88",
     "deepmerge": "^4.2.2",
     "is-fullwidth-code-point": "^3.0.0",
     "strip-ansi": "^6.0.0",

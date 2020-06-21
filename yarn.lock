@@ -1241,10 +1241,10 @@ ci-info@^2.0.0:
   resolved "https://registry.npmjs.org/ci-info/-/ci-info-2.0.0.tgz#67a9e964be31a51e15e5010d58e6f12834002f46"
   integrity sha512-5tK7EtrZ0N+OLFMthtqOj4fI2Jeb88C4CAZPu25LDVUgXJ0A3Js4PMGqrn0JU1W0Mh1/Z8wZzYPxqUrXeBboCQ==
 
-cjk-conv@^1.2.87:
-  version "1.2.87"
-  resolved "https://registry.npmjs.org/cjk-conv/-/cjk-conv-1.2.87.tgz#7cb5520128c5dfecb29b881e4d5fcffa20ae4ef1"
-  integrity sha512-zPVwzYW4Gq25BXFCHk+JWi1N/lhdcwFHlkS6X8t8/LhShinsWpnVK2JDBaXDftKve0f18kq+yyj5lEG4C3i4Vg==
+cjk-conv@^1.2.88:
+  version "1.2.88"
+  resolved "https://registry.npmjs.org/cjk-conv/-/cjk-conv-1.2.88.tgz#21021e806e4651553c5e382ec97fb3fb1a1215e1"
+  integrity sha512-xXk3LWVi5PEVzE+oj3WsNiP8cjx7Dcflmp8U9l/fiRxUdBrNagSGl3m51YKTgxsROa4wykO4bFDbML9GammiKQ==
   dependencies:
     "@lazy-cjk/jp-table-alias" "^1.0.16"
     "@lazy-cjk/jp-table-comparison" "^1.0.9"
@@ -1292,6 +1292,13 @@ cliui@^6.0.0:
     string-width "^4.2.0"
     strip-ansi "^6.0.0"
     wrap-ansi "^6.2.0"
+
+clone-regexp@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.npmjs.org/clone-regexp/-/clone-regexp-2.2.0.tgz#7d65e00885cd8796405c35a737e7a86b7429e36f"
+  integrity sha512-beMpP7BOtTipFuW8hrJvREQ2DrRu3BE7by0ZpibtfBA+qfHYvMGTc2Yb1JMYPKg/JUw0CHYvpg796aNTSW9z7Q==
+  dependencies:
+    is-regexp "^2.0.0"
 
 co@^4.6.0:
   version "4.6.0"
@@ -1373,11 +1380,6 @@ core-util-is@1.0.2:
   version "1.0.2"
   resolved "https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
-
-crlf-normalize@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.npmjs.org/crlf-normalize/-/crlf-normalize-1.0.3.tgz#44b676df23da968b38059d958b34eb7079b6f32f"
-  integrity sha512-n+H8helYU03hMHL1W380VHNHdUW61WVpVTADjZoTzHMLyyu3IKAurTQyCG+neq61txELetenaXQWCPCtukcZBA==
 
 cross-spawn-extra@^2.1.0:
   version "2.1.0"
@@ -1682,6 +1684,13 @@ execa@^4.0.0:
     onetime "^5.1.0"
     signal-exit "^3.0.2"
     strip-final-newline "^2.0.0"
+
+execall2@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.npmjs.org/execall2/-/execall2-2.0.2.tgz#70ea6817566540c037bd13536b617732eb5623bb"
+  integrity sha512-CZciNarsIgdRE57pXIpjmT+57/f5CL/O+8iHs6bFkkmZr0rV+7XRw0ul+TSw9t9OoJjZ3Q0exLBdspqFnPx0eA==
+  dependencies:
+    clone-regexp "^2.2.0"
 
 exit@^0.1.2:
   version "0.1.2"
@@ -2273,6 +2282,11 @@ is-potential-custom-element-name@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/is-potential-custom-element-name/-/is-potential-custom-element-name-1.0.0.tgz#0c52e54bcca391bb2c494b21e8626d7336c6e397"
   integrity sha1-DFLlS8yjkbssSUsh6GJtczbG45c=
+
+is-regexp@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.npmjs.org/is-regexp/-/is-regexp-2.1.0.tgz#cd734a56864e23b956bf4e7c66c396a4c0b22c2d"
+  integrity sha512-OZ4IlER3zmRIoB9AqNhEggVxqIH4ofDns5nRrPS6yQxXE1TPCUpFznBfRQmQa8uC+pXqjMnukiJBxCisIxiLGA==
 
 is-stream@^1.1.0:
   version "1.1.0"
@@ -3479,13 +3493,13 @@ regex-not@^1.0.0, regex-not@^1.0.2:
     extend-shallow "^3.0.2"
     safe-regex "^1.1.0"
 
-regexp-class-to-regenerate@^1.0.10:
-  version "1.0.10"
-  resolved "https://registry.npmjs.org/regexp-class-to-regenerate/-/regexp-class-to-regenerate-1.0.10.tgz#0e555234828e15d0cc8b6a372ce9594606ff28e9"
-  integrity sha512-AWejgBdd9XO+dxmrXf6EUcL1khHNwThR+DcVnCQ0DJe/vln8WeioQ0WIxzXjQdV6DiBralRAsjam4CSHxmsaxQ==
+regexp-class-to-regenerate@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.npmjs.org/regexp-class-to-regenerate/-/regexp-class-to-regenerate-1.0.11.tgz#978cc545533c59fa852ea49d1558508401f94291"
+  integrity sha512-+lGSfooKQnobhbi0j077ittZU58GjUr1N5jY1UGTfj/7EECS0FceUIOSuolGn6YMhHug0jC+zD7fv2iy5RjgLw==
   dependencies:
     regenerate "^1.4.1"
-    regexp-parser-event "^1.1.15"
+    regexp-parser-event "^1.1.16"
     regexpu-core "^4.7.0"
 
 regexp-helper-core@^1.0.10:
@@ -3501,24 +3515,24 @@ regexp-helper@^1.0.12:
     regexp-helper-core "^1.0.10"
     regexp-support "^1.0.25"
 
-regexp-parser-event@^1.1.15:
-  version "1.1.15"
-  resolved "https://registry.npmjs.org/regexp-parser-event/-/regexp-parser-event-1.1.15.tgz#0bba8d4efd2e8dd151baf63edf95c4536d653d65"
-  integrity sha512-t9eFCcumiBDvfkx6356lmRgS4ocRNbKi982tuZgTvcBIvASoBJXxQsIyiK1zwqvCfjCXgC1VI0IV6CpAtRu2ug==
+regexp-parser-event@^1.1.16:
+  version "1.1.16"
+  resolved "https://registry.npmjs.org/regexp-parser-event/-/regexp-parser-event-1.1.16.tgz#7ada671839a6e7edab2e5f20d345af8b95ad0700"
+  integrity sha512-X2qhvATZJ6Dyu+nicO0Wfsvy7ELTm/QUY3BKo1A80k77pvvnspzYYuQ7wdCLhUkH4xw8DXjGw5JjmFNdienKIQ==
   dependencies:
     array-hyper-unique "^1.1.8"
-    regexp-parser-literal "^1.1.9"
-    regexpp2 "^1.3.5"
+    regexp-parser-literal "^1.1.10"
+    regexpp2 "^1.3.6"
     ts-type "^1.2.23"
 
-regexp-parser-literal@^1.1.9:
-  version "1.1.9"
-  resolved "https://registry.npmjs.org/regexp-parser-literal/-/regexp-parser-literal-1.1.9.tgz#345d872b6399cf05565f86c8ceccaba0c7392034"
-  integrity sha512-7bLl+gaTTBUZQXwso8Ewphb7nKl9X42vXGoNBhS8KTkE5kvbbZVkMP6avh4rSlrUcWMDxK2tT5e63fuVn4uXXg==
+regexp-parser-literal@^1.1.10:
+  version "1.1.10"
+  resolved "https://registry.npmjs.org/regexp-parser-literal/-/regexp-parser-literal-1.1.10.tgz#c6c1d3bcd2c934f57d56d42c1eb528796495edd1"
+  integrity sha512-OjAX97pjRZqphdyBQ8XA3O9d6A5KHGDtw9tqWJXJDlm1R/WvbK2URiUaci+bXEJGVd6zEM8CvkctdigA6zj3Nw==
   dependencies:
     array-hyper-unique "^1.1.8"
     emoji-regex "^9.0.0"
-    regexpp2 "^1.3.5"
+    regexpp2 "^1.3.6"
     uni-string "^1.1.9"
 
 regexp-support@^1.0.25:
@@ -3528,10 +3542,10 @@ regexp-support@^1.0.25:
   dependencies:
     sort-object-keys2 "^1.1.0"
 
-regexpp2@^1.3.5:
-  version "1.3.5"
-  resolved "https://registry.npmjs.org/regexpp2/-/regexpp2-1.3.5.tgz#832e6b02616cfb958e90bfb1e5fd6e165289b8c3"
-  integrity sha512-Hiz0z/bF071Sqbucx8lwFdfVxOs10LUySLJqwi9e2u2RIiscbF3QT10qxbs6Y5j9HFkkxWztAUSULwyvdaTOdA==
+regexpp2@^1.3.6:
+  version "1.3.6"
+  resolved "https://registry.npmjs.org/regexpp2/-/regexpp2-1.3.6.tgz#05d4dad7b12ab41059310ad6e6f4d405e049eaf3"
+  integrity sha512-/GEMiga/Rt6vYMcBCxSJ5t9q9+RNoP1TbsXAn2XWZS3GhleIRbQ1toujKLqaet5ahZ3Ou1T3XvNYROyyU8mxEg==
 
 regexpu-core@^4.7.0:
   version "4.7.0"
