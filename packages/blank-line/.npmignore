@@ -1,0 +1,36 @@
+# Created by .ignore support plugin (hsz.mobi)
+/test/
+/.idea/
+/docs/
+/package-lock.json
+### npm template
+.idea
+
+~ci.list.txt
+~ci.log.txt
+~ci.errors.txt
+
+*.stackdump
+*.bak
+*.old
+
+tsconfig.json
+package-lock.json
+
+test
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+### jsonly template
+*.ts
+!*.d.ts
+### jsonly_bin template
+bin/*.ts
+bin/*.d.ts
+/yarn.lock
+*.tgz

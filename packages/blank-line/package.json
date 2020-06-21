@@ -1,0 +1,40 @@
+{
+  "name": "blank-line",
+  "version": "1.0.1",
+  "description": "get min/mid/max blank line length in text ( not include start/end line )",
+  "keywords": [
+    "analyze",
+    "check",
+    "cr",
+    "crlf",
+    "detect",
+    "eol",
+    "lf",
+    "line",
+    "linebreak",
+    "linefeed",
+    "newline",
+    "report"
+  ],
+  "homepage": "https://github.com/bluelovers/node-blank-line#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/node-blank-line/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/node-blank-line.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "execall2": "^1.1.0"
+  },
+  "devDependencies": {}
+}
