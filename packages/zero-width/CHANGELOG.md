@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.14](https://github.com/bluelovers/ws-string/compare/zero-width@1.0.13...zero-width@1.0.14) (2020-06-21)
+
+
+### ♻️　Chores
+
+* **deps:** update deps ([8934bce](https://github.com/bluelovers/ws-string/commit/8934bce53827a2af68a117c6e561fe201c5037ea))
+
+
+
+
+
 ## [1.0.13](https://github.com/bluelovers/ws-string/compare/zero-width@1.0.12...zero-width@1.0.13) (2020-06-20)
 
 **Note:** Version bump only for package zero-width

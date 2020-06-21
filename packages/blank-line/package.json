@@ -1,6 +1,6 @@
 {
   "name": "blank-line",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "get min/mid/max blank line length in text ( not include start/end line )",
   "keywords": [
     "analyze",
@@ -40,6 +40,5 @@
   },
   "dependencies": {
     "execall2": "^2.0.2"
-  },
-  "devDependencies": {}
+  }
 }
