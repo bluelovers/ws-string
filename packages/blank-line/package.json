@@ -39,6 +39,6 @@
     "sort-package-json": "ynpx --quiet yarn-tool -- sort"
   },
   "dependencies": {
-    "execall2": "^2.0.2"
+    "execall2": "^2.0.7"
   }
 }
