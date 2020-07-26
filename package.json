@@ -22,7 +22,7 @@
     "@git-lazy/subtree": "^1.0.15",
     "@types/bluebird": "^3.5.32",
     "@types/fs-extra": "^9.0.1",
-    "@types/jest": "^26.0.5",
+    "@types/jest": "^26.0.7",
     "@types/node": "*",
     "bluebird": "^3.7.2",
     "debug-color2": "^1.2.3",

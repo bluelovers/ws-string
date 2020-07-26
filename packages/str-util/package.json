@@ -70,11 +70,11 @@
   "dependencies": {
     "@lazy-cjk/japanese": "^1.2.8",
     "chinese-parseint2": "^1.1.3",
-    "cjk-conv": "^1.2.106",
+    "cjk-conv": "^1.2.108",
     "deepmerge": "^4.2.2",
     "is-fullwidth-code-point": "^3.0.0",
     "strip-ansi": "^6.0.0",
-    "ts-type": "^1.2.25",
+    "ts-type": "^1.2.29",
     "uni-string": "^1.1.10"
   }
 }
