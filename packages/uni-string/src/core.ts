@@ -22,7 +22,7 @@ export class UString extends String
 		}));
 	}
 
-	[Symbol.iterator]()
+	override [Symbol.iterator]()
 	{
 		return UString.toArray(this)[Symbol.iterator]();
 	}
@@ -52,7 +52,7 @@ export class UString extends String
 		return this._arr;
 	}
 
-	split(separator?, limit?: number): string[]
+	override split(separator?, limit?: number): string[]
 	{
 		let ret: string[];
 		let str = String(this);
@@ -74,12 +74,12 @@ export class UString extends String
 		return ret;
 	}
 
-	substr(start: number, length?: number): string
+	override substr(start: number, length?: number): string
 	{
 		return UString.toArray(this).slice(start).slice(0, length).join('');
 	}
 
-	substring(start: number, indexEnd?: number)
+	override substring(start: number, indexEnd?: number)
 	{
 		if (Number.isNaN(start) || start < 0)
 		{
@@ -102,7 +102,7 @@ export class UString extends String
 		return this.slice(start, indexEnd);
 	}
 
-	indexOf(search: string, start: number = 0): number
+	override indexOf(search: string, start: number = 0): number
 	{
 		let a = UString.toArray(this);
 
@@ -150,29 +150,29 @@ export class UString extends String
 		return -1;
 	}
 
-	includes(search: string, start: number = 0)
+	override includes(search: string, start: number = 0)
 	{
 		return UString.toArray(this).slice(start).join('').indexOf(search) !== -1
 	}
 
-	slice(start: number, indexEnd?: number)
+	override slice(start: number, indexEnd?: number)
 	{
 		return UString.toArray(this).slice(start, indexEnd).join('');
 	}
 
-	charAt(index: number): string
+	override charAt(index: number): string
 	{
 		return this.substr(index, 1);
 	}
 
-	startsWith(search: string, pos?: number): boolean
+	override startsWith(search: string, pos?: number): boolean
 	{
 		return this.substr(!pos || pos < 0 ? 0 : +pos, search.length)
 			.indexOf(search) == 0
 			;
 	}
 
-	endsWith(search: string, length?: number): boolean
+	override endsWith(search: string, length?: number): boolean
 	{
 		let a = UString.toArray(this);
 		let s = UString.toArray(search);
@@ -185,7 +185,7 @@ export class UString extends String
 		return this.substring(length - s.length, length) === search;
 	}
 
-	padEnd(targetLength: number, padString: string)
+	override padEnd(targetLength: number, padString: string)
 	{
 		targetLength = targetLength >> 0; //floor if number or convert non-number to 0;
 		padString = String((typeof padString !== 'undefined' ? padString : ' '));
@@ -211,7 +211,7 @@ export class UString extends String
 		}
 	}
 
-	padStart(targetLength: number, padString: string)
+	override padStart(targetLength: number, padString: string)
 	{
 		targetLength = targetLength >> 0; //truncate if number or convert non-number to 0;
 		padString = String((typeof padString !== 'undefined' ? padString : ' '));
@@ -243,7 +243,7 @@ export class UString extends String
 	/**
 	 * 𠮷 134071 20bb7
 	 */
-	codePointAt(pos: number): number
+	override codePointAt(pos: number): number
 	{
 		return this.toArray()[pos].codePointAt(0)
 	}
