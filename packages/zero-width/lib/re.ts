@@ -29,13 +29,19 @@ export const reRegExpSpace = /[\x08-\r \xA0\u1680\u2000-\u200A\u2028\u2029\u202F
 
 export const reRegExpSpacePlus = /[\x08-\r \xA0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\uFEFF]/gu;
 
+export const reControlCodes = /[\0-\x1F\x7F-\x9F]/gu;
+
 export const reZeroWidthWithSpaceWithoutNewLine = /[\x08\t\x0B\f \xA0\u200B-\u200F\u2028-\u202F\u205F-\u206F\uFE00-\uFE0F\uFEFF\u{E0100}-\u{E01EF}]/gu;
 
 export const reZeroWidthWithSpace = /[\x08-\r \xA0\u1680\u2000-\u200F\u2028-\u202F\u205F-\u206F\u3000\uFE00-\uFE0F\uFEFF\u{E0100}-\u{E01EF}]/gu;
 
-export const reZeroWidthTrimWithoutNewLine = /^[\uFE00-\uFE0F\u{E0100}-\u{E01EF}\u200b-\u200f\ufeff\u2060\u2028-\u202F\u205F-\u206F\u0020\u00a0\t\v\u0008\u000c\u00a0]+|[\uFE00-\uFE0F\u{E0100}-\u{E01EF}\u200b-\u200f\ufeff\u2060\u2028-\u202F\u205F-\u206F\u0020\u00a0\t\v\u0008\u000c\u00a0]+$/gu;
+export const _reZeroWidthTrimWithoutNewLine = /[\0- \x7F-\xA0\u200B-\u200F\u2028-\u202F\u205F-\u206F\uFE00-\uFE0F\uFEFF\u{E0100}-\u{E01EF}]/gu;
 
-export const reZeroWidthTrim = /^[\uFE00-\uFE0F\u{E0100}-\u{E01EF}\u200b-\u200f\ufeff\u2060\u2028-\u202F\u205F-\u206F\u0020\u00a0\t\v\u0008\u000c\u00a0\r\n\s]+|[\uFE00-\uFE0F\u{E0100}-\u{E01EF}\u200b-\u200f\ufeff\u2060\u2028-\u202F\u205F-\u206F\u0020\u00a0\t\v\u0008\u000c\u00a0\r\n\s]+$/gu;
+export const _reZeroWidthTrim = /[\0- \x7F-\xA0\u1680\u2000-\u200F\u2028-\u202F\u205F-\u206F\u3000\uFE00-\uFE0F\uFEFF\u{E0100}-\u{E01EF}]/gu;
+
+export const reZeroWidthTrimWithoutNewLine = /^[\uFE00-\uFE0F\u{E0100}-\u{E01EF}\u200b-\u200f\ufeff\u2060\u2028-\u202F\u205F-\u206F\u0020\u00a0\t\v\u0008\u000c\u00a0\u0000-\u001F\u007F\u0080-\u009F]+|[\uFE00-\uFE0F\u{E0100}-\u{E01EF}\u200b-\u200f\ufeff\u2060\u2028-\u202F\u205F-\u206F\u0020\u00a0\t\v\u0008\u000c\u00a0\u0000-\u001F\u007F\u0080-\u009F]+$/gu;
+
+export const reZeroWidthTrim = /^[\uFE00-\uFE0F\u{E0100}-\u{E01EF}\u200b-\u200f\ufeff\u2060\u2028-\u202F\u205F-\u206F\u0020\u00a0\t\v\u0008\u000c\u00a0\r\n\s\u0000-\u001F\u007F\u0080-\u009F]+|[\uFE00-\uFE0F\u{E0100}-\u{E01EF}\u200b-\u200f\ufeff\u2060\u2028-\u202F\u205F-\u206F\u0020\u00a0\t\v\u0008\u000c\u00a0\r\n\s\u0000-\u001F\u007F\u0080-\u009F]+$/gu;
 
 export const reBomStrict = /^\ufeff/u;
 

@@ -66,6 +66,13 @@ export const reRegExpSpacePlus = _regexpMerge([
 	reNBSP,
 ]);
 
+
+export const reControlCodes = _regexpMerge([
+	/\u0000-\u001F/,
+	/\u007F/,
+	/\u0080-\u009F/,
+]);
+
 export const reZeroWidthWithSpaceWithoutNewLine = _regexpMerge([
 	reZeroWidthAll,
 	reRegExpSpaceWithoutNewLinePlus,
@@ -77,9 +84,25 @@ export const reZeroWidthWithSpace = _regexpMerge([
 	/\s/,
 ]);
 
-export const reZeroWidthTrimWithoutNewLine = new RegExp(`^${reZeroWidthWithSpaceWithoutNewLine.source}+|${reZeroWidthWithSpaceWithoutNewLine.source}+$`, 'gu');
+/**
+ * for trim use
+ */
+export const _reZeroWidthTrimWithoutNewLine = _regexpMerge([
+	reZeroWidthWithSpaceWithoutNewLine,
+	reControlCodes,
+]);
 
-export const reZeroWidthTrim = new RegExp(`^${reZeroWidthWithSpace.source}+|${reZeroWidthWithSpace.source}+$`, 'gu');
+/**
+ * for trim use
+ */
+export const _reZeroWidthTrim = _regexpMerge([
+	reZeroWidthWithSpace,
+	reControlCodes,
+]);
+
+export const reZeroWidthTrimWithoutNewLine = new RegExp(`^${_reZeroWidthTrimWithoutNewLine.source}+|${_reZeroWidthTrimWithoutNewLine.source}+$`, 'gu');
+
+export const reZeroWidthTrim = new RegExp(`^${_reZeroWidthTrim.source}+|${_reZeroWidthTrim.source}+$`, 'gu');
 
 export const reBomStrict = /^\ufeff/u;
 export const reBomUnsafe = /\ufeff/ug;
