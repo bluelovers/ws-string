@@ -4,7 +4,7 @@
  * source file at test/scripts/src
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.reBomUnsafe = exports.reBomStrict = exports.reZeroWidthTrim = exports.reZeroWidthTrimWithoutNewLine = exports.reZeroWidthWithSpace = exports.reZeroWidthWithSpaceWithoutNewLine = exports.reRegExpSpacePlus = exports.reRegExpSpace = exports.reRegExpSpaceWithoutNewLinePlus = exports.reRegExpSpaceWithoutNewLine = exports.reNewLine = exports.reNBSP = exports.reZeroWidthAll = exports.reZeroWidthAllSafe = exports.reZeroWidth2 = exports.reZeroWidth = exports.reVariationSelectorsAll = exports.reVariationSelectorsSupplement = exports.reVariationSelectors = void 0;
+exports.reBomUnsafe = exports.reBomStrict = exports.reZeroWidthTrim = exports.reZeroWidthTrimWithoutNewLine = exports._reZeroWidthTrim = exports._reZeroWidthTrimWithoutNewLine = exports.reZeroWidthWithSpace = exports.reZeroWidthWithSpaceWithoutNewLine = exports.reControlCodes = exports.reRegExpSpacePlus = exports.reRegExpSpace = exports.reRegExpSpaceWithoutNewLinePlus = exports.reRegExpSpaceWithoutNewLine = exports.reNewLine = exports.reNBSP = exports.reZeroWidthAll = exports.reZeroWidthAllSafe = exports.reZeroWidth2 = exports.reZeroWidth = exports.reVariationSelectorsAll = exports.reVariationSelectorsSupplement = exports.reVariationSelectors = void 0;
 exports.reVariationSelectors = /[\uFE00-\uFE0F]/gu;
 exports.reVariationSelectorsSupplement = /[\u{E0100}-\u{E01EF}]/gu;
 exports.reVariationSelectorsAll = /[\uFE00-\uFE0F\u{E0100}-\u{E01EF}]/gu;
@@ -18,10 +18,13 @@ exports.reRegExpSpaceWithoutNewLine = /[\x08\t\x0B\f \xA0]/gu;
 exports.reRegExpSpaceWithoutNewLinePlus = /[\x08\t\x0B\f \xA0]/gu;
 exports.reRegExpSpace = /[\x08-\r \xA0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\uFEFF]/gu;
 exports.reRegExpSpacePlus = /[\x08-\r \xA0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\uFEFF]/gu;
+exports.reControlCodes = /[\0-\x1F\x7F-\x9F]/gu;
 exports.reZeroWidthWithSpaceWithoutNewLine = /[\x08\t\x0B\f \xA0\u200B-\u200F\u2028-\u202F\u205F-\u206F\uFE00-\uFE0F\uFEFF\u{E0100}-\u{E01EF}]/gu;
 exports.reZeroWidthWithSpace = /[\x08-\r \xA0\u1680\u2000-\u200F\u2028-\u202F\u205F-\u206F\u3000\uFE00-\uFE0F\uFEFF\u{E0100}-\u{E01EF}]/gu;
-exports.reZeroWidthTrimWithoutNewLine = /^[\uFE00-\uFE0F\u{E0100}-\u{E01EF}\u200b-\u200f\ufeff\u2060\u2028-\u202F\u205F-\u206F\u0020\u00a0\t\v\u0008\u000c\u00a0]+|[\uFE00-\uFE0F\u{E0100}-\u{E01EF}\u200b-\u200f\ufeff\u2060\u2028-\u202F\u205F-\u206F\u0020\u00a0\t\v\u0008\u000c\u00a0]+$/gu;
-exports.reZeroWidthTrim = /^[\uFE00-\uFE0F\u{E0100}-\u{E01EF}\u200b-\u200f\ufeff\u2060\u2028-\u202F\u205F-\u206F\u0020\u00a0\t\v\u0008\u000c\u00a0\r\n\s]+|[\uFE00-\uFE0F\u{E0100}-\u{E01EF}\u200b-\u200f\ufeff\u2060\u2028-\u202F\u205F-\u206F\u0020\u00a0\t\v\u0008\u000c\u00a0\r\n\s]+$/gu;
+exports._reZeroWidthTrimWithoutNewLine = /[\0- \x7F-\xA0\u200B-\u200F\u2028-\u202F\u205F-\u206F\uFE00-\uFE0F\uFEFF\u{E0100}-\u{E01EF}]/gu;
+exports._reZeroWidthTrim = /[\0- \x7F-\xA0\u1680\u2000-\u200F\u2028-\u202F\u205F-\u206F\u3000\uFE00-\uFE0F\uFEFF\u{E0100}-\u{E01EF}]/gu;
+exports.reZeroWidthTrimWithoutNewLine = /^[\uFE00-\uFE0F\u{E0100}-\u{E01EF}\u200b-\u200f\ufeff\u2060\u2028-\u202F\u205F-\u206F\u0020\u00a0\t\v\u0008\u000c\u00a0\u0000-\u001F\u007F\u0080-\u009F]+|[\uFE00-\uFE0F\u{E0100}-\u{E01EF}\u200b-\u200f\ufeff\u2060\u2028-\u202F\u205F-\u206F\u0020\u00a0\t\v\u0008\u000c\u00a0\u0000-\u001F\u007F\u0080-\u009F]+$/gu;
+exports.reZeroWidthTrim = /^[\uFE00-\uFE0F\u{E0100}-\u{E01EF}\u200b-\u200f\ufeff\u2060\u2028-\u202F\u205F-\u206F\u0020\u00a0\t\v\u0008\u000c\u00a0\r\n\s\u0000-\u001F\u007F\u0080-\u009F]+|[\uFE00-\uFE0F\u{E0100}-\u{E01EF}\u200b-\u200f\ufeff\u2060\u2028-\u202F\u205F-\u206F\u0020\u00a0\t\v\u0008\u000c\u00a0\r\n\s\u0000-\u001F\u007F\u0080-\u009F]+$/gu;
 exports.reBomStrict = /^\ufeff/u;
 exports.reBomUnsafe = /[\uFEFF]/gu;
 //# sourceMappingURL=re.js.map

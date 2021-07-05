@@ -14,5 +14,5 @@ export { charCodeAt } from './lib/util';
 export declare const tableFullHalf: FullHalfCore.ITable[];
 export { toFullNumber, toHalfNumber, toFullEnglish, toHalfEnglish, toFullWidth, toHalfWidth };
 export { stripAnsi };
-declare const _default: typeof import(".");
+declare const _default: typeof import("./index");
 export default _default;

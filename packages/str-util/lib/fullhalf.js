@@ -2,14 +2,12 @@
 /**
  * Created by user on 2017/12/8/008.
  */
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.toHalfWidth = exports.toFullWidth = exports.toHalfEnglish = exports.toFullEnglish = exports.toHalfNumber = exports.toFullNumber = exports.EnumFullHalfTableType = exports.FullHalfCore = void 0;
-const deepmerge_1 = __importDefault(require("deepmerge"));
-const util_1 = __importDefault(require("./util"));
-const uni_string_1 = __importDefault(require("uni-string"));
+const tslib_1 = require("tslib");
+const deepmerge_1 = (0, tslib_1.__importDefault)(require("deepmerge"));
+const util_1 = (0, tslib_1.__importDefault)(require("./util"));
+const uni_string_1 = (0, tslib_1.__importDefault)(require("uni-string"));
 var FullHalfCore;
 (function (FullHalfCore) {
     let EnumFullHalfTableType;

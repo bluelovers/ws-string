@@ -2,12 +2,10 @@
 /**
  * Created by user on 2017/12/8/008.
  */
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.isFullWidth = exports.isFullwidthCodePoint = void 0;
-const is_fullwidth_code_point_1 = __importDefault(require("is-fullwidth-code-point"));
+const tslib_1 = require("tslib");
+const is_fullwidth_code_point_1 = (0, tslib_1.__importDefault)(require("is-fullwidth-code-point"));
 function isFullwidthCodePoint(x) {
     if (Number.isNaN(x)) {
         return false;
@@ -19,7 +17,7 @@ function isFullwidthCodePoint(x) {
         || (
         // https://en.wikipedia.org/wiki/Block_Elements
         0x2580 <= x && x <= 0x259f)
-        || is_fullwidth_code_point_1.default(x)) {
+        || (0, is_fullwidth_code_point_1.default)(x)) {
         return true;
     }
 }

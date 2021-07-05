@@ -78,7 +78,7 @@ function _chinese_parseInt(str, options = {}) {
     if (options.one) {
         str = str.replace(/([佰百])([一二三四五六七八九壹貳參肆伍陸柒捌玖])(?![零○〇一二三四五六七八九壹貳參肆伍陸柒捌玖拾十什])/, '$1〇$2');
     }
-    let ret = chinese_parseint2_1.chinese_parseInt(str);
+    let ret = (0, chinese_parseint2_1.chinese_parseInt)(str);
     if (options.string) {
         // @ts-ignore
         ret = ret.toString();
@@ -100,7 +100,7 @@ function num2zh(number, options = {}) {
     if (Number.isNaN(d) || (options && options.strict && (typeof number != 'number' || d !== number))) {
         throw new TypeError(`${number} is not valid allow number`);
     }
-    return japanese_1.transcribeNumber(d, options);
+    return (0, japanese_1.transcribeNumber)(d, options);
 }
 exports.num2zh = num2zh;
 exports.default = exports;

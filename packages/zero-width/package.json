@@ -54,10 +54,11 @@
     "sort-package-json": "npx yarn-tool sort"
   },
   "dependencies": {
-    "regexp-helper-core": "^1.0.10"
+    "regexp-helper-core": "^1.0.18",
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "regexp-class-to-regenerate": "^1.0.15"
+    "regexp-class-to-regenerate": "^1.0.21"
   },
   "gitHead": "4fd01b2514996a4430f3501d9b1705d2bce8cc78"
 }

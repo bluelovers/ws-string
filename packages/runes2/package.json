@@ -37,5 +37,8 @@
     "postpublishOnly:add": "npx yarn-tool root run postpublishOnly:add runes2",
     "sort-package-json": "npx yarn-tool sort"
   },
-  "gitHead": "4fd01b2514996a4430f3501d9b1705d2bce8cc78"
+  "gitHead": "4fd01b2514996a4430f3501d9b1705d2bce8cc78",
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
 }

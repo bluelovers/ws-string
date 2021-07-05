@@ -28,7 +28,7 @@ exports.GRAPHEMS = [
     0x0E49,
     0x1100,
     0x1161,
-    0x11A8,
+    0x11A8, // ( ᆨ ) HANGUL JONGSEONG KIYEOK
 ];
 function runes(string) {
     if (typeof string !== 'string') {

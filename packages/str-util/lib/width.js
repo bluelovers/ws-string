@@ -2,18 +2,16 @@
 /**
  * Created by user on 2017/12/8/008.
  */
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.stringWidth = void 0;
-const strip_ansi_1 = __importDefault(require("strip-ansi"));
+const tslib_1 = require("tslib");
+const strip_ansi_1 = (0, tslib_1.__importDefault)(require("strip-ansi"));
 const is_fullwidth_1 = require("./is-fullwidth");
 function stringWidth(str) {
     if (typeof str !== 'string' || str.length === 0) {
         return 0;
     }
-    str = strip_ansi_1.default(str);
+    str = (0, strip_ansi_1.default)(str);
     let width = 0;
     for (let i = 0; i < str.length; i++) {
         const code = str.codePointAt(i);
@@ -29,7 +27,7 @@ function stringWidth(str) {
         if (code > 0xFFFF) {
             i++;
         }
-        width += is_fullwidth_1.isFullwidthCodePoint(code) ? 2 : 1;
+        width += (0, is_fullwidth_1.isFullwidthCodePoint)(code) ? 2 : 1;
     }
     return width;
 }

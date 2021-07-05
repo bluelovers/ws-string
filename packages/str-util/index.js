@@ -2,11 +2,9 @@
 /**
  * Created by user on 2017/12/8/008.
  */
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.stripAnsi = exports.toHalfWidth = exports.toFullWidth = exports.toHalfEnglish = exports.toFullEnglish = exports.toHalfNumber = exports.toFullNumber = exports.tableFullHalf = exports.charCodeAt = exports.num2zh = exports.zh2num = exports.jp2zht = exports.jp2zhs = exports.zh2jp = exports.trim = exports.normalize = exports.stringWidth = exports.isFullwidthCodePoint = exports.isFullWidth = void 0;
+const tslib_1 = require("tslib");
 var is_fullwidth_1 = require("./lib/is-fullwidth");
 Object.defineProperty(exports, "isFullWidth", { enumerable: true, get: function () { return is_fullwidth_1.isFullWidth; } });
 Object.defineProperty(exports, "isFullwidthCodePoint", { enumerable: true, get: function () { return is_fullwidth_1.isFullwidthCodePoint; } });
@@ -19,9 +17,9 @@ Object.defineProperty(exports, "toFullEnglish", { enumerable: true, get: functio
 Object.defineProperty(exports, "toHalfEnglish", { enumerable: true, get: function () { return fullhalf_1.toHalfEnglish; } });
 Object.defineProperty(exports, "toFullWidth", { enumerable: true, get: function () { return fullhalf_1.toFullWidth; } });
 Object.defineProperty(exports, "toHalfWidth", { enumerable: true, get: function () { return fullhalf_1.toHalfWidth; } });
-const strip_ansi_1 = __importDefault(require("strip-ansi"));
+const strip_ansi_1 = (0, tslib_1.__importDefault)(require("strip-ansi"));
 exports.stripAnsi = strip_ansi_1.default;
-const normalize_1 = __importDefault(require("./lib/normalize"));
+const normalize_1 = (0, tslib_1.__importDefault)(require("./lib/normalize"));
 exports.normalize = normalize_1.default;
 var trim_1 = require("./lib/trim");
 Object.defineProperty(exports, "trim", { enumerable: true, get: function () { return trim_1.trim; } });

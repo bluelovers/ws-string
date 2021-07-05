@@ -7,7 +7,7 @@ exports.getMinMidMax = exports.getBlankLine = void 0;
 const execall2_1 = require("execall2");
 const normalize_1 = require("./lib/normalize");
 function getBlankLine(txt, options = {}) {
-    let _ms = execall2_1.execall(/\n+/g, normalize_1.normalize(txt));
+    let _ms = (0, execall2_1.execall)(/\n+/g, (0, normalize_1.normalize)(txt));
     if (_ms.length) {
         let _ret = (_ms)
             .reduce(function (a, b) {

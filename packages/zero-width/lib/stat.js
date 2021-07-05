@@ -44,7 +44,7 @@ function _toKey(k) {
             k2 = '\\r';
             break;
         default:
-            k2 = regexp_helper_core_1.unicodeEscape(k, null, null, true);
+            k2 = (0, regexp_helper_core_1.unicodeEscape)(k, null, null, true);
             break;
     }
     if (k2 === k) {

@@ -27,7 +27,8 @@
   },
   "dependencies": {
     "deromanize": "^1.0.0",
-    "num-is-roman": "^1.0.1"
+    "num-is-roman": "^1.0.1",
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
     "arabic-roman-convert.js": "^1.2.1"

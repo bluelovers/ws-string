@@ -68,13 +68,14 @@
     "sort-package-json": "npx yarn-tool sort"
   },
   "dependencies": {
-    "@lazy-cjk/japanese": "^1.2.8",
+    "@lazy-cjk/japanese": "^1.2.15",
     "chinese-parseint2": "^1.1.3",
-    "cjk-conv": "^1.2.108",
+    "cjk-conv": "^1.2.126",
     "deepmerge": "^4.2.2",
-    "is-fullwidth-code-point": "^3.0.0",
-    "strip-ansi": "^6.0.0",
-    "ts-type": "^1.2.29",
+    "is-fullwidth-code-point": "<4 >=3",
+    "strip-ansi": "<7 >=6",
+    "ts-type": "^1.2.35",
+    "tslib": "^2.3.0",
     "uni-string": "^1.1.10"
   }
 }
