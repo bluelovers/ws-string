@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.15](https://github.com/bluelovers/runes/compare/runes2@0.4.14...runes2@0.4.15) (2021-07-05)
+
+
+### 🛠　Build System
+
+* **typescript:** importHelpers ([0716543](https://github.com/bluelovers/runes/commit/07165434bf3e251a31c4d27966ea53136e5bc2e0))
+
+
+
+
+
 ## [0.4.14](https://github.com/bluelovers/runes/compare/runes2@0.4.13...runes2@0.4.14) (2020-06-20)
 
 **Note:** Version bump only for package runes2

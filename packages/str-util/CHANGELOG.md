@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.27](https://github.com/bluelovers/ws-string/compare/str-util@2.3.26...str-util@2.3.27) (2021-07-05)
+
+
+### 🛠　Build System
+
+* **typescript:** importHelpers ([0716543](https://github.com/bluelovers/ws-string/commit/07165434bf3e251a31c4d27966ea53136e5bc2e0))
+
+
+### ♻️　Chores
+
+* **deps:** update deps ([e0b5b60](https://github.com/bluelovers/ws-string/commit/e0b5b60acb7109a0f7a634ba942ada935906e655))
+
+
+
+
+
 ## [2.3.26](https://github.com/bluelovers/ws-string/compare/str-util@2.3.25...str-util@2.3.26) (2020-07-19)
 
 

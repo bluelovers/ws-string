@@ -1,6 +1,6 @@
 {
   "name": "uni-string",
-  "version": "1.1.10",
+  "version": "1.1.11",
   "description": "Unicode String object",
   "keywords": [
     "ansi",
@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "es6-class-prototype": "^1.0.4",
-    "runes2": "^0.4.14",
+    "runes2": "^0.4.15",
     "tslib": "^2.3.0"
   },
   "gitHead": "4fd01b2514996a4430f3501d9b1705d2bce8cc78"

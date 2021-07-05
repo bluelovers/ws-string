@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.11](https://github.com/bluelovers/ws-string/compare/uni-string@1.1.10...uni-string@1.1.11) (2021-07-05)
+
+
+### 📦　Code Refactoring
+
+* **typescript:** update override ([3e438f9](https://github.com/bluelovers/ws-string/commit/3e438f9e69e8f7a29f0bd1dffc7e6c3a1bdd8034))
+
+
+### 🛠　Build System
+
+* **typescript:** importHelpers ([0716543](https://github.com/bluelovers/ws-string/commit/07165434bf3e251a31c4d27966ea53136e5bc2e0))
+
+
+
+
+
 ## [1.1.10](https://github.com/bluelovers/ws-string/compare/uni-string@1.1.9...uni-string@1.1.10) (2020-06-20)
 
 **Note:** Version bump only for package uni-string

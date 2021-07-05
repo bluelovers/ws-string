@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.16](https://github.com/bluelovers/ws-string/compare/zero-width@1.0.15...zero-width@1.0.16) (2021-07-05)
+
+
+### ✨　Features
+
+* trim also remove control code ([8a7d8a2](https://github.com/bluelovers/ws-string/commit/8a7d8a211257b0921cdcbdf71cae41ff4f8f30c3))
+
+
+### 🛠　Build System
+
+* **typescript:** importHelpers ([0716543](https://github.com/bluelovers/ws-string/commit/07165434bf3e251a31c4d27966ea53136e5bc2e0))
+
+
+
+
+
 ## [1.0.15](https://github.com/bluelovers/ws-string/compare/zero-width@1.0.14...zero-width@1.0.15) (2020-07-19)
 
 
