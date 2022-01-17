@@ -16,7 +16,9 @@
     "linefeed",
     "newline",
     "normalize",
-    "replace"
+    "replace",
+    "create-by-yarn-tool",
+    "create-by-tsdx"
   ],
   "homepage": "https://github.com/bluelovers/ws-string/tree/master/packages/crlf-normalize#readme",
   "bugs": {
@@ -28,20 +30,50 @@
   },
   "license": "ISC",
   "author": "bluelovers",
-  "main": "index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "dist/index.cjs",
+  "unpkg": "dist/index.umd.js",
+  "module": "dist/index.esm.mjs",
+  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
   "directories": {
     "test": "test"
   },
   "scripts": {
+    "pretest": "echo pretest",
     "test": "jest",
-    "prepublishOnly": "yarn run test",
-    "prepublishOnly:check-bin": "ynpx --quiet @yarn-tool/check-pkg-bin",
+    "posttest": "yarn run build",
+    "build": "yarn run build:tsdx && yarn run build:dts",
+    "build:dts": "ynpx dts-bundle-generator -o ./dist/index.d.ts ./src/index.ts --no-banner & echo build:dts",
+    "build:tsdx": "ynpx @bluelovers/tsdx build --target node --name index",
+    "ci:install": "echo ci:install",
+    "ci:build": "echo ci:build",
+    "preversion": "echo preversion && yarn run test",
+    "version": "echo version",
+    "postversion": "echo postversion",
+    "prepublish": "echo prepublish",
+    "prepare": "echo prepare",
+    "prepublishOnly": "echo prepublishOnly",
     "prepublishOnly:update": "yarn run ncu && yarn run sort-package-json",
-    "ncu": "ynpx --quiet yarn-tool -- ncu -u",
-    "sort-package-json": "ynpx --quiet yarn-tool -- sort"
+    "prepack": "echo prepack",
+    "pack": "echo pack",
+    "postpack": "echo postpack",
+    "publish": "echo publish",
+    "postpublish": "echo postpublish",
+    "postpublishOnly": "echo postpublishOnly",
+    "ncu": "yarn-tool ncu -u",
+    "sort-package-json": "yarn-tool sort",
+    "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
-    "ts-type": "^2.1.4",
-    "tslib": "^2.3.0"
-  }
+    "ts-type": "^2.1.4"
+  },
+  "packageManager": "yarn@^1.22.11"
 }

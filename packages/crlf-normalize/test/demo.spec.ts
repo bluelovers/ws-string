@@ -1,4 +1,4 @@
-import { crlf, LF, CRLF, CR, chkcrlf } from '../index';
+import { crlf, LF, CRLF, CR, chkcrlf } from '../src/index';
 
 const text = 'foo\r\nbar\nbaz\r';
 
