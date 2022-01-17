@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.7](https://github.com/bluelovers/ws-string/compare/crlf-normalize@1.0.6...crlf-normalize@1.0.7) (2022-01-17)
+
+
+### 📦　Code Refactoring
+
+* to tsdx ([8e5529f](https://github.com/bluelovers/ws-string/commit/8e5529fb8e9fe224d11baa63a6ab0f46b18fabd2))
+* add detectLineBreak ([332b811](https://github.com/bluelovers/ws-string/commit/332b811ba99bc9338615af80160e3691a67a0a8c))
+
+
+
+
+
 ## [1.0.6](https://github.com/bluelovers/ws-string/compare/crlf-normalize@1.0.5...crlf-normalize@1.0.6) (2021-07-05)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.28](https://github.com/bluelovers/ws-string/compare/str-util@2.3.27...str-util@2.3.28) (2022-01-17)
+
+
+### 🔖　Miscellaneous
+
+* . ([7cb827e](https://github.com/bluelovers/ws-string/commit/7cb827e5dc146474f8385ba919eefb48824c1dc2))
+
+
+
+
+
 ## [2.3.27](https://github.com/bluelovers/ws-string/compare/str-util@2.3.26...str-util@2.3.27) (2021-07-05)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.5](https://github.com/bluelovers/ws-string/compare/chinese-parseint2@1.1.4...chinese-parseint2@1.1.5) (2022-01-17)
+
+
+### 🔖　Miscellaneous
+
+* . ([7cb827e](https://github.com/bluelovers/ws-string/commit/7cb827e5dc146474f8385ba919eefb48824c1dc2))
+
+
+
+
+
 ## [1.1.4](https://github.com/bluelovers/ws-string/compare/chinese-parseint2@1.1.3...chinese-parseint2@1.1.4) (2021-07-05)
 
 
