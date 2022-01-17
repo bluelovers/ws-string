@@ -10,7 +10,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-(0, tslib_1.__exportStar)(require("cjk-conv/lib/jp/table"), exports);
-const table_1 = (0, tslib_1.__importDefault)(require("cjk-conv/lib/jp/table"));
+tslib_1.__exportStar(require("cjk-conv/lib/jp/table"), exports);
+const table_1 = tslib_1.__importDefault(require("cjk-conv/lib/jp/table"));
 exports.default = table_1.default;
 //# sourceMappingURL=table.js.map

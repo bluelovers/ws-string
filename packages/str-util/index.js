@@ -17,9 +17,9 @@ Object.defineProperty(exports, "toFullEnglish", { enumerable: true, get: functio
 Object.defineProperty(exports, "toHalfEnglish", { enumerable: true, get: function () { return fullhalf_1.toHalfEnglish; } });
 Object.defineProperty(exports, "toFullWidth", { enumerable: true, get: function () { return fullhalf_1.toFullWidth; } });
 Object.defineProperty(exports, "toHalfWidth", { enumerable: true, get: function () { return fullhalf_1.toHalfWidth; } });
-const strip_ansi_1 = (0, tslib_1.__importDefault)(require("strip-ansi"));
+const strip_ansi_1 = tslib_1.__importDefault(require("strip-ansi"));
 exports.stripAnsi = strip_ansi_1.default;
-const normalize_1 = (0, tslib_1.__importDefault)(require("./lib/normalize"));
+const normalize_1 = tslib_1.__importDefault(require("./lib/normalize"));
 exports.normalize = normalize_1.default;
 var trim_1 = require("./lib/trim");
 Object.defineProperty(exports, "trim", { enumerable: true, get: function () { return trim_1.trim; } });

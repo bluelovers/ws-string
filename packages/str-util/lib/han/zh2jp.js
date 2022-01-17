@@ -7,7 +7,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-(0, tslib_1.__exportStar)(require("cjk-conv/lib/jp/core"), exports);
+tslib_1.__exportStar(require("cjk-conv/lib/jp/core"), exports);
 const core_1 = require("cjk-conv/lib/jp/core");
 exports.default = core_1.zh2jp;
 //# sourceMappingURL=zh2jp.js.map

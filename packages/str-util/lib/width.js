@@ -5,7 +5,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.stringWidth = void 0;
 const tslib_1 = require("tslib");
-const strip_ansi_1 = (0, tslib_1.__importDefault)(require("strip-ansi"));
+const strip_ansi_1 = tslib_1.__importDefault(require("strip-ansi"));
 const is_fullwidth_1 = require("./is-fullwidth");
 function stringWidth(str) {
     if (typeof str !== 'string' || str.length === 0) {

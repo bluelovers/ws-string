@@ -30,6 +30,6 @@
     "sort-package-json": "ynpx --quiet yarn-tool -- sort"
   },
   "dependencies": {
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.1"
   }
 }

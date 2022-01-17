@@ -5,9 +5,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.str2num = exports.roman2num = exports.circle2num = void 0;
 const tslib_1 = require("tslib");
-const circle_1 = (0, tslib_1.__importDefault)(require("./lib/type/circle"));
+const circle_1 = tslib_1.__importDefault(require("./lib/type/circle"));
 exports.circle2num = circle_1.default;
-const roman_1 = (0, tslib_1.__importStar)(require("./lib/type/roman"));
+const roman_1 = tslib_1.__importStar(require("./lib/type/roman"));
 exports.roman2num = roman_1.default;
 function str2num(s, options = {}) {
     if (options.all && options.roman !== false || options.roman) {

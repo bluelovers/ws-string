@@ -39,7 +39,7 @@
     "sort-package-json": "ynpx --quiet yarn-tool -- sort"
   },
   "dependencies": {
-    "execall2": "^2.0.9",
-    "tslib": "^2.3.0"
+    "execall2": "^2.0.17",
+    "tslib": "^2.3.1"
   }
 }

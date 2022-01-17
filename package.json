@@ -17,23 +17,23 @@
   "resolutions": {},
   "devDependencies": {
     "@bluelovers/fast-glob": "^3.0.4",
-    "@bluelovers/tsconfig": "^1.0.22",
-    "@git-lazy/spawn": "^1.0.25",
-    "@git-lazy/subtree": "^1.0.18",
-    "@types/bluebird": "^3.5.35",
-    "@types/fs-extra": "^9.0.11",
-    "@types/jest": "^26.0.23",
+    "@bluelovers/tsconfig": "^1.0.28",
+    "@git-lazy/spawn": "^1.0.28",
+    "@git-lazy/subtree": "^1.0.21",
+    "@types/bluebird": "^3.5.36",
+    "@types/fs-extra": "^9.0.13",
+    "@types/jest": "^27.4.0",
     "@types/node": "*",
     "bluebird": "^3.7.2",
-    "debug-color2": "^1.2.3",
+    "debug-color2": "^1.2.7",
     "fs-extra": "^10.0.0",
-    "jest": "^27.0.6",
-    "ts-jest": "^27.0.3"
+    "jest": "^27.4.7",
+    "ts-jest": "^27.1.3"
   },
   "peerDependencies": {
     "lerna": "^4.0.0"
   },
   "dependencies": {
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.1"
   }
 }

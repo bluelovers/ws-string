@@ -5,7 +5,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.isFullWidth = exports.isFullwidthCodePoint = void 0;
 const tslib_1 = require("tslib");
-const is_fullwidth_code_point_1 = (0, tslib_1.__importDefault)(require("is-fullwidth-code-point"));
+const is_fullwidth_code_point_1 = tslib_1.__importDefault(require("is-fullwidth-code-point"));
 function isFullwidthCodePoint(x) {
     if (Number.isNaN(x)) {
         return false;

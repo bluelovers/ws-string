@@ -5,8 +5,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UString = exports.STRING_PROTOTYPE = void 0;
 const tslib_1 = require("tslib");
-const runes_1 = (0, tslib_1.__importDefault)(require("runes2/runes"));
-const es6_class_prototype_1 = (0, tslib_1.__importDefault)(require("es6-class-prototype"));
+const runes_1 = tslib_1.__importDefault(require("runes2/runes"));
+const es6_class_prototype_1 = tslib_1.__importDefault(require("es6-class-prototype"));
 exports.STRING_PROTOTYPE = Object.getOwnPropertyNames(String.prototype);
 class UString extends String {
     constructor(str, ...argv) {

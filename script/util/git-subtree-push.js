@@ -2,10 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.gitSubtreePush = void 0;
 const tslib_1 = require("tslib");
-const logger_1 = (0, tslib_1.__importDefault)(require("debug-color2/logger"));
-const __root_ws_1 = (0, tslib_1.__importDefault)(require("../../__root_ws"));
+const logger_1 = tslib_1.__importDefault(require("debug-color2/logger"));
+const __root_ws_1 = tslib_1.__importDefault(require("../../__root_ws"));
 const fs_extra_1 = require("fs-extra");
-const create_cache_name_1 = (0, tslib_1.__importDefault)(require("./create-cache-name"));
+const create_cache_name_1 = tslib_1.__importDefault(require("./create-cache-name"));
 const subtree_1 = require("@git-lazy/subtree");
 async function gitSubtreePush(module_name) {
     let _ok = true;
