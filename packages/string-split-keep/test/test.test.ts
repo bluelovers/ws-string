@@ -1,7 +1,7 @@
 "use strict"
 
-var ssplit = require("../src")
-var assert = require("assert");
+import ssplit from '../src';
+import assert from 'assert';
 
 describe("limit undefined or 0", function() {
   it("should follow original string.split behaviour", function() {

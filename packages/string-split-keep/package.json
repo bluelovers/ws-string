@@ -1,13 +1,63 @@
 {
-  "name": "string-split-keep",
-  "author": "Michael Hopfner",
+  "name": "string-split-keep2",
   "version": "1.0.1",
   "description": "Split strings without applying separator after limit; Negative limit starts from the end. No regex separators.",
+  "keywords": [
+    "create-by-yarn-tool",
+    "create-by-tsdx"
+  ],
+  "homepage": "https://github.com/bluelovers/ws-string/tree/master/packages/string-split-keep#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/ws-string/issues"
+  },
   "repository": {
     "type": "git",
-  "url": "https://github.com/mihop/string-split-keep"
+    "url": "git+https://github.com/bluelovers/ws-string.git"
   },
   "license": "MIT",
-  "scripts": {},
-  "devDependencies": {}
+  "author": "Michael Hopfner",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "dist/index.cjs",
+  "unpkg": "dist/index.umd.js",
+  "module": "dist/index.esm.mjs",
+  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "pretest": "echo pretest",
+    "test": "jest",
+    "posttest": "yarn run build",
+    "build": "yarn run build:tsdx && yarn run build:dts:bundle",
+    "build:dts:bundle": "ynpx dts-bundle-generator -o ./dist/index.d.ts ./src/index.ts --no-banner & echo build:dts",
+    "build:tsdx": "ynpx @bluelovers/tsdx build --target node --name index",
+    "ci:install": "echo ci:install",
+    "ci:build": "echo ci:build",
+    "preversion": "echo preversion && yarn run test",
+    "version": "echo version",
+    "postversion": "echo postversion",
+    "prepublish": "echo prepublish",
+    "prepare": "echo prepare",
+    "prepublishOnly": "echo prepublishOnly",
+    "prepublishOnly:update": "yarn run ncu && yarn run sort-package-json",
+    "prepack": "echo prepack",
+    "pack": "echo pack",
+    "postpack": "echo postpack",
+    "publish": "echo publish",
+    "postpublish": "echo postpublish",
+    "postpublishOnly": "echo postpublishOnly",
+    "ncu": "yarn-tool ncu -u",
+    "sort-package-json": "yarn-tool sort",
+    "tsc:showConfig": "ynpx get-current-tsconfig -p"
+  },
+  "devDependencies": {},
+  "packageManager": "yarn@^1.22.11"
 }
