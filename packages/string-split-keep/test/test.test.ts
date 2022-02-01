@@ -1,6 +1,6 @@
 "use strict"
 
-var ssplit = require("../index")
+var ssplit = require("../src")
 var assert = require("assert");
 
 describe("limit undefined or 0", function() {
@@ -20,7 +20,7 @@ describe("separator undefined", function() {
 describe("separator empty", function() {
   it("should follow original string.split behaviour (except for keeping tail)", function() {
     assert.deepEqual("abcde".split("", 4), ["a", "b", "c", "d"])
-    
+
     assert.deepEqual(["abcde"], ssplit("abcde", "", 1))
     assert.deepEqual(["a", "bcde"], ssplit("abcde", "", 2))
     assert.deepEqual(["a", "b", "c", "d", "e"], ssplit("abcde", "", 5))
@@ -50,7 +50,7 @@ describe("limit > 1", function() {
   it("should split completely if limit >= separator occurences", function() {
     assert.deepEqual(["word", "word", "word"], ssplit("word word word", " ", 3))
     assert.deepEqual(["word", "word", "word"], ssplit("word word word", " ", 17))
-    
+
   })
   it("should split in the same fashion for input consisting of separators only", function() {
     assert.deepEqual(["", "  "], ssplit("   ", " ", 2))
