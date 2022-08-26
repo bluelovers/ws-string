@@ -64,7 +64,7 @@
   },
   "resolutions": {},
   "dependencies": {
-    "tslib": "^2.3.1"
+    "tslib": "^2"
   },
   "devDependencies": {
     "@bluelovers/fast-glob": "^3.0.4",

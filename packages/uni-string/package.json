@@ -55,7 +55,7 @@
   "dependencies": {
     "es6-class-prototype": "^1.0.4",
     "runes2": "^1.0.1",
-    "tslib": "^2.3.1"
+    "tslib": "^2"
   },
   "gitHead": "4fd01b2514996a4430f3501d9b1705d2bce8cc78"
 }

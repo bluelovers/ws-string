@@ -68,7 +68,7 @@
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
-    "tslib": "^2.3.1"
+    "tslib": "^2"
   },
   "packageManager": "yarn@1.22.19"
 }
