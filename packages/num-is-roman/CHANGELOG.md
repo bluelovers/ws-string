@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.5](https://github.com/bluelovers/ws-string/compare/num-is-roman@1.0.4...num-is-roman@1.0.5) (2022-08-26)
+
+
+
+### 🔖　Miscellaneous
+
+* . ([f02f008](https://github.com/bluelovers/ws-string/commit/f02f0084480b8c21f85f55f1c0d5f0e0e86306dc))
+
+
+
 ## [1.0.4](https://github.com/bluelovers/ws-string/compare/num-is-roman@1.0.3...num-is-roman@1.0.4) (2022-08-26)
 
 
