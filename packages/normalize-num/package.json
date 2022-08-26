@@ -23,7 +23,6 @@
     "test:jest:snapshot": "yarn run test:jest -- -u",
     "test:snapshot": "yarn run test -- -u",
     "preversion": "yarn run test",
-    "prepublishOnly": "yarn run test",
     "prepublishOnly:check-bin": "ynpx --quiet @yarn-tool/check-pkg-bin",
     "prepublishOnly:update": "yarn run ncu && yarn run sort-package-json",
     "ncu": "ynpx --quiet yarn-tool -- ncu -u",
@@ -40,5 +39,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "b41c5edacf2b3ea6b5b9488a002565ccbbc67e08"
+  "gitHead": "952f3f53bed3e2bf3ccaec50c46702f127ff4e7f"
 }

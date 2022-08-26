@@ -1,6 +1,6 @@
 {
   "name": "num-is-roman",
-  "version": "1.0.5",
+  "version": "1.0.4",
   "description": "<%= description %>",
   "keywords": [
     "create-by-yarn-tool",
@@ -54,7 +54,6 @@
     "postversion": "echo postversion",
     "prepublish": "echo prepublish",
     "prepare": "echo prepare",
-    "prepublishOnly": "yarn run test",
     "prepublishOnly:check-bin": "ynpx --quiet @yarn-tool/check-pkg-bin",
     "prepublishOnly:update": "yarn run ncu && yarn run sort-package-json",
     "prepack": "echo prepack",

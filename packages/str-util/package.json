@@ -1,6 +1,6 @@
 {
   "name": "str-util",
-  "version": "2.3.30",
+  "version": "2.3.29",
   "description": "convert full/half width, Chinese/Japanese number, 中日漢字轉換... others util helper",
   "keywords": [
     "char",
@@ -67,20 +67,19 @@
     "npm:publish:lerna": "npx lerna publish --yes --cd-version patch",
     "preversion": "yarn run test",
     "prepublish:lockfile": "npx sync-lockfile .",
-    "prepublishOnly": "yarn run test",
     "ncu": "npx yarn-tool ncu -u",
     "sort-package-json": "npx yarn-tool sort"
   },
   "dependencies": {
     "@lazy-cjk/japanese": "^1.2.24",
-    "chinese-parseint2": "^1.1.7",
+    "chinese-parseint2": "^1.1.6",
     "cjk-conv": "^1.2.137",
     "deepmerge": "^4.2.2",
     "is-fullwidth-code-point": "<4 >=3",
     "strip-ansi": "<7 >=6",
     "ts-type": "^2.1.4",
     "tslib": "^2",
-    "uni-string": "^1.1.14"
+    "uni-string": "^1.1.13"
   },
   "gitHead": "b41c5edacf2b3ea6b5b9488a002565ccbbc67e08"
 }

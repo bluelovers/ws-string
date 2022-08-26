@@ -1,6 +1,6 @@
 {
   "name": "uni-string",
-  "version": "1.1.14",
+  "version": "1.1.13",
   "description": "Unicode String object",
   "keywords": [
     "ansi",
@@ -45,7 +45,6 @@
     "npm:publish:lerna": "npx lerna publish --yes --cd-version patch",
     "preversion": "yarn run test",
     "prepublish:lockfile": "npx sync-lockfile .",
-    "prepublishOnly": "yarn run test",
     "postpublish": "yarn run postpublishOnly:add",
     "postpublish_": "git commit -m \"chore(release): publish\" .",
     "postpublishOnly:add": "npx yarn-tool root run postpublishOnly:add uni-string",
@@ -54,7 +53,7 @@
   },
   "dependencies": {
     "es6-class-prototype": "^1.0.4",
-    "runes2": "^1.0.3",
+    "runes2": "^1.0.2",
     "tslib": "^2"
   },
   "gitHead": "b41c5edacf2b3ea6b5b9488a002565ccbbc67e08"
