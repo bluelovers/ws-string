@@ -7,7 +7,8 @@ exports.toHalfWidth = exports.toFullWidth = exports.toHalfEnglish = exports.toFu
 const tslib_1 = require("tslib");
 const deepmerge_1 = tslib_1.__importDefault(require("deepmerge"));
 const util_1 = tslib_1.__importDefault(require("./util"));
-const uni_string_1 = tslib_1.__importDefault(require("uni-string"));
+// @ts-ignore
+const uni_string_1 = require("uni-string");
 var FullHalfCore;
 (function (FullHalfCore) {
     let EnumFullHalfTableType;
@@ -16,9 +17,9 @@ var FullHalfCore;
         EnumFullHalfTableType[EnumFullHalfTableType["HALF_WIDTH"] = 0] = "HALF_WIDTH";
         EnumFullHalfTableType[EnumFullHalfTableType["NO_EXIST"] = -1] = "NO_EXIST";
     })(EnumFullHalfTableType = FullHalfCore.EnumFullHalfTableType || (FullHalfCore.EnumFullHalfTableType = {}));
-    FullHalfCore.FULL_WIDTH = 1 /* FULL_WIDTH */;
-    FullHalfCore.HALF_WIDTH = 0 /* HALF_WIDTH */;
-    FullHalfCore.NO_EXIST = -1 /* NO_EXIST */;
+    FullHalfCore.FULL_WIDTH = 1 /* EnumFullHalfTableType.FULL_WIDTH */;
+    FullHalfCore.HALF_WIDTH = 0 /* EnumFullHalfTableType.HALF_WIDTH */;
+    FullHalfCore.NO_EXIST = -1 /* EnumFullHalfTableType.NO_EXIST */;
     /**
      * @see https://en.wikipedia.org/wiki/Code_page_437
      */
@@ -56,8 +57,8 @@ var FullHalfCore;
             let r;
             r = fn(v);
             if (r) {
-                FullHalfCore.table[0 /* HALF_WIDTH */][k] = r[1];
-                FullHalfCore.table[1 /* FULL_WIDTH */][k] = r[0];
+                FullHalfCore.table[0 /* EnumFullHalfTableType.HALF_WIDTH */][k] = r[1];
+                FullHalfCore.table[1 /* EnumFullHalfTableType.FULL_WIDTH */][k] = r[0];
             }
         }
         let r = fn(_table.default);
@@ -72,8 +73,8 @@ var FullHalfCore;
                 r[1].not.push(r2[1]);
             }
         }
-        FullHalfCore.table[0 /* HALF_WIDTH */]['not_default'] = r[1];
-        FullHalfCore.table[1 /* FULL_WIDTH */]['not_default'] = r[0];
+        FullHalfCore.table[0 /* EnumFullHalfTableType.HALF_WIDTH */]['not_default'] = r[1];
+        FullHalfCore.table[1 /* EnumFullHalfTableType.FULL_WIDTH */]['not_default'] = r[0];
         //console.log(table);
         function fn(v) {
             let r = [];
@@ -164,20 +165,20 @@ var FullHalfCore;
     FullHalfCore.chkType = chkType;
     function hasFullHalf(charCode) {
         if (0x0020 <= charCode && charCode < 0x007F) {
-            return 0 /* HALF_WIDTH */;
+            return 0 /* EnumFullHalfTableType.HALF_WIDTH */;
         }
         if (0x3000 === charCode || 0xFF00 < charCode && charCode < 0xFF5F) {
-            return 1 /* FULL_WIDTH */;
+            return 1 /* EnumFullHalfTableType.FULL_WIDTH */;
         }
-        return -1 /* NO_EXIST */;
+        return -1 /* EnumFullHalfTableType.NO_EXIST */;
     }
     FullHalfCore.hasFullHalf = hasFullHalf;
     function isFullHalf(charCode) {
         let r = hasFullHalf(charCode);
-        if (r === 1 /* FULL_WIDTH */) {
+        if (r === 1 /* EnumFullHalfTableType.FULL_WIDTH */) {
             return true;
         }
-        else if (r === 0 /* HALF_WIDTH */) {
+        else if (r === 0 /* EnumFullHalfTableType.HALF_WIDTH */) {
             return false;
         }
         else {
@@ -250,7 +251,7 @@ var FullHalfCore;
         options.skip = _optionsType(options.skip);
         options.only = _optionsType(options.only);
         //console.log(options);
-        let _str = Array.isArray(str) ? str : new uni_string_1.default(str);
+        let _str = Array.isArray(str) ? str : new uni_string_1.UString(str);
         for (let char of _str) {
             let _skip;
             // @ts-ignore
@@ -311,22 +312,22 @@ let typeOnly = {
         number: true,
     },
 };
-exports.toFullNumber = FullHalfCore.factory(FullHalfCore.toFullWidth, 1 /* FULL_WIDTH */, typeOnly);
-exports.toHalfNumber = FullHalfCore.factory(FullHalfCore.toHalfWidth, 0 /* HALF_WIDTH */, typeOnly);
+exports.toFullNumber = FullHalfCore.factory(FullHalfCore.toFullWidth, 1 /* FullHalfCore.EnumFullHalfTableType.FULL_WIDTH */, typeOnly);
+exports.toHalfNumber = FullHalfCore.factory(FullHalfCore.toHalfWidth, 0 /* FullHalfCore.EnumFullHalfTableType.HALF_WIDTH */, typeOnly);
 typeOnly = {
     only: {
         eng: true,
     },
 };
-exports.toFullEnglish = FullHalfCore.factory(FullHalfCore.toFullWidth, 1 /* FULL_WIDTH */, typeOnly);
-exports.toHalfEnglish = FullHalfCore.factory(FullHalfCore.toHalfWidth, 0 /* HALF_WIDTH */, typeOnly);
+exports.toFullEnglish = FullHalfCore.factory(FullHalfCore.toFullWidth, 1 /* FullHalfCore.EnumFullHalfTableType.FULL_WIDTH */, typeOnly);
+exports.toHalfEnglish = FullHalfCore.factory(FullHalfCore.toHalfWidth, 0 /* FullHalfCore.EnumFullHalfTableType.HALF_WIDTH */, typeOnly);
 typeOnly = {
     only: {
         default: true,
     },
 };
-exports.toFullWidth = FullHalfCore.factory(FullHalfCore.toFullWidth, 1 /* FULL_WIDTH */, typeOnly);
-exports.toHalfWidth = FullHalfCore.factory(FullHalfCore.toHalfWidth, 0 /* HALF_WIDTH */, typeOnly);
+exports.toFullWidth = FullHalfCore.factory(FullHalfCore.toFullWidth, 1 /* FullHalfCore.EnumFullHalfTableType.FULL_WIDTH */, typeOnly);
+exports.toHalfWidth = FullHalfCore.factory(FullHalfCore.toHalfWidth, 0 /* FullHalfCore.EnumFullHalfTableType.HALF_WIDTH */, typeOnly);
 exports.default = exports;
 //console.log(toFullEnglish('123abcABCＡＢＣ１２３／＊－＋＝－０］［’；／．+-*/=-09][\'";/.'));
 //console.log(toHalfEnglish('123abcABCＡＢＣ１２３／＊－＋＝－０］［’；／．+-*/=-09][\'";/.'));

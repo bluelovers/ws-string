@@ -3,7 +3,7 @@ export declare function normalize(input: string, options?: {
     allow_nbsp?: boolean;
     allow_bom?: boolean;
 }): string;
-export declare type IOptions = {
+export type IOptions = {
     allow_nbsp?: boolean;
     allow_bom?: boolean;
 };

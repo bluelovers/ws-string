@@ -7,7 +7,7 @@ export interface IOptions {
     sort?: boolean;
 }
 export declare function getBlankLine(txt: string | Buffer, options?: IOptions): number[];
-export declare type IGetMinMidMax = [
+export type IGetMinMidMax = [
     /**
      * min
      */

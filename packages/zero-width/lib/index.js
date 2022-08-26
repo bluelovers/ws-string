@@ -31,7 +31,7 @@ function removeBom(str, unsafe) {
 }
 exports.removeBom = removeBom;
 function nbspToSpace(str) {
-    return str.replace(re_1.reNBSP, " " /* SPACE */);
+    return str.replace(re_1.reNBSP, " " /* ENUM_SPACE.SPACE */);
 }
 exports.nbspToSpace = nbspToSpace;
 exports.default = removeZeroWidth;

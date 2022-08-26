@@ -4,9 +4,8 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UString = exports.STRING_PROTOTYPE = void 0;
-const tslib_1 = require("tslib");
-const runes_1 = tslib_1.__importDefault(require("runes2/runes"));
-const es6_class_prototype_1 = tslib_1.__importDefault(require("es6-class-prototype"));
+const runes2_1 = require("runes2");
+const es6_class_prototype_1 = require("es6-class-prototype");
 exports.STRING_PROTOTYPE = Object.getOwnPropertyNames(String.prototype);
 class UString extends String {
     constructor(str, ...argv) {
@@ -28,11 +27,11 @@ class UString extends String {
         if (str instanceof UString) {
             return str.toArray();
         }
-        return (0, runes_1.default)(String(str));
+        return (0, runes2_1.runes)(String(str));
     }
     toArray() {
         if (!this._arr) {
-            this._arr = (0, runes_1.default)(String(this));
+            this._arr = (0, runes2_1.runes)(String(this));
         }
         return this._arr;
     }
@@ -165,7 +164,7 @@ class UString extends String {
      * 顯示 目前支援 unicode 的 method
      */
     static get support() {
-        let prototype = (0, es6_class_prototype_1.default)(this);
+        let prototype = (0, es6_class_prototype_1.classPrototype)(this);
         return Object.keys(prototype).reduce(function (a, b) {
             if (exports.STRING_PROTOTYPE.includes(b)) {
                 a[b] = true;

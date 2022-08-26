@@ -2,7 +2,7 @@
  * Created by user on 2018/5/15/015.
  */
 import deromanize from 'deromanize';
-import isRoman from 'num-is-roman';
+import { isRoman } from 'num-is-roman';
 export { isRoman };
 export { deromanize };
 export declare function normalizeRoman(input: string, bool?: boolean): string;

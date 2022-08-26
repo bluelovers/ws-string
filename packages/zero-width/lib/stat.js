@@ -31,16 +31,16 @@ exports._report = _report;
 function _toKey(k) {
     let k2;
     switch (k) {
-        case "\t" /* TAB */:
+        case "\t" /* ENUM_SPACE.TAB */:
             k2 = '\\t';
             break;
-        case "\v" /* VERTICAL_TABULATION */:
+        case "\v" /* ENUM_SPACE.VERTICAL_TABULATION */:
             k2 = '\\v';
             break;
-        case "\n" /* NEW_LINE */:
+        case "\n" /* ENUM_SPACE.NEW_LINE */:
             k2 = '\\n';
             break;
-        case "\r" /* CARRIAGE_RETURN */:
+        case "\r" /* ENUM_SPACE.CARRIAGE_RETURN */:
             k2 = '\\r';
             break;
         default:

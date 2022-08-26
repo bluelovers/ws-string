@@ -8,5 +8,5 @@
  * @see http://www5b.biglobe.ne.jp/%7Eharigaya/variants.html
  */
 export * from 'cjk-conv/lib/jp/table';
-import TABLE from 'cjk-conv/lib/jp/table';
+import { TABLE } from 'cjk-conv/lib/jp/table';
 export default TABLE;

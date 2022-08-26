@@ -7,8 +7,8 @@ exports.roman2num = exports.normalizeRoman = exports.deromanize = exports.isRoma
 const tslib_1 = require("tslib");
 const deromanize_1 = tslib_1.__importDefault(require("deromanize"));
 exports.deromanize = deromanize_1.default;
-const num_is_roman_1 = tslib_1.__importDefault(require("num-is-roman"));
-exports.isRoman = num_is_roman_1.default;
+const num_is_roman_1 = require("num-is-roman");
+Object.defineProperty(exports, "isRoman", { enumerable: true, get: function () { return num_is_roman_1.isRoman; } });
 function normalizeRoman(input, bool) {
     let ro = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII',];
     for (let i = 0; i < 12; i++) {

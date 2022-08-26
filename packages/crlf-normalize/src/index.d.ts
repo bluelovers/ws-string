@@ -9,8 +9,8 @@ declare const CRLF: EnumLineBreak.CRLF;
 declare const LF: EnumLineBreak.LF;
 declare const R_CRLF: RegExp;
 export { CR, CRLF, LF, R_CRLF };
-export declare type ILineBreak = ITSTypeAndStringLiteral<EnumLineBreak>;
-export declare type ILineBreakInput = ITSAndTypeAndStringLiteral<EnumLineBreak>;
+export type ILineBreak = ITSTypeAndStringLiteral<EnumLineBreak>;
+export type ILineBreakInput = ITSAndTypeAndStringLiteral<EnumLineBreak>;
 export interface IOptions {
     disable?: {
         lf?: boolean;
