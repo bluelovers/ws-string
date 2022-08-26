@@ -2,19 +2,70 @@
   "name": "ws-string",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://github.com/bluelovers/ws-string#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/ws-string/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/ws-string.git"
+  },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "packages/@lazy-cjk/*",
+    "packages/@regexp-cjk/*",
+    "packages/@node-novel/*"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lerna:publish": "lerna publish --yes --cd-version patch && yarn run postpublishOnly",
-    "postpublish:subtree": "ts-node ./script/run/postpublish-subtree.ts",
-    "ncu": "npx yarn-tool ncu -u && npx yarn-tool ws exec yarn-tool ncu -- -u",
-    "postpublishOnly": "yarn run postpublish:subtree",
-    "postpublishOnly:add": "ts-node ./script/run/postpublish-add.ts",
-    "sort-package-json": "npx yarn-tool sort && npx yarn-tool ws exec yarn-tool sort"
+    "review:all": "yarn-tool ws run review --concurrency 1",
+    "coverage:all": "yarn-tool ws run coverage --concurrency 1",
+    "lint:all": "yarn-tool ws run lint --concurrency 1",
+    "pretest": "echo pretest",
+    "test": "yarn run test:since",
+    "test:all": "yarn-tool ws run test --concurrency 1",
+    "test:jest:clearCache": "jest --clearCache",
+    "test:since": "yarn run test:all -- --since",
+    "test:snapshot:all": "yarn-tool ws run test:snapshot --concurrency 1",
+    "test:snapshot:since": "yarn run test:snapshot:all -- --since",
+    "install:frozenLockfile": "yarn-tool install --frozen-lockfile",
+    "install:reset-lockfile": "yarn-tool install --reset-lockfile",
+    "install:resetLockfile": "yarn-tool install --reset-lockfile",
+    "build:all": "yarn-tool ws run build --concurrency 1",
+    "ci:install": "yarn install --frozen-lockfile && yarn add -W typescript@next jest ts-jest ts-node ynpx lerna yarn-tool",
+    "ci:build": "echo ci:build",
+    "lerna:publish": "yarn run prepublishOnly:root && lerna publish && yarn run postpublishOnly",
+    "lerna:publish:yes": "yarn run prepublishOnly:root && lerna publish --yes --bump patch && yarn run postpublishOnly",
+    "ws:fix-all": "yarn-tool fix-all  --overwriteHostedGitInfo",
+    "preversion": "yarn run test",
+    "version": "echo version",
+    "postversion": "yarn-tool fix-all",
+    "prepublish": "echo prepublish",
+    "prepare": "echo prepare",
+    "prepare:fix-ws-links": "ynpx --quiet @yarn-tool/fix-ws-links",
+    "prepublishOnly": "echo prepublishOnly",
+    "prepublishOnly:check-bin": "ynpx --quiet @yarn-tool/check-pkg-bin",
+    "prepublishOnly:lockfile": "ynpx --quiet sync-lockfile",
+    "prepublishOnly:root": "yarn run prepublishOnly:check-bin && yarn run prepare:fix-ws-links",
+    "prepublishOnly:update": "yarn run ncu && yarn run sort-package-json",
+    "prepack": "echo prepack",
+    "pack": "echo pack",
+    "postpack": "echo postpack",
+    "publish": "echo publish",
+    "postpublish": "echo postpublish",
+    "postpublishOnly": "yarn run postpublishOnly:ws-root-changelog & echo postpublishOnly",
+    "postpublishOnly:ws-root-changelog": "ynpx ws-root-changelog & git add ./CHANGELOG.md & git commit ./CHANGELOG.md -m \"chore(changelog): update changelog toc in workspaces root\" & echo update changelog toc in workspaces root",
+    "ncu": "yarn run ncu:ws",
+    "ncu:ws": "yarn-tool ncu -u --AA",
+    "ncu:root": "yarn-tool ncu -u",
+    "sort-package-json": "yarn run sort-package-json:root && yarn run sort-package-json:ws",
+    "sort-package-json:root": "yarn-tool sort",
+    "sort-package-json:ws": "yarn-tool ws sort",
+    "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "resolutions": {},
+  "dependencies": {
+    "tslib": "^2.3.1"
+  },
   "devDependencies": {
     "@bluelovers/fast-glob": "^3.0.4",
     "@bluelovers/tsconfig": "^1.0.28",
@@ -24,6 +75,7 @@
     "@types/fs-extra": "^9.0.13",
     "@types/jest": "^27.4.0",
     "@types/node": "*",
+    "@yarn-tool/ws-find-up-paths": "*",
     "bluebird": "^3.7.2",
     "debug-color2": "^1.2.7",
     "fs-extra": "^10.0.0",
@@ -32,8 +84,5 @@
   },
   "peerDependencies": {
     "lerna": "^4.0.0"
-  },
-  "dependencies": {
-    "tslib": "^2.3.1"
   }
 }

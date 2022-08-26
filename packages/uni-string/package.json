@@ -38,19 +38,23 @@
   },
   "scripts": {
     "test": "jest -u",
+    "test:jest": "jest --passWithNoTests",
+    "test:jest:snapshot": "yarn run test:jest -- -u",
+    "test:snapshot": "yarn run test -- -u",
     "npm:publish": "npm publish",
     "npm:publish:lerna": "npx lerna publish --yes --cd-version patch",
+    "preversion": "yarn run test",
     "prepublish:lockfile": "npx sync-lockfile .",
     "prepublishOnly": "yarn run test",
     "postpublish": "yarn run postpublishOnly:add",
     "postpublish_": "git commit -m \"chore(release): publish\" .",
-    "ncu": "npx yarn-tool ncu -u",
     "postpublishOnly:add": "npx yarn-tool root run postpublishOnly:add uni-string",
+    "ncu": "npx yarn-tool ncu -u",
     "sort-package-json": "npx yarn-tool sort"
   },
   "dependencies": {
     "es6-class-prototype": "^1.0.4",
-    "runes2": "^0.4.16",
+    "runes2": "^1.0.1",
     "tslib": "^2.3.1"
   },
   "gitHead": "4fd01b2514996a4430f3501d9b1705d2bce8cc78"

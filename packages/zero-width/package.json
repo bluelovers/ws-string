@@ -40,17 +40,21 @@
     "test": "test"
   },
   "scripts": {
-    "npm:publish": "npm publish",
-    "npm:publish:lerna": "npx lerna publish --yes --cd-version patch",
     "pretest": "yarn run build",
     "test": "jest",
+    "test:jest": "jest --passWithNoTests",
+    "test:jest:snapshot": "yarn run test:jest -- -u",
+    "test:snapshot": "yarn run test -- -u",
     "build": "ts-node test/scripts/build-re.ts && ynpx build-ts-file -- ./lib/re.ts",
+    "npm:publish": "npm publish",
+    "npm:publish:lerna": "npx lerna publish --yes --cd-version patch",
+    "preversion": "yarn run test",
     "prepublish:lockfile": "npx sync-lockfile .",
     "prepublishOnly": "yarn run test",
     "postpublish": "yarn run postpublishOnly:add",
     "postpublish_": "git commit -m \"chore(release): publish\" .",
-    "ncu": "npx yarn-tool ncu -u",
     "postpublishOnly:add": "npx yarn-tool root run postpublishOnly:add zero-width",
+    "ncu": "npx yarn-tool ncu -u",
     "sort-package-json": "npx yarn-tool sort"
   },
   "dependencies": {
