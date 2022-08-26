@@ -1,6 +1,6 @@
 {
   "name": "str-util",
-  "version": "2.3.30",
+  "version": "2.3.31",
   "description": "convert full/half width, Chinese/Japanese number, 中日漢字轉換... others util helper",
   "keywords": [
     "char",
@@ -79,7 +79,7 @@
     "strip-ansi": "<7 >=6",
     "ts-type": "^2.1.4",
     "tslib": "^2",
-    "uni-string": "^1.1.14"
+    "uni-string": "^1.1.15"
   },
   "gitHead": "b41c5edacf2b3ea6b5b9488a002565ccbbc67e08"
 }

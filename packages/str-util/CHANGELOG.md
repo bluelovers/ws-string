@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.31](https://github.com/bluelovers/ws-string/compare/str-util@2.3.30...str-util@2.3.31) (2022-08-26)
+
+
+
+### ♻️　Chores
+
+* **release:** publish ([94a6794](https://github.com/bluelovers/ws-string/commit/94a6794030893ceec691d20444d562f4579ba967))
+
+
+### 🔖　Miscellaneous
+
+* . ([ab44fbb](https://github.com/bluelovers/ws-string/commit/ab44fbb3afc8931caea68a1528c74a4e873b0731))
+
+
+
 ## [2.3.30](https://github.com/bluelovers/ws-string/compare/str-util@2.3.30...str-util@2.3.30) (2022-08-26)
 
 
