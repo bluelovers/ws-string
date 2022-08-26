@@ -1,5 +1,3 @@
-'use strict'
-
 export const HIGH_SURROGATE_START = 0xd800
 export const HIGH_SURROGATE_END = 0xdbff
 
@@ -19,7 +17,7 @@ export const DIACRITICAL_MARKS_END = 0x20ff
 
 export const ZWJ = 0x200d
 
-export const GRAPHEMS = [
+export const GRAPHEMS = Object.freeze([
 	0x0308, // ( ◌̈ ) COMBINING DIAERESIS
 	0x0937, // ( ष ) DEVANAGARI LETTER SSA
 	0x0937, // ( ष ) DEVANAGARI LETTER SSA
@@ -35,13 +33,13 @@ export const GRAPHEMS = [
 	0x1100, // ( ᄀ ) HANGUL CHOSEONG KIYEOK
 	0x1161, // ( ᅡ ) HANGUL JUNGSEONG A
 	0x11A8, // ( ᆨ ) HANGUL JONGSEONG KIYEOK
-]
+]);
 
-export function runes(string: string): string[]
+function _runes(string: string): string[]
 {
 	if (typeof string !== 'string')
 	{
-		throw new Error('string cannot be undefined or null')
+		throw new TypeError('string cannot be undefined or null')
 	}
 	const result = []
 	let i = 0
@@ -162,9 +160,9 @@ export function betweenInclusive(value: number, lower: number, upper: number)
 	return value >= lower && value <= upper
 }
 
-export function substring(string: string, start?: number, width?: number)
+function _substring(string: string, start?: number, width?: number)
 {
-	const chars = runes(string)
+	const chars = _runes(string)
 	if (start === undefined)
 	{
 		return string
@@ -183,15 +181,17 @@ export function substring(string: string, start?: number, width?: number)
 	return chars.slice(start, endIndex).join('')
 }
 
-export { substring as substr }
+export { _substring as substring }
+export { _substring as substr }
 
-runes.substr = substring;
-runes.substring = substring;
+_runes.substr = _substring;
+_runes.substring = _substring;
 
-runes.default = runes;
-runes.runes = runes;
+_runes.default = _runes;
+_runes.runes = _runes;
 
-Object.defineProperty(runes, "__esModule", { value: true });
+Object.defineProperty(_runes, "__esModule", { value: true });
 
-export default runes
+export { _runes as runes }
 
+export default _runes

@@ -1,6 +1,6 @@
 {
   "name": "runes2",
-  "version": "0.4.16",
+  "version": "1.0.1",
   "description": "Unicode-aware JS string splitting, typescript version",
   "keywords": [
     "char",
@@ -9,36 +9,88 @@
     "split",
     "split string",
     "string",
-    "unicode"
+    "unicode",
+    "create-by-yarn-tool",
+    "create-by-tsdx"
   ],
-  "homepage": "https://github.com/bluelovers/runes#readme",
+  "homepage": "https://github.com/bluelovers/ws-string/tree/master/packages/runes2#readme",
   "bugs": {
-    "url": "https://github.com/bluelovers/runes/issues"
+    "url": "https://github.com/bluelovers/ws-string/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluelovers/runes.git"
+    "url": "git+https://github.com/bluelovers/ws-string.git"
   },
   "license": "MIT",
   "author": "Vitaly Domnikov <dotcypress@gmail.com>",
-  "main": "index.js",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*"
+  },
+  "main": "dist/index.cjs",
+  "unpkg": "dist/index.umd.production.min.cjs",
+  "module": "dist/index.esm.mjs",
+  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
   "directories": {
     "test": "test"
   },
   "scripts": {
+    "pretest": "echo pretest",
     "test": "jest",
+    "test:jest": "jest --passWithNoTests",
+    "test:jest:clearCache": "jest --clearCache",
+    "test:jest:snapshot": "yarn run test:jest -- -u",
+    "test:snapshot": "yarn run test -- -u",
+    "posttest": "yarn run build",
+    "install:frozenLockfile": "yarn-tool install --frozen-lockfile",
+    "install:resetLockfile": "yarn-tool install --reset-lockfile",
+    "build": "yarn run build:tsdx && yarn run build:dts:bundle",
+    "build:dts:bundle": "ynpx dts-bundle-generator -o ./dist/index.d.ts src/index.ts --no-banner --inline-declare-global & echo build:dts:bundle",
+    "build:dts:copy": "copy .\\src\\index.d.ts .\\dist\\index.d.ts & echo build:dts",
+    "build:dts:tsc": "yarn run build:dts:tsc:emit && yarn run build:dts:copy",
+    "build:dts:tsc:emit": "tsc --emitDeclarationOnly --declaration --noEmit false",
+    "build:tsdx": "ynpx @bluelovers/tsdx build --target node",
+    "ci:install": "yarn install --frozen-lockfile && yarn add -W typescript@next jest ts-jest ts-node ynpx lerna yarn-tool",
+    "ci:build": "echo ci:build",
     "npm:publish": "npm publish",
-    "npm:publish:lerna": "npx lerna publish --yes --cd-version patch",
-    "prepublish:lockfile": "npx sync-lockfile .",
-    "prepublishOnly": "yarn run test",
-    "postpublish": "yarn run postpublishOnly:add",
-    "postpublish_": "git commit -m \"chore(release): publish\" .",
-    "ncu": "npx yarn-tool ncu -u",
-    "postpublishOnly:add": "npx yarn-tool root run postpublishOnly:add runes2",
-    "sort-package-json": "npx yarn-tool sort"
+    "npm:publish:bump": "yarn run version:bump && npm publish",
+    "preversion": "echo preversion && yarn run test",
+    "version": "echo version",
+    "version:bump": "yarn-tool version",
+    "postversion": "echo postversion",
+    "prepublish": "echo prepublish",
+    "prepare": "echo prepare",
+    "prepublishOnly": "yarn run preversion",
+    "prepublishOnly:check-bin": "ynpx --quiet @yarn-tool/check-pkg-bin",
+    "prepublishOnly:update": "yarn run ncu && yarn run sort-package-json",
+    "prepack": "echo prepack",
+    "pack": "echo pack",
+    "postpack": "echo postpack",
+    "publish": "echo publish",
+    "postpublish": "yarn run postpublish:changelog && yarn run postpublish:git:commit && yarn run postpublish:git:tag && yarn run postpublish:git:push",
+    "postpublish:changelog": "ynpx --quiet @yarn-tool/changelog && git add ./CHANGELOG.md",
+    "postpublish:git:commit": "git commit -m \"chore(release): publish\" . & echo postpublish:git:commit",
+    "postpublish:git:push": "git push --follow-tags",
+    "postpublish:git:tag": "ynpx --quiet @yarn-tool/tag",
+    "postpublishOnly": "echo postpublishOnly",
+    "ncu": "yarn-tool ncu -u",
+    "sort-package-json": "yarn-tool sort",
+    "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
-  "gitHead": "4fd01b2514996a4430f3501d9b1705d2bce8cc78",
-  "dependencies": {
-    "tslib": "^2.3.1"
-  }
+  "dependencies": {},
+  "devDependencies": {
+    "@bluelovers/tsconfig": "^1.0.30",
+    "@types/jest": "^28.1.8",
+    "@types/node": "^18.7.13",
+    "tslib": "^2"
+  },
+  "packageManager": "yarn@1.22.19",
+  "gitHead": "4fd01b2514996a4430f3501d9b1705d2bce8cc78"
 }

@@ -1,6 +1,6 @@
 'use strict'
 
-import runes, { substring } from '../runes';
+import { runes, substring } from '../src/';
 import { inspect } from 'util';
 
 test(inspect('✂️  Runes should handle emoji in middle'), () =>

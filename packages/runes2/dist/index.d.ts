@@ -10,14 +10,14 @@ export declare const VARIATION_MODIFIER_END = 65039;
 export declare const DIACRITICAL_MARKS_START = 8400;
 export declare const DIACRITICAL_MARKS_END = 8447;
 export declare const ZWJ = 8205;
-export declare const GRAPHEMS: number[];
-export declare function runes(string: string): string[];
-export declare namespace runes {
-    export var substr: typeof import("./runes").substring;
-    export var substring: typeof import("./runes").substring;
-    var _a: typeof import("./runes").runes;
-    export var runes: typeof import("./runes").runes;
-    export { _a as default };
+export declare const GRAPHEMS: readonly number[];
+declare function _runes(string: string): string[];
+declare namespace _runes {
+	export var substr: typeof _substring;
+	export var substring: typeof _substring;
+	var _a: typeof _runes;
+	export var runes: typeof _runes;
+	export { _a as default };
 }
 export declare function nextUnits(i: number, string: string): 1 | 2 | 4;
 export declare function isFirstOfSurrogatePair(string: string): boolean;
@@ -29,6 +29,13 @@ export declare function isGraphem(string: string): boolean;
 export declare function isZeroWidthJoiner(string: string): boolean;
 export declare function codePointFromSurrogatePair(pair: string): number;
 export declare function betweenInclusive(value: number, lower: number, upper: number): boolean;
-export declare function substring(string: string, start?: number, width?: number): string;
-export { substring as substr };
-export default runes;
+declare function _substring(string: string, start?: number, width?: number): string;
+export default _runes;
+
+export {
+	_runes as runes,
+	_substring as substr,
+	_substring as substring,
+};
+
+export {};
