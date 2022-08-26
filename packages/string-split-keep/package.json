@@ -61,5 +61,6 @@
     "sort-package-json": "yarn-tool sort",
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
-  "packageManager": "yarn@^1.22.11"
+  "packageManager": "yarn@^1.22.11",
+  "gitHead": "b41c5edacf2b3ea6b5b9488a002565ccbbc67e08"
 }
