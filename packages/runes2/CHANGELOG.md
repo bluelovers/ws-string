@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/bluelovers/ws-string/compare/runes2@0.4.16...runes2@1.0.2) (2022-08-26)
+
+
+### BREAKING CHANGES
+
+* no longer supported `const runes = require('runes2')`
+
+
+
+### 📦　Code Refactoring
+
+* support cjs and esm [#1](https://github.com/bluelovers/ws-string/issues/1) ([719da97](https://github.com/bluelovers/ws-string/commit/719da9793f773e8ee5944741dc71cd30f52d3d04))
+
+
+### 🚨　Tests
+
+* update configuration ([a695a63](https://github.com/bluelovers/ws-string/commit/a695a63cafc1a89b5f86cdbeb4cf1295933c9039))
+
+
+
 ## 1.0.1 (2022-08-24)
 
 

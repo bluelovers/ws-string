@@ -1,6 +1,6 @@
 {
   "name": "normalize-num",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "keywords": [],
   "homepage": "https://github.com/bluelovers/ws-string/tree/master/packages/normalize-num#readme",
@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "deromanize": "^1.0.0",
-    "num-is-roman": "^1.0.3",
+    "num-is-roman": "^1.0.4",
     "tslib": "^2"
   },
   "devDependencies": {
