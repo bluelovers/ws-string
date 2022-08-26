@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.4](https://github.com/bluelovers/ws-string/compare/runes2@1.0.3...runes2@1.0.4) (2022-08-26)
+
+
+
+### ♻️　Chores
+
+* **release:** publish ([f51c470](https://github.com/bluelovers/ws-string/commit/f51c470c57f6dad53df572e857b22d47b94ac856))
+
+
+
 ## [1.0.3](https://github.com/bluelovers/ws-string/compare/runes2@1.0.3...runes2@1.0.3) (2022-08-26)
 
 **Note:** Version bump only for package runes2

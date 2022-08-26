@@ -1,6 +1,6 @@
 {
   "name": "string-split-keep2",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Split strings without applying separator after limit; Negative limit starts from the end. No regex separators.",
   "keywords": [
     "create-by-yarn-tool",
