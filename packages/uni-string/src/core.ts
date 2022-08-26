@@ -2,8 +2,8 @@
  * Created by user on 2018/3/16/016.
  */
 
-import runes from 'runes2/runes';
-import classPrototype from "es6-class-prototype";
+import { runes } from 'runes2';
+import { classPrototype } from "es6-class-prototype";
 
 export const STRING_PROTOTYPE = Object.getOwnPropertyNames(String.prototype);
 

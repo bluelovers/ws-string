@@ -1,48 +1,33 @@
-function stringSplitWithLimit(str, separator, limit) {
-  if (!limit || separator === undefined) return str.split(separator, limit);
-  if (!separator.length) return limit > 0 ? _splitStart_noSep(str, limit) : _splitEnd_noSep(str, -limit);
-  return limit > 0 ? _splitStart(str, separator, limit, 0, []) : _splitEnd(str, separator, -limit, str.length, []);
+function stringSplitWithLimit(t, n, i) {
+  return i && void 0 !== n ? n.length ? i > 0 ? _splitStart(t, n, i, 0, []) : _splitEnd(t, n, -i, t.length, []) : i > 0 ? _splitStart_noSep(t, i) : _splitEnd_noSep(t, -i) : t.split(n, i);
 }
-function _splitStart_noSep(str, lim) {
-  const ret = [];
-  lim = Math.min(lim, str.length) - 1;
 
-  for (let i = 0; i < lim; ++i) ret.push(str[i]);
-
-  ret.push(str.slice(lim));
-  return ret;
+function _splitStart_noSep(t, n) {
+  const i = [];
+  n = Math.min(n, t.length) - 1;
+  for (let s = 0; s < n; ++s) i.push(t[s]);
+  return i.push(t.slice(n)), i;
 }
-function _splitEnd_noSep(str, lim) {
-  const ret = [];
-  lim = Math.min(lim, str.length);
-  const firstSlice = str.length - lim + 1;
-  ret.push(str.slice(0, firstSlice));
 
-  for (let i = firstSlice; i < str.length; ++i) ret.push(str[i]);
-
-  return ret;
+function _splitEnd_noSep(t, n) {
+  const i = [];
+  n = Math.min(n, t.length);
+  const s = t.length - n + 1;
+  i.push(t.slice(0, s));
+  for (let n = s; n < t.length; ++n) i.push(t[n]);
+  return i;
 }
-function _splitStart(str, sep, lim, cur, acc) {
-  const index = str.indexOf(sep, cur);
 
-  if (index == -1 || acc.length + 1 == lim) {
-    acc.push(str.slice(cur));
-    return acc;
-  }
-
-  acc.push(str.slice(cur, index));
-  return _splitStart(str, sep, lim, index + sep.length, acc);
+function _splitStart(t, n, i, s, l) {
+  const e = t.indexOf(n, s);
+  return -1 == e || l.length + 1 == i ? (l.push(t.slice(s)), l) : (l.push(t.slice(s, e)), 
+  _splitStart(t, n, i, e + n.length, l));
 }
-function _splitEnd(str, sep, lim, cur, acc) {
-  const index = str.lastIndexOf(sep, cur);
 
-  if (cur == -1 || index == -1 || acc.length + 1 == lim) {
-    acc.unshift(str.slice(0, cur + 1));
-    return acc;
-  }
-
-  acc.unshift(str.slice(index + sep.length, cur + 1));
-  return _splitEnd(str, sep, lim, index - 1, acc);
+function _splitEnd(t, n, i, s, l) {
+  const e = t.lastIndexOf(n, s);
+  return -1 == s || -1 == e || l.length + 1 == i ? (l.unshift(t.slice(0, s + 1)), 
+  l) : (l.unshift(t.slice(e + n.length, s + 1)), _splitEnd(t, n, i, e - 1, l));
 }
 
 export { _splitEnd, _splitEnd_noSep, _splitStart, _splitStart_noSep, stringSplitWithLimit as default, stringSplitWithLimit };

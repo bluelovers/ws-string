@@ -3,8 +3,8 @@
  */
 
 import * as StrUtil from 'str-util';
-import circle2num from './lib/type/circle';
-import roman2num, { isRoman } from './lib/type/roman';
+import { circle2num } from './lib/type/circle';
+import { roman2num, isRoman } from './lib/type/roman';
 
 export { circle2num, roman2num }
 

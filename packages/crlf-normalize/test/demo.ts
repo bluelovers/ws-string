@@ -2,7 +2,7 @@
  * Created by user on 2018/1/26/026.
  */
 
-import { crlf, chkcrlf, LF, CRLF, CR } from '..';
+import { crlf, chkcrlf, LF, CRLF, CR } from '../src';
 
 let text = 'foo\r\nbar\nbaz\r';
 

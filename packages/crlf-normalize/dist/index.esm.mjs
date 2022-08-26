@@ -1,50 +1,50 @@
-var EnumLineBreak;
+var n;
 
-(function (EnumLineBreak) {
-  EnumLineBreak["CR"] = "\r";
-  EnumLineBreak["CRLF"] = "\r\n";
-  EnumLineBreak["LF"] = "\n";
-})(EnumLineBreak || (EnumLineBreak = {}));
+!function(n) {
+  n.CR = "\r", n.CRLF = "\r\n", n.LF = "\n";
+}(n || (n = {}));
 
-const CR = "\r";
-const CRLF = "\r\n";
-const LF = "\n";
-const R_CRLF = /\r\n|\r(?!\n)|\n/g;
-function crlf(text, newline = "\n") {
-  return text.replace(R_CRLF, newline);
+const r = "\r", c = "\r\n", e = "\n", t = /\r\n|\r(?!\n)|\n/g;
+
+function crlf(n, r = "\n") {
+  return n.replace(t, r);
 }
-function chkcrlf(text, options) {
-  var _options$disable;
 
-  const disable = (_options$disable = options === null || options === void 0 ? void 0 : options.disable) !== null && _options$disable !== void 0 ? _options$disable : {};
+function chkcrlf(n, r) {
+  var c;
+  const e = null !== (c = null == r ? void 0 : r.disable) && void 0 !== c ? c : {};
   return {
-    lf: !disable.lf && /\n/.test(text.replace(/\r\n/g, '')),
-    crlf: !disable.crlf && /\r\n/.test(text),
-    cr: !disable.cr && /\r(?!\n)/.test(text)
+    lf: !e.lf && /\n/.test(n.replace(/\r\n/g, "")),
+    crlf: !e.crlf && /\r\n/.test(n),
+    cr: !e.cr && /\r(?!\n)/.test(n)
   };
 }
-function detectLineBreak(text, options) {
-  const _lb = chkcrlf(text, options);
 
-  return _lb.crlf ? "\r\n" : _lb.lf || !_lb.cr ? "\n" : "\r";
-}
-function isCRLF(newline) {
-  return newline === "\r\n";
-}
-function isLF(newline) {
-  return newline === "\n";
-}
-function isCR(newline) {
-  return newline === "\r";
-}
-function lineSplit(text) {
-  return text.split(R_CRLF);
-}
-function crlf_unicode_normalize(text, newline = "\n") {
-  const ln3 = newline + newline + newline;
-  const ln2 = newline + newline;
-  return text.replace(/\u000C/g, ln3).replace(/\u2028/g, newline).replace(/\u2029/g, ln2);
+function detectLineBreak(n, r) {
+  const c = chkcrlf(n, r);
+  return c.crlf ? "\r\n" : c.lf || !c.cr ? "\n" : "\r";
 }
 
-export { CR, CRLF, EnumLineBreak, LF, R_CRLF, chkcrlf, crlf, crlf_unicode_normalize, crlf as default, detectLineBreak, isCR, isCRLF, isLF, lineSplit };
+function isCRLF(n) {
+  return "\r\n" === n;
+}
+
+function isLF(n) {
+  return "\n" === n;
+}
+
+function isCR(n) {
+  return "\r" === n;
+}
+
+function lineSplit(n) {
+  return n.split(t);
+}
+
+function crlf_unicode_normalize(n, r = "\n") {
+  const c = r + r;
+  return n.replace(/\u000C/g, r + r + r).replace(/\u2028/g, r).replace(/\u2029/g, c);
+}
+
+export { r as CR, c as CRLF, n as EnumLineBreak, e as LF, t as R_CRLF, chkcrlf, crlf, crlf_unicode_normalize, crlf as default, detectLineBreak, isCR, isCRLF, isLF, lineSplit };
 //# sourceMappingURL=index.esm.mjs.map

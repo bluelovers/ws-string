@@ -4,7 +4,8 @@
 
 import deepmerge from 'deepmerge';
 import util from './util';
-import UString from 'uni-string';
+// @ts-ignore
+import { UString } from 'uni-string';
 
 export namespace FullHalfCore
 {

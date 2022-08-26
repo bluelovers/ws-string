@@ -3,7 +3,7 @@
  */
 
 import deromanize from 'deromanize';
-import isRoman from 'num-is-roman';
+import { isRoman } from 'num-is-roman';
 
 export { isRoman }
 export { deromanize }
