@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.22](https://github.com/bluelovers/ws-string/compare/zero-width@1.0.19...zero-width@1.0.22) (2022-08-27)
+
+
+
+### ♻️　Chores
+
+* **release:** publish ([94a6794](https://github.com/bluelovers/ws-string/commit/94a6794030893ceec691d20444d562f4579ba967))
+
+
+### 🔖　Miscellaneous
+
+* . ([c46dd5c](https://github.com/bluelovers/ws-string/commit/c46dd5c282d6b6297c374f5e6983bc05a2a3914b))
+* . ([ab44fbb](https://github.com/bluelovers/ws-string/commit/ab44fbb3afc8931caea68a1528c74a4e873b0731))
+
+
+
 ## [1.0.20](https://github.com/bluelovers/ws-string/compare/zero-width@1.0.19...zero-width@1.0.20) (2022-08-26)
 
 
