@@ -1,6 +1,6 @@
 
-import { characters } from './lib/data';
-export { characters } from './lib/data';
+import { characters } from './data';
+export { characters } from './data';
 
 export function chinese_parseInt(str: string, radix?: number)
 {

@@ -1,4 +1,4 @@
-import cpi from '../';
+import cpi from '../src';
 
 const units = [
 	['哈哈', NaN],
@@ -26,4 +26,3 @@ describe(`demo`, () => {
 		});
 	});
 })
-
