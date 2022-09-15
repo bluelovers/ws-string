@@ -5,6 +5,9 @@ Array [
   2,
   2,
   2,
+  2,
+  2,
+  2,
 ]
 `;
 
@@ -12,20 +15,29 @@ exports[`demo blankLine:1 1`] = `
 Array [
   1,
   2,
+  2,
   3,
+  2,
+  2,
 ]
 `;
 
 exports[`demo blankLine:2 1`] = `
 Array [
   2,
-  6,
   11,
+  2,
+  6,
+  2,
+  2,
 ]
 `;
 
 exports[`demo blankLine:3 1`] = `
 Array [
+  1,
+  1,
+  1,
   1,
   1,
   1,
@@ -36,15 +48,23 @@ exports[`demo blankLine:4 1`] = `
 Array [
   1,
   2,
+  2,
   3,
+  2,
+  2,
 ]
 `;
 
 exports[`demo blankLine:5 1`] = `
 Array [
   2,
-  3,
   11,
+  2,
+  6,
+  2,
+  2,
+  8,
+  3,
 ]
 `;
 

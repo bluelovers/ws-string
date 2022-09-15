@@ -3,13 +3,15 @@
  */
 
 import { execall } from 'execall2';
-import { normalize } from './lib/normalize';
+import { normalize } from './normalize';
 
 export interface IOptions
 {
 	filter?: boolean,
 	sort?: boolean,
 }
+
+export { normalize }
 
 export function getBlankLine(txt: string | Buffer, options: IOptions = {}): number[]
 {
@@ -52,15 +54,15 @@ export type IGetMinMidMax = [
 	/**
 	 * min
 	 */
-	number,
+	min: number,
 	/**
 	 * mid
 	 */
-	number,
+	mid: number,
 	/**
 	 * max
 	 */
-	number,
+	max: number,
 ];
 
 export function getMinMidMax(txt: string | Buffer): IGetMinMidMax
@@ -70,7 +72,7 @@ export function getMinMidMax(txt: string | Buffer): IGetMinMidMax
 		sort: true,
 	});
 
-	if (!_ms || !_ms.length)
+	if (!_ms?.length)
 	{
 		return [null, null, null];
 	}

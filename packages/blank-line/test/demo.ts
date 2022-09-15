@@ -2,7 +2,7 @@
  * Created by user on 2018/1/19/019.
  */
 
-import blankLine from '..';
+import blankLine from '../src';
 
 [
 	`
@@ -92,7 +92,7 @@ import blankLine from '..';
 
 `,
 
-].forEach(function (value, index, array)
+].forEach(function (value, index)
 {
 	console.log(index, blankLine(value));
 });

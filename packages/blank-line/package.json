@@ -1,6 +1,6 @@
 {
   "name": "blank-line",
-  "version": "1.0.10",
+  "version": "2.0.0",
   "description": "get min/mid/max blank line length in text ( not include start/end line )",
   "keywords": [
     "analyze",
@@ -14,7 +14,9 @@
     "linebreak",
     "linefeed",
     "newline",
-    "report"
+    "report",
+    "create-by-yarn-tool",
+    "create-by-tsdx"
   ],
   "homepage": "https://github.com/bluelovers/ws-string/tree/master/packages/blank-line#readme",
   "bugs": {
@@ -26,25 +28,60 @@
   },
   "license": "ISC",
   "author": "bluelovers",
-  "main": "index.js",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*"
+  },
+  "main": "dist/index.cjs",
+  "unpkg": "dist/index.umd.production.min.cjs",
+  "module": "dist/index.esm.mjs",
+  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
   "directories": {
     "test": "test"
   },
   "scripts": {
+    "pretest": "echo pretest",
     "test": "jest",
     "test:jest": "jest --passWithNoTests",
     "test:jest:snapshot": "yarn run test:jest -- -u",
     "test:snapshot": "yarn run test -- -u",
+    "posttest": "yarn run build",
+    "build": "yarn run build:tsdx && yarn run build:dts:bundle",
+    "build:dts:bundle": "ynpx dts-bundle-generator -o ./dist/index.d.ts ./src/index.ts --no-banner --inline-declare-global & echo build:dts:bundle",
+    "build:dts:copy": "copy .\\src\\index.d.ts .\\dist\\index.d.ts & echo build:dts",
+    "build:dts:tsc": "yarn run build:dts:tsc:emit && yarn run build:dts:copy",
+    "build:dts:tsc:emit": "tsc --emitDeclarationOnly --declaration --noEmit false",
+    "build:tsdx": "ynpx @bluelovers/tsdx build --target node",
+    "ci:install": "echo ci:install",
+    "ci:build": "echo ci:build",
     "preversion": "yarn run test",
+    "version": "echo version",
+    "postversion": "echo postversion",
+    "prepublish": "echo prepublish",
+    "prepare": "echo prepare",
     "prepublishOnly": "yarn run test",
     "prepublishOnly:check-bin": "ynpx --quiet @yarn-tool/check-pkg-bin",
     "prepublishOnly:update": "yarn run ncu && yarn run sort-package-json",
+    "prepack": "echo prepack",
+    "pack": "echo pack",
+    "postpack": "echo postpack",
+    "publish": "echo publish",
+    "postpublish": "echo postpublish",
+    "postpublishOnly": "echo postpublishOnly",
     "ncu": "ynpx --quiet yarn-tool -- ncu -u",
-    "sort-package-json": "ynpx --quiet yarn-tool -- sort"
+    "sort-package-json": "ynpx --quiet yarn-tool -- sort",
+    "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
-    "execall2": "^2.0.17",
-    "tslib": "^2"
+    "execall2": "^2.0.17"
   },
+  "packageManager": "yarn@1.22.19",
   "gitHead": "952f3f53bed3e2bf3ccaec50c46702f127ff4e7f"
 }

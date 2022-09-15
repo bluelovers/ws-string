@@ -1,5 +1,5 @@
-import blankLine from '../index';
-import getMinMidMax from '../index';
+import { getBlankLine } from '../src/index';
+import { getMinMidMax } from '../src/index';
 
 describe(`demo`, () =>
 {
@@ -162,7 +162,7 @@ describe(`demo`, () =>
 		test(`blankLine:${index}`, () =>
 		{
 
-			let actual = blankLine(source);
+			let actual = getBlankLine(source);
 
 			expect(actual).toMatchSnapshot();
 
