@@ -30,9 +30,9 @@ export declare function isZeroWidthJoiner(string: string): boolean;
 export declare function codePointFromSurrogatePair(pair: string): number;
 export declare function betweenInclusive(value: number, lower: number, upper: number): boolean;
 declare function _substring(string: string, start?: number, width?: number): string;
-export default _runes;
 
 export {
+	_runes as default,
 	_runes as runes,
 	_substring as substr,
 	_substring as substring,

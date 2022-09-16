@@ -9,7 +9,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluelovers/ws-string.git"
+    "url": "git+https://github.com/bluelovers/ws-string.git",
+    "directory": "packages/normalize-num"
   },
   "license": "ISC",
   "author": "bluelovers",
@@ -33,9 +34,7 @@
     "num-is-roman": "^1.1.3",
     "tslib": "^2"
   },
-  "devDependencies": {
-    "arabic-roman-convert.js": "^1.2.1"
-  },
+  "devDependencies": {},
   "publishConfig": {
     "access": "public"
   },

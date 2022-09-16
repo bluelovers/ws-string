@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`'✂️  Runes should handle 3️⃣' 1`] = `
-Array [
+[
   "3️⃣",
 ]
 `;
@@ -9,7 +9,7 @@ Array [
 exports[`'✂️  Runes should handle 3️⃣' 2`] = `1`;
 
 exports[`'✂️  Runes should handle ZERO WIDTH JOINER 2' 1`] = `
-Array [
+[
   "👨‍👨‍👧‍👧",
 ]
 `;
@@ -17,7 +17,7 @@ Array [
 exports[`'✂️  Runes should handle ZERO WIDTH JOINER 2' 2`] = `1`;
 
 exports[`'✂️  Runes should handle ZERO WIDTH JOINER' 1`] = `
-Array [
+[
   "👨‍👩‍👧",
 ]
 `;
@@ -25,7 +25,7 @@ Array [
 exports[`'✂️  Runes should handle ZERO WIDTH JOINER' 2`] = `1`;
 
 exports[`'✂️  Runes should handle acrophonic' 1`] = `
-Array [
+[
   "𐅧",
   ",",
   " ",
@@ -43,7 +43,7 @@ Array [
 exports[`'✂️  Runes should handle acrophonic' 2`] = `11`;
 
 exports[`'✂️  Runes should handle arabic' 1`] = `
-Array [
+[
   "ځ",
   "ڂ",
   "ڃ",
@@ -58,7 +58,7 @@ Array [
 exports[`'✂️  Runes should handle arabic' 2`] = `8`;
 
 exports[`'✂️  Runes should handle checkmark' 1`] = `
-Array [
+[
   "1",
   "2",
   "3",
@@ -70,7 +70,7 @@ Array [
 exports[`'✂️  Runes should handle checkmark' 2`] = `5`;
 
 exports[`'✂️  Runes should handle chinese 2' 1`] = `
-Array [
+[
   "𠬠",
   "𡬶",
   "𫗭",
@@ -82,30 +82,30 @@ Array [
 exports[`'✂️  Runes should handle chinese 2' 2`] = `5`;
 
 exports[`'✂️  Runes should handle chinese' 1`] = `
-Array [
+[
   "𨭎",
-  "\\"",
+  """,
   ",",
   " ",
-  "\\"",
+  """,
   "𠬠",
-  "\\"",
+  """,
   ",",
   " ",
   "a",
   "n",
   "d",
   " ",
-  "\\"",
+  """,
   "𩷶",
-  "\\"",
+  """,
 ]
 `;
 
 exports[`'✂️  Runes should handle chinese' 2`] = `16`;
 
 exports[`'✂️  Runes should handle country flags/regional indicator characters' 1`] = `
-Array [
+[
   "🇦🇸",
 ]
 `;
@@ -113,7 +113,7 @@ Array [
 exports[`'✂️  Runes should handle country flags/regional indicator characters' 2`] = `1`;
 
 exports[`'✂️  Runes should handle emoji in middle' 1`] = `
-Array [
+[
   "a",
   "b",
   "c",
@@ -127,7 +127,7 @@ Array [
 exports[`'✂️  Runes should handle emoji in middle' 2`] = `7`;
 
 exports[`'✂️  Runes should handle emoji on end' 1`] = `
-Array [
+[
   "1",
   "2",
   "3",
@@ -138,7 +138,7 @@ Array [
 exports[`'✂️  Runes should handle emoji on end' 2`] = `4`;
 
 exports[`'✂️  Runes should handle emoji' 1`] = `
-Array [
+[
   "🍕",
   "⚽",
   "⛵",
@@ -162,7 +162,7 @@ Array [
 exports[`'✂️  Runes should handle emoji' 2`] = `17`;
 
 exports[`'✂️  Runes should handle extended grapheme clusters' 1`] = `
-Array [
+[
   "ม้",
   "า",
   "ล",
@@ -177,7 +177,7 @@ Array [
 exports[`'✂️  Runes should handle extended grapheme clusters' 2`] = `8`;
 
 exports[`'✂️  Runes should handle fraktur' 1`] = `
-Array [
+[
   "𝔅",
   "𝔎",
 ]
@@ -186,7 +186,7 @@ Array [
 exports[`'✂️  Runes should handle fraktur' 2`] = `2`;
 
 exports[`'✂️  Runes should handle leading emoji' 1`] = `
-Array [
+[
   "🍕",
   "a",
   "b",
@@ -197,7 +197,7 @@ Array [
 exports[`'✂️  Runes should handle leading emoji' 2`] = `4`;
 
 exports[`'✂️  Runes should handle math script' 1`] = `
-Array [
+[
   "𝒞",
   "𝒯",
   "𝒮",
@@ -208,7 +208,7 @@ Array [
 exports[`'✂️  Runes should handle math script' 2`] = `4`;
 
 exports[`'✂️  Runes should handle regular string' 1`] = `
-Array [
+[
   "H",
   "e",
   "l",
@@ -220,7 +220,7 @@ Array [
 exports[`'✂️  Runes should handle regular string' 2`] = `5`;
 
 exports[`'✂️  Runes should handle single char' 1`] = `
-Array [
+[
   "a",
 ]
 `;
@@ -228,7 +228,7 @@ Array [
 exports[`'✂️  Runes should handle single char' 2`] = `1`;
 
 exports[`'✂️  Runes should handle skin tone indicators' 1`] = `
-Array [
+[
   "🎅🏻",
   "🎅🏼",
   "🎅🏽",
@@ -240,7 +240,7 @@ Array [
 exports[`'✂️  Runes should handle skin tone indicators' 2`] = `5`;
 
 exports[`'✂️  Runes should handle 🏳️‍🌈' 1`] = `
-Array [
+[
   "🏳️‍🌈",
 ]
 `;

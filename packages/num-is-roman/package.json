@@ -12,7 +12,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluelovers/ws-string.git"
+    "url": "git+https://github.com/bluelovers/ws-string.git",
+    "directory": "packages/num-is-roman"
   },
   "license": "ISC",
   "author": "bluelovers",
@@ -66,9 +67,7 @@
     "sort-package-json": "ynpx --quiet yarn-tool -- sort",
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
-  "dependencies": {
-    "tslib": "^2"
-  },
+  "dependencies": {},
   "packageManager": "yarn@1.22.19",
   "gitHead": "b41c5edacf2b3ea6b5b9488a002565ccbbc67e08"
 }

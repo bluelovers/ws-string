@@ -48,7 +48,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluelovers/ws-string.git"
+    "url": "git+https://github.com/bluelovers/ws-string.git",
+    "directory": "packages/str-util"
   },
   "license": "ISC",
   "author": "bluelovers",
@@ -71,13 +72,13 @@
     "sort-package-json": "npx yarn-tool sort"
   },
   "dependencies": {
-    "@lazy-cjk/japanese": "^1.2.24",
-    "chinese-parseint2": "^1.1.10",
-    "cjk-conv": "^1.2.137",
+    "@lazy-cjk/japanese": "^1.2.27",
+    "chinese-parseint2": "^2.0.0",
+    "cjk-conv": ">=1",
     "deepmerge": "^4.2.2",
     "is-fullwidth-code-point": "<4 >=3",
     "strip-ansi": "<7 >=6",
-    "ts-type": "^2.1.4",
+    "ts-type": "^2.1.10",
     "tslib": "^2",
     "uni-string": "^1.1.17"
   },

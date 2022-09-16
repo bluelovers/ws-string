@@ -46,4 +46,3 @@ describe(`unsafe chinese, every thing should not change`, () =>
 		});
 	});
 });
-

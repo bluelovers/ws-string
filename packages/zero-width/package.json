@@ -30,7 +30,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluelovers/ws-string.git"
+    "url": "git+https://github.com/bluelovers/ws-string.git",
+    "directory": "packages/zero-width"
   },
   "license": "ISC",
   "author": "bluelovers",
@@ -60,8 +61,6 @@
     "regexp-helper-core": "^1.0.19",
     "tslib": "^2"
   },
-  "devDependencies": {
-    "regexp-class-to-regenerate": "^1.0.31"
-  },
+  "devDependencies": {},
   "gitHead": "952f3f53bed3e2bf3ccaec50c46702f127ff4e7f"
 }
