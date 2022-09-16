@@ -11,7 +11,7 @@ const CR = EnumLineBreak.CR as const;
 const CRLF = EnumLineBreak.CRLF as const;
 const LF = EnumLineBreak.LF as const;
 
-const R_CRLF = /\r\n|\r(?!\n)|\n/g;
+const R_CRLF = /(\r\n|\r(?!\n)|\n)/g;
 
 export { CR, CRLF, LF, R_CRLF }
 
@@ -44,10 +44,16 @@ export function chkcrlf(text: string, options?: IOptions)
 	} as const;
 }
 
+export type IChkCrlf = ReturnType<typeof chkcrlf>;
+
 export function detectLineBreak(text: string, options?: IOptions)
 {
 	const _lb = chkcrlf(text, options);
+	return _detectLineBreakCore(_lb)
+}
 
+export function _detectLineBreakCore(_lb: IChkCrlf)
+{
 	return _lb.crlf ? EnumLineBreak.CRLF : (_lb.lf || !_lb.cr) ? EnumLineBreak.LF : EnumLineBreak.CR
 }
 
@@ -81,6 +87,57 @@ export function crlf_unicode_normalize(text: string, newline: ILineBreakInput = 
 		.replace(/\u2028/g, newline)
 		.replace(/\u2029/g, ln2)
 		;
+}
+
+export function isEqualWithIgnoreLineSeparators(a: string, b: string)
+{
+	const _lb_a: IChkCrlf = chkcrlf(a);
+	const _lb_b: IChkCrlf = chkcrlf(b);
+
+	let bool = false;
+
+	if (_lb_a.cr === _lb_b.cr && _lb_a.crlf === _lb_b.crlf && _lb_a.lf === _lb_b.lf)
+	{
+		bool = crlf(a) === crlf(b);
+	}
+
+	return {
+		bool,
+		_lb_a,
+		_lb_b,
+	}
+}
+
+export type ILineBreakName = keyof typeof EnumLineBreak;
+
+export function toLineBreakName(newline: ILineBreakInput): ILineBreakName
+{
+	switch (newline)
+	{
+		case EnumLineBreak.LF:
+			return 'LF'
+		case EnumLineBreak.CR:
+			return 'CR'
+		case EnumLineBreak.CRLF:
+			return 'CRLF'
+	}
+
+	throw new TypeError(`Invalid line break`);
+}
+
+export function nameToLineBreak(name: ILineBreakName | string): EnumLineBreak
+{
+	switch (name?.toUpperCase())
+	{
+		case 'LF':
+			return EnumLineBreak.LF
+		case 'CR':
+			return EnumLineBreak.CR
+		case 'CRLF':
+			return EnumLineBreak.CRLF
+	}
+
+	throw new TypeError(`Invalid line break name: ${name}`);
 }
 
 export default crlf;

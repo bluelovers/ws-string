@@ -1,4 +1,4 @@
-import { crlf, LF, CRLF, CR, chkcrlf } from '../src/index';
+import { crlf, LF, CRLF, CR, chkcrlf, detectLineBreak } from '../src/index';
 
 const text = 'foo\r\nbar\nbaz\r';
 
@@ -30,6 +30,13 @@ test(`CR`, () =>
 test(`chkcrlf`, () =>
 {
 	let actual = chkcrlf(text);
+
+	expect(actual).toMatchSnapshot();
+});
+
+test(`detectLineBreak`, () =>
+{
+	let actual = detectLineBreak(text);
 
 	expect(actual).toMatchSnapshot();
 });

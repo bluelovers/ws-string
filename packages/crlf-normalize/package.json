@@ -26,17 +26,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluelovers/ws-string.git"
+    "url": "git+https://github.com/bluelovers/ws-string.git",
+    "directory": "packages/crlf-normalize"
   },
   "license": "ISC",
   "author": "bluelovers",
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.esm.mjs",
       "require": "./dist/index.cjs"
     },
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./src/*": "./src/*"
   },
   "main": "dist/index.cjs",
   "unpkg": "dist/index.umd.js",
@@ -53,9 +56,12 @@
     "test:jest:snapshot": "yarn run test:jest -- -u",
     "test:snapshot": "yarn run test -- -u",
     "posttest": "yarn run build",
-    "build": "yarn run build:tsdx && yarn run build:dts",
-    "build:dts": "ynpx dts-bundle-generator -o ./dist/index.d.ts ./src/index.ts --no-banner & echo build:dts",
-    "build:tsdx": "ynpx @bluelovers/tsdx build --target node --name index",
+    "build": "yarn run build:tsdx && yarn run build:dts:tsc",
+    "build:dts:bundle": "ynpx dts-bundle-generator -o ./dist/index.d.ts ./src/index.ts --no-banner --inline-declare-global & echo build:dts:bundle",
+    "build:dts:copy": "copy .\\src\\index.d.ts .\\dist\\index.d.ts & echo build:dts",
+    "build:dts:tsc": "yarn run build:dts:tsc:emit && yarn run build:dts:copy",
+    "build:dts:tsc:emit": "tsc --emitDeclarationOnly --declaration --noEmit false",
+    "build:tsdx": "ynpx @bluelovers/tsdx build --target node",
     "ci:install": "echo ci:install",
     "ci:build": "echo ci:build",
     "preversion": "echo preversion && yarn run test",
@@ -76,7 +82,7 @@
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
-    "ts-type": "^2.1.4"
+    "ts-type": "^2.1.10"
   },
   "packageManager": "yarn@^1.22.11",
   "gitHead": "952f3f53bed3e2bf3ccaec50c46702f127ff4e7f"

@@ -24,10 +24,28 @@ export declare function chkcrlf(text: string, options?: IOptions): {
     readonly crlf: boolean;
     readonly cr: boolean;
 };
+export type IChkCrlf = ReturnType<typeof chkcrlf>;
 export declare function detectLineBreak(text: string, options?: IOptions): EnumLineBreak;
+export declare function _detectLineBreakCore(_lb: IChkCrlf): EnumLineBreak;
 export declare function isCRLF(newline: string): newline is EnumLineBreak.CRLF;
 export declare function isLF(newline: string): newline is EnumLineBreak.LF;
 export declare function isCR(newline: string): newline is EnumLineBreak.CR;
 export declare function lineSplit(text: string): string[];
 export declare function crlf_unicode_normalize(text: string, newline?: ILineBreakInput): string;
+export declare function isEqualWithIgnoreLineSeparators(a: string, b: string): {
+    bool: boolean;
+    _lb_a: {
+        readonly lf: boolean;
+        readonly crlf: boolean;
+        readonly cr: boolean;
+    };
+    _lb_b: {
+        readonly lf: boolean;
+        readonly crlf: boolean;
+        readonly cr: boolean;
+    };
+};
+export type ILineBreakName = keyof typeof EnumLineBreak;
+export declare function toLineBreakName(newline: ILineBreakInput): ILineBreakName;
+export declare function nameToLineBreak(name: ILineBreakName | string): EnumLineBreak;
 export default crlf;

@@ -22,9 +22,14 @@ baz
 `;
 
 exports[`chkcrlf 1`] = `
-Object {
+{
   "cr": true,
   "crlf": true,
   "lf": true,
 }
+`;
+
+exports[`detectLineBreak 1`] = `
+"
+"
 `;
