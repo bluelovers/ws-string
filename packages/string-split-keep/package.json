@@ -12,7 +12,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluelovers/ws-string.git"
+    "url": "git+https://github.com/bluelovers/ws-string.git",
+    "directory": "packages/string-split-keep"
   },
   "license": "MIT",
   "author": "Michael Hopfner",

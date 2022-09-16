@@ -31,7 +31,7 @@ export function _splitEnd_noSep(str: string, lim: number)
 export function _splitStart(str: string, sep: string, lim: number, cur: number, acc: string[]): string[]
 {
 	const index = str.indexOf(sep, cur);
-	if (index == -1 || acc.length + 1 == lim)
+	if (index === -1 || acc.length + 1 === lim)
 	{
 		acc.push(str.slice(cur))
 		return acc
@@ -43,7 +43,7 @@ export function _splitStart(str: string, sep: string, lim: number, cur: number, 
 export function _splitEnd(str: string, sep: string, lim: number, cur: number, acc: string[]): string[]
 {
 	const index = str.lastIndexOf(sep, cur);
-	if (cur == -1 || index == -1 || acc.length + 1 == lim)
+	if (cur === -1 || index === -1 || acc.length + 1 === lim)
 	{
 		acc.unshift(str.slice(0, cur + 1))
 		return acc

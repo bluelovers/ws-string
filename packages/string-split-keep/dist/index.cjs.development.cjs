@@ -29,7 +29,7 @@ function _splitEnd_noSep(str, lim) {
 function _splitStart(str, sep, lim, cur, acc) {
   const index = str.indexOf(sep, cur);
 
-  if (index == -1 || acc.length + 1 == lim) {
+  if (index === -1 || acc.length + 1 === lim) {
     acc.push(str.slice(cur));
     return acc;
   }
@@ -40,7 +40,7 @@ function _splitStart(str, sep, lim, cur, acc) {
 function _splitEnd(str, sep, lim, cur, acc) {
   const index = str.lastIndexOf(sep, cur);
 
-  if (cur == -1 || index == -1 || acc.length + 1 == lim) {
+  if (cur === -1 || index === -1 || acc.length + 1 === lim) {
     acc.unshift(str.slice(0, cur + 1));
     return acc;
   }

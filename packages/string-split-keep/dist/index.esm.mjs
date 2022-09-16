@@ -20,13 +20,13 @@ function _splitEnd_noSep(t, n) {
 
 function _splitStart(t, n, i, s, l) {
   const e = t.indexOf(n, s);
-  return -1 == e || l.length + 1 == i ? (l.push(t.slice(s)), l) : (l.push(t.slice(s, e)), 
+  return -1 === e || l.length + 1 === i ? (l.push(t.slice(s)), l) : (l.push(t.slice(s, e)), 
   _splitStart(t, n, i, e + n.length, l));
 }
 
 function _splitEnd(t, n, i, s, l) {
   const e = t.lastIndexOf(n, s);
-  return -1 == s || -1 == e || l.length + 1 == i ? (l.unshift(t.slice(0, s + 1)), 
+  return -1 === s || -1 === e || l.length + 1 === i ? (l.unshift(t.slice(0, s + 1)), 
   l) : (l.unshift(t.slice(e + n.length, s + 1)), _splitEnd(t, n, i, e - 1, l));
 }
 
