@@ -1,9 +1,12 @@
-/**
- * Created by user on 2018/3/16/016.
- */
-
 import { runes } from 'runes2';
 import { classPrototype } from "es6-class-prototype";
+
+export interface IObjectWithSymbolSplit
+{
+	[Symbol.split](separator?: RegExp | string, limit?: number): string[]
+}
+
+export type IStringSplitInput = RegExp | string | IObjectWithSymbolSplit;
 
 export const STRING_PROTOTYPE = Object.getOwnPropertyNames(String.prototype);
 
@@ -11,7 +14,7 @@ export class UString extends String
 {
 	protected _arr: string[] = null;
 
-	constructor(str, ...argv)
+	constructor(str: unknown, ...argv: unknown[])
 	{
 		super(str);
 
@@ -27,12 +30,12 @@ export class UString extends String
 		return UString.toArray(this)[Symbol.iterator]();
 	}
 
-	static isString(str): boolean
+	static isString(str: unknown): str is string | String
 	{
-		return (typeof str == 'string' || str instanceof String);
+		return (typeof str === 'string' || str instanceof String);
 	}
 
-	static toArray(str)
+	static toArray(str: unknown)
 	{
 		if (str instanceof UString)
 		{
@@ -52,7 +55,7 @@ export class UString extends String
 		return this._arr;
 	}
 
-	override split(separator?, limit?: number): string[]
+	override split(separator?: IStringSplitInput, limit?: number): string[]
 	{
 		let ret: string[];
 		let str = String(this);
@@ -61,14 +64,14 @@ export class UString extends String
 		{
 			ret = UString.toArray(this);
 
-			if (typeof limit != 'undefined')
+			if (typeof limit !== 'undefined')
 			{
 				ret = ret.slice(0, limit);
 			}
 		}
 		else
 		{
-			ret = String.prototype.split.call(str, separator, limit)
+			ret = String.prototype.split.call(str, separator as any, limit)
 		}
 
 		return ret;
@@ -86,7 +89,7 @@ export class UString extends String
 			start = 0;
 		}
 
-		if (typeof indexEnd == 'number')
+		if (typeof indexEnd === 'number')
 		{
 			if (Number.isNaN(indexEnd) || indexEnd < 0)
 			{
@@ -127,9 +130,9 @@ export class UString extends String
 		{
 			i = a.indexOf(s[0], j);
 
-			if (i != -1)
+			if (i !== -1)
 			{
-				if (a.slice(i, i + s.length).join('') == search)
+				if (a.slice(i, i + s.length).join('') === search)
 				{
 					return start + i;
 				}
@@ -145,7 +148,7 @@ export class UString extends String
 
 			j++;
 		}
-		while (i != -1 && j < a.length);
+		while (i !== -1 && j < a.length);
 
 		return -1;
 	}
@@ -168,7 +171,7 @@ export class UString extends String
 	override startsWith(search: string, pos?: number): boolean
 	{
 		return this.substr(!pos || pos < 0 ? 0 : +pos, search.length)
-			.indexOf(search) == 0
+			.indexOf(search) === 0
 			;
 	}
 
@@ -177,7 +180,7 @@ export class UString extends String
 		let a = UString.toArray(this);
 		let s = UString.toArray(search);
 
-		if (length === undefined || length > a.length)
+		if (typeof length === 'undefined' || length > a.length)
 		{
 			length = a.length;
 		}
@@ -254,7 +257,7 @@ export class UString extends String
 	 */
 	static default = UString;
 
-	static create(str, ...argv)
+	static create(str: unknown, ...argv: unknown[])
 	{
 		return new this(str, ...argv);
 	}
@@ -287,19 +290,20 @@ export class UString extends String
 		{
 			if (STRING_PROTOTYPE.includes(b))
 			{
+				// @ts-ignore
 				a[b] = true;
 			}
 
 			return a;
-		}, {})
+		}, {} as Record<keyof String, true | undefined>)
 	}
 
-	static indexOf(str, search: string, start: number = 0)
+	static indexOf(str: unknown, search: string, start: number = 0)
 	{
 		return this.create(str).indexOf(search, start);
 	}
 
-	static includes(str, search: string, start: number = 0)
+	static includes(str: unknown, search: string, start: number = 0)
 	{
 		return this.create(str).includes(search, start);
 	}
@@ -307,47 +311,47 @@ export class UString extends String
 	/**
 	 * splits a String object into an array of strings by separating the string into substrings, using a specified separator string to determine where to make each split.
 	 */
-	static split(str, separator?: any, limit?: number)
+	static split(str: unknown, separator?: any, limit?: number)
 	{
 		return this.create(str).split(separator, limit);
 	}
 
-	static substr(str, start: number, length?: number)
+	static substr(str: unknown, start: number, length?: number)
 	{
 		return this.create(str).substr(start, length);
 	}
 
-	static substring(str, start: number, indexEnd?: number)
+	static substring(str: unknown, start: number, indexEnd?: number)
 	{
 		return this.create(str).substring(start, indexEnd);
 	}
 
-	static slice(str, start: number, indexEnd?: number)
+	static slice(str: unknown, start: number, indexEnd?: number)
 	{
 		return this.create(str).slice(start, indexEnd);
 	}
 
-	static charAt(str, index: number)
+	static charAt(str: unknown, index: number)
 	{
 		return this.create(str).charAt(index);
 	}
 
-	static padEnd(str, targetLength: number, padString: string)
+	static padEnd(str: unknown, targetLength: number, padString: string)
 	{
 		return this.create(str).padEnd(targetLength, padString);
 	}
 
-	static padStart(str, targetLength: number, padString: string)
+	static padStart(str: unknown, targetLength: number, padString: string)
 	{
 		return this.create(str).padStart(targetLength, padString);
 	}
 
-	static startsWith(str, search: string, pos?: number)
+	static startsWith(str: unknown, search: string, pos?: number)
 	{
 		return this.create(str).startsWith(search, pos);
 	}
 
-	static endsWith(str, search: string, length?: number)
+	static endsWith(str: unknown, search: string, length?: number)
 	{
 		return this.create(str).endsWith(search, length);
 	}
@@ -362,7 +366,7 @@ export class UString extends String
 		return UString.toArray(this).length;
 	}
 
-	static size(str)
+	static size(str: unknown)
 	{
 		return this.create(str).size();
 	}
@@ -370,7 +374,7 @@ export class UString extends String
 	/**
 	 * 𠮷 134071 20bb7
 	 */
-	static codePointAt(str, pos: number): number
+	static codePointAt(str: unknown, pos: number): number
 	{
 		return this.create(str).codePointAt(pos)
 	}

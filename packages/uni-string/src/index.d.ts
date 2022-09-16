@@ -1,15 +1,19 @@
 /**
  * Created by user on 2018/3/16/016.
  */
+export interface IObjectWithSymbolSplit {
+    [Symbol.split](separator?: RegExp | string, limit?: number): string[];
+}
+export type IStringSplitInput = RegExp | string | IObjectWithSymbolSplit;
 export declare const STRING_PROTOTYPE: string[];
 export declare class UString extends String {
     protected _arr: string[];
-    constructor(str: any, ...argv: any[]);
+    constructor(str: unknown, ...argv: unknown[]);
     [Symbol.iterator](): IterableIterator<string>;
-    static isString(str: any): boolean;
-    static toArray(str: any): string[];
+    static isString(str: unknown): boolean;
+    static toArray(str: unknown): string[];
     toArray(): string[];
-    split(separator?: any, limit?: number): string[];
+    split(separator?: IStringSplitInput, limit?: number): string[];
     substr(start: number, length?: number): string;
     substring(start: number, indexEnd?: number): string;
     indexOf(search: string, start?: number): number;
@@ -29,7 +33,7 @@ export declare class UString extends String {
      * @private
      */
     static default: typeof UString;
-    static create(str: any, ...argv: any[]): UString;
+    static create(str: unknown, ...argv: unknown[]): UString;
     /**
      * 顯示 目前支援 unicode 的 method
      */
@@ -48,26 +52,26 @@ export declare class UString extends String {
         codePointAt?: boolean;
         [key: string]: boolean;
     };
-    static indexOf(str: any, search: string, start?: number): number;
-    static includes(str: any, search: string, start?: number): boolean;
+    static indexOf(str: unknown, search: string, start?: number): number;
+    static includes(str: unknown, search: string, start?: number): boolean;
     /**
      * splits a String object into an array of strings by separating the string into substrings, using a specified separator string to determine where to make each split.
      */
-    static split(str: any, separator?: any, limit?: number): string[];
-    static substr(str: any, start: number, length?: number): string;
-    static substring(str: any, start: number, indexEnd?: number): string;
-    static slice(str: any, start: number, indexEnd?: number): string;
-    static charAt(str: any, index: number): string;
-    static padEnd(str: any, targetLength: number, padString: string): string;
-    static padStart(str: any, targetLength: number, padString: string): string;
-    static startsWith(str: any, search: string, pos?: number): boolean;
-    static endsWith(str: any, search: string, length?: number): boolean;
+    static split(str: unknown, separator?: any, limit?: number): string[];
+    static substr(str: unknown, start: number, length?: number): string;
+    static substring(str: unknown, start: number, indexEnd?: number): string;
+    static slice(str: unknown, start: number, indexEnd?: number): string;
+    static charAt(str: unknown, index: number): string;
+    static padEnd(str: unknown, targetLength: number, padString: string): string;
+    static padStart(str: unknown, targetLength: number, padString: string): string;
+    static startsWith(str: unknown, search: string, pos?: number): boolean;
+    static endsWith(str: unknown, search: string, length?: number): boolean;
     get charLength(): number;
     size(): number;
-    static size(str: any): number;
+    static size(str: unknown): number;
     /**
      * 𠮷 134071 20bb7
      */
-    static codePointAt(str: any, pos: number): number;
+    static codePointAt(str: unknown, pos: number): number;
 }
 export default UString;

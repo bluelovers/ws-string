@@ -20,7 +20,9 @@
     "surrogates",
     "symbol",
     "unicode",
-    "utf8"
+    "utf8",
+    "create-by-yarn-tool",
+    "create-by-tsdx"
   ],
   "homepage": "https://github.com/bluelovers/ws-string/tree/master/packages/uni-string#readme",
   "bugs": {
@@ -28,33 +30,75 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluelovers/ws-string.git"
+    "url": "git+https://github.com/bluelovers/ws-string.git",
+    "directory": "packages/uni-string"
   },
   "license": "ISC",
   "author": "bluelovers",
-  "main": "index.js",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json",
+    "./src/core": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./src/*": "./src/*"
+  },
+  "main": "dist/index.cjs",
+  "unpkg": "dist/index.umd.production.min.cjs",
+  "module": "dist/index.esm.mjs",
+  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "jest -u",
+    "pretest": "echo pretest",
+    "test": "yarn run test:jest:snapshot",
     "test:jest": "jest --passWithNoTests",
     "test:jest:snapshot": "yarn run test:jest -- -u",
     "test:snapshot": "yarn run test -- -u",
+    "posttest": "yarn run build",
+    "build": "yarn run build:tsdx && yarn run build:dts:tsc",
+    "build:dts:bundle": "ynpx dts-bundle-generator -o ./dist/index.d.ts ./src/index.ts --no-banner --inline-declare-global & echo build:dts:bundle",
+    "build:dts:copy": "copy .\\src\\index.d.ts .\\dist\\index.d.ts & echo build:dts",
+    "build:dts:tsc": "yarn run build:dts:tsc:emit && yarn run build:dts:copy",
+    "build:dts:tsc:emit": "tsc --emitDeclarationOnly --declaration --noEmit false & echo build:dts:tsc:emit",
+    "build:tsdx": "ynpx @bluelovers/tsdx build --target node",
+    "ci:install": "echo ci:install",
+    "ci:build": "echo ci:build",
     "npm:publish": "npm publish",
     "npm:publish:lerna": "npx lerna publish --yes --cd-version patch",
     "preversion": "yarn run test",
+    "version": "echo version",
+    "postversion": "echo postversion",
+    "prepublish": "echo prepublish",
     "prepublish:lockfile": "npx sync-lockfile .",
+    "prepare": "echo prepare",
+    "prepublishOnly": "echo prepublishOnly",
+    "prepublishOnly:update": "yarn run ncu && yarn run sort-package-json",
+    "prepack": "echo prepack",
+    "pack": "echo pack",
+    "postpack": "echo postpack",
+    "publish": "echo publish",
     "postpublish": "yarn run postpublishOnly:add",
     "postpublish_": "git commit -m \"chore(release): publish\" .",
+    "postpublishOnly": "echo postpublishOnly",
     "postpublishOnly:add": "npx yarn-tool root run postpublishOnly:add uni-string",
     "ncu": "npx yarn-tool ncu -u",
-    "sort-package-json": "npx yarn-tool sort"
+    "sort-package-json": "npx yarn-tool sort",
+    "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
     "es6-class-prototype": "^1.0.4",
-    "runes2": "^1.0.7",
-    "tslib": "^2"
+    "runes2": "^1.0.7"
   },
+  "packageManager": "yarn@1.22.19",
   "gitHead": "b41c5edacf2b3ea6b5b9488a002565ccbbc67e08"
 }

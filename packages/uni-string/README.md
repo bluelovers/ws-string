@@ -12,8 +12,9 @@
 ## demo
 
 ```ts
-import UString from 'uni-string';
-const UString = require('uni-string')
+import UString from 'packages/uni-string/src/index';
+
+const UString = require('packages/uni-string/src/index')
 ```
 
 ```ts

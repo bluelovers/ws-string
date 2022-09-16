@@ -1,4 +1,4 @@
-import UString from '../src/core';
+import UString from '../src';
 import { unsafeChinese } from 'cjk-conv/lib/zh/data/unsafe';
 
 const unsafeChineseString = unsafeChinese.join('');

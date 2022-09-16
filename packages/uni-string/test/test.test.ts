@@ -2,7 +2,7 @@
  * Created by user on 2018/11/8/008.
  */
 
-import UString from '../src/core';
+import UString from '../src';
 import { inspect } from 'util';
 
 it(`UString = UString.UString = UString.default`, done =>
@@ -40,7 +40,8 @@ describe(`simple`, () =>
 
 			expect(arr).toEqual(expected[1]);
 
-			expect(input.split('')).toMatchSnapshot();
+			const _arr_input = input.split('');
+			console.dir(_arr_input);
 			expect(actual).toMatchSnapshot();
 
 			expect(input.length).toMatchSnapshot();
