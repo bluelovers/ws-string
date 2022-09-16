@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.8](https://github.com/bluelovers/ws-string/compare/runes2@1.0.7...runes2@1.0.8) (2022-09-16)
+
+
+
+### 🔖　Miscellaneous
+
+* . ([5a7c959](https://github.com/bluelovers/ws-string/commit/5a7c9593ae906b55bbd7923122e804436a5736b9))
+
+
+
 ## [1.0.7](https://github.com/bluelovers/ws-string/compare/runes2@1.0.5...runes2@1.0.7) (2022-08-27)
 
 

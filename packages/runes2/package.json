@@ -1,6 +1,6 @@
 {
   "name": "runes2",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Unicode-aware JS string splitting, typescript version",
   "keywords": [
     "char",
@@ -86,7 +86,6 @@
     "sort-package-json": "yarn-tool sort",
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
-  "devDependencies": {},
   "packageManager": "yarn@1.22.19",
   "gitHead": "952f3f53bed3e2bf3ccaec50c46702f127ff4e7f"
 }

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.8](https://github.com/bluelovers/ws-string/compare/string-split-keep2@1.0.7...string-split-keep2@1.0.8) (2022-09-16)
+
+
+
+### 📦　Code Refactoring
+
+* strict ([8cf6af1](https://github.com/bluelovers/ws-string/commit/8cf6af121592332cc6372a8ece0d165450eb0830))
+
+
+
 ## [1.0.7](https://github.com/bluelovers/ws-string/compare/string-split-keep2@1.0.5...string-split-keep2@1.0.7) (2022-08-27)
 
 

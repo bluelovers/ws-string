@@ -1,6 +1,6 @@
 {
   "name": "zero-width",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "remove zero-width and some other util about space",
   "keywords": [
     "check",
@@ -61,6 +61,5 @@
     "regexp-helper-core": "^1.0.19",
     "tslib": "^2"
   },
-  "devDependencies": {},
   "gitHead": "952f3f53bed3e2bf3ccaec50c46702f127ff4e7f"
 }

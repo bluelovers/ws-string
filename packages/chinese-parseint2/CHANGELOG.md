@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/bluelovers/ws-string/compare/chinese-parseint2@1.1.10...chinese-parseint2@2.0.1) (2022-09-16)
+
+
+
+### 📦　Code Refactoring
+
+* update to tsdx ([b1a4018](https://github.com/bluelovers/ws-string/commit/b1a40185a0c5d9149a581d8d513ba3c8a161a60c))
+* . ([a71fcf8](https://github.com/bluelovers/ws-string/commit/a71fcf80a3246b7085592cbd3b4222d74f302d47))
+
+
+
 ## [1.1.10](https://github.com/bluelovers/ws-string/compare/chinese-parseint2@1.1.8...chinese-parseint2@1.1.10) (2022-08-27)
 
 

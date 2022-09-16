@@ -1,6 +1,6 @@
 {
   "name": "chinese-parseint2",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "parse Chinese numeric strings to integer",
   "keywords": [
     "chinese",
@@ -70,7 +70,6 @@
     "sort-package-json": "yarn-tool sort",
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
-  "dependencies": {},
   "packageManager": "yarn@1.22.19",
   "gitHead": "952f3f53bed3e2bf3ccaec50c46702f127ff4e7f"
 }

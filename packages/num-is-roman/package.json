@@ -1,6 +1,6 @@
 {
   "name": "num-is-roman",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "<%= description %>",
   "keywords": [
     "create-by-yarn-tool",
@@ -67,7 +67,6 @@
     "sort-package-json": "ynpx --quiet yarn-tool -- sort",
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
-  "dependencies": {},
   "packageManager": "yarn@1.22.19",
   "gitHead": "b41c5edacf2b3ea6b5b9488a002565ccbbc67e08"
 }

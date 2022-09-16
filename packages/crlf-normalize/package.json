@@ -1,6 +1,6 @@
 {
   "name": "crlf-normalize",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Detect and Normalize the newline characters",
   "keywords": [
     "char",

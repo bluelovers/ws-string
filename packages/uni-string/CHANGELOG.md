@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/bluelovers/ws-string/compare/uni-string@1.1.17...uni-string@2.0.1) (2022-09-16)
+
+
+### BREAKING CHANGES
+
+* update to tsdx
+
+
+
+### 📦　Code Refactoring
+
+* update to tsdx ([1466e17](https://github.com/bluelovers/ws-string/commit/1466e17a0966c03ed231de2e86267cc17ab89e2a))
+* update to tsdx ([720d389](https://github.com/bluelovers/ws-string/commit/720d389186ef3344312829b57fead6bb54458b2c))
+
+
+### 🛠　Build System
+
+* update build ([c759290](https://github.com/bluelovers/ws-string/commit/c759290cde63c366dccc67e50389f16d9f7af071))
+
+
+### 🔖　Miscellaneous
+
+* . ([21c5c8d](https://github.com/bluelovers/ws-string/commit/21c5c8d85d84d749b3cb85e939be0687f1fcbcf7))
+* . ([3fa368b](https://github.com/bluelovers/ws-string/commit/3fa368b5b93ba7cba2638e49e3f84af38c75fcfe))
+
+
+
 ## [1.1.17](https://github.com/bluelovers/ws-string/compare/uni-string@1.1.15...uni-string@1.1.17) (2022-08-27)
 
 

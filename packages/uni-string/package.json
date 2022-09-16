@@ -1,6 +1,6 @@
 {
   "name": "uni-string",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Unicode String object",
   "keywords": [
     "ansi",
@@ -97,7 +97,7 @@
   },
   "dependencies": {
     "es6-class-prototype": "^1.0.4",
-    "runes2": "^1.0.7"
+    "runes2": "^1.0.8"
   },
   "packageManager": "yarn@1.22.19",
   "gitHead": "b41c5edacf2b3ea6b5b9488a002565ccbbc67e08"

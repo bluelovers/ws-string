@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/bluelovers/ws-string/compare/blank-line@1.0.10...blank-line@2.0.1) (2022-09-16)
+
+
+
+### 📦　Code Refactoring
+
+* tsdx ([c13c095](https://github.com/bluelovers/ws-string/commit/c13c09508b86fcc276b2f5e0955d74f168a24e6a))
+
+
+### 🔖　Miscellaneous
+
+* . ([5a7c959](https://github.com/bluelovers/ws-string/commit/5a7c9593ae906b55bbd7923122e804436a5736b9))
+* . ([4050456](https://github.com/bluelovers/ws-string/commit/405045666f25e3433f213e5ae0beca4f3460b578))
+
+
+
 ## [1.0.10](https://github.com/bluelovers/ws-string/compare/blank-line@1.0.8...blank-line@1.0.10) (2022-08-27)
 
 
