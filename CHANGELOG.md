@@ -9,6 +9,7 @@ Please see the individual package changelogs for what's new:
 * 🌏 [`num-is-roman`](./packages/num-is-roman/CHANGELOG.md "packages/num-is-roman") *packages/num-is-roman*
 * 🌏 [`runes2`](./packages/runes2/CHANGELOG.md "packages/runes2") *packages/runes2*
 * 🌏 [`str-util`](./packages/str-util/CHANGELOG.md "packages/str-util") *packages/str-util*
+* 🌏 [`string-detect-indent`](./packages/string-indent/CHANGELOG.md "packages/string-indent") *packages/string-indent*
 * 🌏 [`string-split-keep2`](./packages/string-split-keep/CHANGELOG.md "packages/string-split-keep") *packages/string-split-keep*
 * 🌏 [`uni-string`](./packages/uni-string/CHANGELOG.md "packages/uni-string") *packages/uni-string*
 * 🌏 [`zero-width`](./packages/zero-width/CHANGELOG.md "packages/zero-width") *packages/zero-width*
