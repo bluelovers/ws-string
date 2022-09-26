@@ -33,3 +33,12 @@ exports[`detectLineBreak 1`] = `
 "
 "
 `;
+
+exports[`lineSplit 1`] = `
+[
+  "foo",
+  "bar",
+  "baz",
+  "",
+]
+`;
