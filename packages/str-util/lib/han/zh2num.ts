@@ -4,7 +4,6 @@
 
 import { chinese_parseInt, characters } from 'chinese-parseint2';
 import { transcribeNumber, transcriptionConfigs, predefineedTranscriptionConfigs } from '@lazy-cjk/japanese';
-import { ITSOverwrite } from 'ts-type';
 
 export interface IOptions
 {

@@ -3,6 +3,10 @@ const REGEX_MATCH_INDENT_NO_BREAK_SPACE = /^([ \t\xa0]*)((?:[\S\r\n].*|)$)/;
 
 export interface IOptions
 {
+	/**
+	 * no-break space
+	 * \xa0
+	 */
 	includeNoBreakSpace?: boolean,
 }
 

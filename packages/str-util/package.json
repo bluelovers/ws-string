@@ -78,7 +78,6 @@
     "deepmerge": "^4.2.2",
     "is-fullwidth-code-point": "<4 >=3",
     "strip-ansi": "<7 >=6",
-    "ts-type": "^2.1.10",
     "tslib": "^2",
     "uni-string": "^2.0.1"
   },
