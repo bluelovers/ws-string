@@ -11,9 +11,10 @@ const CR = EnumLineBreak.CR as const;
 const CRLF = EnumLineBreak.CRLF as const;
 const LF = EnumLineBreak.LF as const;
 
-const R_CRLF = /(\r\n|\r(?!\n)|\n)/g;
+const R_CRLF = /\r\n|\r(?!\n)|\n/g;
+const R_CRLF_MATCH = new RegExp(`(${R_CRLF.source})`, R_CRLF.flags);
 
-export { CR, CRLF, LF, R_CRLF }
+export { CR, CRLF, LF, R_CRLF, R_CRLF_MATCH }
 
 export type ILineBreak = ITSTypeAndStringLiteral<EnumLineBreak>;
 
