@@ -4,15 +4,15 @@ var r;
   r.CR = "\r", r.CRLF = "\r\n", r.LF = "\n";
 }(r || (r = {}));
 
-const n = "\r", e = "\r\n", t = "\n", c = /(\r\n|\r(?!\n)|\n)/g;
+const e = "\r", n = "\r\n", t = "\n", c = /\r\n|\r(?!\n)|\n/g, i = new RegExp(`(${c.source})`, c.flags);
 
-function crlf(r, n = "\n") {
-  return r.replace(c, n);
+function crlf(r, e = "\n") {
+  return r.replace(c, e);
 }
 
-function chkcrlf(r, n) {
-  var e;
-  const t = null !== (e = null == n ? void 0 : n.disable) && void 0 !== e ? e : {};
+function chkcrlf(r, e) {
+  var n;
+  const t = null !== (n = null == e ? void 0 : e.disable) && void 0 !== n ? n : {};
   return {
     lf: !t.lf && /\n/.test(r.replace(/\r\n/g, "")),
     crlf: !t.crlf && /\r\n/.test(r),
@@ -20,8 +20,8 @@ function chkcrlf(r, n) {
   };
 }
 
-function detectLineBreak(r, n) {
-  return _detectLineBreakCore(chkcrlf(r, n));
+function detectLineBreak(r, e) {
+  return _detectLineBreakCore(chkcrlf(r, e));
 }
 
 function _detectLineBreakCore(r) {
@@ -44,18 +44,18 @@ function lineSplit(r) {
   return r.split(c);
 }
 
-function crlf_unicode_normalize(r, n = "\n") {
-  const e = n + n;
-  return r.replace(/\u000C/g, n + n + n).replace(/\u2028/g, n).replace(/\u2029/g, e);
+function crlf_unicode_normalize(r, e = "\n") {
+  const n = e + e;
+  return r.replace(/\u000C/g, e + e + e).replace(/\u2028/g, e).replace(/\u2029/g, n);
 }
 
-function isEqualWithIgnoreLineSeparators(r, n) {
-  const e = chkcrlf(r), t = chkcrlf(n);
+function isEqualWithIgnoreLineSeparators(r, e) {
+  const n = chkcrlf(r), t = chkcrlf(e);
   let c = !1;
-  return e.cr === t.cr && e.crlf === t.crlf && e.lf === t.lf && (c = crlf(r) === crlf(n)), 
+  return n.cr === t.cr && n.crlf === t.crlf && n.lf === t.lf && (c = crlf(r) === crlf(e)), 
   {
     bool: c,
-    _lb_a: e,
+    _lb_a: n,
     _lb_b: t
   };
 }
@@ -88,5 +88,5 @@ function nameToLineBreak(r) {
   throw new TypeError(`Invalid line break name: ${r}`);
 }
 
-export { n as CR, e as CRLF, r as EnumLineBreak, t as LF, c as R_CRLF, _detectLineBreakCore, chkcrlf, crlf, crlf_unicode_normalize, crlf as default, detectLineBreak, isCR, isCRLF, isEqualWithIgnoreLineSeparators, isLF, lineSplit, nameToLineBreak, toLineBreakName };
+export { e as CR, n as CRLF, r as EnumLineBreak, t as LF, c as R_CRLF, i as R_CRLF_MATCH, _detectLineBreakCore, chkcrlf, crlf, crlf_unicode_normalize, crlf as default, detectLineBreak, isCR, isCRLF, isEqualWithIgnoreLineSeparators, isLF, lineSplit, nameToLineBreak, toLineBreakName };
 //# sourceMappingURL=index.esm.mjs.map

@@ -8,7 +8,8 @@ declare const CR: EnumLineBreak.CR;
 declare const CRLF: EnumLineBreak.CRLF;
 declare const LF: EnumLineBreak.LF;
 declare const R_CRLF: RegExp;
-export { CR, CRLF, LF, R_CRLF };
+declare const R_CRLF_MATCH: RegExp;
+export { CR, CRLF, LF, R_CRLF, R_CRLF_MATCH };
 export type ILineBreak = ITSTypeAndStringLiteral<EnumLineBreak>;
 export type ILineBreakInput = ITSAndTypeAndStringLiteral<EnumLineBreak>;
 export interface IOptions {

@@ -13,7 +13,8 @@ exports.EnumLineBreak = void 0;
 const CR = "\r";
 const CRLF = "\r\n";
 const LF = "\n";
-const R_CRLF = /(\r\n|\r(?!\n)|\n)/g;
+const R_CRLF = /\r\n|\r(?!\n)|\n/g;
+const R_CRLF_MATCH = /*#__PURE__*/new RegExp(`(${R_CRLF.source})`, R_CRLF.flags);
 function crlf(text, newline = "\n") {
   return text.replace(R_CRLF, newline);
 }
@@ -102,6 +103,7 @@ exports.CR = CR;
 exports.CRLF = CRLF;
 exports.LF = LF;
 exports.R_CRLF = R_CRLF;
+exports.R_CRLF_MATCH = R_CRLF_MATCH;
 exports._detectLineBreakCore = _detectLineBreakCore;
 exports.chkcrlf = chkcrlf;
 exports.crlf = crlf;
