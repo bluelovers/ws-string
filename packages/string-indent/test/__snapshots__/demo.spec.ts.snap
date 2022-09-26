@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base '    at pkg\\\\index.ts:64:6' 1`] = `
+{
+  "body": "at pkg\\index.ts:64:6",
+  "bool": true,
+  "indent": "    ",
+  "input": "    at pkg\\index.ts:64:6",
+}
+`;
+
+exports[`base '' 1`] = `
+{
+  "body": "",
+  "bool": false,
+  "indent": "",
+  "input": "",
+}
+`;
+
+exports[`base '\\n' 1`] = `
+{
+  "body": "
+",
+  "bool": false,
+  "indent": "",
+  "input": "
+",
+}
+`;
+
+exports[`no-break space '     at pkg\\\\index.ts:64:6' 1`] = `
+{
+  "body": "at pkg\\index.ts:64:6",
+  "bool": true,
+  "indent": "     ",
+  "input": "     at pkg\\index.ts:64:6",
+}
+`;
+
+exports[`no-break space ' ' 1`] = `
+{
+  "body": "",
+  "bool": true,
+  "indent": " ",
+  "input": " ",
+}
+`;
+
+exports[`no-break space ' \\n' 1`] = `
+{
+  "body": "
+",
+  "bool": true,
+  "indent": " ",
+  "input": " 
+",
+}
+`;
