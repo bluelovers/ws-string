@@ -1,5 +1,5 @@
 {
-  "name": "string-indent",
+  "name": "string-detect-indent",
   "version": "1.0.1",
   "description": "simple detect string indent",
   "keywords": [
@@ -73,5 +73,6 @@
     "sort-package-json": "yarn-tool sort",
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
-  "packageManager": "yarn@1.22.19"
+  "packageManager": "yarn@1.22.19",
+  "gitHead": "59ef40c13dcb41de03375ca3b9a7cbee1caac673"
 }
