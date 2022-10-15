@@ -9,24 +9,26 @@ var i;
   i[i.DIACRITICAL_MARKS_END = 8447] = "DIACRITICAL_MARKS_END", i[i.ZWJ = 8205] = "ZWJ";
 }(i || (i = {}));
 
-const r = Object.freeze([ 0x0308, 0x0937, 0x0937, 0x093F, 0x093F, 0x0BA8, 0x0BBF, 0x0BCD, 0x0E31, 0x0E33, 0x0E40, 0x0E49, 0x1100, 0x1161, 0x11A8 ]);
+const t = Object.freeze([ 0x0308, 0x0937, 0x093F, 0x0BA8, 0x0BBF, 0x0BCD, 0x0E31, 0x0E33, 0x0E40, 0x0E49, 0x1100, 0x1161, 0x11A8 ]);
 
-function _runes(i) {
+var r;
+
+function runes(i) {
   if ("string" != typeof i) throw new TypeError("string cannot be undefined or null");
-  const r = [];
-  let t = 0, e = 0;
-  for (;t < i.length; ) e += nextUnits(t + e, i), isGraphem(i[t + e]) && e++, isVariationSelector(i[t + e]) && e++, 
-  isDiacriticalMark(i[t + e]) && e++, isZeroWidthJoiner(i[t + e]) ? e++ : (r.push(i.substring(t, t + e)), 
-  t += e, e = 0);
-  return r;
+  const t = [];
+  let r = 0, n = 0;
+  for (;r < i.length; ) n += nextUnits(r + n, i), isGraphem(i[r + n]) && n++, isVariationSelector(i[r + n]) && n++, 
+  isDiacriticalMark(i[r + n]) && n++, isZeroWidthJoiner(i[r + n]) ? n++ : (t.push(i.substring(r, r + n)), 
+  r += n, n = 0);
+  return t;
 }
 
-function nextUnits(i, r) {
-  const t = r[i];
-  if (!isFirstOfSurrogatePair(t) || i === r.length - 1) return 1;
-  const e = t + r[i + 1];
-  let n = r.substring(i + 2, i + 5);
-  return isRegionalIndicator(e) && isRegionalIndicator(n) || isFitzpatrickModifier(n) ? 4 : 2;
+function nextUnits(i, t) {
+  const r = t[i];
+  if (!isFirstOfSurrogatePair(r) || i === t.length - 1) return 1;
+  const n = r + t[i + 1];
+  let e = t.substring(i + 2, i + 5);
+  return isRegionalIndicator(n) && isRegionalIndicator(e) || isFitzpatrickModifier(e) ? 4 : 2;
 }
 
 function isFirstOfSurrogatePair(i) {
@@ -50,7 +52,7 @@ function isDiacriticalMark(i) {
 }
 
 function isGraphem(i) {
-  return "string" == typeof i && -1 !== r.indexOf(i.charCodeAt(0));
+  return "string" == typeof i && t.includes(i.charCodeAt(0));
 }
 
 function isZeroWidthJoiner(i) {
@@ -61,18 +63,22 @@ function codePointFromSurrogatePair(i) {
   return (i.charCodeAt(0) - 55296 << 10) + (i.charCodeAt(1) - 56320) + 0x10000;
 }
 
-function betweenInclusive(i, r, t) {
-  return i >= r && i <= t;
+function betweenInclusive(i, t, r) {
+  return i >= t && i <= r;
 }
 
-function substring(i, r, t) {
-  const e = _runes(i);
-  if (void 0 === r) return i;
-  if (r >= e.length) return "";
-  const n = e.length - r;
-  let o = r + (void 0 === t ? n : t);
-  return o > r + n && (o = void 0), e.slice(r, o).join("");
+function substring(i, t, r) {
+  const n = runes(i);
+  if (void 0 === t) return i;
+  if (t >= n.length) return "";
+  const e = n.length - t;
+  let o = t + (void 0 === r ? e : r);
+  return o > t + e && (o = void 0), n.slice(t, o).join("");
 }
 
-export { i as EnumRunesCode, r as GRAPHEMS, betweenInclusive, codePointFromSurrogatePair, _runes as default, isDiacriticalMark, isFirstOfSurrogatePair, isFitzpatrickModifier, isGraphem, isRegionalIndicator, isVariationSelector, isZeroWidthJoiner, nextUnits, _runes as runes, substring as substr, substring };
+!function(i) {
+  i[i.unit_1 = 1] = "unit_1", i[i.unit_2 = 2] = "unit_2", i[i.unit_4 = 4] = "unit_4";
+}(r || (r = {}));
+
+export { r as EnumCodeUnits, i as EnumRunesCode, t as GRAPHEMS, betweenInclusive, codePointFromSurrogatePair, runes as default, isDiacriticalMark, isFirstOfSurrogatePair, isFitzpatrickModifier, isGraphem, isRegionalIndicator, isVariationSelector, isZeroWidthJoiner, nextUnits, runes, substring as substr, substring };
 //# sourceMappingURL=index.esm.mjs.map

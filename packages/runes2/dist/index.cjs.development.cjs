@@ -15,8 +15,14 @@ var EnumRunesCode;
   EnumRunesCode[EnumRunesCode["DIACRITICAL_MARKS_END"] = 8447] = "DIACRITICAL_MARKS_END";
   EnumRunesCode[EnumRunesCode["ZWJ"] = 8205] = "ZWJ";
 })(EnumRunesCode || (EnumRunesCode = {}));
-const GRAPHEMS = /*#__PURE__*/Object.freeze([0x0308, 0x0937, 0x0937, 0x093F, 0x093F, 0x0BA8, 0x0BBF, 0x0BCD, 0x0E31, 0x0E33, 0x0E40, 0x0E49, 0x1100, 0x1161, 0x11A8]);
-function _runes(string) {
+const GRAPHEMS = /*#__PURE__*/Object.freeze([0x0308, 0x0937, 0x093F, 0x0BA8, 0x0BBF, 0x0BCD, 0x0E31, 0x0E33, 0x0E40, 0x0E49, 0x1100, 0x1161, 0x11A8]);
+var EnumCodeUnits;
+(function (EnumCodeUnits) {
+  EnumCodeUnits[EnumCodeUnits["unit_1"] = 1] = "unit_1";
+  EnumCodeUnits[EnumCodeUnits["unit_2"] = 2] = "unit_2";
+  EnumCodeUnits[EnumCodeUnits["unit_4"] = 4] = "unit_4";
+})(EnumCodeUnits || (EnumCodeUnits = {}));
+function runes(string) {
   if (typeof string !== 'string') {
     throw new TypeError('string cannot be undefined or null');
   }
@@ -75,7 +81,7 @@ function isDiacriticalMark(string) {
   return typeof string === 'string' && betweenInclusive(string.charCodeAt(0), 8400, 8447);
 }
 function isGraphem(string) {
-  return typeof string === 'string' && GRAPHEMS.indexOf(string.charCodeAt(0)) !== -1;
+  return typeof string === 'string' && GRAPHEMS.includes(string.charCodeAt(0));
 }
 function isZeroWidthJoiner(string) {
   return typeof string === 'string' && string.charCodeAt(0) === 8205;
@@ -89,7 +95,7 @@ function betweenInclusive(value, lower, upper) {
   return value >= lower && value <= upper;
 }
 function substring(string, start, width) {
-  const chars = _runes(string);
+  const chars = runes(string);
   if (start === undefined) {
     return string;
   }
@@ -105,29 +111,32 @@ function substring(string, start, width) {
   return chars.slice(start, endIndex).join('');
 }
 {
-  Object.defineProperty(_runes, 'runes', {
-    value: _runes
+  Object.defineProperty(runes, 'runes', {
+    value: runes
   });
-  Object.defineProperty(_runes, 'default', {
-    value: _runes
+  Object.defineProperty(runes, 'default', {
+    value: runes
   });
-  Object.defineProperty(_runes, "__esModule", {
+  Object.defineProperty(runes, "__esModule", {
     value: true
   });
-  Object.defineProperty(_runes, 'substr', {
+  Object.defineProperty(runes, 'substr', {
     value: substring
   });
-  Object.defineProperty(_runes, 'substring', {
+  Object.defineProperty(runes, 'substring', {
     value: substring
   });
-  Object.defineProperty(_runes, 'EnumRunesCode', {
+  Object.defineProperty(runes, 'EnumRunesCode', {
     value: EnumRunesCode
   });
-  Object.defineProperty(_runes, 'GRAPHEMS', {
+  Object.defineProperty(runes, 'EnumCodeUnits', {
+    value: EnumCodeUnits
+  });
+  Object.defineProperty(runes, 'GRAPHEMS', {
     value: GRAPHEMS
   });
 }
 
 // @ts-ignore
-module.exports = _runes;
+module.exports = runes;
 //# sourceMappingURL=index.cjs.development.cjs.map
