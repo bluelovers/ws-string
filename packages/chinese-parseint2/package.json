@@ -1,6 +1,6 @@
 {
   "name": "chinese-parseint2",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "parse Chinese numeric strings to integer",
   "keywords": [
     "chinese",

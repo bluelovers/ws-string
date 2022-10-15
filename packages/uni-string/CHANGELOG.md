@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.2](https://github.com/bluelovers/ws-string/compare/uni-string@2.0.1...uni-string@2.0.2) (2022-10-15)
+
+
+
+### 📦　Code Refactoring
+
+* cjs only ([7e8d9cf](https://github.com/bluelovers/ws-string/commit/7e8d9cf83654aad29747d283dfdda03ae82cd190))
+
+
+### 📌　Dependencies
+
+* update deps ([4064a51](https://github.com/bluelovers/ws-string/commit/4064a517bc239a54d055aeacf97315960366b8e4))
+
+
+### 🔖　Miscellaneous
+
+* . ([339c50c](https://github.com/bluelovers/ws-string/commit/339c50c70b046a1565bc9b359daba143a8a220e9))
+
+
+
 ## [2.0.1](https://github.com/bluelovers/ws-string/compare/uni-string@1.1.17...uni-string@2.0.1) (2022-09-16)
 
 

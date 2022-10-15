@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.9](https://github.com/bluelovers/ws-string/compare/runes2@1.0.8...runes2@1.0.9) (2022-10-15)
+
+
+
+### 🐛　Bug Fixes
+
+* Delete duplicated GRAPHEMS ([55f5418](https://github.com/bluelovers/ws-string/commit/55f541852de6439683382220182ee0b946362ad6))
+
+
+### 📦　Code Refactoring
+
+* enum ([aa2c0bc](https://github.com/bluelovers/ws-string/commit/aa2c0bc0d971179af8e4fbcb95f0ca9809c3a52c))
+* enum ([b957f96](https://github.com/bluelovers/ws-string/commit/b957f968cb55e6ed6cbb5447d62811cd2b4ae281))
+
+
+### 🔖　Miscellaneous
+
+* . ([6f26695](https://github.com/bluelovers/ws-string/commit/6f2669586029cf96834620e5db59e1281d55c568))
+* . ([339c50c](https://github.com/bluelovers/ws-string/commit/339c50c70b046a1565bc9b359daba143a8a220e9))
+
+
+
 ## [1.0.8](https://github.com/bluelovers/ws-string/compare/runes2@1.0.7...runes2@1.0.8) (2022-09-16)
 
 
