@@ -1,17 +1,20 @@
 'use strict';
 
-const HIGH_SURROGATE_START = 0xd800;
-const HIGH_SURROGATE_END = 0xdbff;
-const LOW_SURROGATE_START = 0xdc00;
-const REGIONAL_INDICATOR_START = 0x1f1e6;
-const REGIONAL_INDICATOR_END = 0x1f1ff;
-const FITZPATRICK_MODIFIER_START = 0x1f3fb;
-const FITZPATRICK_MODIFIER_END = 0x1f3ff;
-const VARIATION_MODIFIER_START = 0xfe00;
-const VARIATION_MODIFIER_END = 0xfe0f;
-const DIACRITICAL_MARKS_START = 0x20d0;
-const DIACRITICAL_MARKS_END = 0x20ff;
-const ZWJ = 0x200d;
+var EnumRunesCode;
+(function (EnumRunesCode) {
+  EnumRunesCode[EnumRunesCode["HIGH_SURROGATE_START"] = 55296] = "HIGH_SURROGATE_START";
+  EnumRunesCode[EnumRunesCode["HIGH_SURROGATE_END"] = 56319] = "HIGH_SURROGATE_END";
+  EnumRunesCode[EnumRunesCode["LOW_SURROGATE_START"] = 56320] = "LOW_SURROGATE_START";
+  EnumRunesCode[EnumRunesCode["REGIONAL_INDICATOR_START"] = 127462] = "REGIONAL_INDICATOR_START";
+  EnumRunesCode[EnumRunesCode["REGIONAL_INDICATOR_END"] = 127487] = "REGIONAL_INDICATOR_END";
+  EnumRunesCode[EnumRunesCode["FITZPATRICK_MODIFIER_START"] = 127995] = "FITZPATRICK_MODIFIER_START";
+  EnumRunesCode[EnumRunesCode["FITZPATRICK_MODIFIER_END"] = 127999] = "FITZPATRICK_MODIFIER_END";
+  EnumRunesCode[EnumRunesCode["VARIATION_MODIFIER_START"] = 65024] = "VARIATION_MODIFIER_START";
+  EnumRunesCode[EnumRunesCode["VARIATION_MODIFIER_END"] = 65039] = "VARIATION_MODIFIER_END";
+  EnumRunesCode[EnumRunesCode["DIACRITICAL_MARKS_START"] = 8400] = "DIACRITICAL_MARKS_START";
+  EnumRunesCode[EnumRunesCode["DIACRITICAL_MARKS_END"] = 8447] = "DIACRITICAL_MARKS_END";
+  EnumRunesCode[EnumRunesCode["ZWJ"] = 8205] = "ZWJ";
+})(EnumRunesCode || (EnumRunesCode = {}));
 const GRAPHEMS = /*#__PURE__*/Object.freeze([0x0308, 0x0937, 0x0937, 0x093F, 0x093F, 0x0BA8, 0x0BBF, 0x0BCD, 0x0E31, 0x0E33, 0x0E40, 0x0E49, 0x1100, 0x1161, 0x11A8]);
 function _runes(string) {
   if (typeof string !== 'string') {
@@ -57,35 +60,35 @@ function nextUnits(i, string) {
   return 2;
 }
 function isFirstOfSurrogatePair(string) {
-  return string && betweenInclusive(string[0].charCodeAt(0), HIGH_SURROGATE_START, HIGH_SURROGATE_END);
+  return string && betweenInclusive(string[0].charCodeAt(0), 55296, 56319);
 }
 function isRegionalIndicator(string) {
-  return betweenInclusive(codePointFromSurrogatePair(string), REGIONAL_INDICATOR_START, REGIONAL_INDICATOR_END);
+  return betweenInclusive(codePointFromSurrogatePair(string), 127462, 127487);
 }
 function isFitzpatrickModifier(string) {
-  return betweenInclusive(codePointFromSurrogatePair(string), FITZPATRICK_MODIFIER_START, FITZPATRICK_MODIFIER_END);
+  return betweenInclusive(codePointFromSurrogatePair(string), 127995, 127999);
 }
 function isVariationSelector(string) {
-  return typeof string === 'string' && betweenInclusive(string.charCodeAt(0), VARIATION_MODIFIER_START, VARIATION_MODIFIER_END);
+  return typeof string === 'string' && betweenInclusive(string.charCodeAt(0), 65024, 65039);
 }
 function isDiacriticalMark(string) {
-  return typeof string === 'string' && betweenInclusive(string.charCodeAt(0), DIACRITICAL_MARKS_START, DIACRITICAL_MARKS_END);
+  return typeof string === 'string' && betweenInclusive(string.charCodeAt(0), 8400, 8447);
 }
 function isGraphem(string) {
   return typeof string === 'string' && GRAPHEMS.indexOf(string.charCodeAt(0)) !== -1;
 }
 function isZeroWidthJoiner(string) {
-  return typeof string === 'string' && string.charCodeAt(0) === ZWJ;
+  return typeof string === 'string' && string.charCodeAt(0) === 8205;
 }
 function codePointFromSurrogatePair(pair) {
-  const highOffset = pair.charCodeAt(0) - HIGH_SURROGATE_START;
-  const lowOffset = pair.charCodeAt(1) - LOW_SURROGATE_START;
+  const highOffset = pair.charCodeAt(0) - 55296;
+  const lowOffset = pair.charCodeAt(1) - 56320;
   return (highOffset << 10) + lowOffset + 0x10000;
 }
 function betweenInclusive(value, lower, upper) {
   return value >= lower && value <= upper;
 }
-function _substring(string, start, width) {
+function substring(string, start, width) {
   const chars = _runes(string);
   if (start === undefined) {
     return string;
@@ -112,10 +115,16 @@ function _substring(string, start, width) {
     value: true
   });
   Object.defineProperty(_runes, 'substr', {
-    value: _substring
+    value: substring
   });
   Object.defineProperty(_runes, 'substring', {
-    value: _substring
+    value: substring
+  });
+  Object.defineProperty(_runes, 'EnumRunesCode', {
+    value: EnumRunesCode
+  });
+  Object.defineProperty(_runes, 'GRAPHEMS', {
+    value: GRAPHEMS
   });
 }
 

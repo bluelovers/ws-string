@@ -1,21 +1,24 @@
-export const HIGH_SURROGATE_START = 0xd800
-export const HIGH_SURROGATE_END = 0xdbff
+export const enum EnumRunesCode
+{
+	HIGH_SURROGATE_START = 0xd800,
+	HIGH_SURROGATE_END = 0xdbff,
 
-export const LOW_SURROGATE_START = 0xdc00
+	LOW_SURROGATE_START = 0xdc00,
 
-export const REGIONAL_INDICATOR_START = 0x1f1e6
-export const REGIONAL_INDICATOR_END = 0x1f1ff
+	REGIONAL_INDICATOR_START = 0x1f1e6,
+	REGIONAL_INDICATOR_END = 0x1f1ff,
 
-export const FITZPATRICK_MODIFIER_START = 0x1f3fb
-export const FITZPATRICK_MODIFIER_END = 0x1f3ff
+	FITZPATRICK_MODIFIER_START = 0x1f3fb,
+	FITZPATRICK_MODIFIER_END = 0x1f3ff,
 
-export const VARIATION_MODIFIER_START = 0xfe00
-export const VARIATION_MODIFIER_END = 0xfe0f
+	VARIATION_MODIFIER_START = 0xfe00,
+	VARIATION_MODIFIER_END = 0xfe0f,
 
-export const DIACRITICAL_MARKS_START = 0x20d0
-export const DIACRITICAL_MARKS_END = 0x20ff
+	DIACRITICAL_MARKS_START = 0x20d0,
+	DIACRITICAL_MARKS_END = 0x20ff,
 
-export const ZWJ = 0x200d
+	ZWJ = 0x200d,
+}
 
 export const GRAPHEMS = Object.freeze([
 	0x0308, // ( ◌̈ ) COMBINING DIAERESIS
@@ -115,27 +118,27 @@ export function nextUnits(i: number, string: string): 1 | 2 | 4
 
 export function isFirstOfSurrogatePair(string: string)
 {
-	return string && betweenInclusive(string[0].charCodeAt(0), HIGH_SURROGATE_START, HIGH_SURROGATE_END)
+	return string && betweenInclusive(string[0].charCodeAt(0), EnumRunesCode.HIGH_SURROGATE_START, EnumRunesCode.HIGH_SURROGATE_END)
 }
 
 export function isRegionalIndicator(string: string)
 {
-	return betweenInclusive(codePointFromSurrogatePair(string), REGIONAL_INDICATOR_START, REGIONAL_INDICATOR_END)
+	return betweenInclusive(codePointFromSurrogatePair(string), EnumRunesCode.REGIONAL_INDICATOR_START, EnumRunesCode.REGIONAL_INDICATOR_END)
 }
 
 export function isFitzpatrickModifier(string: string)
 {
-	return betweenInclusive(codePointFromSurrogatePair(string), FITZPATRICK_MODIFIER_START, FITZPATRICK_MODIFIER_END)
+	return betweenInclusive(codePointFromSurrogatePair(string), EnumRunesCode.FITZPATRICK_MODIFIER_START, EnumRunesCode.FITZPATRICK_MODIFIER_END)
 }
 
 export function isVariationSelector(string: string)
 {
-	return typeof string === 'string' && betweenInclusive(string.charCodeAt(0), VARIATION_MODIFIER_START, VARIATION_MODIFIER_END)
+	return typeof string === 'string' && betweenInclusive(string.charCodeAt(0), EnumRunesCode.VARIATION_MODIFIER_START, EnumRunesCode.VARIATION_MODIFIER_END)
 }
 
 export function isDiacriticalMark(string: string)
 {
-	return typeof string === 'string' && betweenInclusive(string.charCodeAt(0), DIACRITICAL_MARKS_START, DIACRITICAL_MARKS_END)
+	return typeof string === 'string' && betweenInclusive(string.charCodeAt(0), EnumRunesCode.DIACRITICAL_MARKS_START, EnumRunesCode.DIACRITICAL_MARKS_END)
 }
 
 export function isGraphem(string: string)
@@ -145,13 +148,13 @@ export function isGraphem(string: string)
 
 export function isZeroWidthJoiner(string: string)
 {
-	return typeof string === 'string' && string.charCodeAt(0) === ZWJ
+	return typeof string === 'string' && string.charCodeAt(0) === EnumRunesCode.ZWJ
 }
 
 export function codePointFromSurrogatePair(pair: string)
 {
-	const highOffset = pair.charCodeAt(0) - HIGH_SURROGATE_START
-	const lowOffset = pair.charCodeAt(1) - LOW_SURROGATE_START
+	const highOffset = pair.charCodeAt(0) - EnumRunesCode.HIGH_SURROGATE_START
+	const lowOffset = pair.charCodeAt(1) - EnumRunesCode.LOW_SURROGATE_START
 	return (highOffset << 10) + lowOffset + 0x10000
 }
 
@@ -160,7 +163,7 @@ export function betweenInclusive(value: number, lower: number, upper: number)
 	return value >= lower && value <= upper
 }
 
-function _substring(string: string, start?: number, width?: number)
+export function substring(string: string, start?: number, width?: number)
 {
 	const chars = _runes(string)
 	if (start === undefined)
@@ -181,8 +184,7 @@ function _substring(string: string, start?: number, width?: number)
 	return chars.slice(start, endIndex).join('')
 }
 
-export { _substring as substring }
-export { _substring as substr }
+export { substring as substr }
 
 // @ts-ignore
 if (process.env.TSDX_FORMAT !== 'esm')
@@ -191,8 +193,12 @@ if (process.env.TSDX_FORMAT !== 'esm')
 	Object.defineProperty(_runes, 'default', { value: _runes });
 	Object.defineProperty(_runes, "__esModule", { value: true });
 
-	Object.defineProperty(_runes, 'substr', { value: _substring });
-	Object.defineProperty(_runes, 'substring', { value: _substring });
+	Object.defineProperty(_runes, 'substr', { value: substring });
+	Object.defineProperty(_runes, 'substring', { value: substring });
+
+	// @ts-ignore
+	Object.defineProperty(_runes, 'EnumRunesCode', { value: EnumRunesCode });
+	Object.defineProperty(_runes, 'GRAPHEMS', { value: GRAPHEMS });
 }
 
 export { _runes as runes }

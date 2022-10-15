@@ -1,4 +1,15 @@
-const i = 0xd800, r = 0xdbff, t = 0xdc00, e = 0x1f1e6, n = 0x1f1ff, o = 0x1f3fb, s = 0x1f3ff, u = 0xfe00, a = 0xfe0f, c = 0x20d0, f = 0x20ff, d = 0x200d, l = Object.freeze([ 0x0308, 0x0937, 0x0937, 0x093F, 0x093F, 0x0BA8, 0x0BBF, 0x0BCD, 0x0E31, 0x0E33, 0x0E40, 0x0E49, 0x1100, 0x1161, 0x11A8 ]);
+var i;
+
+!function(i) {
+  i[i.HIGH_SURROGATE_START = 55296] = "HIGH_SURROGATE_START", i[i.HIGH_SURROGATE_END = 56319] = "HIGH_SURROGATE_END", 
+  i[i.LOW_SURROGATE_START = 56320] = "LOW_SURROGATE_START", i[i.REGIONAL_INDICATOR_START = 127462] = "REGIONAL_INDICATOR_START", 
+  i[i.REGIONAL_INDICATOR_END = 127487] = "REGIONAL_INDICATOR_END", i[i.FITZPATRICK_MODIFIER_START = 127995] = "FITZPATRICK_MODIFIER_START", 
+  i[i.FITZPATRICK_MODIFIER_END = 127999] = "FITZPATRICK_MODIFIER_END", i[i.VARIATION_MODIFIER_START = 65024] = "VARIATION_MODIFIER_START", 
+  i[i.VARIATION_MODIFIER_END = 65039] = "VARIATION_MODIFIER_END", i[i.DIACRITICAL_MARKS_START = 8400] = "DIACRITICAL_MARKS_START", 
+  i[i.DIACRITICAL_MARKS_END = 8447] = "DIACRITICAL_MARKS_END", i[i.ZWJ = 8205] = "ZWJ";
+}(i || (i = {}));
+
+const r = Object.freeze([ 0x0308, 0x0937, 0x0937, 0x093F, 0x093F, 0x0BA8, 0x0BBF, 0x0BCD, 0x0E31, 0x0E33, 0x0E40, 0x0E49, 0x1100, 0x1161, 0x11A8 ]);
 
 function _runes(i) {
   if ("string" != typeof i) throw new TypeError("string cannot be undefined or null");
@@ -39,7 +50,7 @@ function isDiacriticalMark(i) {
 }
 
 function isGraphem(i) {
-  return "string" == typeof i && -1 !== l.indexOf(i.charCodeAt(0));
+  return "string" == typeof i && -1 !== r.indexOf(i.charCodeAt(0));
 }
 
 function isZeroWidthJoiner(i) {
@@ -54,7 +65,7 @@ function betweenInclusive(i, r, t) {
   return i >= r && i <= t;
 }
 
-function _substring(i, r, t) {
+function substring(i, r, t) {
   const e = _runes(i);
   if (void 0 === r) return i;
   if (r >= e.length) return "";
@@ -63,5 +74,5 @@ function _substring(i, r, t) {
   return o > r + n && (o = void 0), e.slice(r, o).join("");
 }
 
-export { f as DIACRITICAL_MARKS_END, c as DIACRITICAL_MARKS_START, s as FITZPATRICK_MODIFIER_END, o as FITZPATRICK_MODIFIER_START, l as GRAPHEMS, r as HIGH_SURROGATE_END, i as HIGH_SURROGATE_START, t as LOW_SURROGATE_START, n as REGIONAL_INDICATOR_END, e as REGIONAL_INDICATOR_START, a as VARIATION_MODIFIER_END, u as VARIATION_MODIFIER_START, d as ZWJ, betweenInclusive, codePointFromSurrogatePair, _runes as default, isDiacriticalMark, isFirstOfSurrogatePair, isFitzpatrickModifier, isGraphem, isRegionalIndicator, isVariationSelector, isZeroWidthJoiner, nextUnits, _runes as runes, _substring as substr, _substring as substring };
+export { i as EnumRunesCode, r as GRAPHEMS, betweenInclusive, codePointFromSurrogatePair, _runes as default, isDiacriticalMark, isFirstOfSurrogatePair, isFitzpatrickModifier, isGraphem, isRegionalIndicator, isVariationSelector, isZeroWidthJoiner, nextUnits, _runes as runes, substring as substr, substring };
 //# sourceMappingURL=index.esm.mjs.map
