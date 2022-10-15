@@ -36,13 +36,20 @@ export const GRAPHEMS = Object.freeze([
 	0x11A8, // ( ᆨ ) HANGUL JONGSEONG KIYEOK
 ]);
 
-function _runes(string: string): string[]
+export const enum EnumCodeUnits
+{
+	unit_1 = 1,
+	unit_2 = 2,
+	unit_4 = 4,
+}
+
+export function runes(string: string): string[]
 {
 	if (typeof string !== 'string')
 	{
 		throw new TypeError('string cannot be undefined or null')
 	}
-	const result = []
+	const result: string[] = []
 	let i = 0
 	let increment = 0
 	while (i < string.length)
@@ -78,14 +85,14 @@ function _runes(string: string): string[]
 // Emoji with skin-tone modifiers: 4 code units (2 code points)
 // Country flags: 4 code units (2 code points)
 // Variations: 2 code units
-export function nextUnits(i: number, string: string): 1 | 2 | 4
+export function nextUnits(i: number, string: string)
 {
 	const current = string[i]
 	// If we don't have a value that is part of a surrogate pair, or we're at
 	// the end, only take the value at i
 	if (!isFirstOfSurrogatePair(current) || i === string.length - 1)
 	{
-		return 1
+		return EnumCodeUnits.unit_1
 	}
 
 	const currentPair = current + string[i + 1]
@@ -97,7 +104,7 @@ export function nextUnits(i: number, string: string): 1 | 2 | 4
 	// If both pairs are regional indicator symbols, take 4
 	if (isRegionalIndicator(currentPair) && isRegionalIndicator(nextPair))
 	{
-		return 4
+		return EnumCodeUnits.unit_4
 	}
 
 	// If the next pair make a Fitzpatrick skin tone
@@ -109,9 +116,9 @@ export function nextUnits(i: number, string: string): 1 | 2 | 4
 	// one of them.
 	if (isFitzpatrickModifier(nextPair))
 	{
-		return 4
+		return EnumCodeUnits.unit_4
 	}
-	return 2
+	return EnumCodeUnits.unit_2
 }
 
 export function isFirstOfSurrogatePair(string: string)
@@ -141,7 +148,7 @@ export function isDiacriticalMark(string: string)
 
 export function isGraphem(string: string)
 {
-	return typeof string === 'string' && GRAPHEMS.indexOf(string.charCodeAt(0)) !== -1
+	return typeof string === 'string' && GRAPHEMS.includes(string.charCodeAt(0))
 }
 
 export function isZeroWidthJoiner(string: string)
@@ -163,7 +170,7 @@ export function betweenInclusive(value: number, lower: number, upper: number)
 
 export function substring(string: string, start?: number, width?: number)
 {
-	const chars = _runes(string)
+	const chars = runes(string)
 	if (start === undefined)
 	{
 		return string
@@ -187,18 +194,18 @@ export { substring as substr }
 // @ts-ignore
 if (process.env.TSDX_FORMAT !== 'esm')
 {
-	Object.defineProperty(_runes, 'runes', { value: _runes });
-	Object.defineProperty(_runes, 'default', { value: _runes });
-	Object.defineProperty(_runes, "__esModule", { value: true });
+	Object.defineProperty(runes, 'runes', { value: runes });
+	Object.defineProperty(runes, 'default', { value: runes });
+	Object.defineProperty(runes, "__esModule", { value: true });
 
-	Object.defineProperty(_runes, 'substr', { value: substring });
-	Object.defineProperty(_runes, 'substring', { value: substring });
+	Object.defineProperty(runes, 'substr', { value: substring });
+	Object.defineProperty(runes, 'substring', { value: substring });
 
 	// @ts-ignore
-	Object.defineProperty(_runes, 'EnumRunesCode', { value: EnumRunesCode });
-	Object.defineProperty(_runes, 'GRAPHEMS', { value: GRAPHEMS });
+	Object.defineProperty(runes, 'EnumRunesCode', { value: EnumRunesCode });
+	// @ts-ignore
+	Object.defineProperty(runes, 'EnumCodeUnits', { value: EnumCodeUnits });
+	Object.defineProperty(runes, 'GRAPHEMS', { value: GRAPHEMS });
 }
 
-export { _runes as runes }
-
-export default _runes
+export default runes
