@@ -12,13 +12,6 @@ export declare const DIACRITICAL_MARKS_END = 8447;
 export declare const ZWJ = 8205;
 export declare const GRAPHEMS: readonly number[];
 declare function _runes(string: string): string[];
-declare namespace _runes {
-	export var substr: typeof _substring;
-	export var substring: typeof _substring;
-	var _a: typeof _runes;
-	export var runes: typeof _runes;
-	export { _a as default };
-}
 export declare function nextUnits(i: number, string: string): 1 | 2 | 4;
 export declare function isFirstOfSurrogatePair(string: string): boolean;
 export declare function isRegionalIndicator(string: string): boolean;

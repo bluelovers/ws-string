@@ -10,9 +10,7 @@ function stringSplitWithLimit(str, separator, limit) {
 function _splitStart_noSep(str, lim) {
   const ret = [];
   lim = Math.min(lim, str.length) - 1;
-
   for (let i = 0; i < lim; ++i) ret.push(str[i]);
-
   ret.push(str.slice(lim));
   return ret;
 }
@@ -21,30 +19,24 @@ function _splitEnd_noSep(str, lim) {
   lim = Math.min(lim, str.length);
   const firstSlice = str.length - lim + 1;
   ret.push(str.slice(0, firstSlice));
-
   for (let i = firstSlice; i < str.length; ++i) ret.push(str[i]);
-
   return ret;
 }
 function _splitStart(str, sep, lim, cur, acc) {
   const index = str.indexOf(sep, cur);
-
   if (index === -1 || acc.length + 1 === lim) {
     acc.push(str.slice(cur));
     return acc;
   }
-
   acc.push(str.slice(cur, index));
   return _splitStart(str, sep, lim, index + sep.length, acc);
 }
 function _splitEnd(str, sep, lim, cur, acc) {
   const index = str.lastIndexOf(sep, cur);
-
   if (cur === -1 || index === -1 || acc.length + 1 === lim) {
     acc.unshift(str.slice(0, cur + 1));
     return acc;
   }
-
   acc.unshift(str.slice(index + sep.length, cur + 1));
   return _splitEnd(str, sep, lim, index - 1, acc);
 }

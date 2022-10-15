@@ -105,46 +105,37 @@ function chinese_parseInt(str, radix) {
 }
 function _chineseParseIntCore(str) {
   const negative = _isNegative(str);
-
   if (negative) str = str.slice(1);
   let charVal;
   let result = 0;
   let partialSum = 0;
   let digit = -1;
-
   for (let i = 0; i < str.length; ++i) {
     charVal = getSpecialCharVal(str.charAt(i));
     if (charVal === undefined) return NaN;
-
     if (charVal < 10) {
       digit = digit == -1 ? charVal : digit * 10 + charVal;
     } else if (charVal < 1e+4) {
       if (digit == -1) digit = 1;
-
       if (i > 1 && digit == 0 && getSpecialCharVal(str.charAt(i - 2)) != 100) {
         digit = 1;
       }
-
       partialSum += digit * charVal;
       digit = -1;
     } else {
       if (digit != -1) partialSum += digit;
-
       if (i && getSpecialCharVal(str.charAt(i - 1)) >= 1e+4) {
         result *= getSpecialCharVal(str.charAt(i));
       } else {
         result += partialSum * charVal;
       }
-
       partialSum = 0;
       digit = -1;
     }
   }
-
   if (digit > 0) {
     if (str.length > 1) {
       charVal = getSpecialCharVal(str.charAt(str.length - 2));
-
       if (charVal < 100) {
         partialSum += digit;
       } else {
@@ -155,7 +146,6 @@ function _chineseParseIntCore(str) {
       partialSum += digit;
     }
   }
-
   result += partialSum;
   if (negative) result *= -1;
   return result;

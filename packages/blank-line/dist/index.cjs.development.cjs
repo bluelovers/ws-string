@@ -11,28 +11,23 @@ function normalize(txt) {
 
 function getBlankLine(txt, options = {}) {
   let _ms = execall2.execall(/\n+/g, normalize(txt));
-
   if (_ms.length) {
     let _ret = _ms.reduce(function (a, b) {
       a.push(b.match.length);
       return a;
     }, []);
-
     if (options.filter) {
       _ret = _ret.filter(function (v, i, a) {
         return a.indexOf(v) == i;
       });
     }
-
     if (options.sort) {
       _ret.sort(function (a, b) {
         return a - b;
       });
     }
-
     return _ret;
   }
-
   return null;
 }
 function getMinMidMax(txt) {
@@ -40,11 +35,9 @@ function getMinMidMax(txt) {
     filter: true,
     sort: true
   });
-
   if (!(_ms !== null && _ms !== void 0 && _ms.length)) {
     return [null, null, null];
   }
-
   let min = _ms[0] || null;
   let max = _ms[_ms.length - 1] || min;
   let mid = _ms[1] || min;

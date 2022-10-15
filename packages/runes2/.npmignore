@@ -35,10 +35,10 @@ node_modules
 /bin/**/*.d.cts
 /bin/*.d.cts
 
-!./src/**/*.ts
-!./src/**/*.cts
-!./src/**/*.mts
-!./src/**/*.tsx
+!/src/**/*.ts
+!/src/**/*.cts
+!/src/**/*.mts
+!/src/**/*.tsx
 
 /src/**/*.d.ts
 /src/**/*.js
@@ -90,6 +90,7 @@ tsconfig.esm.json.tpl
 .mocharc.yml
 jest.config.js
 jest.config.*
+/jest-preset.*
 /report.*.json
 now.json
 /Makefile
@@ -135,3 +136,7 @@ bin/tsconfig.json
 bin/tsconfig.*.json
 
 .yarnrc.yml
+.turbo
+__file_snapshots__
+__fixtures__
+/fixture/

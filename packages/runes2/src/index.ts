@@ -184,13 +184,16 @@ function _substring(string: string, start?: number, width?: number)
 export { _substring as substring }
 export { _substring as substr }
 
-_runes.substr = _substring;
-_runes.substring = _substring;
+// @ts-ignore
+if (process.env.TSDX_FORMAT !== 'esm')
+{
+	Object.defineProperty(_runes, 'runes', { value: _runes });
+	Object.defineProperty(_runes, 'default', { value: _runes });
+	Object.defineProperty(_runes, "__esModule", { value: true });
 
-_runes.default = _runes;
-_runes.runes = _runes;
-
-Object.defineProperty(_runes, "__esModule", { value: true });
+	Object.defineProperty(_runes, 'substr', { value: _substring });
+	Object.defineProperty(_runes, 'substring', { value: _substring });
+}
 
 export { _runes as runes }
 

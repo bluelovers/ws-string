@@ -3,13 +3,11 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 exports.EnumLineBreak = void 0;
-
 (function (EnumLineBreak) {
   EnumLineBreak["CR"] = "\r";
   EnumLineBreak["CRLF"] = "\r\n";
   EnumLineBreak["LF"] = "\n";
 })(exports.EnumLineBreak || (exports.EnumLineBreak = {}));
-
 const CR = "\r";
 const CRLF = "\r\n";
 const LF = "\n";
@@ -20,7 +18,6 @@ function crlf(text, newline = "\n") {
 }
 function chkcrlf(text, options) {
   var _options$disable;
-
   const disable = (_options$disable = options === null || options === void 0 ? void 0 : options.disable) !== null && _options$disable !== void 0 ? _options$disable : {};
   return {
     lf: !disable.lf && /\n/.test(text.replace(/\r\n/g, '')),
@@ -30,7 +27,6 @@ function chkcrlf(text, options) {
 }
 function detectLineBreak(text, options) {
   const _lb = chkcrlf(text, options);
-
   return _detectLineBreakCore(_lb);
 }
 function _detectLineBreakCore(_lb) {
@@ -55,15 +51,11 @@ function crlf_unicode_normalize(text, newline = "\n") {
 }
 function isEqualWithIgnoreLineSeparators(a, b) {
   const _lb_a = chkcrlf(a);
-
   const _lb_b = chkcrlf(b);
-
   let bool = false;
-
   if (_lb_a.cr === _lb_b.cr && _lb_a.crlf === _lb_b.crlf && _lb_a.lf === _lb_b.lf) {
     bool = crlf(a) === crlf(b);
   }
-
   return {
     bool,
     _lb_a,
@@ -74,28 +66,22 @@ function toLineBreakName(newline) {
   switch (newline) {
     case "\n":
       return 'LF';
-
     case "\r":
       return 'CR';
-
     case "\r\n":
       return 'CRLF';
   }
-
   throw new TypeError(`Invalid line break`);
 }
 function nameToLineBreak(name) {
   switch (name === null || name === void 0 ? void 0 : name.toUpperCase()) {
     case 'LF':
       return "\n";
-
     case 'CR':
       return "\r";
-
     case 'CRLF':
       return "\r\n";
   }
-
   throw new TypeError(`Invalid line break name: ${name}`);
 }
 

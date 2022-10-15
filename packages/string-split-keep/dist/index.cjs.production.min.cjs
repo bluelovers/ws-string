@@ -1,2 +1,40 @@
-"use strict";function stringSplitWithLimit(t,i,n){return n&&void 0!==i?i.length?n>0?_splitStart(t,i,n,0,[]):_splitEnd(t,i,-n,t.length,[]):n>0?_splitStart_noSep(t,n):_splitEnd_noSep(t,-n):t.split(i,n)}function _splitStart_noSep(t,i){const n=[];i=Math.min(i,t.length)-1;for(let s=0;s<i;++s)n.push(t[s]);return n.push(t.slice(i)),n}function _splitEnd_noSep(t,i){const n=[];i=Math.min(i,t.length);const s=t.length-i+1;n.push(t.slice(0,s));for(let i=s;i<t.length;++i)n.push(t[i]);return n}function _splitStart(t,i,n,s,e){const l=t.indexOf(i,s);return-1===l||e.length+1===n?(e.push(t.slice(s)),e):(e.push(t.slice(s,l)),_splitStart(t,i,n,l+i.length,e))}function _splitEnd(t,i,n,s,e){const l=t.lastIndexOf(i,s);return-1===s||-1===l||e.length+1===n?(e.unshift(t.slice(0,s+1)),e):(e.unshift(t.slice(l+i.length,s+1)),_splitEnd(t,i,n,l-1,e))}Object.defineProperty(exports,"__esModule",{value:!0}),exports._splitEnd=_splitEnd,exports._splitEnd_noSep=_splitEnd_noSep,exports._splitStart=_splitStart,exports._splitStart_noSep=_splitStart_noSep,exports.default=stringSplitWithLimit,exports.stringSplitWithLimit=stringSplitWithLimit;
+"use strict";
+
+function stringSplitWithLimit(t, i, n) {
+  return n && void 0 !== i ? i.length ? n > 0 ? _splitStart(t, i, n, 0, []) : _splitEnd(t, i, -n, t.length, []) : n > 0 ? _splitStart_noSep(t, n) : _splitEnd_noSep(t, -n) : t.split(i, n);
+}
+
+function _splitStart_noSep(t, i) {
+  const n = [];
+  i = Math.min(i, t.length) - 1;
+  for (let s = 0; s < i; ++s) n.push(t[s]);
+  return n.push(t.slice(i)), n;
+}
+
+function _splitEnd_noSep(t, i) {
+  const n = [];
+  i = Math.min(i, t.length);
+  const s = t.length - i + 1;
+  n.push(t.slice(0, s));
+  for (let i = s; i < t.length; ++i) n.push(t[i]);
+  return n;
+}
+
+function _splitStart(t, i, n, s, e) {
+  const l = t.indexOf(i, s);
+  return -1 === l || e.length + 1 === n ? (e.push(t.slice(s)), e) : (e.push(t.slice(s, l)), 
+  _splitStart(t, i, n, l + i.length, e));
+}
+
+function _splitEnd(t, i, n, s, e) {
+  const l = t.lastIndexOf(i, s);
+  return -1 === s || -1 === l || e.length + 1 === n ? (e.unshift(t.slice(0, s + 1)), 
+  e) : (e.unshift(t.slice(l + i.length, s + 1)), _splitEnd(t, i, n, l - 1, e));
+}
+
+Object.defineProperty(exports, "__esModule", {
+  value: !0
+}), exports._splitEnd = _splitEnd, exports._splitEnd_noSep = _splitEnd_noSep, exports._splitStart = _splitStart, 
+exports._splitStart_noSep = _splitStart_noSep, exports.default = stringSplitWithLimit, 
+exports.stringSplitWithLimit = stringSplitWithLimit;
 //# sourceMappingURL=index.cjs.production.min.cjs.map

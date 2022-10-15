@@ -49,6 +49,7 @@
     "test:jest:clearCache": "jest --clearCache",
     "test:jest:snapshot": "yarn run test:jest -- -u",
     "test:snapshot": "yarn run test -- -u",
+    "test:tsd": "ynpx tsd",
     "posttest": "yarn run build",
     "install:frozenLockfile": "yarn-tool install --frozen-lockfile",
     "install:resetLockfile": "yarn-tool install --reset-lockfile",

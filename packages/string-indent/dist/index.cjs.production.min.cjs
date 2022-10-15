@@ -1,2 +1,20 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});const e=/^([ \t]*)((?:[\S\r\n].*|)$)/,t=/^([ \t\xa0]*)((?:[\S\r\n].*|)$)/;function detectIndentLine(n,d){const c=(null!=d&&d.includeNoBreakSpace?t:e).exec(n);return{input:n,indent:c[1],body:c[2],bool:c[1].length>0}}exports.default=detectIndentLine,exports.detectIndentLine=detectIndentLine;
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: !0
+});
+
+const e = /^([ \t]*)((?:[\S\r\n].*|)$)/, t = /^([ \t\xa0]*)((?:[\S\r\n].*|)$)/;
+
+function detectIndentLine(n, d) {
+  const c = (null != d && d.includeNoBreakSpace ? t : e).exec(n);
+  return {
+    input: n,
+    indent: c[1],
+    body: c[2],
+    bool: c[1].length > 0
+  };
+}
+
+exports.default = detectIndentLine, exports.detectIndentLine = detectIndentLine;
 //# sourceMappingURL=index.cjs.production.min.cjs.map
