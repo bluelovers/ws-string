@@ -1287,6 +1287,11 @@ class-proxy@^1.1.2:
   resolved "https://registry.npmjs.org/class-proxy/-/class-proxy-1.1.2.tgz#ebd38c9927dc146926873d86692418fd057a3220"
   integrity sha512-kowpC1EGn0b5ZxOMbF8f7IO03gg6dtI1rwBIHMfG5dEAeOVpZpukN9cT4K9cxv+IG8JihVdsqPr0V5bitB+pqQ==
 
+class-proxy@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/class-proxy/-/class-proxy-2.0.0.tgz#14795627c1276273bddc0f212d43541e6343fd2f"
+  integrity sha512-BDQfDF/EThTivmMgaEpiwToj20nDzpXoverANmY7aJyTe2z4ss8ZRlFnWFkJqcMli9HvNDzO1+getFeoED/xZg==
+
 cliui@^8.0.1:
   version "8.0.1"
   resolved "https://registry.npmjs.org/cliui/-/cliui-8.0.1.tgz#0c04b075db02cbfe60dc8e6cf2f5486b1a3608aa"
@@ -1484,6 +1489,13 @@ es6-class-prototype@^1.0.4:
   integrity sha512-w772noDRF8U+iSsg+wesXRNP61bMbKzky8JAvYEtQOI/DptYMN5cnNnGnjERGXoB+uPrhATbPz/wx7YCRwrpiA==
   dependencies:
     class-proxy "^1.1.2"
+
+es6-class-prototype@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/es6-class-prototype/-/es6-class-prototype-2.0.0.tgz#f42b577ca25f71e1f9dee88cd7644e004668b370"
+  integrity sha512-nn4YicqIBGRYIf8n/k45/iMfEZY8VVEW3jSeKWE9UTojR2evH1nl5fsJ9Cu7ZYZGUWaqZbXDyXMHk+e8ekw7Aw==
+  dependencies:
+    class-proxy "^2.0.0"
 
 escalade@^3.1.1:
   version "3.1.1"

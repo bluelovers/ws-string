@@ -97,7 +97,7 @@
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
-    "es6-class-prototype": "^1.0.4",
+    "es6-class-prototype": "^2.0.0",
     "runes2": "^1.0.8"
   },
   "packageManager": "yarn@1.22.19",
