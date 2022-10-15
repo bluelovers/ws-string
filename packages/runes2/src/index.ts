@@ -23,8 +23,6 @@ export const enum EnumRunesCode
 export const GRAPHEMS = Object.freeze([
 	0x0308, // ( ◌̈ ) COMBINING DIAERESIS
 	0x0937, // ( ष ) DEVANAGARI LETTER SSA
-	0x0937, // ( ष ) DEVANAGARI LETTER SSA
-	0x093F, // ( ि ) DEVANAGARI VOWEL SIGN I
 	0x093F, // ( ि ) DEVANAGARI VOWEL SIGN I
 	0x0BA8, // ( ந ) TAMIL LETTER NA
 	0x0BBF, // ( ி ) TAMIL VOWEL SIGN I
