@@ -141,9 +141,5 @@ class UString extends String {
   }
 }
 
-Object.defineProperty(UString, "__esModule", {
-  value: !0
-}), UString.default = UString.UString = UString;
-
 export { e as STRING_PROTOTYPE, UString, UString as default };
 //# sourceMappingURL=index.esm.mjs.map

@@ -141,7 +141,11 @@ class UString extends String {
   }
 }
 
-Object.defineProperty(UString, "__esModule", {
+Object.defineProperty(UString, "UString", {
+  value: UString
+}), Object.defineProperty(UString, "default", {
+  value: UString
+}), Object.defineProperty(UString, "__esModule", {
   value: !0
-}), UString.default = UString.UString = UString, module.exports = UString;
+}), module.exports = UString;
 //# sourceMappingURL=index.cjs.production.min.cjs.map

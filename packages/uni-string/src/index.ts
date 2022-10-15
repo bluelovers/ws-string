@@ -384,7 +384,9 @@ export class UString extends String
 export default UString;
 
 // @ts-ignore
-Object.defineProperty(UString, "__esModule", { value: true });
-
-// @ts-ignore
-UString.default = UString.UString = UString;
+if (process.env.TSDX_FORMAT !== 'esm')
+{
+	Object.defineProperty(UString, 'UString', { value: UString });
+	Object.defineProperty(UString, 'default', { value: UString });
+	Object.defineProperty(UString, "__esModule", { value: true });
+}

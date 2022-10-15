@@ -205,10 +205,17 @@ class UString extends String {
     return this.create(str).codePointAt(pos);
   }
 }
-Object.defineProperty(UString, "__esModule", {
-  value: true
-});
-UString.default = UString.UString = UString;
+{
+  Object.defineProperty(UString, 'UString', {
+    value: UString
+  });
+  Object.defineProperty(UString, 'default', {
+    value: UString
+  });
+  Object.defineProperty(UString, "__esModule", {
+    value: true
+  });
+}
 
 // @ts-ignore
 // @ts-ignore
