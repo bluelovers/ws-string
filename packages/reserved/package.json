@@ -1,41 +1,76 @@
 {
-  "name": "reserved",
-  "description": "Reserved words that may not be used as variables, functions, methods, or object identifiers, since ECMAScript specifies special behavior for them.",
+  "name": "reserved2",
   "version": "0.1.2",
-  "homepage": "https://github.com/jonschlinkert/reserved",
-  "author": {
-    "name": "Jon Schlinkert",
-    "url": "https://github.com/jonschlinkert"
+  "description": "Reserved words that may not be used as variables, functions, methods, or object identifiers, since ECMAScript specifies special behavior for them.",
+  "keywords": [
+    "reserved",
+    "words",
+    "javascript",
+    "ECMAScript",
+    "create-by-yarn-tool",
+    "create-by-tsdx"
+  ],
+  "homepage": "https://github.com/bluelovers/ws-string/tree/master/packages/reserved#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/ws-string/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jonschlinkert/reserved.git"
+    "url": "git+https://github.com/bluelovers/ws-string.git",
+    "directory": "packages/reserved"
   },
-  "bugs": {
-    "url": "https://github.com/jonschlinkert/reserved/issues"
+  "license": "ISC",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*"
   },
+  "main": "dist/index.cjs",
+  "unpkg": "dist/index.umd.production.min.cjs",
+  "module": "dist/index.esm.mjs",
+  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "pretest": "echo pretest",
+    "test": "jest --passWithNoTests",
+    "posttest": "yarn run build",
+    "build": "yarn run build:tsdx && yarn run build:dts:bundle",
+    "build:dts:bundle": "ynpx dts-bundle-generator -o ./dist/index.d.ts ./src/index.ts --no-banner --inline-declare-global & echo build:dts:bundle",
+    "build:dts:copy": "copy .\\src\\index.d.ts .\\dist\\index.d.ts & echo build:dts",
+    "build:dts:tsc": "yarn run build:dts:copy && yarn run build:dts:tsc:emit && yarn run build:dts:copy",
+    "build:dts:tsc:emit": "tsc --emitDeclarationOnly --declaration --noEmit false",
+    "build:tsdx": "ynpx @bluelovers/tsdx build --target node",
+    "ci:install": "echo ci:install",
+    "ci:build": "echo ci:build",
+    "preversion": "echo preversion && yarn run test",
+    "version": "echo version",
+    "postversion": "echo postversion",
+    "prepublish": "echo prepublish",
+    "prepare": "echo prepare",
+    "prepublishOnly": "echo prepublishOnly",
+    "prepublishOnly:update": "yarn run ncu && yarn run sort-package-json",
+    "prepack": "echo prepack",
+    "pack": "echo pack",
+    "postpack": "echo postpack",
+    "publish": "echo publish",
+    "postpublish": "echo postpublish",
+    "postpublishOnly": "echo postpublishOnly",
+    "ncu": "yarn-tool ncu -u",
+    "sort-package-json": "yarn-tool sort",
+    "tsc:showConfig": "ynpx get-current-tsconfig -p"
+  },
+  "devDependencies": {},
+  "packageManager": "yarn@1.22.19",
   "licenses": [
     {
       "type": "MIT",
       "url": "https://github.com/jonschlinkert/reserved/blob/master/LICENSE-MIT"
     }
-  ],
-  "keywords": [
-    "reserved",
-    "words",
-    "javascript",
-    "ECMAScript"
-  ],
-  "main": "index.js",
-  "engines": {
-    "node": ">=0.8"
-  },
-  "scripts": {
-    "test": "mocha -R spec"
-  },
-  "devDependencies": {
-    "verb": "~0.2.0",
-    "chai": "~1.9.1",
-    "mocha": "~1.18.2"
-  }
+  ]
 }
