@@ -1,6 +1,6 @@
 {
   "name": "safe-variable-name",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Get a safe variable name from a given string.",
   "keywords": [
     "name",
@@ -82,9 +82,7 @@
   },
   "dependencies": {
     "camelcase": "<7.0.0 >=6.3.0",
-    "reserved2": "^0.1.2"
+    "reserved2": "^0.1.3"
   },
-  "devDependencies": {},
-  "peerDependencies": {},
   "packageManager": "yarn@1.22.19"
 }
