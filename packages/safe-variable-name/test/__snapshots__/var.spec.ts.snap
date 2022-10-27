@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when a basic one-word string is passed should return the string as-is 1`] = `"Foo"`;
+
+exports[`when a malformed name is passed should return a camel-case version of the name 1`] = `"ThisIsATest"`;
+
+exports[`when a malformed name is passed should return a camel-case version of the name 2`] = `"ThisIsATest"`;
+
+exports[`when a malformed name is passed should return a camel-case version of the name 3`] = `"ThisIsATest"`;
+
+exports[`when a two-word name separated by hyphens is passed should return a camel-case version of the name 1`] = `"FooBar"`;
