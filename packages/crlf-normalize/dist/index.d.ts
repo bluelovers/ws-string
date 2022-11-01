@@ -35,6 +35,8 @@ export declare function _detectLineBreakCore(_lb: IChkCrlf): EnumLineBreak;
 export declare function isCRLF(newline: string): newline is EnumLineBreak.CRLF;
 export declare function isLF(newline: string): newline is EnumLineBreak.LF;
 export declare function isCR(newline: string): newline is EnumLineBreak.CR;
+export declare function charCodeIsLF(charCode: number): charCode is EnumLineBreakCharCode.LF;
+export declare function charCodeIsCR(charCode: number): charCode is EnumLineBreakCharCode.CR;
 export declare function lineSplit(text: string): string[];
 export declare function crlf_unicode_normalize(text: string, newline?: ILineBreakInput): string;
 export declare function isEqualWithIgnoreLineSeparators(a: string, b: string): {

@@ -42,6 +42,14 @@ function isCR(e) {
   return "\r" === e;
 }
 
+function charCodeIsLF(e) {
+  return 10 === e;
+}
+
+function charCodeIsCR(e) {
+  return 13 === e;
+}
+
 function lineSplit(e) {
   return e.split(i);
 }
@@ -92,13 +100,13 @@ function nameToLineBreak(e) {
 
 function detectCurrentIndexLineBreakFromBufferLike(e, n) {
   const r = e[n], t = n + 1;
-  return 10 === r ? {
+  return charCodeIsLF(r) ? {
     newline: "\n",
     cur: r,
     index: n,
     next: t,
     length: 1
-  } : 13 === r ? 10 === e[t] ? {
+  } : charCodeIsCR(r) ? charCodeIsLF(e[t]) ? {
     newline: "\r\n",
     cur: r,
     index: n,
@@ -121,13 +129,13 @@ function detectCurrentIndexLineBreakFromBufferLike(e, n) {
 
 function detectCurrentIndexLineBreak(e, n) {
   const r = e[n], t = n + 1;
-  return "\n" === r ? {
+  return isLF(r) ? {
     newline: "\n",
     cur: r,
     index: n,
     next: t,
     length: 1
-  } : "\r" === r ? "\n" === e[t] ? {
+  } : isCR(r) ? isLF(e[t]) ? {
     newline: "\r\n",
     cur: r,
     index: n,
@@ -148,5 +156,5 @@ function detectCurrentIndexLineBreak(e, n) {
   };
 }
 
-export { r as CR, t as CRLF, e as EnumLineBreak, n as EnumLineBreakCharCode, c as LF, i as R_CRLF, l as R_CRLF_MATCH, _detectLineBreakCore, chkcrlf, crlf, crlf_unicode_normalize, crlf as default, detectCurrentIndexLineBreak, detectCurrentIndexLineBreakFromBufferLike, detectLineBreak, isCR, isCRLF, isEqualWithIgnoreLineSeparators, isLF, lineSplit, nameToLineBreak, toLineBreakName };
+export { r as CR, t as CRLF, e as EnumLineBreak, n as EnumLineBreakCharCode, c as LF, i as R_CRLF, l as R_CRLF_MATCH, _detectLineBreakCore, charCodeIsCR, charCodeIsLF, chkcrlf, crlf, crlf_unicode_normalize, crlf as default, detectCurrentIndexLineBreak, detectCurrentIndexLineBreakFromBufferLike, detectLineBreak, isCR, isCRLF, isEqualWithIgnoreLineSeparators, isLF, lineSplit, nameToLineBreak, toLineBreakName };
 //# sourceMappingURL=index.esm.mjs.map

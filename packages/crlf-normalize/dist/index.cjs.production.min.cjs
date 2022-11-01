@@ -28,20 +28,37 @@ function _detectLineBreakCore(e) {
   return e.crlf ? "\r\n" : e.lf || !e.cr ? "\n" : "\r";
 }
 
+function isLF(e) {
+  return "\n" === e;
+}
+
+function isCR(e) {
+  return "\r" === e;
+}
+
+function charCodeIsLF(e) {
+  return 10 === e;
+}
+
+function charCodeIsCR(e) {
+  return 13 === e;
+}
+
 exports.CR = "\r", exports.CRLF = "\r\n", exports.LF = "\n", exports.R_CRLF = n, 
-exports.R_CRLF_MATCH = t, exports._detectLineBreakCore = _detectLineBreakCore, exports.chkcrlf = chkcrlf, 
-exports.crlf = crlf, exports.crlf_unicode_normalize = function crlf_unicode_normalize(e, r = "\n") {
+exports.R_CRLF_MATCH = t, exports._detectLineBreakCore = _detectLineBreakCore, exports.charCodeIsCR = charCodeIsCR, 
+exports.charCodeIsLF = charCodeIsLF, exports.chkcrlf = chkcrlf, exports.crlf = crlf, 
+exports.crlf_unicode_normalize = function crlf_unicode_normalize(e, r = "\n") {
   const n = r + r;
   return e.replace(/\u000C/g, r + r + r).replace(/\u2028/g, r).replace(/\u2029/g, n);
 }, exports.default = crlf, exports.detectCurrentIndexLineBreak = function detectCurrentIndexLineBreak(e, r) {
   const n = e[r], t = r + 1;
-  return "\n" === n ? {
+  return isLF(n) ? {
     newline: "\n",
     cur: n,
     index: r,
     next: t,
     length: 1
-  } : "\r" === n ? "\n" === e[t] ? {
+  } : isCR(n) ? isLF(e[t]) ? {
     newline: "\r\n",
     cur: n,
     index: r,
@@ -62,13 +79,13 @@ exports.crlf = crlf, exports.crlf_unicode_normalize = function crlf_unicode_norm
   };
 }, exports.detectCurrentIndexLineBreakFromBufferLike = function detectCurrentIndexLineBreakFromBufferLike(e, r) {
   const n = e[r], t = r + 1;
-  return 10 === n ? {
+  return charCodeIsLF(n) ? {
     newline: "\n",
     cur: n,
     index: r,
     next: t,
     length: 1
-  } : 13 === n ? 10 === e[t] ? {
+  } : charCodeIsCR(n) ? charCodeIsLF(e[t]) ? {
     newline: "\r\n",
     cur: n,
     index: r,
@@ -89,22 +106,18 @@ exports.crlf = crlf, exports.crlf_unicode_normalize = function crlf_unicode_norm
   };
 }, exports.detectLineBreak = function detectLineBreak(e, r) {
   return _detectLineBreakCore(chkcrlf(e, r));
-}, exports.isCR = function isCR(e) {
-  return "\r" === e;
-}, exports.isCRLF = function isCRLF(e) {
+}, exports.isCR = isCR, exports.isCRLF = function isCRLF(e) {
   return "\r\n" === e;
 }, exports.isEqualWithIgnoreLineSeparators = function isEqualWithIgnoreLineSeparators(e, r) {
   const n = chkcrlf(e), t = chkcrlf(r);
-  let i = !1;
-  return n.cr === t.cr && n.crlf === t.crlf && n.lf === t.lf && (i = crlf(e) === crlf(r)), 
+  let o = !1;
+  return n.cr === t.cr && n.crlf === t.crlf && n.lf === t.lf && (o = crlf(e) === crlf(r)), 
   {
-    bool: i,
+    bool: o,
     _lb_a: n,
     _lb_b: t
   };
-}, exports.isLF = function isLF(e) {
-  return "\n" === e;
-}, exports.lineSplit = function lineSplit(e) {
+}, exports.isLF = isLF, exports.lineSplit = function lineSplit(e) {
   return e.split(n);
 }, exports.nameToLineBreak = function nameToLineBreak(e) {
   switch (null == e ? void 0 : e.toUpperCase()) {

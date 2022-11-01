@@ -79,6 +79,16 @@ export function isCR(newline: string): newline is EnumLineBreak.CR
 	return newline === EnumLineBreak.CR
 }
 
+export function charCodeIsLF(charCode: number): charCode is EnumLineBreakCharCode.LF
+{
+	return charCode === EnumLineBreakCharCode.LF
+}
+
+export function charCodeIsCR(charCode: number): charCode is EnumLineBreakCharCode.CR
+{
+	return charCode === EnumLineBreakCharCode.CR
+}
+
 export function lineSplit(text: string)
 {
 	return text.split(R_CRLF);
@@ -153,7 +163,7 @@ export function detectCurrentIndexLineBreakFromBufferLike<T extends number, A ex
 {
 	const cur = buffer[index];
 	const next = index + 1;
-	if (cur === EnumLineBreakCharCode.LF)
+	if (charCodeIsLF(cur))
 	{
 		return {
 			newline: EnumLineBreak.LF as const,
@@ -163,9 +173,9 @@ export function detectCurrentIndexLineBreakFromBufferLike<T extends number, A ex
 			length: 1 as const,
 		} as const
 	}
-	else if (cur === EnumLineBreakCharCode.CR)
+	else if (charCodeIsCR(cur))
 	{
-		if (buffer[next] === EnumLineBreakCharCode.LF)
+		if (charCodeIsLF(buffer[next]))
 		{
 			return {
 				newline: EnumLineBreak.CRLF as const,
@@ -200,7 +210,7 @@ export function detectCurrentIndexLineBreak<T extends number, A extends {
 {
 	const cur = buffer[index];
 	const next = index + 1;
-	if (cur === EnumLineBreak.LF)
+	if (isLF(cur))
 	{
 		return {
 			newline: EnumLineBreak.LF as const,
@@ -210,9 +220,9 @@ export function detectCurrentIndexLineBreak<T extends number, A extends {
 			length: 1 as const,
 		} as const
 	}
-	else if (cur === EnumLineBreak.CR)
+	else if (isCR(cur))
 	{
-		if (buffer[next] === EnumLineBreak.LF)
+		if (isLF(buffer[next]))
 		{
 			return {
 				newline: EnumLineBreak.CRLF as const,

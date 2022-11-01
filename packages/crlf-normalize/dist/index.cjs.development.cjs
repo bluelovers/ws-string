@@ -46,6 +46,12 @@ function isLF(newline) {
 function isCR(newline) {
   return newline === "\r";
 }
+function charCodeIsLF(charCode) {
+  return charCode === 10;
+}
+function charCodeIsCR(charCode) {
+  return charCode === 13;
+}
 function lineSplit(text) {
   return text.split(R_CRLF);
 }
@@ -92,7 +98,7 @@ function nameToLineBreak(name) {
 function detectCurrentIndexLineBreakFromBufferLike(buffer, index) {
   const cur = buffer[index];
   const next = index + 1;
-  if (cur === 10) {
+  if (charCodeIsLF(cur)) {
     return {
       newline: "\n",
       cur: cur,
@@ -100,8 +106,8 @@ function detectCurrentIndexLineBreakFromBufferLike(buffer, index) {
       next,
       length: 1
     };
-  } else if (cur === 13) {
-    if (buffer[next] === 10) {
+  } else if (charCodeIsCR(cur)) {
+    if (charCodeIsLF(buffer[next])) {
       return {
         newline: "\r\n",
         cur: cur,
@@ -129,7 +135,7 @@ function detectCurrentIndexLineBreakFromBufferLike(buffer, index) {
 function detectCurrentIndexLineBreak(buffer, index) {
   const cur = buffer[index];
   const next = index + 1;
-  if (cur === "\n") {
+  if (isLF(cur)) {
     return {
       newline: "\n",
       cur: cur,
@@ -137,8 +143,8 @@ function detectCurrentIndexLineBreak(buffer, index) {
       next,
       length: 1
     };
-  } else if (cur === "\r") {
-    if (buffer[next] === "\n") {
+  } else if (isCR(cur)) {
+    if (isLF(buffer[next])) {
       return {
         newline: "\r\n",
         cur: cur,
@@ -170,6 +176,8 @@ exports.LF = LF;
 exports.R_CRLF = R_CRLF;
 exports.R_CRLF_MATCH = R_CRLF_MATCH;
 exports._detectLineBreakCore = _detectLineBreakCore;
+exports.charCodeIsCR = charCodeIsCR;
+exports.charCodeIsLF = charCodeIsLF;
 exports.chkcrlf = chkcrlf;
 exports.crlf = crlf;
 exports.crlf_unicode_normalize = crlf_unicode_normalize;
