@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.17](https://github.com/bluelovers/ws-string/compare/crlf-normalize@1.0.16...crlf-normalize@1.0.17) (2022-11-01)
+
+
+
+### ✨　Features
+
+* add support buffer like ([0e3e07c](https://github.com/bluelovers/ws-string/commit/0e3e07c88478e732d5781f74ca1708f2296d5c44))
+
+
+
 ## [1.0.16](https://github.com/bluelovers/ws-string/compare/crlf-normalize@1.0.15...crlf-normalize@1.0.16) (2022-10-15)
 
 
