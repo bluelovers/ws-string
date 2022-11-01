@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.5](https://github.com/bluelovers/ws-string/compare/string-detect-indent@1.0.4...string-detect-indent@1.0.5) (2022-11-01)
+
+
+
+### 🔖　Miscellaneous
+
+* . ([c16d3cd](https://github.com/bluelovers/ws-string/commit/c16d3cd54f8a49287f41805546dca27f709f009d))
+
+
+
 ## [1.0.4](https://github.com/bluelovers/ws-string/compare/string-detect-indent@1.0.3...string-detect-indent@1.0.4) (2022-10-15)
 
 

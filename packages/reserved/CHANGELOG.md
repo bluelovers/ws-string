@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.4](https://github.com/bluelovers/ws-string/compare/reserved2@0.1.3...reserved2@0.1.4) (2022-11-01)
+
+
+
+### 🔖　Miscellaneous
+
+* . ([c16d3cd](https://github.com/bluelovers/ws-string/commit/c16d3cd54f8a49287f41805546dca27f709f009d))
+
+
+
 ## 0.1.3 (2022-10-27)
 
 

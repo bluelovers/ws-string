@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.18](https://github.com/bluelovers/ws-string/compare/crlf-normalize@1.0.17...crlf-normalize@1.0.18) (2022-11-01)
+
+
+
+### ✨　Features
+
+* add `charCodeIsLF` ([7643106](https://github.com/bluelovers/ws-string/commit/7643106724369581864c77294ad2e0fd8418b63f))
+
+
+
 ## [1.0.17](https://github.com/bluelovers/ws-string/compare/crlf-normalize@1.0.16...crlf-normalize@1.0.17) (2022-11-01)
 
 
