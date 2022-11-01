@@ -20,8 +20,8 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.esm.mjs",
-      "require": "./dist/index.cjs"
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.esm.mjs"
     },
     "./package.json": "./package.json"
   },
@@ -34,6 +34,7 @@
     "test": "test"
   },
   "scripts": {
+    "coverage": "yarn run test -- --coverage",
     "pretest": "echo pretest",
     "test": "jest",
     "test:jest": "jest --passWithNoTests",

@@ -41,6 +41,7 @@
     "test": "test"
   },
   "scripts": {
+    "coverage": "yarn run test -- --coverage",
     "pretest": "yarn run build",
     "test": "jest",
     "test:jest": "jest --passWithNoTests",

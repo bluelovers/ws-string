@@ -20,13 +20,19 @@
     "directory": "packages/reserved"
   },
   "license": "ISC",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jonschlinkert/reserved/blob/master/LICENSE-MIT"
+    }
+  ],
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.esm.mjs",
-      "require": "./dist/index.cjs"
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.esm.mjs"
     },
     "./package.json": "./package.json",
     "./src/*": "./src/*"
@@ -37,8 +43,13 @@
   "types": "dist/index.d.ts",
   "typings": "dist/index.d.ts",
   "scripts": {
+    "coverage": "yarn run test -- --coverage",
     "pretest": "echo pretest",
     "test": "jest --passWithNoTests",
+    "test:jest": "jest --passWithNoTests",
+    "test:jest:snapshot": "yarn run test:jest -- -u",
+    "test:snapshot": "yarn run test -- -u",
+    "test:tsd": "ynpx tsd",
     "posttest": "yarn run build",
     "build": "yarn run build:tsdx && yarn run build:dts:bundle",
     "build:dts:bundle": "ynpx dts-bundle-generator -o ./dist/index.d.ts ./src/index.ts --no-banner --inline-declare-global & echo build:dts:bundle",
@@ -65,11 +76,5 @@
     "sort-package-json": "yarn-tool sort",
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
-  "packageManager": "yarn@1.22.19",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/jonschlinkert/reserved/blob/master/LICENSE-MIT"
-    }
-  ]
+  "packageManager": "yarn@1.22.19"
 }
