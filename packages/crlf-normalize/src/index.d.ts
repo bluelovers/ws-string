@@ -4,6 +4,10 @@ export declare const enum EnumLineBreak {
     CRLF = "\r\n",
     LF = "\n"
 }
+export declare const enum EnumLineBreakCharCode {
+    CR = 13,
+    LF = 10
+}
 declare const CR: EnumLineBreak.CR;
 declare const CRLF: EnumLineBreak.CRLF;
 declare const LF: EnumLineBreak.LF;
@@ -48,5 +52,59 @@ export declare function isEqualWithIgnoreLineSeparators(a: string, b: string): {
 };
 export type ILineBreakName = keyof typeof EnumLineBreak;
 export declare function toLineBreakName(newline: ILineBreakInput): ILineBreakName;
-export declare function nameToLineBreak(name: ILineBreakName | string): EnumLineBreak;
+export declare function nameToLineBreak(name: ILineBreakName | Lowercase<ILineBreakName> | Capitalize<Lowercase<ILineBreakName>> | string): EnumLineBreak;
+export declare function detectCurrentIndexLineBreakFromBufferLike<T extends number, A extends {
+    [n: number]: number;
+}>(buffer: A, index: T): {
+    readonly newline: EnumLineBreak.LF;
+    readonly cur: EnumLineBreakCharCode.LF;
+    readonly index: T;
+    readonly next: number;
+    readonly length: 1;
+} | {
+    readonly newline: EnumLineBreak.CRLF;
+    readonly cur: EnumLineBreakCharCode.CR;
+    readonly index: T;
+    readonly next: number;
+    readonly length: 2;
+} | {
+    readonly newline: EnumLineBreak.CR;
+    readonly cur: EnumLineBreakCharCode.CR;
+    readonly index: T;
+    readonly next: number;
+    readonly length: 1;
+} | {
+    readonly newline: undefined;
+    readonly cur: A[T];
+    readonly index: T;
+    readonly next: number;
+    readonly length: 0;
+};
+export declare function detectCurrentIndexLineBreak<T extends number, A extends {
+    [n: number]: string;
+}>(buffer: A, index: T): {
+    readonly newline: EnumLineBreak.LF;
+    readonly cur: EnumLineBreak.LF;
+    readonly index: T;
+    readonly next: number;
+    readonly length: 1;
+} | {
+    readonly newline: EnumLineBreak.CRLF;
+    readonly cur: EnumLineBreak.CR;
+    readonly index: T;
+    readonly next: number;
+    readonly length: 2;
+} | {
+    readonly newline: EnumLineBreak.CR;
+    readonly cur: EnumLineBreak.CR;
+    readonly index: T;
+    readonly next: number;
+    readonly length: 1;
+} | {
+    readonly newline: void;
+    readonly cur: A[T];
+    readonly index: T;
+    readonly next: number;
+    readonly length: 0;
+};
 export default crlf;

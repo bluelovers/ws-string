@@ -7,6 +7,12 @@ export const enum EnumLineBreak
 	LF = "\n",
 }
 
+export const enum EnumLineBreakCharCode
+{
+	CR = 0x0d,
+	LF = 0x0a,
+}
+
 const CR = EnumLineBreak.CR as const;
 const CRLF = EnumLineBreak.CRLF as const;
 const LF = EnumLineBreak.LF as const;
@@ -126,7 +132,7 @@ export function toLineBreakName(newline: ILineBreakInput): ILineBreakName
 	throw new TypeError(`Invalid line break`);
 }
 
-export function nameToLineBreak(name: ILineBreakName | string): EnumLineBreak
+export function nameToLineBreak(name: ILineBreakName | Lowercase<ILineBreakName> | Capitalize<Lowercase<ILineBreakName>> | string): EnumLineBreak
 {
 	switch (name?.toUpperCase())
 	{
@@ -139,6 +145,100 @@ export function nameToLineBreak(name: ILineBreakName | string): EnumLineBreak
 	}
 
 	throw new TypeError(`Invalid line break name: ${name}`);
+}
+
+export function detectCurrentIndexLineBreakFromBufferLike<T extends number, A extends {
+	[n: number]: number
+}>(buffer: A, index: T)
+{
+	const cur = buffer[index];
+	const next = index + 1;
+	if (cur === EnumLineBreakCharCode.LF)
+	{
+		return {
+			newline: EnumLineBreak.LF as const,
+			cur: cur as EnumLineBreakCharCode.LF,
+			index,
+			next,
+			length: 1 as const,
+		} as const
+	}
+	else if (cur === EnumLineBreakCharCode.CR)
+	{
+		if (buffer[next] === EnumLineBreakCharCode.LF)
+		{
+			return {
+				newline: EnumLineBreak.CRLF as const,
+				cur: cur as EnumLineBreakCharCode.CR,
+				index,
+				next: next + 1,
+				length: 2 as const,
+			} as const
+		}
+
+		return {
+			newline: EnumLineBreak.CR as const,
+			cur: cur as EnumLineBreakCharCode.CR,
+			index,
+			next,
+			length: 1 as const,
+		} as const
+	}
+
+	return {
+		newline: void 0 as undefined,
+		cur,
+		index,
+		next,
+		length: 0 as const,
+	} as const
+}
+
+export function detectCurrentIndexLineBreak<T extends number, A extends {
+	[n: number]: string
+}>(buffer: A, index: T)
+{
+	const cur = buffer[index];
+	const next = index + 1;
+	if (cur === EnumLineBreak.LF)
+	{
+		return {
+			newline: EnumLineBreak.LF as const,
+			cur: cur as EnumLineBreak.LF,
+			index,
+			next,
+			length: 1 as const,
+		} as const
+	}
+	else if (cur === EnumLineBreak.CR)
+	{
+		if (buffer[next] === EnumLineBreak.LF)
+		{
+			return {
+				newline: EnumLineBreak.CRLF as const,
+				cur: cur as EnumLineBreak.CR,
+				index,
+				next: next + 1,
+				length: 2 as const,
+			} as const
+		}
+
+		return {
+			newline: EnumLineBreak.CR as const,
+			cur: cur as EnumLineBreak.CR,
+			index,
+			next,
+			length: 1 as const,
+		} as const
+	}
+
+	return {
+		newline: void 0 as void,
+		cur,
+		index,
+		next,
+		length: 0 as const,
+	} as const
 }
 
 export default crlf;

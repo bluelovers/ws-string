@@ -8,6 +8,11 @@ exports.EnumLineBreak = void 0;
   EnumLineBreak["CRLF"] = "\r\n";
   EnumLineBreak["LF"] = "\n";
 })(exports.EnumLineBreak || (exports.EnumLineBreak = {}));
+exports.EnumLineBreakCharCode = void 0;
+(function (EnumLineBreakCharCode) {
+  EnumLineBreakCharCode[EnumLineBreakCharCode["CR"] = 13] = "CR";
+  EnumLineBreakCharCode[EnumLineBreakCharCode["LF"] = 10] = "LF";
+})(exports.EnumLineBreakCharCode || (exports.EnumLineBreakCharCode = {}));
 const CR = "\r";
 const CRLF = "\r\n";
 const LF = "\n";
@@ -84,6 +89,80 @@ function nameToLineBreak(name) {
   }
   throw new TypeError(`Invalid line break name: ${name}`);
 }
+function detectCurrentIndexLineBreakFromBufferLike(buffer, index) {
+  const cur = buffer[index];
+  const next = index + 1;
+  if (cur === 10) {
+    return {
+      newline: "\n",
+      cur: cur,
+      index,
+      next,
+      length: 1
+    };
+  } else if (cur === 13) {
+    if (buffer[next] === 10) {
+      return {
+        newline: "\r\n",
+        cur: cur,
+        index,
+        next: next + 1,
+        length: 2
+      };
+    }
+    return {
+      newline: "\r",
+      cur: cur,
+      index,
+      next,
+      length: 1
+    };
+  }
+  return {
+    newline: void 0,
+    cur,
+    index,
+    next,
+    length: 0
+  };
+}
+function detectCurrentIndexLineBreak(buffer, index) {
+  const cur = buffer[index];
+  const next = index + 1;
+  if (cur === "\n") {
+    return {
+      newline: "\n",
+      cur: cur,
+      index,
+      next,
+      length: 1
+    };
+  } else if (cur === "\r") {
+    if (buffer[next] === "\n") {
+      return {
+        newline: "\r\n",
+        cur: cur,
+        index,
+        next: next + 1,
+        length: 2
+      };
+    }
+    return {
+      newline: "\r",
+      cur: cur,
+      index,
+      next,
+      length: 1
+    };
+  }
+  return {
+    newline: void 0,
+    cur,
+    index,
+    next,
+    length: 0
+  };
+}
 
 exports.CR = CR;
 exports.CRLF = CRLF;
@@ -94,7 +173,9 @@ exports._detectLineBreakCore = _detectLineBreakCore;
 exports.chkcrlf = chkcrlf;
 exports.crlf = crlf;
 exports.crlf_unicode_normalize = crlf_unicode_normalize;
-exports["default"] = crlf;
+exports.default = crlf;
+exports.detectCurrentIndexLineBreak = detectCurrentIndexLineBreak;
+exports.detectCurrentIndexLineBreakFromBufferLike = detectCurrentIndexLineBreakFromBufferLike;
 exports.detectLineBreak = detectLineBreak;
 exports.isCR = isCR;
 exports.isCRLF = isCRLF;

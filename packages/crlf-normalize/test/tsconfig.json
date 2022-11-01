@@ -1,7 +1,7 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "module": "node12",
+    "module": "NodeNext",
     "noEmit": true,
     "declaration": false,
     "noUnusedParameters": false,

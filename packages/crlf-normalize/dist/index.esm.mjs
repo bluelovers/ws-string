@@ -1,67 +1,69 @@
-var r;
+var e, n;
 
-!function(r) {
-  r.CR = "\r", r.CRLF = "\r\n", r.LF = "\n";
-}(r || (r = {}));
+!function(e) {
+  e.CR = "\r", e.CRLF = "\r\n", e.LF = "\n";
+}(e || (e = {})), function(e) {
+  e[e.CR = 13] = "CR", e[e.LF = 10] = "LF";
+}(n || (n = {}));
 
-const e = "\r", n = "\r\n", t = "\n", c = /\r\n|\r(?!\n)|\n/g, i = new RegExp(`(${c.source})`, c.flags);
+const r = "\r", t = "\r\n", c = "\n", i = /\r\n|\r(?!\n)|\n/g, l = new RegExp(`(${i.source})`, i.flags);
 
-function crlf(r, e = "\n") {
-  return r.replace(c, e);
+function crlf(e, n = "\n") {
+  return e.replace(i, n);
 }
 
-function chkcrlf(r, e) {
-  var n;
-  const t = null !== (n = null == e ? void 0 : e.disable) && void 0 !== n ? n : {};
+function chkcrlf(e, n) {
+  var r;
+  const t = null !== (r = null == n ? void 0 : n.disable) && void 0 !== r ? r : {};
   return {
-    lf: !t.lf && /\n/.test(r.replace(/\r\n/g, "")),
-    crlf: !t.crlf && /\r\n/.test(r),
-    cr: !t.cr && /\r(?!\n)/.test(r)
+    lf: !t.lf && /\n/.test(e.replace(/\r\n/g, "")),
+    crlf: !t.crlf && /\r\n/.test(e),
+    cr: !t.cr && /\r(?!\n)/.test(e)
   };
 }
 
-function detectLineBreak(r, e) {
-  return _detectLineBreakCore(chkcrlf(r, e));
+function detectLineBreak(e, n) {
+  return _detectLineBreakCore(chkcrlf(e, n));
 }
 
-function _detectLineBreakCore(r) {
-  return r.crlf ? "\r\n" : r.lf || !r.cr ? "\n" : "\r";
+function _detectLineBreakCore(e) {
+  return e.crlf ? "\r\n" : e.lf || !e.cr ? "\n" : "\r";
 }
 
-function isCRLF(r) {
-  return "\r\n" === r;
+function isCRLF(e) {
+  return "\r\n" === e;
 }
 
-function isLF(r) {
-  return "\n" === r;
+function isLF(e) {
+  return "\n" === e;
 }
 
-function isCR(r) {
-  return "\r" === r;
+function isCR(e) {
+  return "\r" === e;
 }
 
-function lineSplit(r) {
-  return r.split(c);
+function lineSplit(e) {
+  return e.split(i);
 }
 
-function crlf_unicode_normalize(r, e = "\n") {
-  const n = e + e;
-  return r.replace(/\u000C/g, e + e + e).replace(/\u2028/g, e).replace(/\u2029/g, n);
+function crlf_unicode_normalize(e, n = "\n") {
+  const r = n + n;
+  return e.replace(/\u000C/g, n + n + n).replace(/\u2028/g, n).replace(/\u2029/g, r);
 }
 
-function isEqualWithIgnoreLineSeparators(r, e) {
-  const n = chkcrlf(r), t = chkcrlf(e);
+function isEqualWithIgnoreLineSeparators(e, n) {
+  const r = chkcrlf(e), t = chkcrlf(n);
   let c = !1;
-  return n.cr === t.cr && n.crlf === t.crlf && n.lf === t.lf && (c = crlf(r) === crlf(e)), 
+  return r.cr === t.cr && r.crlf === t.crlf && r.lf === t.lf && (c = crlf(e) === crlf(n)), 
   {
     bool: c,
-    _lb_a: n,
+    _lb_a: r,
     _lb_b: t
   };
 }
 
-function toLineBreakName(r) {
-  switch (r) {
+function toLineBreakName(e) {
+  switch (e) {
    case "\n":
     return "LF";
 
@@ -74,8 +76,8 @@ function toLineBreakName(r) {
   throw new TypeError("Invalid line break");
 }
 
-function nameToLineBreak(r) {
-  switch (null == r ? void 0 : r.toUpperCase()) {
+function nameToLineBreak(e) {
+  switch (null == e ? void 0 : e.toUpperCase()) {
    case "LF":
     return "\n";
 
@@ -85,8 +87,66 @@ function nameToLineBreak(r) {
    case "CRLF":
     return "\r\n";
   }
-  throw new TypeError(`Invalid line break name: ${r}`);
+  throw new TypeError(`Invalid line break name: ${e}`);
 }
 
-export { e as CR, n as CRLF, r as EnumLineBreak, t as LF, c as R_CRLF, i as R_CRLF_MATCH, _detectLineBreakCore, chkcrlf, crlf, crlf_unicode_normalize, crlf as default, detectLineBreak, isCR, isCRLF, isEqualWithIgnoreLineSeparators, isLF, lineSplit, nameToLineBreak, toLineBreakName };
+function detectCurrentIndexLineBreakFromBufferLike(e, n) {
+  const r = e[n], t = n + 1;
+  return 10 === r ? {
+    newline: "\n",
+    cur: r,
+    index: n,
+    next: t,
+    length: 1
+  } : 13 === r ? 10 === e[t] ? {
+    newline: "\r\n",
+    cur: r,
+    index: n,
+    next: t + 1,
+    length: 2
+  } : {
+    newline: "\r",
+    cur: r,
+    index: n,
+    next: t,
+    length: 1
+  } : {
+    newline: void 0,
+    cur: r,
+    index: n,
+    next: t,
+    length: 0
+  };
+}
+
+function detectCurrentIndexLineBreak(e, n) {
+  const r = e[n], t = n + 1;
+  return "\n" === r ? {
+    newline: "\n",
+    cur: r,
+    index: n,
+    next: t,
+    length: 1
+  } : "\r" === r ? "\n" === e[t] ? {
+    newline: "\r\n",
+    cur: r,
+    index: n,
+    next: t + 1,
+    length: 2
+  } : {
+    newline: "\r",
+    cur: r,
+    index: n,
+    next: t,
+    length: 1
+  } : {
+    newline: void 0,
+    cur: r,
+    index: n,
+    next: t,
+    length: 0
+  };
+}
+
+export { r as CR, t as CRLF, e as EnumLineBreak, n as EnumLineBreakCharCode, c as LF, i as R_CRLF, l as R_CRLF_MATCH, _detectLineBreakCore, chkcrlf, crlf, crlf_unicode_normalize, crlf as default, detectCurrentIndexLineBreak, detectCurrentIndexLineBreakFromBufferLike, detectLineBreak, isCR, isCRLF, isEqualWithIgnoreLineSeparators, isLF, lineSplit, nameToLineBreak, toLineBreakName };
 //# sourceMappingURL=index.esm.mjs.map
