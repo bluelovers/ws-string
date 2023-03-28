@@ -219,6 +219,16 @@ test(inspect('✂️  Runes should handle 🏳️‍🌈'), () =>
 	expect(result.length).toMatchSnapshot();
 })
 
+test(inspect('✂️  Runes should handle subdivision-flags'), () =>
+{
+	let string = '🏴󠁧󠁢󠁥󠁮󠁧󠁿🏴󠁵󠁳󠁷󠁡󠁿🏴🏴󠁵󠁳󠁴󠁸󠁿';
+	let result = runes(string);
+	expect(result).toEqual(['🏴󠁧󠁢󠁥󠁮󠁧󠁿', '🏴󠁵󠁳󠁷󠁡󠁿', '🏴', '🏴󠁵󠁳󠁴󠁸󠁿']);
+
+	expect(result).toMatchSnapshot();
+	expect(result.length).toMatchSnapshot();
+})
+
 test(inspect('✂️  Runes should handle extended grapheme clusters'), () =>
 {
 	let string = 'g̈';

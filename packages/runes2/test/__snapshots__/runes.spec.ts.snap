@@ -239,6 +239,17 @@ exports[`'✂️  Runes should handle skin tone indicators' 1`] = `
 
 exports[`'✂️  Runes should handle skin tone indicators' 2`] = `5`;
 
+exports[`'✂️  Runes should handle subdivision-flags' 1`] = `
+[
+  "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+  "🏴󠁵󠁳󠁷󠁡󠁿",
+  "🏴",
+  "🏴󠁵󠁳󠁴󠁸󠁿",
+]
+`;
+
+exports[`'✂️  Runes should handle subdivision-flags' 2`] = `4`;
+
 exports[`'✂️  Runes should handle 🏳️‍🌈' 1`] = `
 [
   "🏳️‍🌈",

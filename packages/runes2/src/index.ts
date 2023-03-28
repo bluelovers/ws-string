@@ -17,10 +17,14 @@ export const enum EnumRunesCode
 	DIACRITICAL_MARKS_START = 0x20d0,
 	DIACRITICAL_MARKS_END = 0x20ff,
 
+	SUBDIVISION_INDICATOR_START = 0x1f3f4,
+	TAGS_START = 0xe0000,
+	TAGS_END = 0xe007f,
+
 	ZWJ = 0x200d,
 }
 
-export const GRAPHEMS = Object.freeze([
+export const GRAPHEMES = Object.freeze([
 	0x0308, // ( ◌̈ ) COMBINING DIAERESIS
 	0x0937, // ( ष ) DEVANAGARI LETTER SSA
 	0x093F, // ( ि ) DEVANAGARI VOWEL SIGN I
@@ -55,7 +59,7 @@ export function runes(string: string): string[]
 	while (i < string.length)
 	{
 		increment += nextUnits(i + increment, string)
-		if (isGraphem(string[i + increment]))
+		if (isGrapheme(string[i + increment]))
 		{
 			increment++
 		}
@@ -85,6 +89,7 @@ export function runes(string: string): string[]
 // Emoji with skin-tone modifiers: 4 code units (2 code points)
 // Country flags: 4 code units (2 code points)
 // Variations: 2 code units
+// Subdivision flags: 14 code units (7 code points)
 export function nextUnits(i: number, string: string)
 {
 	const current = string[i]
@@ -105,6 +110,15 @@ export function nextUnits(i: number, string: string)
 	if (isRegionalIndicator(currentPair) && isRegionalIndicator(nextPair))
 	{
 		return EnumCodeUnits.unit_4
+	}
+
+	// https://unicode.org/emoji/charts/full-emoji-list.html#subdivision-flag
+	// See https://emojipedia.org/emoji-tag-sequence/
+	// If nextPair is in Tags(https://en.wikipedia.org/wiki/Tags_(Unicode_block)),
+	// then find next closest U+E007F(CANCEL TAG)
+	if (isSubdivisionFlag(currentPair) &&	isSupplementarySpecialpurposePlane(nextPair))
+	{
+		return string.slice(i).indexOf(String.fromCodePoint(EnumRunesCode.TAGS_END)) + 2
 	}
 
 	// If the next pair make a Fitzpatrick skin tone
@@ -131,6 +145,11 @@ export function isRegionalIndicator(string: string)
 	return betweenInclusive(codePointFromSurrogatePair(string), EnumRunesCode.REGIONAL_INDICATOR_START, EnumRunesCode.REGIONAL_INDICATOR_END)
 }
 
+export function isSubdivisionFlag(string: string)
+{
+	return betweenInclusive(codePointFromSurrogatePair(string),	EnumRunesCode.SUBDIVISION_INDICATOR_START, EnumRunesCode.SUBDIVISION_INDICATOR_START)
+}
+
 export function isFitzpatrickModifier(string: string)
 {
 	return betweenInclusive(codePointFromSurrogatePair(string), EnumRunesCode.FITZPATRICK_MODIFIER_START, EnumRunesCode.FITZPATRICK_MODIFIER_END)
@@ -146,9 +165,15 @@ export function isDiacriticalMark(string: string)
 	return typeof string === 'string' && betweenInclusive(string.charCodeAt(0), EnumRunesCode.DIACRITICAL_MARKS_START, EnumRunesCode.DIACRITICAL_MARKS_END)
 }
 
-export function isGraphem(string: string)
+export function isSupplementarySpecialpurposePlane(string: string)
 {
-	return typeof string === 'string' && GRAPHEMS.includes(string.charCodeAt(0))
+	const codePoint = string.codePointAt(0)
+	return (typeof string === 'string' &&	typeof codePoint === 'number' && betweenInclusive(codePoint, EnumRunesCode.TAGS_START, EnumRunesCode.TAGS_END))
+}
+
+export function isGrapheme(string: string)
+{
+	return typeof string === 'string' && GRAPHEMES.includes(string.charCodeAt(0))
 }
 
 export function isZeroWidthJoiner(string: string)
@@ -205,7 +230,7 @@ if (process.env.TSDX_FORMAT !== 'esm')
 	Object.defineProperty(runes, 'EnumRunesCode', { value: EnumRunesCode });
 	// @ts-ignore
 	Object.defineProperty(runes, 'EnumCodeUnits', { value: EnumCodeUnits });
-	Object.defineProperty(runes, 'GRAPHEMS', { value: GRAPHEMS });
+	Object.defineProperty(runes, 'GRAPHEMES', { value: GRAPHEMES });
 }
 
 export default runes
