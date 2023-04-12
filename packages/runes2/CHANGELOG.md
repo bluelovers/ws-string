@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/bluelovers/ws-string/compare/runes2@1.0.10...runes2@1.1.1) (2023-04-12)
+
+
+
+### 🐛　Bug Fixes
+
+* **runes:** correctly handle subdivision-flags ([f04aeb6](https://github.com/bluelovers/ws-string/commit/f04aeb6ecbd8a915f7b169d612a78d5b47ae9aea))
+
+
+### 🔖　Miscellaneous
+
+* . ([d39e39d](https://github.com/bluelovers/ws-string/commit/d39e39d439001dac9750f254e60f42c076380106))
+
+
+
 ## [1.0.10](https://github.com/bluelovers/ws-string/compare/runes2@1.0.9...runes2@1.0.10) (2022-11-01)
 
 
