@@ -13,9 +13,12 @@ var EnumRunesCode;
   EnumRunesCode[EnumRunesCode["VARIATION_MODIFIER_END"] = 65039] = "VARIATION_MODIFIER_END";
   EnumRunesCode[EnumRunesCode["DIACRITICAL_MARKS_START"] = 8400] = "DIACRITICAL_MARKS_START";
   EnumRunesCode[EnumRunesCode["DIACRITICAL_MARKS_END"] = 8447] = "DIACRITICAL_MARKS_END";
+  EnumRunesCode[EnumRunesCode["SUBDIVISION_INDICATOR_START"] = 127988] = "SUBDIVISION_INDICATOR_START";
+  EnumRunesCode[EnumRunesCode["TAGS_START"] = 917504] = "TAGS_START";
+  EnumRunesCode[EnumRunesCode["TAGS_END"] = 917631] = "TAGS_END";
   EnumRunesCode[EnumRunesCode["ZWJ"] = 8205] = "ZWJ";
 })(EnumRunesCode || (EnumRunesCode = {}));
-const GRAPHEMS = /*#__PURE__*/Object.freeze([0x0308, 0x0937, 0x093F, 0x0BA8, 0x0BBF, 0x0BCD, 0x0E31, 0x0E33, 0x0E40, 0x0E49, 0x1100, 0x1161, 0x11A8]);
+const GRAPHEMES = /*#__PURE__*/Object.freeze([0x0308, 0x0937, 0x093F, 0x0BA8, 0x0BBF, 0x0BCD, 0x0E31, 0x0E33, 0x0E40, 0x0E49, 0x1100, 0x1161, 0x11A8]);
 var EnumCodeUnits;
 (function (EnumCodeUnits) {
   EnumCodeUnits[EnumCodeUnits["unit_1"] = 1] = "unit_1";
@@ -31,7 +34,7 @@ function runes(string) {
   let increment = 0;
   while (i < string.length) {
     increment += nextUnits(i + increment, string);
-    if (isGraphem(string[i + increment])) {
+    if (isGrapheme(string[i + increment])) {
       increment++;
     }
     if (isVariationSelector(string[i + increment])) {
@@ -60,6 +63,9 @@ function nextUnits(i, string) {
   if (isRegionalIndicator(currentPair) && isRegionalIndicator(nextPair)) {
     return 4;
   }
+  if (isSubdivisionFlag(currentPair) && isSupplementarySpecialpurposePlane(nextPair)) {
+    return string.slice(i).indexOf(String.fromCodePoint(917631)) + 2;
+  }
   if (isFitzpatrickModifier(nextPair)) {
     return 4;
   }
@@ -71,6 +77,9 @@ function isFirstOfSurrogatePair(string) {
 function isRegionalIndicator(string) {
   return betweenInclusive(codePointFromSurrogatePair(string), 127462, 127487);
 }
+function isSubdivisionFlag(string) {
+  return betweenInclusive(codePointFromSurrogatePair(string), 127988, 127988);
+}
 function isFitzpatrickModifier(string) {
   return betweenInclusive(codePointFromSurrogatePair(string), 127995, 127999);
 }
@@ -80,8 +89,12 @@ function isVariationSelector(string) {
 function isDiacriticalMark(string) {
   return typeof string === 'string' && betweenInclusive(string.charCodeAt(0), 8400, 8447);
 }
-function isGraphem(string) {
-  return typeof string === 'string' && GRAPHEMS.includes(string.charCodeAt(0));
+function isSupplementarySpecialpurposePlane(string) {
+  const codePoint = string.codePointAt(0);
+  return typeof string === 'string' && typeof codePoint === 'number' && betweenInclusive(codePoint, 917504, 917631);
+}
+function isGrapheme(string) {
+  return typeof string === 'string' && GRAPHEMES.includes(string.charCodeAt(0));
 }
 function isZeroWidthJoiner(string) {
   return typeof string === 'string' && string.charCodeAt(0) === 8205;
@@ -132,8 +145,8 @@ function substring(string, start, width) {
   Object.defineProperty(runes, 'EnumCodeUnits', {
     value: EnumCodeUnits
   });
-  Object.defineProperty(runes, 'GRAPHEMS', {
-    value: GRAPHEMS
+  Object.defineProperty(runes, 'GRAPHEMES', {
+    value: GRAPHEMES
   });
 }
 

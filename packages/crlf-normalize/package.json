@@ -35,8 +35,8 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.esm.mjs",
-      "require": "./dist/index.cjs"
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.esm.mjs"
     },
     "./package.json": "./package.json",
     "./src/*": "./src/*"
@@ -50,9 +50,11 @@
     "test": "test"
   },
   "scripts": {
+    "coverage": "yarn run test -- --coverage",
     "pretest": "echo pretest",
     "test": "jest",
     "test:jest": "jest --passWithNoTests",
+    "test:jest:coverage": "yarn run test:jest -- --coverage",
     "test:jest:snapshot": "yarn run test:jest -- -u",
     "test:snapshot": "yarn run test -- -u",
     "test:tsd": "ynpx tsd",
