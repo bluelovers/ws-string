@@ -1,6 +1,6 @@
 {
   "name": "reserved2",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Reserved words that may not be used as variables, functions, methods, or object identifiers, since ECMAScript specifies special behavior for them.",
   "keywords": [
     "reserved",
