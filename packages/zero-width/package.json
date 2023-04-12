@@ -60,7 +60,7 @@
     "sort-package-json": "npx yarn-tool sort"
   },
   "dependencies": {
-    "regexp-helper-core": "^1.0.19",
+    "regexp-helper-core": "^2.0.7",
     "tslib": "^2"
   },
   "gitHead": "952f3f53bed3e2bf3ccaec50c46702f127ff4e7f"

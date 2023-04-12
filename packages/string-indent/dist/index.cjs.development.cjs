@@ -14,6 +14,6 @@ function detectIndentLine(input, options) {
   };
 }
 
-exports["default"] = detectIndentLine;
+exports.default = detectIndentLine;
 exports.detectIndentLine = detectIndentLine;
 //# sourceMappingURL=index.cjs.development.cjs.map

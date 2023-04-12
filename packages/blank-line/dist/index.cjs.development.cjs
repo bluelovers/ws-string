@@ -44,7 +44,7 @@ function getMinMidMax(txt) {
   return [min, mid, max];
 }
 
-exports["default"] = getMinMidMax;
+exports.default = getMinMidMax;
 exports.getBlankLine = getBlankLine;
 exports.getMinMidMax = getMinMidMax;
 exports.normalize = normalize;

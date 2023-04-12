@@ -45,6 +45,6 @@ exports._splitEnd = _splitEnd;
 exports._splitEnd_noSep = _splitEnd_noSep;
 exports._splitStart = _splitStart;
 exports._splitStart_noSep = _splitStart_noSep;
-exports["default"] = stringSplitWithLimit;
+exports.default = stringSplitWithLimit;
 exports.stringSplitWithLimit = stringSplitWithLimit;
 //# sourceMappingURL=index.cjs.development.cjs.map
