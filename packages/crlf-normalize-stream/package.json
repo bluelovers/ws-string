@@ -1,6 +1,6 @@
 {
   "name": "crlf-normalize-stream",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "keywords": [
     "create-by-yarn-tool",
@@ -78,7 +78,5 @@
   "dependencies": {
     "crlf-normalize": "^1.0.19"
   },
-  "devDependencies": {},
-  "peerDependencies": {},
   "packageManager": "yarn@1.22.19"
 }

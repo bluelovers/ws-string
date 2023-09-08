@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.27](https://github.com/bluelovers/ws-string/compare/zero-width@1.0.26...zero-width@1.0.27) (2023-09-08)
+
+
+
+### 📌　Dependencies
+
+* update deps ([cc88619](https://github.com/bluelovers/ws-string/commit/cc88619f1d76faea87579a5ad72d876e5c310d4a))
+
+
+
 ## [1.0.26](https://github.com/bluelovers/ws-string/compare/zero-width@1.0.25...zero-width@1.0.26) (2023-04-12)
 
 
