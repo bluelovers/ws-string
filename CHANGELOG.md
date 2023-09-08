@@ -5,6 +5,7 @@ Please see the individual package changelogs for what's new:
 * 🌏 [`blank-line`](./packages/blank-line/CHANGELOG.md "packages/blank-line") *packages/blank-line*
 * 🌏 [`chinese-parseint2`](./packages/chinese-parseint2/CHANGELOG.md "packages/chinese-parseint2") *packages/chinese-parseint2*
 * 🌏 [`crlf-normalize`](./packages/crlf-normalize/CHANGELOG.md "packages/crlf-normalize") *packages/crlf-normalize*
+* 🌏 [`crlf-normalize-stream`](./packages/crlf-normalize-stream/CHANGELOG.md "packages/crlf-normalize-stream") *packages/crlf-normalize-stream*
 * 🌏 [`normalize-num`](./packages/normalize-num/CHANGELOG.md "packages/normalize-num") *packages/normalize-num*
 * 🌏 [`num-is-roman`](./packages/num-is-roman/CHANGELOG.md "packages/num-is-roman") *packages/num-is-roman*
 * 🌏 [`reserved2`](./packages/reserved/CHANGELOG.md "packages/reserved") *packages/reserved*
