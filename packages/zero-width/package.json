@@ -45,6 +45,7 @@
     "pretest": "yarn run build",
     "test": "jest",
     "test:jest": "jest --passWithNoTests",
+    "test:jest:coverage": "yarn run test:jest -- --coverage",
     "test:jest:snapshot": "yarn run test:jest -- -u",
     "test:snapshot": "yarn run test -- -u",
     "test:tsd": "ynpx tsd",
@@ -57,7 +58,8 @@
     "postpublish_": "git commit -m \"chore(release): publish\" .",
     "postpublishOnly:add": "npx yarn-tool root run postpublishOnly:add zero-width",
     "ncu": "npx yarn-tool ncu -u",
-    "sort-package-json": "npx yarn-tool sort"
+    "sort-package-json": "npx yarn-tool sort",
+    "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
     "regexp-helper-core": "^2.0.7",
