@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.6](https://github.com/bluelovers/ws-string/compare/uni-string@2.0.5...uni-string@2.0.6) (2023-11-24)
+
+
+
+### 📌　Dependencies
+
+* update deps ([1d08736](https://github.com/bluelovers/ws-string/commit/1d08736f604a570a189299ea0ebec8785ae1c743))
+
+
+
 ## [2.0.5](https://github.com/bluelovers/ws-string/compare/uni-string@2.0.4...uni-string@2.0.5) (2023-04-12)
 
 **Note:** Version bump only for package uni-string

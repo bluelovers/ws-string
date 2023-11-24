@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.41](https://github.com/bluelovers/ws-string/compare/str-util@2.3.40...str-util@2.3.41) (2023-11-24)
+
+**Note:** Version bump only for package str-util
+
+
+
+
+
 ## [2.3.40](https://github.com/bluelovers/ws-string/compare/str-util@2.3.39...str-util@2.3.40) (2023-09-08)
 
 **Note:** Version bump only for package str-util
