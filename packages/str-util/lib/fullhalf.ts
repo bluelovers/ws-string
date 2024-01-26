@@ -3,7 +3,7 @@
  */
 
 import deepmerge from 'deepmerge';
-import util from './util';
+import util from '@lazy-cjk/str-util-char-code-at';
 // @ts-ignore
 import { UString } from 'uni-string';
 
