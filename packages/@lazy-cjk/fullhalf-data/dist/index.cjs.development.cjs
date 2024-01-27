@@ -2,9 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const tableDefaultInclude = ['number', 'A-Z', 'a-z', 'space', 'not_default'];
+const tableFullHalfDefaultInclude = ['number', 'A-Z', 'a-z', 'space', 'not_default'];
 
-const table = [{
+const tableFullHalf = [{
   "default": {
     "from": 65281,
     "to": 65374,
@@ -94,7 +94,7 @@ const table = [{
   }
 }];
 
-exports.default = table;
-exports.table = table;
-exports.tableDefaultInclude = tableDefaultInclude;
+exports.default = tableFullHalf;
+exports.tableFullHalf = tableFullHalf;
+exports.tableFullHalfDefaultInclude = tableFullHalfDefaultInclude;
 //# sourceMappingURL=index.cjs.development.cjs.map

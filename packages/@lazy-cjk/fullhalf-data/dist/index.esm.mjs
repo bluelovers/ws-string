@@ -88,5 +88,5 @@ const o = [ "number", "A-Z", "a-z", "space", "not_default" ], t = [ {
   }
 } ];
 
-export { t as default, t as table, o as tableDefaultInclude };
+export { t as default, t as tableFullHalf, o as tableFullHalfDefaultInclude };
 //# sourceMappingURL=index.esm.mjs.map

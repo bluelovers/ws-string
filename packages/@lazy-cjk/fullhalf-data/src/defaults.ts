@@ -1,4 +1,4 @@
-export const tableDefaultInclude = [
+export const tableFullHalfDefaultInclude = [
 	'number',
 	'A-Z',
 	'a-z',

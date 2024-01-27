@@ -1,33 +1,33 @@
-import { tableDefaultInclude } from './defaults';
-import { table } from './table';
+import { tableFullHalfDefaultInclude } from './defaults';
+import { tableFullHalf } from './table';
 
-export interface ITableObject
+export interface ITableFullHalfObject
 {
 	from?: number;
 	to?: number;
 
 	values?: number[];
 
-	not?: ITableObject[],
+	not?: ITableFullHalfObject[],
 }
 
-export interface ITable
+export interface ITableFullHalf
 {
-	default?: ITableObject;
+	default?: ITableFullHalfObject;
 
-	number?: ITableObject;
-	space?: ITableObject;
+	number?: ITableFullHalfObject;
+	space?: ITableFullHalfObject;
 
-	'A-Z'?: ITableObject;
-	'a-z'?: ITableObject;
+	'A-Z'?: ITableFullHalfObject;
+	'a-z'?: ITableFullHalfObject;
 
-	not_default?: ITableObject;
+	not_default?: ITableFullHalfObject;
 
-	[index: string]: ITableObject;
+	[index: string]: ITableFullHalfObject;
 }
 
-export type ITableDefaultIncludeKey = typeof tableDefaultInclude[number]
+export type ITableFullHalfDefaultIncludeKey = typeof tableFullHalfDefaultInclude[number]
 
-export { table, tableDefaultInclude }
+export { tableFullHalf, tableFullHalfDefaultInclude }
 
-export default table
+export default tableFullHalf

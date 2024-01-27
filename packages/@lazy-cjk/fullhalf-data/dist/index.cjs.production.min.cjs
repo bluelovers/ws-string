@@ -94,5 +94,5 @@ const o = [ {
   }
 } ];
 
-exports.default = o, exports.table = o, exports.tableDefaultInclude = [ "number", "A-Z", "a-z", "space", "not_default" ];
+exports.default = o, exports.tableFullHalf = o, exports.tableFullHalfDefaultInclude = [ "number", "A-Z", "a-z", "space", "not_default" ];
 //# sourceMappingURL=index.cjs.production.min.cjs.map

@@ -3,23 +3,24 @@ import { outputFile, outputFileSync } from 'fs-extra';
 import { join } from 'path';
 import { __ROOT } from '../__root';
 import { _table } from '../../src/_table';
-import { tableDefaultInclude } from '../../src/defaults';
+import { tableFullHalfDefaultInclude } from '../../src/defaults';
 import { EnumFullHalfTableType, toHalfWidthCharCode, toFullWidthCharCode } from '@lazy-cjk/fullhalf-char-code';
-import { ITable, ITableObject } from '../../src';
+import { ITableFullHalf, ITableFullHalfObject, ITableFullHalfDefaultIncludeKey } from '../../src';
 
-export const table: ITable[] = [];
+export const table: ITableFullHalf[] = [];
 
 {
-	let _keys = tableDefaultInclude.slice(0, -1);
+	let _keys = tableFullHalfDefaultInclude.slice(0, -1);
 
 	table[0] = {};
 	table[1] = {};
 
 	for (let k in _table)
 	{
+		// @ts-ignore
 		let v = _table[k];
 
-		let r;
+		let r: any;
 
 		r = fn(v);
 
@@ -37,9 +38,10 @@ export const table: ITable[] = [];
 
 	for (let k of _keys)
 	{
+		// @ts-ignore
 		let v = _table[k];
 
-		let r2;
+		let r2: any;
 
 		r2 = fn(v);
 
@@ -55,9 +57,9 @@ export const table: ITable[] = [];
 
 	//console.log(table);
 
-	function fn(v)
+	function fn(v: any)
 	{
-		let r: ITableObject[] = [];
+		let r: ITableFullHalfObject[] = [];
 
 		r[0] = {};
 		r[1] = {};
@@ -121,8 +123,8 @@ export const table: ITable[] = [];
 
 const lines: string[] = [];
 
-lines.push(`import { ITable } from '../types';`);
-lines.push(`export const table = ${JSON.stringify(table, null, '\t')} satisfies ITable[];`);
+lines.push(`import { ITableFullHalf } from './index';`);
+lines.push(`export const tableFullHalf = ${JSON.stringify(table, null, '\t')} satisfies ITableFullHalf[];`);
 lines.push('');
 
 outputFileSync(join(__ROOT, 'src', 'table.ts'), lines.join('\n\n'))

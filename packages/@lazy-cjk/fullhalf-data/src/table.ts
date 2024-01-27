@@ -1,6 +1,6 @@
-import { ITable } from './index';
+import { ITableFullHalf } from './index';
 
-export const table = [
+export const tableFullHalf = [
 	{
 		"default": {
 			"from": 65281,
@@ -137,5 +137,5 @@ export const table = [
 			]
 		}
 	}
-] satisfies ITable[];
+] satisfies ITableFullHalf[];
 

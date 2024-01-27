@@ -1,11 +1,11 @@
-export declare const tableDefaultInclude: readonly [
+export declare const tableFullHalfDefaultInclude: readonly [
 	"number",
 	"A-Z",
 	"a-z",
 	"space",
 	"not_default"
 ];
-export declare const table: {
+export declare const tableFullHalf: {
 	default: {
 		from: number;
 		to: number;
@@ -47,25 +47,25 @@ export declare const table: {
 		})[];
 	};
 }[];
-export interface ITableObject {
+export interface ITableFullHalfObject {
 	from?: number;
 	to?: number;
 	values?: number[];
-	not?: ITableObject[];
+	not?: ITableFullHalfObject[];
 }
-export interface ITable {
-	default?: ITableObject;
-	number?: ITableObject;
-	space?: ITableObject;
-	"A-Z"?: ITableObject;
-	"a-z"?: ITableObject;
-	not_default?: ITableObject;
-	[index: string]: ITableObject;
+export interface ITableFullHalf {
+	default?: ITableFullHalfObject;
+	number?: ITableFullHalfObject;
+	space?: ITableFullHalfObject;
+	"A-Z"?: ITableFullHalfObject;
+	"a-z"?: ITableFullHalfObject;
+	not_default?: ITableFullHalfObject;
+	[index: string]: ITableFullHalfObject;
 }
-export type ITableDefaultIncludeKey = typeof tableDefaultInclude[number];
+export type ITableFullHalfDefaultIncludeKey = typeof tableFullHalfDefaultInclude[number];
 
 export {
-	table as default,
+	tableFullHalf as default,
 };
 
 export {};
