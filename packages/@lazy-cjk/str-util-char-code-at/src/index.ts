@@ -1,20 +1,17 @@
-/**
- * Created by user on 2017/12/9/009.
- */
 
 export interface IcharCodeAtFn
 {
-	(char, charCode, str)
+	(char: unknown, charCode: unknown, str: unknown): unknown
 }
 
-export function split(str): string[]
+export function split(str: unknown): string[]
 {
 	return str.toString().split('');
 }
 
-export function charCodeAt(str, cb?: IcharCodeAtFn): number[]
+export function charCodeAt(str: unknown, cb?: IcharCodeAtFn): number[]
 {
-	let ret = [];
+	let ret: any[] = [];
 
 	if (typeof cb !== 'function')
 	{
@@ -48,4 +45,4 @@ export function charCodeAt(str, cb?: IcharCodeAtFn): number[]
 	return ret;
 }
 
-export default exports as typeof import('./util');
+export default charCodeAt
