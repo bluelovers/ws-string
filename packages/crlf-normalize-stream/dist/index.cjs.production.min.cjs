@@ -5,7 +5,7 @@ var r = require("stream"), e = require("crlf-normalize");
 function transformLinebreak(n) {
   return new r.Transform({
     transform(r, a, t) {
-      t(null, e(r.toString(), n));
+      t(null, e.crlf(r.toString(), n));
     }
   });
 }

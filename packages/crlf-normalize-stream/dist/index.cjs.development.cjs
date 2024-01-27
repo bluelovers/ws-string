@@ -1,16 +1,17 @@
 'use strict';
 
 var stream = require('stream');
-var crlf = require('crlf-normalize');
+var crlfNormalize = require('crlf-normalize');
 
 function transformLinebreak(newline) {
   return new stream.Transform({
     transform(chunk, _encoding, callback) {
-      const data = crlf(chunk.toString(), newline);
+      const data = crlfNormalize.crlf(chunk.toString(), newline);
       callback(null, data);
     }
   });
 }
+// @ts-ignore
 {
   Object.defineProperty(transformLinebreak, "__esModule", {
     value: true

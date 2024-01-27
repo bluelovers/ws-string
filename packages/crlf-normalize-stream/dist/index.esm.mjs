@@ -1,6 +1,6 @@
 import { Transform as r } from "stream";
 
-import n from "crlf-normalize";
+import { crlf as n } from "crlf-normalize";
 
 function transformLinebreak(t) {
   return new r({

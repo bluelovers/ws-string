@@ -1,5 +1,5 @@
 import { Transform } from 'stream';
-import crlf, { ILineBreakInput } from 'crlf-normalize';
+import { crlf, ILineBreakInput } from 'crlf-normalize';
 
 export function transformLinebreak(newline?: ILineBreakInput)
 {
