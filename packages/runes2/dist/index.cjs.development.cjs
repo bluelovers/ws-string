@@ -56,52 +56,64 @@ function runes(string) {
 function nextUnits(i, string) {
   const current = string[i];
   if (!isFirstOfSurrogatePair(current) || i === string.length - 1) {
-    return 1;
+    return 1 /* EnumCodeUnits.unit_1 */;
   }
+
   const currentPair = current + string[i + 1];
   let nextPair = string.substring(i + 2, i + 5);
   if (isRegionalIndicator(currentPair) && isRegionalIndicator(nextPair)) {
-    return 4;
+    return 4 /* EnumCodeUnits.unit_4 */;
   }
+
   if (isSubdivisionFlag(currentPair) && isSupplementarySpecialpurposePlane(nextPair)) {
-    return string.slice(i).indexOf(String.fromCodePoint(917631)) + 2;
+    return string.slice(i).indexOf(String.fromCodePoint(917631 /* EnumRunesCode.TAGS_END */)) + 2;
   }
   if (isFitzpatrickModifier(nextPair)) {
-    return 4;
+    return 4 /* EnumCodeUnits.unit_4 */;
   }
-  return 2;
+
+  return 2 /* EnumCodeUnits.unit_2 */;
 }
+
 function isFirstOfSurrogatePair(string) {
-  return string && betweenInclusive(string[0].charCodeAt(0), 55296, 56319);
+  return string && betweenInclusive(string[0].charCodeAt(0), 55296 /* EnumRunesCode.HIGH_SURROGATE_START */, 56319 /* EnumRunesCode.HIGH_SURROGATE_END */);
 }
+
 function isRegionalIndicator(string) {
-  return betweenInclusive(codePointFromSurrogatePair(string), 127462, 127487);
+  return betweenInclusive(codePointFromSurrogatePair(string), 127462 /* EnumRunesCode.REGIONAL_INDICATOR_START */, 127487 /* EnumRunesCode.REGIONAL_INDICATOR_END */);
 }
+
 function isSubdivisionFlag(string) {
-  return betweenInclusive(codePointFromSurrogatePair(string), 127988, 127988);
+  return betweenInclusive(codePointFromSurrogatePair(string), 127988 /* EnumRunesCode.SUBDIVISION_INDICATOR_START */, 127988 /* EnumRunesCode.SUBDIVISION_INDICATOR_START */);
 }
+
 function isFitzpatrickModifier(string) {
-  return betweenInclusive(codePointFromSurrogatePair(string), 127995, 127999);
+  return betweenInclusive(codePointFromSurrogatePair(string), 127995 /* EnumRunesCode.FITZPATRICK_MODIFIER_START */, 127999 /* EnumRunesCode.FITZPATRICK_MODIFIER_END */);
 }
+
 function isVariationSelector(string) {
-  return typeof string === 'string' && betweenInclusive(string.charCodeAt(0), 65024, 65039);
+  return typeof string === 'string' && betweenInclusive(string.charCodeAt(0), 65024 /* EnumRunesCode.VARIATION_MODIFIER_START */, 65039 /* EnumRunesCode.VARIATION_MODIFIER_END */);
 }
+
 function isDiacriticalMark(string) {
-  return typeof string === 'string' && betweenInclusive(string.charCodeAt(0), 8400, 8447);
+  return typeof string === 'string' && betweenInclusive(string.charCodeAt(0), 8400 /* EnumRunesCode.DIACRITICAL_MARKS_START */, 8447 /* EnumRunesCode.DIACRITICAL_MARKS_END */);
 }
+
 function isSupplementarySpecialpurposePlane(string) {
   const codePoint = string.codePointAt(0);
-  return typeof string === 'string' && typeof codePoint === 'number' && betweenInclusive(codePoint, 917504, 917631);
+  return typeof string === 'string' && typeof codePoint === 'number' && betweenInclusive(codePoint, 917504 /* EnumRunesCode.TAGS_START */, 917631 /* EnumRunesCode.TAGS_END */);
 }
+
 function isGrapheme(string) {
   return typeof string === 'string' && GRAPHEMES.includes(string.charCodeAt(0));
 }
 function isZeroWidthJoiner(string) {
-  return typeof string === 'string' && string.charCodeAt(0) === 8205;
+  return typeof string === 'string' && string.charCodeAt(0) === 8205 /* EnumRunesCode.ZWJ */;
 }
+
 function codePointFromSurrogatePair(pair) {
-  const highOffset = pair.charCodeAt(0) - 55296;
-  const lowOffset = pair.charCodeAt(1) - 56320;
+  const highOffset = pair.charCodeAt(0) - 55296 /* EnumRunesCode.HIGH_SURROGATE_START */;
+  const lowOffset = pair.charCodeAt(1) - 56320 /* EnumRunesCode.LOW_SURROGATE_START */;
   return (highOffset << 10) + lowOffset + 0x10000;
 }
 function betweenInclusive(value, lower, upper) {
@@ -123,6 +135,7 @@ function substring(string, start, width) {
   }
   return chars.slice(start, endIndex).join('');
 }
+// @ts-ignore
 {
   Object.defineProperty(runes, 'runes', {
     value: runes
@@ -139,9 +152,11 @@ function substring(string, start, width) {
   Object.defineProperty(runes, 'substring', {
     value: substring
   });
+  // @ts-ignore
   Object.defineProperty(runes, 'EnumRunesCode', {
     value: EnumRunesCode
   });
+  // @ts-ignore
   Object.defineProperty(runes, 'EnumCodeUnits', {
     value: EnumCodeUnits
   });
