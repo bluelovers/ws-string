@@ -84,5 +84,17 @@ export interface IFactoryFn {
 	(str: unknown, options: IOptions): string | number[];
 }
 export type ICharProcessor = (charCode: number) => number;
+declare const _default: {
+	toFullNumber: IFactoryFn;
+	toHalfNumber: IFactoryFn;
+	toFullEnglish: IFactoryFn;
+	toHalfEnglish: IFactoryFn;
+	toFullWidth: IFactoryFn;
+	toHalfWidth: IFactoryFn;
+};
+
+export {
+	_default as default,
+};
 
 export {};

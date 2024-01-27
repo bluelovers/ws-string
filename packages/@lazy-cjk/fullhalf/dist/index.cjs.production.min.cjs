@@ -4,39 +4,39 @@ Object.defineProperty(exports, "__esModule", {
   value: !0
 });
 
-var e = require("@lazy-cjk/fullhalf-char-code"), t = require("uni-string"), o = require("deepmerge"), r = require("@lazy-cjk/fullhalf-data");
+var e = require("@lazy-cjk/fullhalf-char-code"), t = require("uni-string"), o = require("deepmerge"), l = require("@lazy-cjk/fullhalf-data");
 
-let l = {
+let r = {
   only: {
     number: !0
   }
 };
 
-const n = factory(e.toFullWidthCharCode, 1, l), f = factory(e.toHalfWidthCharCode, 0, l);
+const n = factory(e.toFullWidthCharCode, 1, r), f = factory(e.toHalfWidthCharCode, 0, r);
 
-l = {
+r = {
   only: {
     eng: !0
   }
 };
 
-const a = factory(e.toFullWidthCharCode, 1, l), i = factory(e.toHalfWidthCharCode, 0, l);
+const a = factory(e.toFullWidthCharCode, 1, r), i = factory(e.toHalfWidthCharCode, 0, r);
 
-l = {
+r = {
   only: {
     default: !0
   }
 };
 
-const p = factory(e.toFullWidthCharCode, 1, l), u = factory(e.toHalfWidthCharCode, 0, l);
+const u = factory(e.toFullWidthCharCode, 1, r), p = factory(e.toHalfWidthCharCode, 0, r);
 
 function _optionsType(e) {
   if (e) if ("boolean" == typeof e.exists) {
-    for (let t in r.tableFullHalf[0]) 0 != t.indexOf("default") && !1 !== e[t] && (e[t] = e.exists);
+    for (let t in l.tableFullHalf[0]) 0 != t.indexOf("default") && !1 !== e[t] && (e[t] = e.exists);
     delete e.exists;
   } else {
     if ("boolean" == typeof e.default) {
-      for (let t of r.tableFullHalfDefaultInclude) !1 !== e[t] && (e[t] = e.default);
+      for (let t of l.tableFullHalfDefaultInclude) !1 !== e[t] && (e[t] = e.default);
       delete e.default;
     }
     "boolean" == typeof e.not_default2 && (e.both = e.space = e.not_default2, delete e.not_default2), 
@@ -52,38 +52,47 @@ function _chkType(e, t) {
 }
 
 function chkType(e, t, o) {
-  let l = r.tableFullHalf[o][t];
-  if (Array.isArray(l.not) && l.not.length) for (let t of l.not) if (_chkType(e, t)) return !1;
-  if (_chkType(e, l)) return !0;
+  let r = l.tableFullHalf[o][t];
+  if (Array.isArray(r.not) && r.not.length) for (let t of r.not) if (_chkType(e, t)) return !1;
+  if (_chkType(e, r)) return !0;
 }
 
-function process(e, o, r) {
-  let l = [];
-  r.skip = _optionsType(r.skip), r.only = _optionsType(r.only);
+function process(e, o, l) {
+  let r = [];
+  l.skip = _optionsType(l.skip), l.only = _optionsType(l.only);
   let n = Array.isArray(e) ? e : new t(e);
   for (let e of n) {
     let t, n = "number" == typeof e ? e : e.codePointAt();
-    if (r.only) {
+    if (l.only) {
       t = !0;
-      for (let e in r.only) if (r.only[e] && chkType(n, e, r.type)) {
+      for (let e in l.only) if (l.only[e] && chkType(n, e, l.type)) {
         t = !1;
         break;
       }
     }
-    if (!t && r.skip) for (let e in r.skip) if (r.skip[e] && chkType(n, e, r.type)) {
+    if (!t && l.skip) for (let e in l.skip) if (l.skip[e] && chkType(n, e, l.type)) {
       t = !0;
       break;
     }
-    l.push(t ? n : o(n));
+    r.push(t ? n : o(n));
   }
-  return r.returnType ? l : String.fromCodePoint.apply(String, l);
+  return l.returnType ? r : String.fromCodePoint.apply(String, r);
 }
 
-function factory(e, t, r) {
-  return (l, n) => (n = o.all([ {}, n || {}, r || {}, {
+function factory(e, t, l) {
+  return (r, n) => (n = o.all([ {}, n || {}, l || {}, {
     type: t
-  } ]), process(l, e, n));
+  } ]), process(r, e, n));
 }
+
+var s = {
+  toFullNumber: n,
+  toHalfNumber: f,
+  toFullEnglish: a,
+  toHalfEnglish: i,
+  toFullWidth: u,
+  toHalfWidth: p
+};
 
 exports._chkType = _chkType, exports._filterTable = function _filterTable(e) {
   let t = [];
@@ -92,7 +101,8 @@ exports._chkType = _chkType, exports._filterTable = function _filterTable(e) {
     for (let o of e.not) if (_chkType(t, o)) return !1;
     return !0;
   }))), t;
-}, exports._optionsType = _optionsType, exports.chkType = chkType, exports.factory = factory, 
-exports.process = process, exports.toFullEnglish = a, exports.toFullNumber = n, 
-exports.toFullWidth = p, exports.toHalfEnglish = i, exports.toHalfNumber = f, exports.toHalfWidth = u;
+}, exports._optionsType = _optionsType, exports.chkType = chkType, exports.default = s, 
+exports.factory = factory, exports.process = process, exports.toFullEnglish = a, 
+exports.toFullNumber = n, exports.toFullWidth = u, exports.toHalfEnglish = i, exports.toHalfNumber = f, 
+exports.toHalfWidth = p;
 //# sourceMappingURL=index.cjs.production.min.cjs.map

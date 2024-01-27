@@ -155,11 +155,20 @@ function _filterTable(data) {
   }
   return _a;
 }
+var index = {
+  toFullNumber,
+  toHalfNumber,
+  toFullEnglish,
+  toHalfEnglish,
+  toFullWidth,
+  toHalfWidth
+};
 
 exports._chkType = _chkType;
 exports._filterTable = _filterTable;
 exports._optionsType = _optionsType;
 exports.chkType = chkType;
+exports.default = index;
 exports.factory = factory;
 exports.process = process;
 exports.toFullEnglish = toFullEnglish;

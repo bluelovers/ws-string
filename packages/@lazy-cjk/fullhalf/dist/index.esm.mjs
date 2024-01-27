@@ -4,31 +4,31 @@ import o from "uni-string";
 
 import { all as r } from "deepmerge";
 
-import { tableFullHalf as n, tableFullHalfDefaultInclude as f } from "@lazy-cjk/fullhalf-data";
+import { tableFullHalf as n, tableFullHalfDefaultInclude as l } from "@lazy-cjk/fullhalf-data";
 
-let l = {
+let f = {
   only: {
     number: !0
   }
 };
 
-const i = factory(e, 1, l), y = factory(t, 0, l);
+const i = factory(e, 1, f), a = factory(t, 0, f);
 
-l = {
+f = {
   only: {
     eng: !0
   }
 };
 
-const a = factory(e, 1, l), p = factory(t, 0, l);
+const y = factory(e, 1, f), p = factory(t, 0, f);
 
-l = {
+f = {
   only: {
     default: !0
   }
 };
 
-const c = factory(e, 1, l), u = factory(t, 0, l);
+const u = factory(e, 1, f), c = factory(t, 0, f);
 
 function _optionsType(e) {
   if (e) if ("boolean" == typeof e.exists) {
@@ -36,7 +36,7 @@ function _optionsType(e) {
     delete e.exists;
   } else {
     if ("boolean" == typeof e.default) {
-      for (let t of f) !1 !== e[t] && (e[t] = e.default);
+      for (let t of l) !1 !== e[t] && (e[t] = e.default);
       delete e.default;
     }
     "boolean" == typeof e.not_default2 && (e.both = e.space = e.not_default2, delete e.not_default2), 
@@ -60,29 +60,29 @@ function chkType(e, t, o) {
 function process(e, t, r) {
   let n = [];
   r.skip = _optionsType(r.skip), r.only = _optionsType(r.only);
-  let f = Array.isArray(e) ? e : new o(e);
-  for (let e of f) {
-    let o, f = "number" == typeof e ? e : e.codePointAt();
+  let l = Array.isArray(e) ? e : new o(e);
+  for (let e of l) {
+    let o, l = "number" == typeof e ? e : e.codePointAt();
     if (r.only) {
       o = !0;
-      for (let e in r.only) if (r.only[e] && chkType(f, e, r.type)) {
+      for (let e in r.only) if (r.only[e] && chkType(l, e, r.type)) {
         o = !1;
         break;
       }
     }
-    if (!o && r.skip) for (let e in r.skip) if (r.skip[e] && chkType(f, e, r.type)) {
+    if (!o && r.skip) for (let e in r.skip) if (r.skip[e] && chkType(l, e, r.type)) {
       o = !0;
       break;
     }
-    n.push(o ? f : t(f));
+    n.push(o ? l : t(l));
   }
   return r.returnType ? n : String.fromCodePoint.apply(String, n);
 }
 
 function factory(e, t, o) {
-  return (n, f) => (f = r([ {}, f || {}, o || {}, {
+  return (n, l) => (l = r([ {}, l || {}, o || {}, {
     type: t
-  } ]), process(n, e, f));
+  } ]), process(n, e, l));
 }
 
 function _filterTable(e) {
@@ -94,5 +94,14 @@ function _filterTable(e) {
   }))), t;
 }
 
-export { _chkType, _filterTable, _optionsType, chkType, factory, process, a as toFullEnglish, i as toFullNumber, c as toFullWidth, p as toHalfEnglish, y as toHalfNumber, u as toHalfWidth };
+var s = {
+  toFullNumber: i,
+  toHalfNumber: a,
+  toFullEnglish: y,
+  toHalfEnglish: p,
+  toFullWidth: u,
+  toHalfWidth: c
+};
+
+export { _chkType, _filterTable, _optionsType, chkType, s as default, factory, process, y as toFullEnglish, i as toFullNumber, u as toFullWidth, p as toHalfEnglish, a as toHalfNumber, c as toHalfWidth };
 //# sourceMappingURL=index.esm.mjs.map

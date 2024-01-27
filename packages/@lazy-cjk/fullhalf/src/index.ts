@@ -340,3 +340,13 @@ export interface IFactoryFn
 
 export type ICharProcessor = (charCode: number) => number
 
+export default {
+	toFullNumber,
+	toHalfNumber,
+
+	toFullEnglish,
+	toHalfEnglish,
+
+	toFullWidth,
+	toHalfWidth,
+}
