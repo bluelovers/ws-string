@@ -2,8 +2,8 @@
  * Created by user on 2017/12/11/011.
  */
 
-import { zh2num, IOptions } from '../../lib/han/zh2num';
 import { inspect } from 'util';
+import { IOptions, zh2num } from '../src';
 
 let tests = [
 	[
