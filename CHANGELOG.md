@@ -16,4 +16,9 @@ Please see the individual package changelogs for what's new:
 * 🌏 [`string-split-keep2`](./packages/string-split-keep/CHANGELOG.md "packages/string-split-keep") *packages/string-split-keep*
 * 🌏 [`uni-string`](./packages/uni-string/CHANGELOG.md "packages/uni-string") *packages/uni-string*
 * 🌏 [`zero-width`](./packages/zero-width/CHANGELOG.md "packages/zero-width") *packages/zero-width*
+* 🌏 [`@lazy-cjk/fullhalf`](./packages/@lazy-cjk/fullhalf/CHANGELOG.md "packages/@lazy-cjk/fullhalf") *packages/@lazy-cjk/fullhalf*
+* 🌏 [`@lazy-cjk/fullhalf-char-code`](./packages/@lazy-cjk/fullhalf-char-code/CHANGELOG.md "packages/@lazy-cjk/fullhalf-char-code") *packages/@lazy-cjk/fullhalf-char-code*
+* 🌏 [`@lazy-cjk/fullhalf-data`](./packages/@lazy-cjk/fullhalf-data/CHANGELOG.md "packages/@lazy-cjk/fullhalf-data") *packages/@lazy-cjk/fullhalf-data*
+* 🌏 [`@lazy-cjk/str-util-char-code-at`](./packages/@lazy-cjk/str-util-char-code-at/CHANGELOG.md "packages/@lazy-cjk/str-util-char-code-at") *packages/@lazy-cjk/str-util-char-code-at*
+* 🌏 [`@lazy-cjk/zh2num`](./packages/@lazy-cjk/zh2num/CHANGELOG.md "packages/@lazy-cjk/zh2num") *packages/@lazy-cjk/zh2num*
 
