@@ -1,6 +1,6 @@
 {
   "name": "@lazy-cjk/fullhalf-char-code",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Determines whether the specified character code is full-width or half-width.",
   "keywords": [
     "fullhalf",
@@ -83,9 +83,6 @@
     "tsc:esm": "tsc -p tsconfig.esm.json",
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
-  "dependencies": {},
-  "devDependencies": {},
-  "peerDependencies": {},
   "packageManager": "yarn@1.22.19",
   "publishConfig": {
     "access": "public"

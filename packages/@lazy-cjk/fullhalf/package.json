@@ -1,6 +1,6 @@
 {
   "name": "@lazy-cjk/fullhalf",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Converts character to full-width/half-width character.",
   "keywords": [
     "create-by-yarn-tool",
@@ -76,13 +76,11 @@
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
-    "@lazy-cjk/fullhalf-char-code": "^1.0.0",
-    "@lazy-cjk/fullhalf-data": "^1.0.0",
+    "@lazy-cjk/fullhalf-char-code": "^1.0.1",
+    "@lazy-cjk/fullhalf-data": "^1.0.1",
     "deepmerge": "^4.3.1",
-    "uni-string": "^2.0.6"
+    "uni-string": "^2.0.7"
   },
-  "devDependencies": {},
-  "peerDependencies": {},
   "packageManager": "yarn@1.22.19",
   "publishConfig": {
     "access": "public"

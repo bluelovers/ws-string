@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/bluelovers/ws-string/compare/str-util@2.3.41...str-util@3.0.1) (2024-01-29)
+
+
+### BREAKING CHANGES
+
+* @lazy-cjk/fullhalf
+* @lazy-cjk/zh2num
+
+
+
+### 📦　Code Refactoring
+
+* @lazy-cjk/fullhalf ([04d2a7a](https://github.com/bluelovers/ws-string/commit/04d2a7adb4af497ca2d2e2e24977f5dcdc156c66))
+* @lazy-cjk/zh2num ([9cf2092](https://github.com/bluelovers/ws-string/commit/9cf2092e0d7dfdcdc2e28b5c6a8cc9e562c4548b))
+* @lazy-cjk/str-util-char-code-at ([f0391eb](https://github.com/bluelovers/ws-string/commit/f0391eb9e75dc730ceffd2bec4776abf9503da72))
+
+
+### 🔖　Miscellaneous
+
+* . ([9813037](https://github.com/bluelovers/ws-string/commit/9813037fc4de56b134bd28286983920987a7dfc7))
+
+
+
 ## [2.3.41](https://github.com/bluelovers/ws-string/compare/str-util@2.3.40...str-util@2.3.41) (2023-11-24)
 
 **Note:** Version bump only for package str-util

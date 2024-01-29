@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.7](https://github.com/bluelovers/ws-string/compare/blank-line@2.0.6...blank-line@2.0.7) (2024-01-29)
+
+
+
+### 🔖　Miscellaneous
+
+* . ([f5d4f83](https://github.com/bluelovers/ws-string/commit/f5d4f8356dfba2fa3954afab13556dbe9b53d53a))
+
+
+
 ## [2.0.6](https://github.com/bluelovers/ws-string/compare/blank-line@2.0.5...blank-line@2.0.6) (2023-09-08)
 
 
