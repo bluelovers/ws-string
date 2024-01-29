@@ -13,12 +13,12 @@ exports.EnumLineBreakCharCode = void 0;
   EnumLineBreakCharCode[EnumLineBreakCharCode["CR"] = 13] = "CR";
   EnumLineBreakCharCode[EnumLineBreakCharCode["LF"] = 10] = "LF";
 })(exports.EnumLineBreakCharCode || (exports.EnumLineBreakCharCode = {}));
-const CR = "\r";
-const CRLF = "\r\n";
-const LF = "\n";
+const CR = "\r" /* EnumLineBreak.CR */;
+const CRLF = "\r\n" /* EnumLineBreak.CRLF */;
+const LF = "\n" /* EnumLineBreak.LF */;
 const R_CRLF = /\r\n|\r(?!\n)|\n/g;
 const R_CRLF_MATCH = /*#__PURE__*/new RegExp(`(${R_CRLF.source})`, R_CRLF.flags);
-function crlf(text, newline = "\n") {
+function crlf(text, newline = "\n" /* EnumLineBreak.LF */) {
   return text.replace(R_CRLF, newline);
 }
 function chkcrlf(text, options) {
@@ -35,27 +35,33 @@ function detectLineBreak(text, options) {
   return _detectLineBreakCore(_lb);
 }
 function _detectLineBreakCore(_lb) {
-  return _lb.crlf ? "\r\n" : _lb.lf || !_lb.cr ? "\n" : "\r";
+  return _lb.crlf ? "\r\n" /* EnumLineBreak.CRLF */ : _lb.lf || !_lb.cr ? "\n" /* EnumLineBreak.LF */ : "\r" /* EnumLineBreak.CR */;
 }
+
 function isCRLF(newline) {
-  return newline === "\r\n";
+  return newline === "\r\n" /* EnumLineBreak.CRLF */;
 }
+
 function isLF(newline) {
-  return newline === "\n";
+  return newline === "\n" /* EnumLineBreak.LF */;
 }
+
 function isCR(newline) {
-  return newline === "\r";
+  return newline === "\r" /* EnumLineBreak.CR */;
 }
+
 function charCodeIsLF(charCode) {
-  return charCode === 10;
+  return charCode === 10 /* EnumLineBreakCharCode.LF */;
 }
+
 function charCodeIsCR(charCode) {
-  return charCode === 13;
+  return charCode === 13 /* EnumLineBreakCharCode.CR */;
 }
+
 function lineSplit(text) {
   return text.split(R_CRLF);
 }
-function crlf_unicode_normalize(text, newline = "\n") {
+function crlf_unicode_normalize(text, newline = "\n" /* EnumLineBreak.LF */) {
   const ln3 = newline + newline + newline;
   const ln2 = newline + newline;
   return text.replace(/\u000C/g, ln3).replace(/\u2028/g, newline).replace(/\u2029/g, ln2);
@@ -75,11 +81,11 @@ function isEqualWithIgnoreLineSeparators(a, b) {
 }
 function toLineBreakName(newline) {
   switch (newline) {
-    case "\n":
+    case "\n" /* EnumLineBreak.LF */:
       return 'LF';
-    case "\r":
+    case "\r" /* EnumLineBreak.CR */:
       return 'CR';
-    case "\r\n":
+    case "\r\n" /* EnumLineBreak.CRLF */:
       return 'CRLF';
   }
   throw new TypeError(`Invalid line break`);
@@ -87,12 +93,13 @@ function toLineBreakName(newline) {
 function nameToLineBreak(name) {
   switch (name === null || name === void 0 ? void 0 : name.toUpperCase()) {
     case 'LF':
-      return "\n";
+      return "\n" /* EnumLineBreak.LF */;
     case 'CR':
-      return "\r";
+      return "\r" /* EnumLineBreak.CR */;
     case 'CRLF':
-      return "\r\n";
+      return "\r\n" /* EnumLineBreak.CRLF */;
   }
+
   throw new TypeError(`Invalid line break name: ${name}`);
 }
 function detectCurrentIndexLineBreakFromBufferLike(buffer, index) {
@@ -100,7 +107,7 @@ function detectCurrentIndexLineBreakFromBufferLike(buffer, index) {
   const next = index + 1;
   if (charCodeIsLF(cur)) {
     return {
-      newline: "\n",
+      newline: "\n" /* EnumLineBreak.LF */,
       cur: cur,
       index,
       next,
@@ -109,7 +116,7 @@ function detectCurrentIndexLineBreakFromBufferLike(buffer, index) {
   } else if (charCodeIsCR(cur)) {
     if (charCodeIsLF(buffer[next])) {
       return {
-        newline: "\r\n",
+        newline: "\r\n" /* EnumLineBreak.CRLF */,
         cur: cur,
         index,
         next: next + 1,
@@ -117,7 +124,7 @@ function detectCurrentIndexLineBreakFromBufferLike(buffer, index) {
       };
     }
     return {
-      newline: "\r",
+      newline: "\r" /* EnumLineBreak.CR */,
       cur: cur,
       index,
       next,
@@ -137,7 +144,7 @@ function detectCurrentIndexLineBreak(buffer, index) {
   const next = index + 1;
   if (isLF(cur)) {
     return {
-      newline: "\n",
+      newline: "\n" /* EnumLineBreak.LF */,
       cur: cur,
       index,
       next,
@@ -146,7 +153,7 @@ function detectCurrentIndexLineBreak(buffer, index) {
   } else if (isCR(cur)) {
     if (isLF(buffer[next])) {
       return {
-        newline: "\r\n",
+        newline: "\r\n" /* EnumLineBreak.CRLF */,
         cur: cur,
         index,
         next: next + 1,
@@ -154,7 +161,7 @@ function detectCurrentIndexLineBreak(buffer, index) {
       };
     }
     return {
-      newline: "\r",
+      newline: "\r" /* EnumLineBreak.CR */,
       cur: cur,
       index,
       next,

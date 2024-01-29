@@ -20,7 +20,7 @@ var ENUM_ZERO_WIDTH;
      * @see https://unicode-table.com/cn/034F/
      */
     ENUM_ZERO_WIDTH["COMBINING_GRAPHEME_JOINER"] = "\u034F";
-})(ENUM_ZERO_WIDTH = exports.ENUM_ZERO_WIDTH || (exports.ENUM_ZERO_WIDTH = {}));
+})(ENUM_ZERO_WIDTH || (exports.ENUM_ZERO_WIDTH = ENUM_ZERO_WIDTH = {}));
 /**
  * @see https://unicode-table.com/en/blocks/variation-selectors/
  */
@@ -90,7 +90,7 @@ var ENUM_VARIATION_SELECTORS;
      * 	VARIATION SELECTOR-16
      */
     ENUM_VARIATION_SELECTORS["FE0F"] = "\uFE0F";
-})(ENUM_VARIATION_SELECTORS = exports.ENUM_VARIATION_SELECTORS || (exports.ENUM_VARIATION_SELECTORS = {}));
+})(ENUM_VARIATION_SELECTORS || (exports.ENUM_VARIATION_SELECTORS = ENUM_VARIATION_SELECTORS = {}));
 /**
  * too many give up
  * @see https://unicode-table.com/cn/blocks/variation-selectors-supplement/
@@ -98,7 +98,7 @@ var ENUM_VARIATION_SELECTORS;
  */
 var ENUM_VARIATION_SELECTORS_SUPPLEMENT;
 (function (ENUM_VARIATION_SELECTORS_SUPPLEMENT) {
-})(ENUM_VARIATION_SELECTORS_SUPPLEMENT = exports.ENUM_VARIATION_SELECTORS_SUPPLEMENT || (exports.ENUM_VARIATION_SELECTORS_SUPPLEMENT = {}));
+})(ENUM_VARIATION_SELECTORS_SUPPLEMENT || (exports.ENUM_VARIATION_SELECTORS_SUPPLEMENT = ENUM_VARIATION_SELECTORS_SUPPLEMENT = {}));
 var ENUM_SPACE;
 (function (ENUM_SPACE) {
     /**
@@ -146,5 +146,5 @@ var ENUM_SPACE;
      * @see https://unicode-table.com/cn/000C/
      */
     ENUM_SPACE["FORM_FEED"] = "\f";
-})(ENUM_SPACE = exports.ENUM_SPACE || (exports.ENUM_SPACE = {}));
+})(ENUM_SPACE || (exports.ENUM_SPACE = ENUM_SPACE = {}));
 //# sourceMappingURL=const.js.map

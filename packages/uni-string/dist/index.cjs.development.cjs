@@ -121,6 +121,7 @@ class UString extends String {
       targetLength = targetLength - str.length;
       if (targetLength > pad.length) {
         padString += padString.repeat(targetLength / pad.length);
+        // @ts-ignore
         pad = new UString(padString);
       }
       return String(this) + pad.slice(0, targetLength);
@@ -137,6 +138,7 @@ class UString extends String {
       targetLength = targetLength - str.length;
       if (targetLength > pad.length) {
         padString += padString.repeat(targetLength / pad.length);
+        // @ts-ignore
         pad = new UString(padString);
       }
       return pad.slice(0, targetLength) + String(this);
@@ -146,6 +148,9 @@ class UString extends String {
     return this.toArray()[pos].codePointAt(0);
   }
   static UString = UString;
+  /**
+   * @private
+   */
   static default = UString;
   static create(str, ...argv) {
     return new this(str, ...argv);
@@ -154,6 +159,7 @@ class UString extends String {
     let prototype = es6ClassPrototype.classPrototype(this);
     return Object.keys(prototype).reduce(function (a, b) {
       if (STRING_PROTOTYPE.includes(b)) {
+        // @ts-ignore
         a[b] = true;
       }
       return a;
@@ -205,6 +211,7 @@ class UString extends String {
     return this.create(str).codePointAt(pos);
   }
 }
+// @ts-ignore
 {
   Object.defineProperty(UString, 'UString', {
     value: UString

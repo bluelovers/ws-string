@@ -6,8 +6,10 @@ Object.defineProperty(exports, "__esModule", {
 
 var e = require("execall2");
 
+const n = "\n";
+
 function normalize(e) {
-  return String(e).replace(/\r\n|\r(?!\n)|\n/g, "\n").replace(/\uFEFF/g, "").replace(/[  \xA0]/g, " ").replace(/[ \t　\xA0\u3000]+\n/g, "\n").replace(/^\n+|[\s　\xA0\u3000]+$/g, "");
+  return String(e).replace(/\r\n|\r(?!\n)|\n/g, n).replace(/\uFEFF/g, "").replace(/[  \xA0]/g, " ").replace(/[ \t　\xA0\u3000]+\n/g, "\n").replace(/^\n+|[\s　\xA0\u3000]+$/g, "");
 }
 
 function getBlankLine(n, t = {}) {
