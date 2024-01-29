@@ -3,15 +3,13 @@
  */
 export { isFullWidth, isFullwidthCodePoint } from './lib/is-fullwidth';
 export { stringWidth } from './lib/width';
-import { FullHalfCore, toFullNumber, toHalfNumber, toFullEnglish, toHalfEnglish, toFullWidth, toHalfWidth } from './lib/fullhalf';
+import { toFullNumber, toHalfNumber, toFullEnglish, toHalfEnglish, toFullWidth, toHalfWidth } from '@lazy-cjk/fullhalf';
 import stripAnsi from 'strip-ansi';
-import normalize from './lib/normalize';
-export { normalize };
+export { normalize } from './lib/normalize';
 export { trim, ITrimOptions } from './lib/trim';
 export { zh2jp, jp2zhs, jp2zht } from './lib/han/zh2jp';
-export { zh2num, num2zh } from './lib/han/zh2num';
-export { charCodeAt } from './lib/util';
-export declare const tableFullHalf: FullHalfCore.ITable[];
+export { zh2num, num2zh } from '@lazy-cjk/zh2num';
+export { charCodeAt } from '@lazy-cjk/str-util-char-code-at';
 export { toFullNumber, toHalfNumber, toFullEnglish, toHalfEnglish, toFullWidth, toHalfWidth };
 export { stripAnsi };
 declare const _default: typeof import("./index");

@@ -12,8 +12,7 @@
 /// <reference types="node" />
 
 import { unsafeChinese } from 'cjk-conv/lib/zh/data/unsafe';
-import { FullHalfCore } from '../lib/fullhalf';
-import { toFullWidth, toHalfWidth, toFullEnglish, toFullNumber, toHalfEnglish, toHalfNumber } from '../lib/fullhalf';
+import { toFullWidth, toHalfWidth, toFullEnglish, toFullNumber, toHalfEnglish, toHalfNumber } from '../src';
 import UString from 'uni-string';
 
 // @ts-ignore
