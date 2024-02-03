@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.2](https://github.com/bluelovers/ws-string/compare/str-util@3.0.1...str-util@3.0.2) (2024-02-03)
+
+
+
+### 🔖　Miscellaneous
+
+* . ([91827bc](https://github.com/bluelovers/ws-string/commit/91827bc744c17170bd9d9010ed49e77590da211f))
+* . ([0315714](https://github.com/bluelovers/ws-string/commit/0315714ab0f98cce959be71cbe0b86c3e96401f3))
+* @lazy-cjk/str-util-normalize ([64554ab](https://github.com/bluelovers/ws-string/commit/64554ab7215653f89e566771630124052ee9d2a4))
+* @lazy-cjk/str-util-trim ([64b5de1](https://github.com/bluelovers/ws-string/commit/64b5de18f3347253d147ee6e811db578194a9cbd))
+
+
+
 ## [3.0.1](https://github.com/bluelovers/ws-string/compare/str-util@2.3.41...str-util@3.0.1) (2024-01-29)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@lazy-cjk/zh2num",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "將漢字轉換成數字 Parse Chinese/Japanese numeric strings to integer",
   "keywords": [
     "zh2num",
