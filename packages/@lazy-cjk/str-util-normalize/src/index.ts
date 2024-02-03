@@ -8,7 +8,7 @@ export const StripTable = [
 	// ZERO WIDTH NO-BREAK SPACE
 	/\uFEFF/g,
 
-];
+] as readonly RegExp[];
 
 export function normalize(input: string, options: IOptions = {}): string
 {

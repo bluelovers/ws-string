@@ -10,7 +10,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-tslib_1.__exportStar(require("cjk-conv/lib/jp/table"), exports);
-const table_1 = require("cjk-conv/lib/jp/table");
-exports.default = table_1.TABLE;
+tslib_1.__exportStar(require("@lazy-cjk/jp-table-comparison"), exports);
+const jp_table_comparison_1 = require("@lazy-cjk/jp-table-comparison");
+exports.default = jp_table_comparison_1.TABLE;
 //# sourceMappingURL=table.js.map

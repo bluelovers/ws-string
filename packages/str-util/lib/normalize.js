@@ -1,25 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.normalize = exports.StripTable = void 0;
-exports.StripTable = [
-    /[\u2000-\u200F]/g,
-    /[\u2028-\u202F]/g,
-    /[\u205F-\u206F]/g,
-    // ZERO WIDTH NO-BREAK SPACE
-    /\uFEFF/g,
-];
-function normalize(input, options = {}) {
-    if (!options.allow_nbsp) {
-        input = input.replace(/\xA0/g, ' ');
-    }
-    if (!options.allow_bom) {
-        input = input.replace(/\uFEFF/g, '');
-    }
-    exports.StripTable.forEach(function (r) {
-        input = input.replace(r, '');
-    });
-    return input;
-}
-exports.normalize = normalize;
-exports.default = normalize;
+exports.default = exports.IOptions = exports.normalize = exports.StripTable = void 0;
+var str_util_normalize_1 = require("@lazy-cjk/str-util-normalize");
+Object.defineProperty(exports, "StripTable", { enumerable: true, get: function () { return str_util_normalize_1.StripTable; } });
+Object.defineProperty(exports, "normalize", { enumerable: true, get: function () { return str_util_normalize_1.normalize; } });
+Object.defineProperty(exports, "IOptions", { enumerable: true, get: function () { return str_util_normalize_1.IOptions; } });
+Object.defineProperty(exports, "default", { enumerable: true, get: function () { return str_util_normalize_1.normalize; } });
 //# sourceMappingURL=normalize.js.map

@@ -7,11 +7,11 @@ export { stringWidth } from './lib/width';
 import { toFullNumber, toHalfNumber, toFullEnglish, toHalfEnglish, toFullWidth, toHalfWidth } from '@lazy-cjk/fullhalf';
 import stripAnsi from 'strip-ansi';
 
-export { normalize } from './lib/normalize';
+export { normalize } from '@lazy-cjk/str-util-normalize';
 
-export { trim, ITrimOptions } from './lib/trim';
+export { trim, ITrimOptions } from '@lazy-cjk/str-util-trim';
 
-export { zh2jp, jp2zhs, jp2zht } from './lib/han/zh2jp';
+export { zh2jp, jp2zhs, jp2zht } from '@lazy-cjk/jp-table-convert';
 
 export { zh2num, num2zh } from '@lazy-cjk/zh2num';
 export { charCodeAt } from '@lazy-cjk/str-util-char-code-at';

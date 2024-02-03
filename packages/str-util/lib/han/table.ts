@@ -8,6 +8,6 @@
  * @see http://www5b.biglobe.ne.jp/%7Eharigaya/variants.html
  */
 
-export * from 'cjk-conv/lib/jp/table';
-import { TABLE } from 'cjk-conv/lib/jp/table';
+export * from '@lazy-cjk/jp-table-comparison';
+import { TABLE } from '@lazy-cjk/jp-table-comparison';
 export default TABLE;

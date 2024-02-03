@@ -5,6 +5,6 @@
  * so don't use this module when u wanna fully zht <=> zhs
  */
 
-export * from 'cjk-conv/lib/jp/core';
-import { zh2jp } from 'cjk-conv/lib/jp/core';
+export * from '@lazy-cjk/jp-table-convert';
+import { zh2jp } from '@lazy-cjk/jp-table-convert';
 export default zh2jp;
