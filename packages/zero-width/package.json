@@ -62,7 +62,7 @@
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
-    "regexp-helper-core": "^2.0.7",
+    "regexp-helper-core": "^2.0.8",
     "tslib": "^2"
   },
   "gitHead": "952f3f53bed3e2bf3ccaec50c46702f127ff4e7f"
