@@ -10,10 +10,7 @@ export const StripTable = [
 
 ];
 
-export function normalize(input: string, options: {
-	allow_nbsp?: boolean,
-	allow_bom?: boolean,
-} = {}): string
+export function normalize(input: string, options: IOptions = {}): string
 {
 	if (!options.allow_nbsp)
 	{
