@@ -11,9 +11,9 @@ export interface ITrimOptions
 	no_end?: boolean,
 }
 
-export function trim(txt, character_mask?: string)
-export function trim(txt, character_mask?: ITrimOptions)
-export function trim(txt, character_mask?: string | ITrimOptions)
+export function trim(txt: unknown, character_mask?: string): string
+export function trim(txt: unknown, character_mask?: ITrimOptions): string
+export function trim(txt: unknown, character_mask?: string | ITrimOptions): string
 {
 	let ret = txt.toString();
 
