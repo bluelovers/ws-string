@@ -1,8 +1,15 @@
 {
   "name": "@lazy-cjk/fullhalf-data",
   "version": "1.0.6",
-  "description": "",
+  "description": "Full-width/half-width character conversion mapping data",
   "keywords": [
+    "fullhalf",
+    "full-width",
+    "half-width",
+    "data",
+    "mapping",
+    "table",
+    "unicode",
     "create-by-yarn-tool",
     "create-by-tsdx"
   ],

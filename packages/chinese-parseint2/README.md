@@ -1,5 +1,24 @@
-# chinese-parseint
-Parse Chinese numeric strings to integer; also usable for client-side script.
+# chinese-parseint2
+
+> Parse Chinese numeric strings to integer; also usable for client-side script.
+
+## 安裝 (Installation)
+
+```bash
+# 使用 yarn / Using yarn
+yarn add chinese-parseint2
+
+# 使用 yarn-tool / Using yarn-tool
+yarn-tool add chinese-parseint2
+# yt 是 yarn-tool 的別名 / yt is an alias for yarn-tool
+yt add chinese-parseint2
+
+# 使用 pnpm / Using pnpm
+pnpm add chinese-parseint2
+
+# 使用 npm / Using npm
+npm install chinese-parseint2
+```
 
 ## In browsers (front-end JavaScript)
 Download `chinese-parseint.js`.
@@ -13,7 +32,6 @@ Download `chinese-parseint.js`.
 ```
 
 ## In Node.js
-`npm install chinese-parseint`
 ### Usage
 ```javascript
 var chinese_parseInt = require('chinese-parseint');

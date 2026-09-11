@@ -1,8 +1,17 @@
 {
   "name": "normalize-num",
   "version": "1.0.18",
-  "description": "",
-  "keywords": [],
+  "description": "Normalize numbers in strings, including Roman numerals and circled numbers",
+  "keywords": [
+    "normalize",
+    "number",
+    "roman",
+    "circled",
+    "str2num",
+    "convert",
+    "string",
+    "util"
+  ],
   "homepage": "https://github.com/bluelovers/ws-string/tree/master/packages/normalize-num#readme",
   "bugs": {
     "url": "https://github.com/bluelovers/ws-string/issues"

@@ -2,7 +2,23 @@
 
 > convert full/half width, Chinese/Japanese number ... others util helper
 
-`npm i str-util`
+## 安裝 (Installation)
+
+```bash
+# 使用 yarn / Using yarn
+yarn add str-util
+
+# 使用 yarn-tool / Using yarn-tool
+yarn-tool add str-util
+# yt 是 yarn-tool 的別名 / yt is an alias for yarn-tool
+yt add str-util
+
+# 使用 pnpm / Using pnpm
+pnpm add str-util
+
+# 使用 npm / Using npm
+npm install str-util
+```
 
 ## Usage
 

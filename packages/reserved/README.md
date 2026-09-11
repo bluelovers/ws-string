@@ -4,11 +4,22 @@
 
 Used in [variable](https://github.com/jonschlinkert/variable)
 
-## Install
-Install with [npm](npmjs.org):
+## 安裝 (Installation)
 
 ```bash
-npm i reserved --save-dev
+# 使用 yarn / Using yarn
+yarn add reserved2
+
+# 使用 yarn-tool / Using yarn-tool
+yarn-tool add reserved2
+# yt 是 yarn-tool 的別名 / yt is an alias for yarn-tool
+yt add reserved2
+
+# 使用 pnpm / Using pnpm
+pnpm add reserved2
+
+# 使用 npm / Using npm
+npm install reserved2
 ```
 
 

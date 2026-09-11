@@ -1,8 +1,13 @@
 {
   "name": "@lazy-cjk/str-util-char-code-at",
   "version": "1.0.6",
-  "description": "",
+  "description": "Get charCode array from a string with optional callback",
   "keywords": [
+    "charCodeAt",
+    "char-code",
+    "character",
+    "string",
+    "unicode",
     "create-by-yarn-tool",
     "create-by-tsdx"
   ],

@@ -1,8 +1,16 @@
 {
   "name": "@lazy-cjk/str-util-normalize",
   "version": "1.0.6",
-  "description": "",
+  "description": "Remove invisible Unicode characters and normalize strings",
   "keywords": [
+    "normalize",
+    "unicode",
+    "strip",
+    "zero-width",
+    "bom",
+    "nbsp",
+    "invisible",
+    "string",
     "create-by-yarn-tool",
     "create-by-tsdx"
   ],

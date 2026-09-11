@@ -2,7 +2,23 @@
 
 > Unicode-aware String object
 
-`npm install uni-string`
+## 安裝 (Installation)
+
+```bash
+# 使用 yarn / Using yarn
+yarn add uni-string
+
+# 使用 yarn-tool / Using yarn-tool
+yarn-tool add uni-string
+# yt 是 yarn-tool 的別名 / yt is an alias for yarn-tool
+yt add uni-string
+
+# 使用 pnpm / Using pnpm
+pnpm add uni-string
+
+# 使用 npm / Using npm
+npm install uni-string
+```
 
 ## api
 

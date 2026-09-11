@@ -3,6 +3,13 @@
   "version": "1.0.3",
   "description": "Converts character to full-width/half-width character.",
   "keywords": [
+    "fullhalf",
+    "full-width",
+    "half-width",
+    "convert",
+    "character",
+    "string",
+    "unicode",
     "create-by-yarn-tool",
     "create-by-tsdx"
   ],

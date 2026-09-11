@@ -10,10 +10,22 @@ Split a string into its constituent characters, without munging emoji and other 
 
 The native `String#split` implementation does not pay attention to [surrogate pairs](http://en.wikipedia.org/wiki/UTF-16). When the code units of a surrogate pair are split apart, they are not intelligible on their own. Unless they are put back together in the correct order, individual code units will cause problems in code that handles strings.
 
-## Installation
+## 安裝 (Installation)
 
-```js
-$ npm install runes2
+```bash
+# 使用 yarn / Using yarn
+yarn add runes2
+
+# 使用 yarn-tool / Using yarn-tool
+yarn-tool add runes2
+# yt 是 yarn-tool 的別名 / yt is an alias for yarn-tool
+yt add runes2
+
+# 使用 pnpm / Using pnpm
+pnpm add runes2
+
+# 使用 npm / Using npm
+npm install runes2
 ```
 
 ## Example

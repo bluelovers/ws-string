@@ -1,8 +1,14 @@
 {
   "name": "@lazy-cjk/str-util-trim",
   "version": "1.0.6",
-  "description": "",
+  "description": "Trim whitespace and special characters from strings with customizable options",
   "keywords": [
+    "trim",
+    "string",
+    "whitespace",
+    "strip",
+    "sanitize",
+    "util",
     "create-by-yarn-tool",
     "create-by-tsdx"
   ],

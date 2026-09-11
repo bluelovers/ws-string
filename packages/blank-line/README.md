@@ -2,7 +2,23 @@
 
 > get min/mid/max blank line length in text ( not include start/end line )
 
-`npm i blank-line`
+## 安裝 (Installation)
+
+```bash
+# 使用 yarn / Using yarn
+yarn add blank-line
+
+# 使用 yarn-tool / Using yarn-tool
+yarn-tool add blank-line
+# yt 是 yarn-tool 的別名 / yt is an alias for yarn-tool
+yt add blank-line
+
+# 使用 pnpm / Using pnpm
+pnpm add blank-line
+
+# 使用 npm / Using npm
+npm install blank-line
+```
 
 # demo
 

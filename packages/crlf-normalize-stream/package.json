@@ -1,8 +1,18 @@
 {
   "name": "crlf-normalize-stream",
   "version": "1.0.4",
-  "description": "",
+  "description": "Transform stream for normalizing newline characters (CR/LF/CRLF)",
   "keywords": [
+    "crlf-normalize",
+    "stream",
+    "transform",
+    "newline",
+    "linebreak",
+    "cr",
+    "lf",
+    "crlf",
+    "eol",
+    "normalize",
     "create-by-yarn-tool",
     "create-by-tsdx"
   ],
