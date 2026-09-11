@@ -1,6 +1,6 @@
 {
   "name": "string-detect-indent",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "simple detect string indent",
   "keywords": [
     "create-by-yarn-tool",
