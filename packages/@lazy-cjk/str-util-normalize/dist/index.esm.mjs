@@ -2,9 +2,9 @@ const e = [ /[\u2000-\u200F]/g, /[\u2028-\u202F]/g, /[\u205F-\u206F]/g, /\uFEFF/
 
 function normalize(u, a = {}) {
   return a.allow_nbsp || (u = u.replace(/\xA0/g, " ")), a.allow_bom || (u = u.replace(/\uFEFF/g, "")), 
-  e.forEach((function(e) {
+  e.forEach(function(e) {
     u = u.replace(e, "");
-  })), u;
+  }), u;
 }
 
 export { e as StripTable, normalize as default, normalize };

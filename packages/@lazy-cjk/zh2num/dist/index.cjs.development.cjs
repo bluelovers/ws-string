@@ -8,6 +8,17 @@ var chineseParseint2 = require('chinese-parseint2');
 const defaultOptions = {
   one: true
 };
+/**
+ * 將漢字轉換成數字
+ * Parse Chinese/Japanese numeric strings to integer
+ *
+ * @param str
+ * @param {IOptions} options
+ * @returns {string|number}
+ *
+ * @example zh2num('千百十七') == 1117
+ */
+
 function zh2num(str, options = {}) {
   var _options;
   options = Object.assign({}, defaultOptions, options);

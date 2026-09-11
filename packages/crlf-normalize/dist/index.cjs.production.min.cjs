@@ -1,17 +1,19 @@
 "use strict";
 
-var e, r;
-
 Object.defineProperty(exports, "__esModule", {
   value: !0
-}), exports.EnumLineBreak = void 0, (e = exports.EnumLineBreak || (exports.EnumLineBreak = {})).CR = "\r", 
-e.CRLF = "\r\n", e.LF = "\n", exports.EnumLineBreakCharCode = void 0, (r = exports.EnumLineBreakCharCode || (exports.EnumLineBreakCharCode = {}))[r.CR = 13] = "CR", 
-r[r.LF = 10] = "LF";
+});
 
-const n = /\r\n|\r(?!\n)|\n/g, t = new RegExp(`(${n.source})`, n.flags);
+let e = /*#__PURE__*/ function(e) {
+  return e.CR = "\r", e.CRLF = "\r\n", e.LF = "\n", e;
+}({}), r = /*#__PURE__*/ function(e) {
+  return e[e.CR = 13] = "CR", e[e.LF = 10] = "LF", e;
+}({});
 
-function crlf(e, r = "\n") {
-  return e.replace(n, r);
+const n = e.CR, t = e.CRLF, c = e.LF, i = /\r\n|\r(?!\n)|\n/g, o = /*#__PURE__*/ new RegExp(`(${i.source})`, i.flags);
+
+function crlf(r, n = e.LF) {
+  return r.replace(i, n);
 }
 
 function chkcrlf(e, r) {
@@ -24,122 +26,122 @@ function chkcrlf(e, r) {
   };
 }
 
-function _detectLineBreakCore(e) {
-  return e.crlf ? "\r\n" : e.lf || !e.cr ? "\n" : "\r";
+function _detectLineBreakCore(r) {
+  return r.crlf ? e.CRLF : r.lf || !r.cr ? e.LF : e.CR;
 }
 
-function isLF(e) {
-  return "\n" === e;
+function isLF(r) {
+  return r === e.LF;
 }
 
-function isCR(e) {
-  return "\r" === e;
+function isCR(r) {
+  return r === e.CR;
 }
 
 function charCodeIsLF(e) {
-  return 10 === e;
+  return e === r.LF;
 }
 
 function charCodeIsCR(e) {
-  return 13 === e;
+  return e === r.CR;
 }
 
-exports.CR = "\r", exports.CRLF = "\r\n", exports.LF = "\n", exports.R_CRLF = n, 
-exports.R_CRLF_MATCH = t, exports._detectLineBreakCore = _detectLineBreakCore, exports.charCodeIsCR = charCodeIsCR, 
-exports.charCodeIsLF = charCodeIsLF, exports.chkcrlf = chkcrlf, exports.crlf = crlf, 
-exports.crlf_unicode_normalize = function crlf_unicode_normalize(e, r = "\n") {
-  const n = r + r;
-  return e.replace(/\u000C/g, r + r + r).replace(/\u2028/g, r).replace(/\u2029/g, n);
-}, exports.default = crlf, exports.detectCurrentIndexLineBreak = function detectCurrentIndexLineBreak(e, r) {
-  const n = e[r], t = r + 1;
-  return isLF(n) ? {
-    newline: "\n",
-    cur: n,
-    index: r,
-    next: t,
+exports.CR = n, exports.CRLF = t, exports.EnumLineBreak = e, exports.EnumLineBreakCharCode = r, 
+exports.LF = c, exports.R_CRLF = i, exports.R_CRLF_MATCH = o, exports._detectLineBreakCore = _detectLineBreakCore, 
+exports.charCodeIsCR = charCodeIsCR, exports.charCodeIsLF = charCodeIsLF, exports.chkcrlf = chkcrlf, 
+exports.crlf = crlf, exports.crlf_unicode_normalize = function crlf_unicode_normalize(r, n = e.LF) {
+  const t = n + n;
+  return r.replace(/\u000C/g, n + n + n).replace(/\u2028/g, n).replace(/\u2029/g, t);
+}, exports.default = crlf, exports.detectCurrentIndexLineBreak = function detectCurrentIndexLineBreak(r, n) {
+  const t = r[n], c = n + 1;
+  return isLF(t) ? {
+    newline: e.LF,
+    cur: t,
+    index: n,
+    next: c,
     length: 1
-  } : isCR(n) ? isLF(e[t]) ? {
-    newline: "\r\n",
-    cur: n,
-    index: r,
-    next: t + 1,
+  } : isCR(t) ? isLF(r[c]) ? {
+    newline: e.CRLF,
+    cur: t,
+    index: n,
+    next: c + 1,
     length: 2
   } : {
-    newline: "\r",
-    cur: n,
-    index: r,
-    next: t,
+    newline: e.CR,
+    cur: t,
+    index: n,
+    next: c,
     length: 1
   } : {
     newline: void 0,
-    cur: n,
-    index: r,
-    next: t,
+    cur: t,
+    index: n,
+    next: c,
     length: 0
   };
-}, exports.detectCurrentIndexLineBreakFromBufferLike = function detectCurrentIndexLineBreakFromBufferLike(e, r) {
-  const n = e[r], t = r + 1;
-  return charCodeIsLF(n) ? {
-    newline: "\n",
-    cur: n,
-    index: r,
-    next: t,
+}, exports.detectCurrentIndexLineBreakFromBufferLike = function detectCurrentIndexLineBreakFromBufferLike(r, n) {
+  const t = r[n], c = n + 1;
+  return charCodeIsLF(t) ? {
+    newline: e.LF,
+    cur: t,
+    index: n,
+    next: c,
     length: 1
-  } : charCodeIsCR(n) ? charCodeIsLF(e[t]) ? {
-    newline: "\r\n",
-    cur: n,
-    index: r,
-    next: t + 1,
+  } : charCodeIsCR(t) ? charCodeIsLF(r[c]) ? {
+    newline: e.CRLF,
+    cur: t,
+    index: n,
+    next: c + 1,
     length: 2
   } : {
-    newline: "\r",
-    cur: n,
-    index: r,
-    next: t,
+    newline: e.CR,
+    cur: t,
+    index: n,
+    next: c,
     length: 1
   } : {
     newline: void 0,
-    cur: n,
-    index: r,
-    next: t,
+    cur: t,
+    index: n,
+    next: c,
     length: 0
   };
 }, exports.detectLineBreak = function detectLineBreak(e, r) {
   return _detectLineBreakCore(chkcrlf(e, r));
-}, exports.isCR = isCR, exports.isCRLF = function isCRLF(e) {
-  return "\r\n" === e;
+}, exports.isCR = isCR, exports.isCRLF = function isCRLF(r) {
+  return r === e.CRLF;
 }, exports.isEqualWithIgnoreLineSeparators = function isEqualWithIgnoreLineSeparators(e, r) {
   const n = chkcrlf(e), t = chkcrlf(r);
-  let o = !1;
-  return n.cr === t.cr && n.crlf === t.crlf && n.lf === t.lf && (o = crlf(e) === crlf(r)), 
+  let c = !1;
+  return n.cr === t.cr && n.crlf === t.crlf && n.lf === t.lf && (c = crlf(e) === crlf(r)), 
   {
-    bool: o,
+    bool: c,
     _lb_a: n,
     _lb_b: t
   };
 }, exports.isLF = isLF, exports.lineSplit = function lineSplit(e) {
-  return e.split(n);
-}, exports.nameToLineBreak = function nameToLineBreak(e) {
-  switch (null == e ? void 0 : e.toUpperCase()) {
+  return e.split(i);
+}, exports.nameToLineBreak = function nameToLineBreak(r) {
+  switch (null == r ? void 0 : r.toUpperCase()) {
    case "LF":
-    return "\n";
+    return e.LF;
 
    case "CR":
-    return "\r";
+    return e.CR;
 
    case "CRLF":
-    return "\r\n";
+    return e.CRLF;
   }
-  throw new TypeError(`Invalid line break name: ${e}`);
-}, exports.toLineBreakName = function toLineBreakName(e) {
-  switch (e) {
-   case "\n":
+  throw new TypeError(`Invalid line break name: ${r}`);
+}, exports.toLineBreakName = function toLineBreakName(r) {
+  switch (r) {
+   case e.LF:
     return "LF";
 
-   case "\r":
+   case e.CR:
     return "CR";
 
-   case "\r\n":
+   case e.CRLF:
     return "CRLF";
   }
   throw new TypeError("Invalid line break");

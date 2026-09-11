@@ -1,22 +1,6 @@
-export declare const enum EnumFullHalfTableType {
-	FULL_WIDTH = 1,
-	HALF_WIDTH = 0,
-	NO_EXIST = -1
-}
-declare const tableFullHalfDefaultInclude: readonly [
-	"number",
-	"A-Z",
-	"a-z",
-	"space",
-	"not_default"
-];
-export interface ITableFullHalfObject {
-	from?: number;
-	to?: number;
-	values?: number[];
-	not?: ITableFullHalfObject[];
-}
-export type ITableFullHalfDefaultIncludeKey = typeof tableFullHalfDefaultInclude[number];
+import { EnumFullHalfTableType } from '@lazy-cjk/fullhalf-char-code';
+import { ITableFullHalfDefaultIncludeKey, ITableFullHalfObject } from '@lazy-cjk/fullhalf-data';
+
 export declare const toFullNumber: IFactoryFn;
 export declare const toHalfNumber: IFactoryFn;
 export declare const toFullEnglish: IFactoryFn;

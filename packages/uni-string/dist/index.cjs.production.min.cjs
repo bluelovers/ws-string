@@ -2,7 +2,7 @@
 
 var t = require("runes2"), r = require("es6-class-prototype");
 
-const e = Object.getOwnPropertyNames(String.prototype);
+const e = /*#__PURE__*/ Object.getOwnPropertyNames(String.prototype);
 
 class UString extends String {
   _arr=null;
@@ -69,13 +69,13 @@ class UString extends String {
     return (void 0 === r || r > e.length) && (r = e.length), this.substring(r - i.length, r) === t;
   }
   padEnd(t, r) {
-    t >>= 0, r = String(void 0 !== r ? r : " ");
+    t |= 0, r = String(void 0 !== r ? r : " ");
     let e = this.split(""), i = this.split.call(r, "");
     return e.length > t ? String(this) : ((t -= e.length) > i.length && (r += r.repeat(t / i.length), 
     i = new UString(r)), String(this) + i.slice(0, t));
   }
   padStart(t, r) {
-    t >>= 0, r = String(void 0 !== r ? r : " ");
+    t |= 0, r = String(void 0 !== r ? r : " ");
     let e = this.split(""), i = this.split.call(r, "");
     return e.length > t ? String(this) : ((t -= e.length) > i.length && (r += r.repeat(t / i.length), 
     i = new UString(r)), i.slice(0, t) + String(this));
@@ -90,9 +90,9 @@ class UString extends String {
   }
   static get support() {
     let t = r.classPrototype(this);
-    return Object.keys(t).reduce((function(t, r) {
+    return Object.keys(t).reduce(function(t, r) {
       return e.includes(r) && (t[r] = !0), t;
-    }), {});
+    }, {});
   }
   static indexOf(t, r, e = 0) {
     return this.create(t).indexOf(r, e);

@@ -1,4 +1,4 @@
-const e = Object.freeze({
+const e = /*#__PURE__*/ Object.freeze({
   "０": 0,
   零: 0,
   "○": 0,

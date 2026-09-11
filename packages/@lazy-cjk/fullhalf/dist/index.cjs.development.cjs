@@ -12,22 +12,22 @@ let typeOnly = {
     number: true
   }
 };
-const toFullNumber = /*#__PURE__*/factory(fullhalfCharCode.toFullWidthCharCode, 1 /* EnumFullHalfTableType.FULL_WIDTH */, typeOnly);
-const toHalfNumber = /*#__PURE__*/factory(fullhalfCharCode.toHalfWidthCharCode, 0 /* EnumFullHalfTableType.HALF_WIDTH */, typeOnly);
+const toFullNumber = /*#__PURE__*/factory(fullhalfCharCode.toFullWidthCharCode, fullhalfCharCode.EnumFullHalfTableType.FULL_WIDTH, typeOnly);
+const toHalfNumber = /*#__PURE__*/factory(fullhalfCharCode.toHalfWidthCharCode, fullhalfCharCode.EnumFullHalfTableType.HALF_WIDTH, typeOnly);
 typeOnly = {
   only: {
     eng: true
   }
 };
-const toFullEnglish = /*#__PURE__*/factory(fullhalfCharCode.toFullWidthCharCode, 1 /* EnumFullHalfTableType.FULL_WIDTH */, typeOnly);
-const toHalfEnglish = /*#__PURE__*/factory(fullhalfCharCode.toHalfWidthCharCode, 0 /* EnumFullHalfTableType.HALF_WIDTH */, typeOnly);
+const toFullEnglish = /*#__PURE__*/factory(fullhalfCharCode.toFullWidthCharCode, fullhalfCharCode.EnumFullHalfTableType.FULL_WIDTH, typeOnly);
+const toHalfEnglish = /*#__PURE__*/factory(fullhalfCharCode.toHalfWidthCharCode, fullhalfCharCode.EnumFullHalfTableType.HALF_WIDTH, typeOnly);
 typeOnly = {
   only: {
     default: true
   }
 };
-const toFullWidth = /*#__PURE__*/factory(fullhalfCharCode.toFullWidthCharCode, 1 /* EnumFullHalfTableType.FULL_WIDTH */, typeOnly);
-const toHalfWidth = /*#__PURE__*/factory(fullhalfCharCode.toHalfWidthCharCode, 0 /* EnumFullHalfTableType.HALF_WIDTH */, typeOnly);
+const toFullWidth = /*#__PURE__*/factory(fullhalfCharCode.toFullWidthCharCode, fullhalfCharCode.EnumFullHalfTableType.FULL_WIDTH, typeOnly);
+const toHalfWidth = /*#__PURE__*/factory(fullhalfCharCode.toHalfWidthCharCode, fullhalfCharCode.EnumFullHalfTableType.HALF_WIDTH, typeOnly);
 function _optionsType(data) {
   if (data) {
     if (typeof data.exists === 'boolean') {

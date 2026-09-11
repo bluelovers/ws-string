@@ -2,29 +2,26 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-exports.EnumFullHalfTableType = void 0;
-(function (EnumFullHalfTableType) {
+let EnumFullHalfTableType = /*#__PURE__*/function (EnumFullHalfTableType) {
   EnumFullHalfTableType[EnumFullHalfTableType["FULL_WIDTH"] = 1] = "FULL_WIDTH";
   EnumFullHalfTableType[EnumFullHalfTableType["HALF_WIDTH"] = 0] = "HALF_WIDTH";
   EnumFullHalfTableType[EnumFullHalfTableType["NO_EXIST"] = -1] = "NO_EXIST";
-})(exports.EnumFullHalfTableType || (exports.EnumFullHalfTableType = {}));
+  return EnumFullHalfTableType;
+}({});
 function detectFullHalfCharCode(charCode) {
   if (0x0020 <= charCode && charCode < 0x007F) {
-    return 0 /* EnumFullHalfTableType.HALF_WIDTH */;
+    return EnumFullHalfTableType.HALF_WIDTH;
   }
-
   if (0x3000 === charCode || 0xFF00 < charCode && charCode < 0xFF5F) {
-    return 1 /* EnumFullHalfTableType.FULL_WIDTH */;
+    return EnumFullHalfTableType.FULL_WIDTH;
   }
-
-  return -1 /* EnumFullHalfTableType.NO_EXIST */;
+  return EnumFullHalfTableType.NO_EXIST;
 }
-
 function isFullHalfCharCode(charCode) {
   const r = detectFullHalfCharCode(charCode);
-  if (r === 1 /* EnumFullHalfTableType.FULL_WIDTH */) {
+  if (r === EnumFullHalfTableType.FULL_WIDTH) {
     return true;
-  } else if (r === 0 /* EnumFullHalfTableType.HALF_WIDTH */) {
+  } else if (r === EnumFullHalfTableType.HALF_WIDTH) {
     return false;
   } else ;
   return null;
@@ -58,6 +55,7 @@ function toHalfWidthCharCode(charCode) {
   return charCode;
 }
 
+exports.EnumFullHalfTableType = EnumFullHalfTableType;
 exports.detectFullHalfCharCode = detectFullHalfCharCode;
 exports.isFullHalfCharCode = isFullHalfCharCode;
 exports.toFullWidthCharCode = toFullWidthCharCode;

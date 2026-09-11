@@ -8,7 +8,7 @@ const reserved = /*#__PURE__*/Object.freeze(['abstract', 'arguments', 'boolean',
  */
 const builtins = /*#__PURE__*/Object.freeze(['Array', 'Date', 'eval', 'function', 'hasOwnProperty', 'Infinity', 'isFinite', 'isNaN', 'isPrototypeOf', 'length', 'Math', 'name', 'NaN', 'Number', 'Object', 'prototype', 'String', 'toString', 'undefined', 'valueOf']);
 const mixinReservedBuiltins = /*#__PURE__*/Object.freeze([...reserved, ...builtins]);
-const mixinReservedBuiltinsLC = /*#__PURE__*/Object.freeze( /*#__PURE__*/mixinReservedBuiltins.map(s => s.toLowerCase()));
+const mixinReservedBuiltinsLC = /*#__PURE__*/Object.freeze(/*#__PURE__*/mixinReservedBuiltins.map(s => s.toLowerCase()));
 function containReservedOrBuiltins(input) {
   return mixinReservedBuiltins.indexOf(input) !== -1;
 }

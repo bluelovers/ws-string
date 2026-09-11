@@ -6,23 +6,21 @@ Object.defineProperty(exports, "__esModule", {
 
 var e = require("execall2");
 
-const n = "\n";
-
 function normalize(e) {
-  return String(e).replace(/\r\n|\r(?!\n)|\n/g, n).replace(/\uFEFF/g, "").replace(/[  \xA0]/g, " ").replace(/[ \t　\xA0\u3000]+\n/g, "\n").replace(/^\n+|[\s　\xA0\u3000]+$/g, "");
+  return String(e).replace(/\r\n|\r(?!\n)|\n/g, "\n").replace(/\uFEFF/g, "").replace(/[  \xA0]/g, " ").replace(/[ \t　\xA0\u3000]+\n/g, "\n").replace(/^\n+|[\s　\xA0\u3000]+$/g, "");
 }
 
 function getBlankLine(n, t = {}) {
   let r = e.execall(/\n+/g, normalize(n));
   if (r.length) {
-    let e = r.reduce((function(e, n) {
+    let e = r.reduce(function(e, n) {
       return e.push(n.match.length), e;
-    }), []);
-    return t.filter && (e = e.filter((function(e, n, t) {
+    }, []);
+    return t.filter && (e = e.filter(function(e, n, t) {
       return t.indexOf(e) == n;
-    }))), t.sort && e.sort((function(e, n) {
+    })), t.sort && e.sort(function(e, n) {
       return e - n;
-    })), e;
+    }), e;
   }
   return null;
 }

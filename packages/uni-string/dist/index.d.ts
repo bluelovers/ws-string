@@ -6,7 +6,7 @@ export declare const STRING_PROTOTYPE: string[];
 export declare class UString extends String {
     protected _arr: string[];
     constructor(str: unknown, ...argv: unknown[]);
-    [Symbol.iterator](): IterableIterator<string>;
+    [Symbol.iterator](): ArrayIterator<string>;
     static isString(str: unknown): str is string | String;
     static toArray(str: unknown): string[];
     toArray(): string[];

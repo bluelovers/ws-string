@@ -12,7 +12,7 @@ let r = {
   }
 };
 
-const n = factory(e.toFullWidthCharCode, 1, r), f = factory(e.toHalfWidthCharCode, 0, r);
+const n = /*#__PURE__*/ factory(e.toFullWidthCharCode, e.EnumFullHalfTableType.FULL_WIDTH, r), f = /*#__PURE__*/ factory(e.toHalfWidthCharCode, e.EnumFullHalfTableType.HALF_WIDTH, r);
 
 r = {
   only: {
@@ -20,7 +20,7 @@ r = {
   }
 };
 
-const a = factory(e.toFullWidthCharCode, 1, r), i = factory(e.toHalfWidthCharCode, 0, r);
+const a = /*#__PURE__*/ factory(e.toFullWidthCharCode, e.EnumFullHalfTableType.FULL_WIDTH, r), u = /*#__PURE__*/ factory(e.toHalfWidthCharCode, e.EnumFullHalfTableType.HALF_WIDTH, r);
 
 r = {
   only: {
@@ -28,7 +28,7 @@ r = {
   }
 };
 
-const u = factory(e.toFullWidthCharCode, 1, r), p = factory(e.toHalfWidthCharCode, 0, r);
+const i = /*#__PURE__*/ factory(e.toFullWidthCharCode, e.EnumFullHalfTableType.FULL_WIDTH, r), p = /*#__PURE__*/ factory(e.toHalfWidthCharCode, e.EnumFullHalfTableType.HALF_WIDTH, r);
 
 function _optionsType(e) {
   if (e) if ("boolean" == typeof e.exists) {
@@ -89,20 +89,20 @@ var s = {
   toFullNumber: n,
   toHalfNumber: f,
   toFullEnglish: a,
-  toHalfEnglish: i,
-  toFullWidth: u,
+  toHalfEnglish: u,
+  toFullWidth: i,
   toHalfWidth: p
 };
 
 exports._chkType = _chkType, exports._filterTable = function _filterTable(e) {
   let t = [];
   if (e.from && e.to) for (let o = e.from; o <= e.to; o++) t.push(o);
-  return e.values && (t = t.concat(e.values)), Array.isArray(e.not) && e.not.length && (t = t.filter((function(t) {
+  return e.values && (t = t.concat(e.values)), Array.isArray(e.not) && e.not.length && (t = t.filter(function(t) {
     for (let o of e.not) if (_chkType(t, o)) return !1;
     return !0;
-  }))), t;
+  })), t;
 }, exports._optionsType = _optionsType, exports.chkType = chkType, exports.default = s, 
 exports.factory = factory, exports.process = process, exports.toFullEnglish = a, 
-exports.toFullNumber = n, exports.toFullWidth = u, exports.toHalfEnglish = i, exports.toHalfNumber = f, 
+exports.toFullNumber = n, exports.toFullWidth = i, exports.toHalfEnglish = u, exports.toHalfNumber = f, 
 exports.toHalfWidth = p;
 //# sourceMappingURL=index.cjs.production.min.cjs.map

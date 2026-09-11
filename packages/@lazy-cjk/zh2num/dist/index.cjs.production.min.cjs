@@ -17,16 +17,16 @@ function zh2num(r, s = {}) {
   for (let e of [ "digits", "unitNames" ]) if (Array.isArray(s[e]) && s[e].length) for (let n of s[e]) o[e][n] && (a = a.concat(Object.values(o[e][n])));
   if ("number" == typeof s.truncateOne) for (let e in c.default.truncateOne) e < s.truncateOne && a.push(c.default.truncateOne[e]); else void 0 !== s.truncateOne && !0 !== s.truncateOne || !a.length || (a = a.concat(Object.values(c.default.truncateOne)));
   s.chars && (a = a.concat(Array.isArray(s.chars) ? s.chars : s.chars.split(""))), 
-  a.length && (u = !1), a.filter((function(e) {
+  a.length && (u = !1), a.filter(function(e) {
     return 1 === e.length && e in n.characters;
-  })), u && (a = Object.keys(n.characters)), (i = s).flags || (i.flags = "u"), s.unsafe && (s.flags += "g");
+  }), u && (a = Object.keys(n.characters)), (i = s).flags || (i.flags = "u"), s.unsafe && (s.flags += "g");
   let f = a.join(""), p = r.toString();
   if (!new RegExp("([^" + f + "])").test(p)) return _chinese_parseInt(p, s);
   if (s.strict) return Number.NaN;
   let l = new RegExp("([" + f + "]+)", s.flags);
-  return p.replace(l, (function(...e) {
+  return p.replace(l, function(...e) {
     return _chinese_parseInt(e[1], s);
-  })).toString();
+  }).toString();
 }
 
 const r = /([佰百])([一二三四五六七八九壹貳參肆伍陸柒捌玖])(?![零○〇一二三四五六七八九壹貳參肆伍陸柒捌玖拾十什])/;

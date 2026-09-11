@@ -173,7 +173,7 @@ export declare const mixinReservedBuiltins: readonly [
 	"undefined",
 	"valueOf"
 ];
-export declare const mixinReservedBuiltinsLC: readonly ("string" | "number" | "boolean" | "undefined" | "object" | "function" | "abstract" | "arguments" | "break" | "byte" | "case" | "catch" | "char" | "class" | "const" | "continue" | "debugger" | "default" | "delete" | "do" | "double" | "else" | "enum" | "eval" | "export" | "extends" | "false" | "final" | "finally" | "float" | "for" | "goto" | "if" | "implements" | "import" | "in" | "instanceof" | "int" | "interface" | "let" | "long" | "native" | "new" | "null" | "package" | "private" | "protected" | "public" | "return" | "short" | "static" | "super" | "switch" | "synchronized" | "this" | "throw" | "throws" | "transient" | "true" | "try" | "typeof" | "var" | "void" | "volatile" | "while" | "with" | "yield" | "length" | "name" | "prototype" | "array" | "date" | "hasownproperty" | "infinity" | "isfinite" | "isnan" | "isprototypeof" | "math" | "nan" | "tostring" | "valueof")[];
+export declare const mixinReservedBuiltinsLC: readonly Lowercase<IMixinReservedBuiltins>[];
 export type IMixinReservedBuiltins = typeof mixinReservedBuiltins[number];
 export declare function containReservedOrBuiltins(input: string): boolean;
 export declare function isReservedOrBuiltins(input: string): input is IMixinReservedBuiltins;

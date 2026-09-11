@@ -1,3 +1,5 @@
+import { predefineedTranscriptionConfigs, transcriptionConfigs } from '@lazy-cjk/japanese';
+
 export interface IOptions {
 	/**
 	 * @see https://github.com/hakatashi/japanese.js/blob/master/src/numbers.es6
@@ -60,6 +62,8 @@ declare const _default: {
 
 export {
 	_default as default,
+	predefineedTranscriptionConfigs,
+	transcriptionConfigs,
 };
 
 export {};
