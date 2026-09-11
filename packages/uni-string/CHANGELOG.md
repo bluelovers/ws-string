@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.8](https://github.com/bluelovers/ws-string/compare/uni-string@2.0.7...uni-string@2.0.8) (2026-09-11)
+
+
+
+### 🔖　Miscellaneous
+
+* . ([4277d78](https://github.com/bluelovers/ws-string/commit/4277d78a1aa3f30eb57d556c0a829dd42ed99f39))
+* . ([64ea858](https://github.com/bluelovers/ws-string/commit/64ea858a715a396dc18984d40ba1f5ed698fc773))
+* . ([298eb9d](https://github.com/bluelovers/ws-string/commit/298eb9d080f492dd2477db721dbd48f7dfa4678a))
+
+
+
 ## [2.0.7](https://github.com/bluelovers/ws-string/compare/uni-string@2.0.6...uni-string@2.0.7) (2024-01-29)
 
 

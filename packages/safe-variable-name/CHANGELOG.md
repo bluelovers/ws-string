@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.5](https://github.com/bluelovers/ws-string/compare/safe-variable-name@1.0.4...safe-variable-name@1.0.5) (2026-09-11)
+
+
+
+### 🔖　Miscellaneous
+
+* . ([4277d78](https://github.com/bluelovers/ws-string/commit/4277d78a1aa3f30eb57d556c0a829dd42ed99f39))
+* . ([298eb9d](https://github.com/bluelovers/ws-string/commit/298eb9d080f492dd2477db721dbd48f7dfa4678a))
+
+
+
 ## [1.0.4](https://github.com/bluelovers/ws-string/compare/safe-variable-name@1.0.3...safe-variable-name@1.0.4) (2024-01-29)
 
 **Note:** Version bump only for package safe-variable-name

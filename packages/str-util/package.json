@@ -1,6 +1,6 @@
 {
   "name": "str-util",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "convert full/half width, Chinese/Japanese number, 中日漢字轉換... others util helper",
   "keywords": [
     "char",
@@ -76,21 +76,21 @@
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
-    "@lazy-cjk/fullhalf": "^1.0.1",
+    "@lazy-cjk/fullhalf": "^1.0.2",
     "@lazy-cjk/japanese": "^1.2.39",
     "@lazy-cjk/jp-table-comparison": "^1.0.35",
     "@lazy-cjk/jp-table-convert": "^1.0.55",
-    "@lazy-cjk/str-util-char-code-at": "^1.0.1",
-    "@lazy-cjk/str-util-normalize": "^1.0.1",
-    "@lazy-cjk/str-util-trim": "^1.0.1",
-    "@lazy-cjk/zh2num": "^1.0.2",
-    "chinese-parseint2": "^2.0.6",
+    "@lazy-cjk/str-util-char-code-at": "^1.0.5",
+    "@lazy-cjk/str-util-normalize": "^1.0.5",
+    "@lazy-cjk/str-util-trim": "^1.0.5",
+    "@lazy-cjk/zh2num": "^1.0.3",
+    "chinese-parseint2": "^2.0.10",
     "cjk-conv": ">=1",
     "deepmerge": "^4.3.1",
     "is-fullwidth-code-point": "<4 >=3",
     "strip-ansi": "<7 >=6",
     "tslib": "^2.8.1",
-    "uni-string": "^2.0.7"
+    "uni-string": "^2.0.8"
   },
   "gitHead": "b41c5edacf2b3ea6b5b9488a002565ccbbc67e08"
 }
