@@ -84,6 +84,7 @@
     "tslib": "^2.8.1"
   },
   "devDependencies": {
+    "@bluelovers/conventional-changelog-bluelovers": "^5.0.27",
     "@bluelovers/fast-glob": "^3.0.4",
     "@bluelovers/jest-config": "^1.1.11",
     "@bluelovers/tsconfig": "^2.0.3",
