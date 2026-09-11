@@ -1,12 +1,12 @@
 # README.md
 
-    <%= description %>
+    
 
 ## install
 
 ```bash
-yarn add <%= name %>
-yarn-tool add <%= name %>
-yt add <%= name %>
+yarn add normalize-num
+yarn-tool add normalize-num
+yt add normalize-num
 ```
 

@@ -1,0 +1,34 @@
+packages:
+  # all packages in subdirs of packages/ and components/
+  - 'packages/*'
+  # exclude packages that are inside test/ directories
+  - '!**/test/**'
+  - packages/@lazy-cjk/*
+  - packages/@regexp-cjk/*
+  - packages/@node-novel/*
+
+# publicHoistPattern:
+#   - "ts-type"
+#   - "@bluelovers/tsconfig"
+#   - "@bluelovers/jest-config"
+#   - "@types/node"
+#   - "@types/jest"
+#   - "jest"
+#   - "ts-jest"
+#   - "ts-node"
+#   - "tsx"
+#   - "tslib"
+
+linkWorkspacePackages: true
+saveWorkspaceProtocol: false
+#  設定決定了 當依賴版本重疊時，pnpm 該優先用「本地程式碼」還是「線上版本」。
+preferWorkspacePackages: true
+
+# ignoreWorkspaceRootCheck: true
+
+# onlyBuiltDependencies: []
+# ignoredBuiltDependencies: []
+allowBuilds:
+  '@parcel/watcher': true
+  nx: true
+  unrs-resolver: true

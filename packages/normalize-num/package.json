@@ -19,16 +19,16 @@
     "lib": "lib"
   },
   "scripts": {
-    "coverage": "yarn run test -- --coverage",
-    "test": "echo \"Error: no test specified\"",
+    "coverage": "pnpm run test --coverage",
+    "test": "node --run test:jest --",
     "test:jest": "jest --passWithNoTests",
-    "test:jest:coverage": "yarn run test:jest -- --coverage",
-    "test:jest:snapshot": "yarn run test:jest -- -u",
-    "test:snapshot": "yarn run test -- -u",
+    "test:jest:coverage": "node --run test:jest -- --coverage",
+    "test:jest:snapshot": "node --run test:jest -- -u",
+    "test:snapshot": "pnpm run test -u",
     "test:tsd": "ynpx tsd",
-    "preversion": "yarn run test",
+    "preversion": "pnpm run test",
     "prepublishOnly:check-bin": "ynpx --quiet @yarn-tool/check-pkg-bin",
-    "prepublishOnly:update": "yarn run ncu && yarn run sort-package-json",
+    "prepublishOnly:update": "pnpm run ncu && pnpm run sort-package-json",
     "ncu": "ynpx --quiet yarn-tool -- ncu -u",
     "sort-package-json": "ynpx --quiet yarn-tool -- sort",
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
@@ -36,7 +36,7 @@
   "dependencies": {
     "deromanize": "^1.0.0",
     "num-is-roman": "^1.1.9",
-    "tslib": "^2"
+    "tslib": "^2.8.1"
   },
   "publishConfig": {
     "access": "public"

@@ -5,8 +5,8 @@
 ## install
 
 ```bash
-yarn add <%= name %>
-yarn-tool add <%= name %>
-yt add <%= name %>
+yarn add num-is-roman
+yarn-tool add num-is-roman
+yt add num-is-roman
 ```
 
