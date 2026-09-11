@@ -1,6 +1,6 @@
 {
   "name": "crlf-normalize-stream",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "keywords": [
     "create-by-yarn-tool",
@@ -68,7 +68,7 @@
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
-    "crlf-normalize": "^1.0.24"
+    "crlf-normalize": "^1.0.25"
   },
   "gitHead": "6598981758ee074359392d088dd9fadf9d0df127"
 }

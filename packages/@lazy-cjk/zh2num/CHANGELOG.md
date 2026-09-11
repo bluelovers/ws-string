@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.4](https://github.com/bluelovers/ws-string/compare/@lazy-cjk/zh2num@1.0.3...@lazy-cjk/zh2num@1.0.4) (2026-09-11)
+
+
+
+### 🔖　Miscellaneous
+
+* . ([3c7e812](https://github.com/bluelovers/ws-string/commit/3c7e8126410fc85d04c9a8ebfce14b35659d774a))
+
+
+
 ## [1.0.3](https://github.com/bluelovers/ws-string/compare/@lazy-cjk/zh2num@1.0.2...@lazy-cjk/zh2num@1.0.3) (2026-09-11)
 
 
