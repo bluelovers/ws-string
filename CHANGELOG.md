@@ -20,5 +20,7 @@ Please see the individual package changelogs for what's new:
 * 🌏 [`@lazy-cjk/fullhalf-char-code`](./packages/@lazy-cjk/fullhalf-char-code/CHANGELOG.md "packages/@lazy-cjk/fullhalf-char-code") *packages/@lazy-cjk/fullhalf-char-code*
 * 🌏 [`@lazy-cjk/fullhalf-data`](./packages/@lazy-cjk/fullhalf-data/CHANGELOG.md "packages/@lazy-cjk/fullhalf-data") *packages/@lazy-cjk/fullhalf-data*
 * 🌏 [`@lazy-cjk/str-util-char-code-at`](./packages/@lazy-cjk/str-util-char-code-at/CHANGELOG.md "packages/@lazy-cjk/str-util-char-code-at") *packages/@lazy-cjk/str-util-char-code-at*
+* 🌏 [`@lazy-cjk/str-util-normalize`](./packages/@lazy-cjk/str-util-normalize/CHANGELOG.md "packages/@lazy-cjk/str-util-normalize") *packages/@lazy-cjk/str-util-normalize*
+* 🌏 [`@lazy-cjk/str-util-trim`](./packages/@lazy-cjk/str-util-trim/CHANGELOG.md "packages/@lazy-cjk/str-util-trim") *packages/@lazy-cjk/str-util-trim*
 * 🌏 [`@lazy-cjk/zh2num`](./packages/@lazy-cjk/zh2num/CHANGELOG.md "packages/@lazy-cjk/zh2num") *packages/@lazy-cjk/zh2num*
 
