@@ -106,8 +106,5 @@
     "pretty-format": "^30.5.1",
     "ts-jest": "^29.4.12",
     "undici-types": "^8.10.2"
-  },
-  "peerDependencies": {
-    "lerna": "^10.0.1"
   }
 }

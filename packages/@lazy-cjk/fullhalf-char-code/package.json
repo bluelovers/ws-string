@@ -1,6 +1,6 @@
 {
   "name": "@lazy-cjk/fullhalf-char-code",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Determines whether the specified character code is full-width or half-width.",
   "keywords": [
     "fullhalf",
