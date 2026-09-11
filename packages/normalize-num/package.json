@@ -1,6 +1,6 @@
 {
   "name": "normalize-num",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "Normalize numbers in strings, including Roman numerals and circled numbers",
   "keywords": [
     "normalize",
@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "deromanize": "^1.0.0",
-    "num-is-roman": "^1.1.14",
+    "num-is-roman": "^1.1.15",
     "tslib": "^2.8.1"
   },
   "publishConfig": {

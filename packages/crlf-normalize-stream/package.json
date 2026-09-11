@@ -1,6 +1,6 @@
 {
   "name": "crlf-normalize-stream",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Transform stream for normalizing newline characters (CR/LF/CRLF)",
   "keywords": [
     "crlf-normalize",
@@ -78,7 +78,7 @@
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
-    "crlf-normalize": "^1.0.25"
+    "crlf-normalize": "^1.0.26"
   },
   "gitHead": "6598981758ee074359392d088dd9fadf9d0df127"
 }

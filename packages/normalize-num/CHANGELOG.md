@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.19](https://github.com/bluelovers/ws-string/compare/normalize-num@1.0.18...normalize-num@1.0.19) (2026-09-11)
+
+
+
+### 📚　Documentation
+
+* **docs:** 更新各套件的 README 說明文件與安裝指南 ([3487b20](https://github.com/bluelovers/ws-string/commit/3487b209d0c935a48da91eeccad9c0068c74e7ba))
+
+
+
 ## [1.0.18](https://github.com/bluelovers/ws-string/compare/normalize-num@1.0.17...normalize-num@1.0.18) (2026-09-11)
 
 

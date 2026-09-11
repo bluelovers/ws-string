@@ -1,6 +1,6 @@
 {
   "name": "@lazy-cjk/fullhalf",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Converts character to full-width/half-width character.",
   "keywords": [
     "fullhalf",
@@ -75,10 +75,10 @@
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
-    "@lazy-cjk/fullhalf-char-code": "^1.0.6",
-    "@lazy-cjk/fullhalf-data": "^1.0.6",
+    "@lazy-cjk/fullhalf-char-code": "^1.0.7",
+    "@lazy-cjk/fullhalf-data": "^1.0.7",
     "deepmerge": "^4.3.1",
-    "uni-string": "^2.0.9"
+    "uni-string": "^2.0.10"
   },
   "publishConfig": {
     "access": "public"

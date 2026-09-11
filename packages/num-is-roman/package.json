@@ -1,6 +1,6 @@
 {
   "name": "num-is-roman",
-  "version": "1.1.14",
+  "version": "1.1.15",
   "description": "Check if a string is a Roman numeral",
   "keywords": [
     "roman",

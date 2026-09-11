@@ -88,16 +88,16 @@ importers:
   packages/@lazy-cjk/fullhalf:
     dependencies:
       '@lazy-cjk/fullhalf-char-code':
-        specifier: ^1.0.6
+        specifier: ^1.0.7
         version: link:../fullhalf-char-code
       '@lazy-cjk/fullhalf-data':
-        specifier: ^1.0.6
+        specifier: ^1.0.7
         version: link:../fullhalf-data
       deepmerge:
         specifier: ^4.3.1
         version: 4.3.1
       uni-string:
-        specifier: ^2.0.9
+        specifier: ^2.0.10
         version: link:../../uni-string
 
   packages/@lazy-cjk/fullhalf-char-code: {}
@@ -116,7 +116,7 @@ importers:
         specifier: ^1.2.39
         version: 1.2.39(ts-toolbelt@9.6.0)
       chinese-parseint2:
-        specifier: ^2.0.11
+        specifier: ^2.0.12
         version: link:../../chinese-parseint2
 
   packages/blank-line:
@@ -136,7 +136,7 @@ importers:
   packages/crlf-normalize-stream:
     dependencies:
       crlf-normalize:
-        specifier: ^1.0.25
+        specifier: ^1.0.26
         version: link:../crlf-normalize
 
   packages/normalize-num:
@@ -145,7 +145,7 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
       num-is-roman:
-        specifier: ^1.1.14
+        specifier: ^1.1.15
         version: link:../num-is-roman
       tslib:
         specifier: ^2.8.1
@@ -163,13 +163,13 @@ importers:
         specifier: <7.0.0 >=6.3.0
         version: 6.3.0
       reserved2:
-        specifier: ^0.1.11
+        specifier: ^0.1.12
         version: link:../reserved
 
   packages/str-util:
     dependencies:
       '@lazy-cjk/fullhalf':
-        specifier: ^1.0.3
+        specifier: ^1.0.4
         version: link:../@lazy-cjk/fullhalf
       '@lazy-cjk/japanese':
         specifier: ^1.2.39
@@ -181,19 +181,19 @@ importers:
         specifier: ^1.0.55
         version: 1.0.55
       '@lazy-cjk/str-util-char-code-at':
-        specifier: ^1.0.6
+        specifier: ^1.0.7
         version: link:../@lazy-cjk/str-util-char-code-at
       '@lazy-cjk/str-util-normalize':
-        specifier: ^1.0.6
+        specifier: ^1.0.7
         version: link:../@lazy-cjk/str-util-normalize
       '@lazy-cjk/str-util-trim':
-        specifier: ^1.0.6
+        specifier: ^1.0.7
         version: link:../@lazy-cjk/str-util-trim
       '@lazy-cjk/zh2num':
-        specifier: ^1.0.4
+        specifier: ^1.0.5
         version: link:../@lazy-cjk/zh2num
       chinese-parseint2:
-        specifier: ^2.0.11
+        specifier: ^2.0.12
         version: link:../chinese-parseint2
       cjk-conv:
         specifier: '>=1'
@@ -211,7 +211,7 @@ importers:
         specifier: ^2.8.1
         version: 2.8.1
       uni-string:
-        specifier: ^2.0.9
+        specifier: ^2.0.10
         version: link:../uni-string
 
   packages/string-indent: {}
@@ -224,7 +224,7 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0
       runes2:
-        specifier: ^1.1.9
+        specifier: ^1.1.10
         version: link:../runes2
     devDependencies:
       cjk-conv:

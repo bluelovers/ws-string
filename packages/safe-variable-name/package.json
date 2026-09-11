@@ -1,6 +1,6 @@
 {
   "name": "safe-variable-name",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Get a safe variable name from a given string.",
   "keywords": [
     "name",
@@ -75,7 +75,7 @@
   },
   "dependencies": {
     "camelcase": "<7.0.0 >=6.3.0",
-    "reserved2": "^0.1.11"
+    "reserved2": "^0.1.12"
   },
   "gitHead": "6598981758ee074359392d088dd9fadf9d0df127"
 }

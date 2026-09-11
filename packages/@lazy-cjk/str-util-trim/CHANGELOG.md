@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.7](https://github.com/bluelovers/ws-string/compare/@lazy-cjk/str-util-trim@1.0.6...@lazy-cjk/str-util-trim@1.0.7) (2026-09-11)
+
+
+
+### 📚　Documentation
+
+* **docs:** 更新各套件的 README 說明文件與安裝指南 ([3487b20](https://github.com/bluelovers/ws-string/commit/3487b209d0c935a48da91eeccad9c0068c74e7ba))
+
+
+
 ## [1.0.6](https://github.com/bluelovers/ws-string/compare/@lazy-cjk/str-util-trim@1.0.5...@lazy-cjk/str-util-trim@1.0.6) (2026-09-11)
 
 
