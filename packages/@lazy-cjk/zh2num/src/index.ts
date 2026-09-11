@@ -200,7 +200,7 @@ export function num2zh(number: unknown, options: {
 		throw new TypeError(`${number} is not valid allow number`);
 	}
 
-	return transcribeNumber(d, options);
+	return transcribeNumber(d, options as any);
 }
 
 export default {

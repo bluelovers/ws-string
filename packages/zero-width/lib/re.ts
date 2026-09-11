@@ -3,47 +3,47 @@
  * source file at test/scripts/src
  */
 
-export const reVariationSelectors = /[\uFE00-\uFE0F]/gu;
+export const _reZeroWidthTrim = /[\0- \x7F-\xA0\u1680\u2000-\u200F\u2028-\u202F\u205F-\u206F\u3000\uFE00-\uFE0F\uFEFF\u{E0100}-\u{E01EF}]/gu;
 
-export const reVariationSelectorsSupplement = /[\u{E0100}-\u{E01EF}]/gu;
+export const _reZeroWidthTrimWithoutNewLine = /[\0- \x7F-\xA0\u200B-\u200F\u2028-\u202F\u205F-\u206F\uFE00-\uFE0F\uFEFF\u{E0100}-\u{E01EF}]/gu;
 
-export const reVariationSelectorsAll = /[\uFE00-\uFE0F\u{E0100}-\u{E01EF}]/gu;
+export const reBomStrict = /^\ufeff/u;
 
-export const reZeroWidth = /[\u200B-\u200F\u2060\uFEFF]/gu;
+export const reBomUnsafe = /[\uFEFF]/gu;
 
-export const reZeroWidth2 = /[\u2028-\u202F\u205F-\u206F]/gu;
-
-export const reZeroWidthAllSafe = /[\u200B\u200E\u200F\u2028-\u202F\u205F-\u206F\uFEFF]/gu;
-
-export const reZeroWidthAll = /[\u200B-\u200F\u2028-\u202F\u205F-\u206F\uFE00-\uFE0F\uFEFF\u{E0100}-\u{E01EF}]/gu;
+export const reControlCodes = /[\0-\x1F\x7F-\x9F]/gu;
 
 export const reNBSP = /[\xA0]/gu;
 
 export const reNewLine = /[\n\r]/gu;
 
-export const reRegExpSpaceWithoutNewLine = /[\x08\t\x0B\f \xA0]/gu;
-
-export const reRegExpSpaceWithoutNewLinePlus = /[\x08\t\x0B\f \xA0]/gu;
-
 export const reRegExpSpace = /[\x08-\r \xA0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\uFEFF]/gu;
 
 export const reRegExpSpacePlus = /[\x08-\r \xA0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\uFEFF]/gu;
 
-export const reControlCodes = /[\0-\x1F\x7F-\x9F]/gu;
+export const reRegExpSpaceWithoutNewLine = /[\x08\t\x0B\f \xA0]/gu;
 
-export const reZeroWidthWithSpaceWithoutNewLine = /[\x08\t\x0B\f \xA0\u200B-\u200F\u2028-\u202F\u205F-\u206F\uFE00-\uFE0F\uFEFF\u{E0100}-\u{E01EF}]/gu;
+export const reRegExpSpaceWithoutNewLinePlus = /[\x08\t\x0B\f \xA0]/gu;
 
-export const reZeroWidthWithSpace = /[\x08-\r \xA0\u1680\u2000-\u200F\u2028-\u202F\u205F-\u206F\u3000\uFE00-\uFE0F\uFEFF\u{E0100}-\u{E01EF}]/gu;
+export const reVariationSelectors = /[\uFE00-\uFE0F]/gu;
 
-export const _reZeroWidthTrimWithoutNewLine = /[\0- \x7F-\xA0\u200B-\u200F\u2028-\u202F\u205F-\u206F\uFE00-\uFE0F\uFEFF\u{E0100}-\u{E01EF}]/gu;
+export const reVariationSelectorsAll = /[\uFE00-\uFE0F\u{E0100}-\u{E01EF}]/gu;
 
-export const _reZeroWidthTrim = /[\0- \x7F-\xA0\u1680\u2000-\u200F\u2028-\u202F\u205F-\u206F\u3000\uFE00-\uFE0F\uFEFF\u{E0100}-\u{E01EF}]/gu;
+export const reVariationSelectorsSupplement = /[\u{E0100}-\u{E01EF}]/gu;
 
-export const reZeroWidthTrimWithoutNewLine = /^[\uFE00-\uFE0F\u{E0100}-\u{E01EF}\u200b-\u200f\ufeff\u2060\u2028-\u202F\u205F-\u206F\u0020\u00a0\t\v\u0008\u000c\u00a0\u0000-\u001F\u007F\u0080-\u009F]+|[\uFE00-\uFE0F\u{E0100}-\u{E01EF}\u200b-\u200f\ufeff\u2060\u2028-\u202F\u205F-\u206F\u0020\u00a0\t\v\u0008\u000c\u00a0\u0000-\u001F\u007F\u0080-\u009F]+$/gu;
+export const reZeroWidth = /[\u200B-\u200F\u2060\uFEFF]/gu;
+
+export const reZeroWidth2 = /[\u2028-\u202F\u205F-\u206F]/gu;
+
+export const reZeroWidthAll = /[\u200B-\u200F\u2028-\u202F\u205F-\u206F\uFE00-\uFE0F\uFEFF\u{E0100}-\u{E01EF}]/gu;
+
+export const reZeroWidthAllSafe = /[\u200B\u200E\u200F\u2028-\u202F\u205F-\u206F\uFEFF]/gu;
 
 export const reZeroWidthTrim = /^[\uFE00-\uFE0F\u{E0100}-\u{E01EF}\u200b-\u200f\ufeff\u2060\u2028-\u202F\u205F-\u206F\u0020\u00a0\t\v\u0008\u000c\u00a0\r\n\s\u0000-\u001F\u007F\u0080-\u009F]+|[\uFE00-\uFE0F\u{E0100}-\u{E01EF}\u200b-\u200f\ufeff\u2060\u2028-\u202F\u205F-\u206F\u0020\u00a0\t\v\u0008\u000c\u00a0\r\n\s\u0000-\u001F\u007F\u0080-\u009F]+$/gu;
 
-export const reBomStrict = /^\ufeff/u;
+export const reZeroWidthTrimWithoutNewLine = /^[\uFE00-\uFE0F\u{E0100}-\u{E01EF}\u200b-\u200f\ufeff\u2060\u2028-\u202F\u205F-\u206F\u0020\u00a0\t\v\u0008\u000c\u00a0\u0000-\u001F\u007F\u0080-\u009F]+|[\uFE00-\uFE0F\u{E0100}-\u{E01EF}\u200b-\u200f\ufeff\u2060\u2028-\u202F\u205F-\u206F\u0020\u00a0\t\v\u0008\u000c\u00a0\u0000-\u001F\u007F\u0080-\u009F]+$/gu;
 
-export const reBomUnsafe = /[\uFEFF]/gu;
+export const reZeroWidthWithSpace = /[\x08-\r \xA0\u1680\u2000-\u200F\u2028-\u202F\u205F-\u206F\u3000\uFE00-\uFE0F\uFEFF\u{E0100}-\u{E01EF}]/gu;
+
+export const reZeroWidthWithSpaceWithoutNewLine = /[\x08\t\x0B\f \xA0\u200B-\u200F\u2028-\u202F\u205F-\u206F\uFE00-\uFE0F\uFEFF\u{E0100}-\u{E01EF}]/gu;
 

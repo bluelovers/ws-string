@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`allow VariationSelectors by default '[對熊]埃爾斯特西之森林Part6[要注意⚠️]' 1`] = `"[對熊]埃爾斯特西之森林Part6[要注意⚠️]"`;
 
