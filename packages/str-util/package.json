@@ -68,11 +68,10 @@
     "test:snapshot": "pnpm run test -u",
     "test:tsd": "ynpx tsd",
     "npm:publish": "npm publish",
-    "npm:publish:lerna": "npx lerna publish --yes --cd-version patch",
+    "npm:publish:lerna": "lerna publish --yes --cd-version patch",
     "preversion": "pnpm run test",
-    "prepublish:lockfile": "npx sync-lockfile .",
-    "ncu": "npx yarn-tool ncu -u",
-    "sort-package-json": "npx yarn-tool sort",
+    "ncu": "yarn-tool ncu -u",
+    "sort-package-json": "yarn-tool sort",
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
@@ -92,5 +91,5 @@
     "tslib": "^2.8.1",
     "uni-string": "^2.0.8"
   },
-  "gitHead": "b41c5edacf2b3ea6b5b9488a002565ccbbc67e08"
+  "gitHead": "6598981758ee074359392d088dd9fadf9d0df127"
 }

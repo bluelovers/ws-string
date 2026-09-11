@@ -77,10 +77,10 @@
     "postpublish:git:push": "git push --follow-tags",
     "postpublish:git:tag": "ynpx --quiet @yarn-tool/tag",
     "postpublishOnly": "echo postpublishOnly",
-    "postpublishOnly:add": "npx yarn-tool root run postpublishOnly:add runes2",
+    "postpublishOnly:add": "pnpm -w run postpublishOnly:add runes2",
     "ncu": "yarn-tool ncu -u",
     "sort-package-json": "yarn-tool sort",
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
-  "gitHead": "952f3f53bed3e2bf3ccaec50c46702f127ff4e7f"
+  "gitHead": "6598981758ee074359392d088dd9fadf9d0df127"
 }

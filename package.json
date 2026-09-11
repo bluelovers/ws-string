@@ -68,7 +68,7 @@
     "postpublish:subtree": "ts-node ./script/run/postpublish-subtree.ts",
     "postpublishOnly": "pnpm run postpublishOnly:ws-root-changelog & pnpm run postpublish:subtree & echo postpublishOnly",
     "postpublishOnly:ws-root-changelog": "ynpx ws-root-changelog & git add ./CHANGELOG.md & git commit ./CHANGELOG.md -m \"chore(changelog): update changelog toc in workspaces root\" & echo update changelog toc in workspaces root",
-    "postpublishOnly:add": "ts-node ./script/run/postpublish-add.ts",
+    "postpublishOnly:add": "tsx ./script/run/postpublish-add.ts",
     "ncu": "pnpm run ncu:ws",
     "ncu:ws": "yarn-tool ncu -u --AA",
     "ncu:root": "yarn-tool ncu -u",

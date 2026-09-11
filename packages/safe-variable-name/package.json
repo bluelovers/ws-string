@@ -76,5 +76,6 @@
   "dependencies": {
     "camelcase": "<7.0.0 >=6.3.0",
     "reserved2": "^0.1.10"
-  }
+  },
+  "gitHead": "6598981758ee074359392d088dd9fadf9d0df127"
 }

@@ -62,5 +62,5 @@
     "sort-package-json": "ynpx --quiet yarn-tool -- sort",
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
-  "gitHead": "b41c5edacf2b3ea6b5b9488a002565ccbbc67e08"
+  "gitHead": "6598981758ee074359392d088dd9fadf9d0df127"
 }

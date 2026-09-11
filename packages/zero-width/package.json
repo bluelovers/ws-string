@@ -52,17 +52,15 @@
     "build": "tsx test/scripts/build-re.ts && build-ts-file -- ./lib/re.ts",
     "npm:publish": "npm publish",
     "preversion": "pnpm run test",
-    "prepublish:lockfile": "npx sync-lockfile .",
     "postpublish": "pnpm run postpublishOnly:add",
-    "postpublish_": "git commit -m \"chore(release): publish\" .",
-    "postpublishOnly:add": "npx yarn-tool root run postpublishOnly:add zero-width",
-    "ncu": "npx yarn-tool ncu -u",
-    "sort-package-json": "npx yarn-tool sort",
+    "postpublishOnly:add": "pnpm -w run postpublishOnly:add zero-width",
+    "ncu": "yarn-tool ncu -u",
+    "sort-package-json": "yarn-tool sort",
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
     "regexp-helper-core": "^2.0.13",
     "tslib": "^2.8.1"
   },
-  "gitHead": "952f3f53bed3e2bf3ccaec50c46702f127ff4e7f"
+  "gitHead": "6598981758ee074359392d088dd9fadf9d0df127"
 }

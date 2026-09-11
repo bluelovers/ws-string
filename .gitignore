@@ -278,3 +278,4 @@ test/temp*/
 
 .agentbridge
 node_modules_
+temp/subtree/zero-width
